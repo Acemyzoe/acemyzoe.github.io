@@ -1,0 +1,30 @@
+---
+layout: page
+---
+{{ content }}
+{% if site.jekyll-theme-WuK.tags.pie_chart.enable %}
+<div class="mermaid">
+  pie
+  {{ site.jekyll-theme-WuK.tags.pie_chart.title }}
+  {% for tag in site.tags %}
+  "{{ tag[0] }}" : {{ tag[1].size }}
+  {% endfor %}
+</div>
+{% endif %}
+{% for tag in site.tags %}
+<h2>
+  {{ site.jekyll-theme-WuK.tags.alert }}
+  {% if site.jekyll-theme-WuK.tags.count %}
+  <small>{{ tag[1].size }}</small>
+  {% endif %}
+  {{ tag[0] }}
+</h2>
+<ul>
+  {% for post in tag[1] %}
+  <li>
+    <small>{{ post.date | date_to_string }}</small>
+    <a href="{{ post.url | absolute_url }}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endfor %}
