@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-26T18:06:01+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-28T20:23:04+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
 真是&lt;br/&gt;
 太有趣了&lt;br/&gt;
 QAQ&lt;br/&gt;
@@ -9,8 +9,215 @@ QAQ&lt;br/&gt;
   &lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;
 &lt;/a&gt;
 &lt;br/&gt;
-&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=100% height=42 src=&quot;//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;
-</subtitle><entry><title type="html">开篇-Init commit</title><link href="http://localhost:4000/_posts/2020-04-26-%E5%BC%80%E7%AF%87-Init-commit/" rel="alternate" type="text/html" title="开篇-Init commit" /><published>2020-04-26T00:00:00+08:00</published><updated>2020-04-26T00:00:00+08:00</updated><id>http://localhost:4000/_posts/%E5%BC%80%E7%AF%87-Init%20commit</id><content type="html" xml:base="http://localhost:4000/_posts/2020-04-26-%E5%BC%80%E7%AF%87-Init-commit/">&lt;blockquote&gt;
+&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=100% height=52 src=&quot;//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;
+</subtitle><entry><title type="html">Ssh</title><link href="http://localhost:4000/_posts/2020-04-28-SSH/" rel="alternate" type="text/html" title="Ssh" /><published>2020-04-28T00:00:00+08:00</published><updated>2020-04-28T00:00:00+08:00</updated><id>http://localhost:4000/_posts/SSH</id><content type="html" xml:base="http://localhost:4000/_posts/2020-04-28-SSH/">&lt;h1 id=&quot;ssh&quot;&gt;SSH&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://abcdabcd987.com/ssh/&quot;&gt;了解更多&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;linux&quot;&gt;LINUX&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ssh user@remote -p port&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code&gt;user&lt;/code&gt; 是你在远程机器上的用户名，如果不指定的话默认为当前用户&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;remote&lt;/code&gt; 是远程机器的地址，可以是 IP，域名，或者是后面会提到的别名&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;port&lt;/code&gt; 是 SSH Server 监听的端口，如果不指定的话就为默认值 22&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;windows&quot;&gt;WINDOWS&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html&quot;&gt;PuTTY&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;免密登录&quot;&gt;免密登录&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;ssh-keygen #一路回车
+#生成的公钥放在了 ~/.ssh/id_rsa.pub，私钥放在了 ~/.ssh/id_rsa
+ssh-copy-id user@remote -p port  #预装ssh-copy-id
+sshssh user@remote -p port 'mkdir -p .ssh &amp;amp;&amp;amp; cat &amp;gt;&amp;gt; .ssh/authorized_keys' &amp;lt; ~/.ssh/id_rsa.pubcopy-id user@remote -p port
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;配置别名&quot;&gt;配置别名&lt;/h2&gt;
+
+&lt;p&gt;在 &lt;code&gt;~/.ssh/config&lt;/code&gt; 里面追加以下内容：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Host name
+    HostName remote
+    User user
+    Port port
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;传输文件&quot;&gt;传输文件&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;scp&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;图形界面&quot;&gt;图形界面&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ssh-X remote&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;remote $ xeyes&lt;/code&gt; #可以运行gedit 等任何图形界面的程序&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;如果出现 &lt;code&gt;Can't open display&lt;/code&gt;，执行 &lt;code&gt;xhost +&lt;/code&gt;试试，xhost 是用来控制X server访问权限的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ssh 远程的 docker，失败，待解决。&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">SSH</summary></entry><entry><title type="html">Tmux</title><link href="http://localhost:4000/_posts/2020-04-28-Tmux/" rel="alternate" type="text/html" title="Tmux" /><published>2020-04-28T00:00:00+08:00</published><updated>2020-04-28T00:00:00+08:00</updated><id>http://localhost:4000/_posts/Tmux</id><content type="html" xml:base="http://localhost:4000/_posts/2020-04-28-Tmux/">&lt;h1 id=&quot;tmux&quot;&gt;Tmux&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ruanyifeng.com/blog/2019/10/tmux.html&quot;&gt;了解更多&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这里作wiki提醒自己。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;用途&lt;/strong&gt; ：SSH 远程登录时只有命令行终端，tumx 可以使会话与窗口”解绑”，也可以分出多个窗口。&lt;/p&gt;
+
+&lt;p&gt;安装 ：&lt;code&gt;sudo apt-get install tmux&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;命令 ：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# 新建
+tmux new -s  &amp;lt;session-name&amp;gt;
+# 分离会话，进程仍在后台运行
+tmux detach   # 或者 Ctrl+b  d
+#接入会话
+tmux attach -t  &amp;lt;number / session-name&amp;gt;
+# 查看
+tmux ls
+# 杀死会话
+tmux kill-session -t  &amp;lt;number / session-name&amp;gt; # Ctrl+d 就完事了
+#切换会话
+tmux switch -t  &amp;lt;number / session-name&amp;gt;
+
+#划分窗格
+Ctrl+b %：划分左右两个窗格。
+Ctrl+b &quot; ：划分上下两个窗格。
+Ctrl+b &amp;lt;arrow key&amp;gt;：光标切换到其他窗格。&amp;lt;arrow key&amp;gt;是指向要切换到的窗格的方向键，比如切换到下方窗格，就按方向键↓。
+Ctrl+b {：当前窗格左移。
+Ctrl+b }：当前窗格右移。
+Ctrl+b Ctrl+o：当前窗格上移。
+Ctrl+b Alt+o：当前窗格下移。
+Ctrl+b z：当前窗格全屏显示，再使用一次会变回原来大小。
+Ctrl+b Ctrl+&amp;lt;arrow key&amp;gt;：按箭头方向调整窗格大小。
+Ctrl+b q：显示窗格编号。
+
+#窗口操作
+Ctrl+b c：创建一个新窗口，状态栏会显示多个窗口的信息。
+Ctrl+b p：切换到上一个窗口（按照状态栏上的顺序）。
+Ctrl+b n：切换到下一个窗口。
+Ctrl+b &amp;lt;number&amp;gt;：切换到指定编号的窗口，其中的&amp;lt;number&amp;gt;是状态栏上的窗口编号。
+Ctrl+b w：从列表中选择窗口。
+Ctrl+b ,：窗口重命名。
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">Tmux</summary></entry><entry><title type="html">从零开始的blog搭建之路</title><link href="http://localhost:4000/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/" rel="alternate" type="text/html" title="从零开始的blog搭建之路" /><published>2020-04-27T00:00:00+08:00</published><updated>2020-04-27T00:00:00+08:00</updated><id>http://localhost:4000/_posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF</id><content type="html" xml:base="http://localhost:4000/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/">&lt;p&gt;记录这次 blog 的搭建之路。&lt;/p&gt;
+
+&lt;p&gt;所用的 Markdown 编辑器 : &lt;a href=&quot;https://www.typora.io/&quot;&gt;typora&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;一些搭建博客的途径&quot;&gt;一些搭建博客的途径&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Github+jekyll&lt;/strong&gt; :&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Github Pages和推荐的框架，blog 直接以 markdown 形式存放在项目里。&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;可以云端写作，直接生成页面部署上去。其他的框架都是本地写作，本地生成页面，感觉不太方便。&lt;/p&gt;
+
+      &lt;p&gt;&lt;a href=&quot;https://help.github.com/en/github/working-with-github-pages&quot;&gt;Github的文档&lt;/a&gt;&lt;/p&gt;
+
+      &lt;p&gt;&lt;a href=&quot;https://www.jekyll.com.cn/&quot;&gt;jekyll官网&lt;/a&gt;(挺多好看的主题)&lt;/p&gt;
+
+      &lt;ol&gt;
+        &lt;li&gt;&lt;a href=&quot;https://github.com/mzlogin/mzlogin.github.io&quot;&gt;theme&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://github.com/DONGChuan/Yummy-Jekyll&quot;&gt;theme&lt;/a&gt;  (这两个主题可以一试)&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://github.com/wu-kan/wu-kan.github.io&quot;&gt;theme&lt;/a&gt; (我fork的主题，后生可畏)&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://github.com/Drinkwang/drinkwang.github.io&quot;&gt;theme&lt;/a&gt; (馋那个看板娘)&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Github+issues&lt;/strong&gt; :&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;基于 Github 的问题系统，用 node.js 搭建的 blog 。&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;整个页面简洁，以后可以尝试下，但写作是直接在 issues 上提交 blog ，不知道以后 blog 怎么迁移出来。&lt;/p&gt;
+
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;http://martin-liu.github.io/#/&quot;&gt;theme&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://github.com/Drinkwang/drinkwang.github.io&quot;&gt;theme&lt;/a&gt;(要试一试的，馋看板娘)&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://gridea.dev/&quot;&gt;&lt;strong&gt;Gridea&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;一个静态博客写作客户端，markdown、本地写作、一键部署到Github 或自己的服务器、主题轻松自定义。以后可以尝试下。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://typecho.org/&quot;&gt;&lt;strong&gt;Typecho&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;官方文档有点恶心，没弄懂，以后再说。&lt;/p&gt;
+
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;https://github.com/Dreamer-Paul/Single&quot;&gt;theme&lt;/a&gt; (真的挺好看，fantasy的主题也很梦幻，还有夜间模式，馋看板娘) (&lt;a href=&quot;https://paul.ren/&quot;&gt;更多)&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://tiddlywiki.com/&quot;&gt;&lt;strong&gt;TiddkyWiki&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;非线性个人笔记本（没弄明白，以后有空再研究下）&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://blog.getpelican.com/&quot;&gt;&lt;strong&gt;Pelican&lt;/strong&gt;&lt;/a&gt; : python 写的静态站点生成器&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://hexo.io/zh-cn/&quot;&gt;&lt;strong&gt;Hexo&lt;/strong&gt;&lt;/a&gt; : node.js 写的博客框架&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/theme-next/hexo-theme-next&quot;&gt;theme&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://gohugo.io/&quot;&gt;&lt;strong&gt;Hugo&lt;/strong&gt;&lt;/a&gt; : 开源静态站点生成器，自称速度最快&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.netlify.com/&quot;&gt;&lt;strong&gt;Netlify&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;优秀的静态博客托管平台-自动编译部署生成 Web 网站可绑域名支持 SSL。Netlify 支持自动编译Jekyll、Hexo、Hugo等常见的静态博客程序。可以一试。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;一些插件&quot;&gt;一些插件&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://gitalk.github.io/&quot;&gt;Gittalk&lt;/a&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;评论插件(只能Github账户登陆评论，路走窄了yo)&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://valine.js.org/&quot;&gt;Valine&lt;/a&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;一款快速、简洁且高效的无后端评论系统。(推荐使用）&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="just for fun" /><summary type="html">记录这次 blog 的搭建之路。</summary></entry><entry><title type="html">开篇-Init commit</title><link href="http://localhost:4000/_posts/2020-04-26-%E5%BC%80%E7%AF%87-Init-commit/" rel="alternate" type="text/html" title="开篇-Init commit" /><published>2020-04-26T00:00:00+08:00</published><updated>2020-04-26T00:00:00+08:00</updated><id>http://localhost:4000/_posts/%E5%BC%80%E7%AF%87-Init%20commit</id><content type="html" xml:base="http://localhost:4000/_posts/2020-04-26-%E5%BC%80%E7%AF%87-Init-commit/">&lt;blockquote&gt;
   &lt;p&gt;沁园春 长沙&lt;/p&gt;
 
   &lt;p&gt;独立寒秋，湘江北去，橘子洲头。
@@ -26,4 +233,4 @@ QAQ&lt;br/&gt;
 指点江山，激扬文字，
 粪土当年万户侯。
 曾记否，到中流击水，浪遏飞舟！&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><category term="其他" /><summary type="html">沁园春 长沙 独立寒秋，湘江北去，橘子洲头。 看万山红遍，层林尽染； 漫江碧透，百舸争流。 鹰击长空，鱼翔浅底， 万类霜天竞自由。 怅寥廓，问苍茫天地，谁主沉浮？ 携来百侣曾游， 忆往昔峥嵘岁月稠。 恰同学少年，风华正茂； 书生意气，挥斥方遒。 指点江山，激扬文字， 粪土当年万户侯。 曾记否，到中流击水，浪遏飞舟！</summary></entry></feed>
+&lt;/blockquote&gt;</content><author><name></name></author><category term="else" /><summary type="html">沁园春 长沙 独立寒秋，湘江北去，橘子洲头。 看万山红遍，层林尽染； 漫江碧透，百舸争流。 鹰击长空，鱼翔浅底， 万类霜天竞自由。 怅寥廓，问苍茫天地，谁主沉浮？ 携来百侣曾游， 忆往昔峥嵘岁月稠。 恰同学少年，风华正茂； 书生意气，挥斥方遒。 指点江山，激扬文字， 粪土当年万户侯。 曾记否，到中流击水，浪遏飞舟！</summary></entry></feed>
