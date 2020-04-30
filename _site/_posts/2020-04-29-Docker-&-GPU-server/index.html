@@ -4,19 +4,19 @@
 <head>
   
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Ssh | Acemyzoe</title>
+<title>Docker &amp; GPU-server | Acemyzoe</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Ssh" />
+<meta property="og:title" content="Docker &amp; GPU-server" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="SSH" />
-<meta property="og:description" content="SSH" />
-<link rel="canonical" href="http://localhost:4000/_posts/2020-04-28-SSH/" />
-<meta property="og:url" content="http://localhost:4000/_posts/2020-04-28-SSH/" />
+<meta name="description" content="GPU-server" />
+<meta property="og:description" content="GPU-server" />
+<link rel="canonical" href="http://localhost:4000/_posts/2020-04-29-Docker-&-GPU-server/" />
+<meta property="og:url" content="http://localhost:4000/_posts/2020-04-29-Docker-&-GPU-server/" />
 <meta property="og:site_name" content="Acemyzoe" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-04-28T00:00:00+08:00" />
+<meta property="article:published_time" content="2020-04-29T00:00:00+08:00" />
 <script type="application/ld+json">
-{"headline":"Ssh","dateModified":"2020-04-28T00:00:00+08:00","datePublished":"2020-04-28T00:00:00+08:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/_posts/2020-04-28-SSH/"},"url":"http://localhost:4000/_posts/2020-04-28-SSH/","description":"SSH","@context":"https://schema.org"}</script>
+{"headline":"Docker &amp; GPU-server","dateModified":"2020-04-29T00:00:00+08:00","datePublished":"2020-04-29T00:00:00+08:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/_posts/2020-04-29-Docker-&-GPU-server/"},"url":"http://localhost:4000/_posts/2020-04-29-Docker-&-GPU-server/","description":"GPU-server","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -478,7 +478,7 @@ QAQ<br/>
 <div class="masthead">
   <h3 class="container masthead-title">
     
-    Ssh
+    Docker & GPU-server
     <a href="http://localhost:4000/" title="Home">
       <small>
         Acemyzoe
@@ -493,18 +493,18 @@ QAQ<br/>
   <span class="post-date">
     
     <i class="fas fa-calendar-day fa-fw"></i>
-    28 Apr 2020
+    29 Apr 2020
     
     
     <i class="fas fa-file-word fa-fw"></i>
-    100字
+    233字
     
     
     <i class="fas fa-clock fa-fw"></i>
     1分
     
     
-    <span class="leancloud-visitors" data-xid="/_posts/2020-04-28-SSH/" data-flag-title="Ssh">
+    <span class="leancloud-visitors" data-xid="/_posts/2020-04-29-Docker-&-GPU-server/" data-flag-title="Docker & GPU-server">
       <i class="fas fa-book-reader fa-fw"></i>
       <span class="leancloud-visitors-count">
         <i class="fas fa-spinner fa-pulse"></i>
@@ -524,61 +524,113 @@ QAQ<br/>
 
     
   </span>
-  <h1 id="ssh">SSH</h1>
+  <h2 id="gpu-server">GPU-server</h2>
 
-<p><a href="https://abcdabcd987.com/ssh/">了解更多</a></p>
+<iframe src="https://ghbtns.com/github-btn.html?user=acemyzoe&amp;repo=gpu-server&amp;type=star&amp;size=large" frameborder="0" scrolling="0" width="220" height="30" title="Star acemyzoe/gpu-server on GitHub"></iframe>
 
-<h2 id="linux">LINUX</h2>
+<iframe src="https://ghbtns.com/github-btn.html?user=acemyzoe&amp;type=follow&amp;size=large" frameborder="0" scrolling="0" width="2200" height="30" title="Follow @acemyzoe on GitHub"></iframe>
 
-<p><code>ssh user@remote -p port</code></p>
+<p>构建GPU服务器的容器技术：<a href="https://docs.docker.com/">Docker</a>  /  <a href="https://linuxcontainers.org/">LXC&amp;LXD</a></p>
+
+<p>远程登陆：SSH(局域网)</p>
 
 <blockquote>
-  <ul>
-    <li><code>user</code> 是你在远程机器上的用户名，如果不指定的话默认为当前用户</li>
-    <li><code>remote</code> 是远程机器的地址，可以是 IP，域名，或者是后面会提到的别名</li>
-    <li><code>port</code> 是 SSH Server 监听的端口，如果不指定的话就为默认值 22</li>
-  </ul>
+  <p><a href="http://wdom.net/">Hole</a> : 使用Holer服务端软件搭建Holer服务，通过Holer客户端软件经自己服务器实现公网访问。</p>
 </blockquote>
 
-<h2 id="windows">WINDOWS</h2>
+<p>容器管理：DaoCloud - <a href="https://dashboard.daocloud.io/">DCS</a>(可从公网访问管理多主机)</p>
 
-<p><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a></p>
+<blockquote>
+  <p><a href="http://guide.daocloud.io/dcd/%E7%AE%80%E4%BB%8B-13044181.html">DCD</a> : 开发者版，<a href="http://localhost/#/">本地管理</a></p>
 
-<h2 id="免密登录">免密登录</h2>
+  <p><a href="https://www.portainer.io/">Portainer</a> : docker管理功能更全，支持创建container，但好像只支持<a href="http://loaclhost:9000/#/home">本地管理</a></p>
+</blockquote>
 
-<pre><code class="language-bash">ssh-keygen #一路回车
-#生成的公钥放在了 ~/.ssh/id_rsa.pub，私钥放在了 ~/.ssh/id_rsa
-ssh-copy-id user@remote -p port  #预装ssh-copy-id
-sshssh user@remote -p port 'mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys' &lt; ~/.ssh/id_rsa.pubcopy-id user@remote -p port
+<hr />
+
+<h2 id="docker">Docker</h2>
+
+<p>容器的本质是进程。</p>
+
+<h3 id="安装"><a href="https://docs.docker.com/engine/install/linux-postinstall/">安装</a></h3>
+
+<pre><code class="language-bash">#安装docker，借助第三方不香么
+curl -sSL https://get.daocloud.io/docker | sh 
+#安装nvidia-docker : https://github.com/NVIDIA/nvidia-docker
+# Add the package repositories
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit
+sudo systemctl restart docker
+
+#非root用户身份管理
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker 
+#配置docker自启动
+sudo systemctl enable docker
 </code></pre>
 
-<h2 id="配置别名">配置别名</h2>
+<h3 id="命令">命令</h3>
 
-<p>在 <code>~/.ssh/config</code> 里面追加以下内容：</p>
+<p><a href="https://www.runoob.com/docker/docker-command-manual.html">了解更多</a></p>
 
-<pre><code>Host name
-    HostName remote
-    User user
-    Port port
+<pre><code class="language-bash">#info
+docker info
+###################
+#从dockerfile构建image
+docker build -t &lt;name&gt;:&lt;tag&gt; dockerfile_path
+#从container构建image
+docker commit container &lt;images-name&gt;:&lt;tag&gt;
+#拉取镜像
+docker pull tensorflow：latest
+#查看image
+docker images
+#导出镜像
+docker save -o &lt;name&gt;.tar.gz &lt;image-name&gt;
+docekr export &lt;name&gt;.tar.gz &lt;image-name&gt;
+#导入镜像
+docker import &lt;name&gt;.tar.gz 
+docker iload &lt;name&gt;.tar.gz 
+####################
+#创建container
+docker run -ti \
+                        --gpus all \
+                        -p 6000:22 \
+                        --name &lt;name&gt; \
+                        -v server_dir : container_dir :ro \
+                        &lt;image&gt;
+                        bash
+#查看container
+docker ps -a
+#进入container ,attach可以带上--sig-proxy=false来确保CTRL-D或CTRL-C不会关闭容器
+ docker attach &lt;container-name&gt;
+#在运行的容器中执行命令。-d 后台运行；-i 保持STDIN打开；-t 分配伪终端
+docker exec -ti &lt;container-name&gt;
+ #查看容器中运行的进程信息
+ docker top &lt;container-name&gt;
+ #查看端口映射
+ docker port &lt;contain-name&gt;
+ #容器与主机之间的数据拷贝
+ docker cp container:path host-path
 </code></pre>
 
-<h2 id="传输文件">传输文件</h2>
+<hr />
 
-<p><code>scp</code></p>
+<h2 id="lxd">LXD</h2>
 
-<h2 id="图形界面">图形界面</h2>
+<p>中道崩殂</p>
 
-<p><code>ssh-X remote</code></p>
+<p>可参考文章：</p>
 
-<p><code>remote $ xeyes</code> #可以运行gedit 等任何图形界面的程序</p>
+<ul>
+  <li>https://github.com/shenuiuin/LXD_GPU_SERVER</li>
+  <li>https://shenxiaohai.me/2018/12/03/gpu-server-lab/</li>
+  <li>https://butui.me/post/lxd-gpu-server/</li>
+  <li>https://abcdabcd987.com/setup-shared-gpu-server-for-labs/</li>
+</ul>
 
-<blockquote>
-  <p>如果出现 <code>Can't open display</code>，执行 <code>xhost +</code>试试，xhost 是用来控制X server访问权限的。</p>
-</blockquote>
-
-<blockquote>
-  <p>ssh 远程的 docker，失败，待解决。</p>
-</blockquote>
 
 </div>
 <div class="v">

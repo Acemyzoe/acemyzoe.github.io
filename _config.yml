@@ -19,7 +19,6 @@ description: | # 头像背后的信息（html格式），<br/>代表换行
   <a href="https://github.com/acemyzoe">
     <i class="fab fa-github"></i>
   </a>
-  <br/>
   <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=52 src="//music.163.com/outchain/player?type=2&id=486806&auto=1&height=32"></iframe>
 jekyll-theme-WuK: # 我的主题的自定义样式都在这个命名空间
   default:
@@ -310,13 +309,13 @@ jekyll-theme-WuK: # 我的主题的自定义样式都在这个命名空间
         - | # Copyright声明
           <div>
             <i class="fas fa-copyright fa-fw"></i>
-            2020 acemyzoe
+            acemyzoe
           </div>
         - | # 觉得我的主题好用的话，让更多的人知道它吧！
           <div>
             <i class="fas fa-thumbs-up fa-fw"></i>
             <a href="https://github.com/acemyzoe">
-              acemyzoe
+              Github
             </a>
           </div>
       wordcount: # 全站字数统计
@@ -331,7 +330,7 @@ jekyll-theme-WuK: # 我的主题的自定义样式都在这个命名空间
       - | # 代码块背景透明（否则mermaid受影响），且代码块超过半屏的时候自动折叠
         <style>
           pre {
-            max-height: 50vh;
+            max-height: 80vh;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0);
           }
@@ -458,7 +457,7 @@ jekyll-theme-WuK: # 我的主题的自定义样式都在这个命名空间
       | # 我的文章使用最宽松的知识共享协议：署名 4.0 国际 (CC BY 4.0)。您可以自由地：共享 — 在任何媒介以任何形式复制、发行本作品；演绎 — 修改、转换或以本作品为基础进行创作；在任何用途下，甚至商业目的。只要你遵守许可协议条款，许可人就无法收回你的这些权利。惟须遵守下列条件：署名 — 您必须给出适当的署名，提供指向本许可协议的链接，同时标明是否（对原始作品）作了修改。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。
       <br/>
       <i class="fas fa-coffee fa-fw"></i>
-      <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a>
+      <a href="/merger/">QAQ~</a>
       <br/>
       <i class="fab fa-creative-commons-by fa-fw"></i>
       <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a>（除特别声明或转载文章外）

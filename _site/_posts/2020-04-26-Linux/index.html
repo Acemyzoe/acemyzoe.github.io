@@ -4,19 +4,19 @@
 <head>
   
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Ssh | Acemyzoe</title>
+<title>Linux | Acemyzoe</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Ssh" />
+<meta property="og:title" content="Linux" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="SSH" />
-<meta property="og:description" content="SSH" />
-<link rel="canonical" href="http://localhost:4000/_posts/2020-04-28-SSH/" />
-<meta property="og:url" content="http://localhost:4000/_posts/2020-04-28-SSH/" />
+<meta name="description" content="笨兔兔" />
+<meta property="og:description" content="笨兔兔" />
+<link rel="canonical" href="http://localhost:4000/_posts/2020-04-26-Linux/" />
+<meta property="og:url" content="http://localhost:4000/_posts/2020-04-26-Linux/" />
 <meta property="og:site_name" content="Acemyzoe" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-04-28T00:00:00+08:00" />
+<meta property="article:published_time" content="2020-04-26T00:00:00+08:00" />
 <script type="application/ld+json">
-{"headline":"Ssh","dateModified":"2020-04-28T00:00:00+08:00","datePublished":"2020-04-28T00:00:00+08:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/_posts/2020-04-28-SSH/"},"url":"http://localhost:4000/_posts/2020-04-28-SSH/","description":"SSH","@context":"https://schema.org"}</script>
+{"headline":"Linux","dateModified":"2020-04-26T00:00:00+08:00","datePublished":"2020-04-26T00:00:00+08:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/_posts/2020-04-26-Linux/"},"url":"http://localhost:4000/_posts/2020-04-26-Linux/","description":"笨兔兔","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -478,7 +478,7 @@ QAQ<br/>
 <div class="masthead">
   <h3 class="container masthead-title">
     
-    Ssh
+    Linux
     <a href="http://localhost:4000/" title="Home">
       <small>
         Acemyzoe
@@ -493,18 +493,18 @@ QAQ<br/>
   <span class="post-date">
     
     <i class="fas fa-calendar-day fa-fw"></i>
-    28 Apr 2020
+    26 Apr 2020
     
     
     <i class="fas fa-file-word fa-fw"></i>
-    100字
+    2字
     
     
     <i class="fas fa-clock fa-fw"></i>
     1分
     
     
-    <span class="leancloud-visitors" data-xid="/_posts/2020-04-28-SSH/" data-flag-title="Ssh">
+    <span class="leancloud-visitors" data-xid="/_posts/2020-04-26-Linux/" data-flag-title="Linux">
       <i class="fas fa-book-reader fa-fw"></i>
       <span class="leancloud-visitors-count">
         <i class="fas fa-spinner fa-pulse"></i>
@@ -523,62 +523,10 @@ QAQ<br/>
 <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a>（除特别声明或转载文章外）
 
     
+     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=42 src="//music.163.com/outchain/player?type=2&id=22800822&auto=1&height=32"></iframe>
+    
   </span>
-  <h1 id="ssh">SSH</h1>
-
-<p><a href="https://abcdabcd987.com/ssh/">了解更多</a></p>
-
-<h2 id="linux">LINUX</h2>
-
-<p><code>ssh user@remote -p port</code></p>
-
-<blockquote>
-  <ul>
-    <li><code>user</code> 是你在远程机器上的用户名，如果不指定的话默认为当前用户</li>
-    <li><code>remote</code> 是远程机器的地址，可以是 IP，域名，或者是后面会提到的别名</li>
-    <li><code>port</code> 是 SSH Server 监听的端口，如果不指定的话就为默认值 22</li>
-  </ul>
-</blockquote>
-
-<h2 id="windows">WINDOWS</h2>
-
-<p><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a></p>
-
-<h2 id="免密登录">免密登录</h2>
-
-<pre><code class="language-bash">ssh-keygen #一路回车
-#生成的公钥放在了 ~/.ssh/id_rsa.pub，私钥放在了 ~/.ssh/id_rsa
-ssh-copy-id user@remote -p port  #预装ssh-copy-id
-sshssh user@remote -p port 'mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys' &lt; ~/.ssh/id_rsa.pubcopy-id user@remote -p port
-</code></pre>
-
-<h2 id="配置别名">配置别名</h2>
-
-<p>在 <code>~/.ssh/config</code> 里面追加以下内容：</p>
-
-<pre><code>Host name
-    HostName remote
-    User user
-    Port port
-</code></pre>
-
-<h2 id="传输文件">传输文件</h2>
-
-<p><code>scp</code></p>
-
-<h2 id="图形界面">图形界面</h2>
-
-<p><code>ssh-X remote</code></p>
-
-<p><code>remote $ xeyes</code> #可以运行gedit 等任何图形界面的程序</p>
-
-<blockquote>
-  <p>如果出现 <code>Can't open display</code>，执行 <code>xhost +</code>试试，xhost 是用来控制X server访问权限的。</p>
-</blockquote>
-
-<blockquote>
-  <p>ssh 远程的 docker，失败，待解决。</p>
-</blockquote>
+  <h1 id="笨兔兔">笨兔兔</h1>
 
 </div>
 <div class="v">

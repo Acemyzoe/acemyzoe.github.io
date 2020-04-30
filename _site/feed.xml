@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-28T20:23:04+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-30T18:01:36+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
 真是&lt;br/&gt;
 太有趣了&lt;br/&gt;
 QAQ&lt;br/&gt;
@@ -8,9 +8,135 @@ QAQ&lt;br/&gt;
 &lt;a href=&quot;https://github.com/acemyzoe&quot;&gt;
   &lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;
 &lt;/a&gt;
-&lt;br/&gt;
 &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=100% height=52 src=&quot;//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;
-</subtitle><entry><title type="html">Ssh</title><link href="http://localhost:4000/_posts/2020-04-28-SSH/" rel="alternate" type="text/html" title="Ssh" /><published>2020-04-28T00:00:00+08:00</published><updated>2020-04-28T00:00:00+08:00</updated><id>http://localhost:4000/_posts/SSH</id><content type="html" xml:base="http://localhost:4000/_posts/2020-04-28-SSH/">&lt;h1 id=&quot;ssh&quot;&gt;SSH&lt;/h1&gt;
+</subtitle><entry><title type="html">Docker &amp;amp; GPU-server</title><link href="http://localhost:4000/_posts/2020-04-29-Docker-&-GPU-server/" rel="alternate" type="text/html" title="Docker &amp; GPU-server" /><published>2020-04-29T00:00:00+08:00</published><updated>2020-04-29T00:00:00+08:00</updated><id>http://localhost:4000/_posts/Docker%20&amp;%20GPU-server</id><content type="html" xml:base="http://localhost:4000/_posts/2020-04-29-Docker-&amp;-GPU-server/">&lt;h2 id=&quot;gpu-server&quot;&gt;GPU-server&lt;/h2&gt;
+
+&lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=acemyzoe&amp;amp;repo=gpu-server&amp;amp;type=star&amp;amp;size=large&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;220&quot; height=&quot;30&quot; title=&quot;Star acemyzoe/gpu-server on GitHub&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=acemyzoe&amp;amp;type=follow&amp;amp;size=large&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;2200&quot; height=&quot;30&quot; title=&quot;Follow @acemyzoe on GitHub&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;构建GPU服务器的容器技术：&lt;a href=&quot;https://docs.docker.com/&quot;&gt;Docker&lt;/a&gt;  /  &lt;a href=&quot;https://linuxcontainers.org/&quot;&gt;LXC&amp;amp;LXD&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;远程登陆：SSH(局域网)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://wdom.net/&quot;&gt;Hole&lt;/a&gt; : 使用Holer服务端软件搭建Holer服务，通过Holer客户端软件经自己服务器实现公网访问。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;容器管理：DaoCloud - &lt;a href=&quot;https://dashboard.daocloud.io/&quot;&gt;DCS&lt;/a&gt;(可从公网访问管理多主机)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://guide.daocloud.io/dcd/%E7%AE%80%E4%BB%8B-13044181.html&quot;&gt;DCD&lt;/a&gt; : 开发者版，&lt;a href=&quot;http://localhost/#/&quot;&gt;本地管理&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;https://www.portainer.io/&quot;&gt;Portainer&lt;/a&gt; : docker管理功能更全，支持创建container，但好像只支持&lt;a href=&quot;http://loaclhost:9000/#/home&quot;&gt;本地管理&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;docker&quot;&gt;Docker&lt;/h2&gt;
+
+&lt;p&gt;容器的本质是进程。&lt;/p&gt;
+
+&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;https://docs.docker.com/engine/install/linux-postinstall/&quot;&gt;安装&lt;/a&gt;&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;#安装docker，借助第三方不香么
+curl -sSL https://get.daocloud.io/docker | sh 
+#安装nvidia-docker : https://github.com/NVIDIA/nvidia-docker
+# Add the package repositories
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y nvidia-container-toolkit
+sudo systemctl restart docker
+
+#非root用户身份管理
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker 
+#配置docker自启动
+sudo systemctl enable docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;命令&quot;&gt;命令&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.runoob.com/docker/docker-command-manual.html&quot;&gt;了解更多&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;#info
+docker info
+###################
+#从dockerfile构建image
+docker build -t &amp;lt;name&amp;gt;:&amp;lt;tag&amp;gt; dockerfile_path
+#从container构建image
+docker commit container &amp;lt;images-name&amp;gt;:&amp;lt;tag&amp;gt;
+#拉取镜像
+docker pull tensorflow：latest
+#查看image
+docker images
+#导出镜像
+docker save -o &amp;lt;name&amp;gt;.tar.gz &amp;lt;image-name&amp;gt;
+docekr export &amp;lt;name&amp;gt;.tar.gz &amp;lt;image-name&amp;gt;
+#导入镜像
+docker import &amp;lt;name&amp;gt;.tar.gz 
+docker iload &amp;lt;name&amp;gt;.tar.gz 
+####################
+#创建container
+docker run -ti \
+                        --gpus all \
+                        -p 6000:22 \
+                        --name &amp;lt;name&amp;gt; \
+                        -v server_dir : container_dir :ro \
+                        &amp;lt;image&amp;gt;
+                        bash
+#查看container
+docker ps -a
+#进入container ,attach可以带上--sig-proxy=false来确保CTRL-D或CTRL-C不会关闭容器
+ docker attach &amp;lt;container-name&amp;gt;
+#在运行的容器中执行命令。-d 后台运行；-i 保持STDIN打开；-t 分配伪终端
+docker exec -ti &amp;lt;container-name&amp;gt;
+ #查看容器中运行的进程信息
+ docker top &amp;lt;container-name&amp;gt;
+ #查看端口映射
+ docker port &amp;lt;contain-name&amp;gt;
+ #容器与主机之间的数据拷贝
+ docker cp container:path host-path
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;lxd&quot;&gt;LXD&lt;/h2&gt;
+
+&lt;p&gt;中道崩殂&lt;/p&gt;
+
+&lt;p&gt;可参考文章：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;https://github.com/shenuiuin/LXD_GPU_SERVER&lt;/li&gt;
+  &lt;li&gt;https://shenxiaohai.me/2018/12/03/gpu-server-lab/&lt;/li&gt;
+  &lt;li&gt;https://butui.me/post/lxd-gpu-server/&lt;/li&gt;
+  &lt;li&gt;https://abcdabcd987.com/setup-shared-gpu-server-for-labs/&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">GPU-server</summary></entry><entry><title type="html">少年，该醒了</title><link href="http://localhost:4000/_posts/2020-04-29-%E8%87%AA%E5%8B%89/" rel="alternate" type="text/html" title="少年，该醒了" /><published>2020-04-29T00:00:00+08:00</published><updated>2020-04-29T00:00:00+08:00</updated><id>http://localhost:4000/_posts/%E8%87%AA%E5%8B%89</id><content type="html" xml:base="http://localhost:4000/_posts/2020-04-29-%E8%87%AA%E5%8B%89/">&lt;blockquote&gt;
+  &lt;iframe src=&quot;//player.bilibili.com/player.html?aid=840488687&amp;amp;bvid=BV1m54y1Q7eQ&amp;amp;cid=182078162&amp;amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot;&gt; &lt;/iframe&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;所以我时常害怕，愿中国青年都摆脱冷气，只是向上走，不必听自暴自弃者流的话。&lt;/p&gt;
+
+  &lt;p&gt;能做事的做事，能发声的发声。有一分热，发一分光，就令萤火一般，也可以在黑暗里发一点光，不必等候炬火。&lt;/p&gt;
+
+  &lt;p&gt;此后如竟没有炬火：我便是唯一的光。倘若有了炬火，出了太阳，我们自然心悦诚服的消失。 不但毫无不平，而且还要随喜赞美这炬火或太阳；因为他照了人类，连我都在内。&lt;/p&gt;
+
+  &lt;p&gt;我又愿中国青年都只是向上走，不必理会这冷笑和暗箭。&lt;/p&gt;
+
+  &lt;p&gt;“真的，人是一个浊流。应该是海了，能容这浊流使他干净。&lt;/p&gt;
+
+  &lt;p&gt;“咄，我教你们超人：这便是海，在他这里，能容下你们的大侮蔑。” 　&lt;/p&gt;
+
+  &lt;p&gt;纵令不过一洼浅水，也可以学学大海；横坚都是水，可以相通。&lt;/p&gt;
+
+  &lt;p&gt;几粒石子，任他们暗地里掷来；几滴秽水，任他们从背后泼来就是了。&lt;/p&gt;
+
+  &lt;p&gt;这还算不到“大侮蔑”——因为大侮蔑也须有胆力。&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="else" /><summary type="html"></summary></entry><entry><title type="html">Ssh</title><link href="http://localhost:4000/_posts/2020-04-28-SSH/" rel="alternate" type="text/html" title="Ssh" /><published>2020-04-28T00:00:00+08:00</published><updated>2020-04-28T00:00:00+08:00</updated><id>http://localhost:4000/_posts/SSH</id><content type="html" xml:base="http://localhost:4000/_posts/2020-04-28-SSH/">&lt;h1 id=&quot;ssh&quot;&gt;SSH&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://abcdabcd987.com/ssh/&quot;&gt;了解更多&lt;/a&gt;&lt;/p&gt;
 
@@ -217,7 +343,7 @@ Ctrl+b ,：窗口重命名。
       &lt;p&gt;一款快速、简洁且高效的无后端评论系统。(推荐使用）&lt;/p&gt;
     &lt;/blockquote&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="just for fun" /><summary type="html">记录这次 blog 的搭建之路。</summary></entry><entry><title type="html">开篇-Init commit</title><link href="http://localhost:4000/_posts/2020-04-26-%E5%BC%80%E7%AF%87-Init-commit/" rel="alternate" type="text/html" title="开篇-Init commit" /><published>2020-04-26T00:00:00+08:00</published><updated>2020-04-26T00:00:00+08:00</updated><id>http://localhost:4000/_posts/%E5%BC%80%E7%AF%87-Init%20commit</id><content type="html" xml:base="http://localhost:4000/_posts/2020-04-26-%E5%BC%80%E7%AF%87-Init-commit/">&lt;blockquote&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="just for fun" /><summary type="html">记录这次 blog 的搭建之路。</summary></entry><entry><title type="html">Linux</title><link href="http://localhost:4000/_posts/2020-04-26-Linux/" rel="alternate" type="text/html" title="Linux" /><published>2020-04-26T00:00:00+08:00</published><updated>2020-04-26T00:00:00+08:00</updated><id>http://localhost:4000/_posts/Linux</id><content type="html" xml:base="http://localhost:4000/_posts/2020-04-26-Linux/">&lt;h1 id=&quot;笨兔兔&quot;&gt;笨兔兔&lt;/h1&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">笨兔兔</summary></entry><entry><title type="html">开篇-Init commit</title><link href="http://localhost:4000/_posts/2020-04-26-%E5%BC%80%E7%AF%87-Init-commit/" rel="alternate" type="text/html" title="开篇-Init commit" /><published>2020-04-26T00:00:00+08:00</published><updated>2020-04-26T00:00:00+08:00</updated><id>http://localhost:4000/_posts/%E5%BC%80%E7%AF%87-Init%20commit</id><content type="html" xml:base="http://localhost:4000/_posts/2020-04-26-%E5%BC%80%E7%AF%87-Init-commit/">&lt;blockquote&gt;
   &lt;p&gt;沁园春 长沙&lt;/p&gt;
 
   &lt;p&gt;独立寒秋，湘江北去，橘子洲头。
