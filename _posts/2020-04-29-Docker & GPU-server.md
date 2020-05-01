@@ -71,7 +71,7 @@ docker save -o <name>.tar.gz <image-name>
 docekr export <name>.tar.gz <image-name>
 #导入镜像
 docker import <name>.tar.gz 
-docker iload <name>.tar.gz 
+docker load <name>.tar.gz 
 ####################
 #创建container
 docker run -ti \
@@ -79,6 +79,7 @@ docker run -ti \
                         -p 6000:22 \
                         --name <name> \
                         -v server_dir : container_dir :ro \
+                        -w container_dir
                         <image>
                         bash
 #查看container
@@ -86,7 +87,8 @@ docker ps -a
 #进入container ,attach可以带上--sig-proxy=false来确保CTRL-D或CTRL-C不会关闭容器
  docker attach <container-name>
 #在运行的容器中执行命令。-d 后台运行；-i 保持STDIN打开；-t 分配伪终端
-docker exec -ti <container-name>
+#可用于多终端，作用同tmux
+docker exec -ti <container-name> bash
  #查看容器中运行的进程信息
  docker top <container-name>
  #查看端口映射
