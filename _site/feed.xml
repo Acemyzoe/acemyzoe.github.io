@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-05-08T09:59:31+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-05-13T14:47:40+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
 真是&lt;br/&gt;
 太有趣了&lt;br/&gt;
 QAQ&lt;br/&gt;
@@ -9,7 +9,32 @@ QAQ&lt;br/&gt;
   &lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;
 &lt;/a&gt;
 &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=100% height=52 src=&quot;//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;
-</subtitle><entry><title type="html">Docker &amp;amp; GPU-server</title><link href="https://acemyzoe.github.io/_posts/2020-04-29-Docker-&-GPU-server/" rel="alternate" type="text/html" title="Docker &amp; GPU-server" /><published>2020-04-29T00:00:00+08:00</published><updated>2020-04-29T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/Docker%20&amp;%20GPU-server</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-04-29-Docker-&amp;-GPU-server/">&lt;h2 id=&quot;gpu-server&quot;&gt;GPU-server&lt;/h2&gt;
+</subtitle><entry><title type="html">VsCode</title><link href="https://acemyzoe.github.io/_posts/2020-05-13-VsCode/" rel="alternate" type="text/html" title="VsCode" /><published>2020-05-13T00:00:00+08:00</published><updated>2020-05-13T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/VsCode</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-13-VsCode/">&lt;h1 id=&quot;vscode&quot;&gt;VsCode&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf&quot;&gt;Keyboard shortcuts for Linux&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;行缩进: ctrl + [  、ctrl + ]&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;选中按TAB右移，按SHIFT+TAB左移&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;整行上下移&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;alt+up/down&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;显示/隐藏左侧目录栏&lt;/strong&gt;: ctrl + b&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;控制台终端显示与隐藏&lt;/strong&gt;: ctrl + ~&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;关闭编辑器窗口&lt;/strong&gt; : ctrl + w&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;折叠代码&lt;/strong&gt;： ctrl + k + 0&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;展开代码&lt;/strong&gt;： ctrl + k + j&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">VsCode</summary></entry><entry><title type="html">Docker &amp;amp; GPU-server</title><link href="https://acemyzoe.github.io/_posts/2020-04-29-Docker-&-GPU-server/" rel="alternate" type="text/html" title="Docker &amp; GPU-server" /><published>2020-04-29T00:00:00+08:00</published><updated>2020-04-29T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/Docker%20&amp;%20GPU-server</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-04-29-Docker-&amp;-GPU-server/">&lt;h2 id=&quot;gpu-server&quot;&gt;GPU-server&lt;/h2&gt;
 
 &lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=acemyzoe&amp;amp;repo=gpu-server&amp;amp;type=star&amp;amp;size=large&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;220&quot; height=&quot;30&quot; title=&quot;Star acemyzoe/gpu-server on GitHub&quot;&gt;&lt;/iframe&gt;
 
