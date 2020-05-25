@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-05-13T14:48:26+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-05-25T16:53:33+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
 真是&lt;br/&gt;
 太有趣了&lt;br/&gt;
 QAQ&lt;br/&gt;
@@ -66,6 +66,7 @@ QAQ&lt;br/&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;#安装docker，借助第三方不香么
 curl -sSL https://get.daocloud.io/docker | sh 
+
 #安装nvidia-docker : https://github.com/NVIDIA/nvidia-docker
 # Add the package repositories
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
@@ -78,6 +79,7 @@ sudo systemctl restart docker
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker 
+
 #配置docker自启动
 sudo systemctl enable docker
 &lt;/code&gt;&lt;/pre&gt;
@@ -90,19 +92,20 @@ sudo systemctl enable docker
 docker info
 ###################
 #从dockerfile构建image
-docker build -t &amp;lt;name&amp;gt;:&amp;lt;tag&amp;gt; dockerfile_path
+docker build -t &amp;lt;name&amp;gt;:&amp;lt;tag&amp;gt;  dockerfile_path
 #从container构建image
 docker commit container &amp;lt;images-name&amp;gt;:&amp;lt;tag&amp;gt;
 #拉取镜像
-docker pull tensorflow：latest
+docker pull tensorflow:latest
 #查看image
 docker images
-#导出镜像
+#导出\导入镜像(优先)
 docker save -o &amp;lt;name&amp;gt;.tar.gz &amp;lt;image-name&amp;gt;
-docekr export &amp;lt;name&amp;gt;.tar.gz &amp;lt;image-name&amp;gt;
-#导入镜像
-docker import &amp;lt;name&amp;gt;.tar.gz 
-docker load &amp;lt;name&amp;gt;.tar.gz 
+docker load -i &amp;lt;name&amp;gt;.tar.gz 
+#导出\导入容器(导入后cuda 失效)
+docekr export -o &amp;lt;name&amp;gt;.tar.gz &amp;lt;container-name&amp;gt;
+docker import &amp;lt;name&amp;gt;.tar.gz &amp;lt;images-name&amp;gt;:&amp;lt;tag&amp;gt;
+
 ####################
 #创建container
 docker run -ti \
@@ -117,9 +120,11 @@ docker run -ti \
 docker ps -a
 #进入container ,attach可以带上--sig-proxy=false来确保CTRL-D或CTRL-C不会关闭容器
  docker attach &amp;lt;container-name&amp;gt;
+ 
 #在运行的容器中执行命令。-d 后台运行；-i 保持STDIN打开；-t 分配伪终端
 #可用于多终端，作用同tmux
 docker exec -ti &amp;lt;container-name&amp;gt; bash
+
  #查看容器中运行的进程信息
  docker top &amp;lt;container-name&amp;gt;
  #查看端口映射

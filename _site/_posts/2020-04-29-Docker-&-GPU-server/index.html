@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-04-29T00:00:00+08:00" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"https://acemyzoe.github.io/_posts/2020-04-29-Docker-&-GPU-server/","headline":"Docker &amp; GPU-server","dateModified":"2020-04-29T00:00:00+08:00","datePublished":"2020-04-29T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://acemyzoe.github.io/_posts/2020-04-29-Docker-&-GPU-server/"},"description":"GPU-server","@context":"https://schema.org"}</script>
+{"headline":"Docker &amp; GPU-server","dateModified":"2020-04-29T00:00:00+08:00","datePublished":"2020-04-29T00:00:00+08:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://acemyzoe.github.io/_posts/2020-04-29-Docker-&-GPU-server/"},"url":"https://acemyzoe.github.io/_posts/2020-04-29-Docker-&-GPU-server/","description":"GPU-server","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -497,7 +497,7 @@ QAQ<br/>
     
     
     <i class="fas fa-file-word fa-fw"></i>
-    237字
+    241字
     
     
     <i class="fas fa-clock fa-fw"></i>
@@ -556,6 +556,7 @@ QAQ<br/>
 
 <pre><code class="language-bash">#安装docker，借助第三方不香么
 curl -sSL https://get.daocloud.io/docker | sh 
+
 #安装nvidia-docker : https://github.com/NVIDIA/nvidia-docker
 # Add the package repositories
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
@@ -568,6 +569,7 @@ sudo systemctl restart docker
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker 
+
 #配置docker自启动
 sudo systemctl enable docker
 </code></pre>
@@ -580,19 +582,20 @@ sudo systemctl enable docker
 docker info
 ###################
 #从dockerfile构建image
-docker build -t &lt;name&gt;:&lt;tag&gt; dockerfile_path
+docker build -t &lt;name&gt;:&lt;tag&gt;  dockerfile_path
 #从container构建image
 docker commit container &lt;images-name&gt;:&lt;tag&gt;
 #拉取镜像
-docker pull tensorflow：latest
+docker pull tensorflow:latest
 #查看image
 docker images
-#导出镜像
+#导出\导入镜像(优先)
 docker save -o &lt;name&gt;.tar.gz &lt;image-name&gt;
-docekr export &lt;name&gt;.tar.gz &lt;image-name&gt;
-#导入镜像
-docker import &lt;name&gt;.tar.gz 
-docker load &lt;name&gt;.tar.gz 
+docker load -i &lt;name&gt;.tar.gz 
+#导出\导入容器(导入后cuda 失效)
+docekr export -o &lt;name&gt;.tar.gz &lt;container-name&gt;
+docker import &lt;name&gt;.tar.gz &lt;images-name&gt;:&lt;tag&gt;
+
 ####################
 #创建container
 docker run -ti \
@@ -607,9 +610,11 @@ docker run -ti \
 docker ps -a
 #进入container ,attach可以带上--sig-proxy=false来确保CTRL-D或CTRL-C不会关闭容器
  docker attach &lt;container-name&gt;
+ 
 #在运行的容器中执行命令。-d 后台运行；-i 保持STDIN打开；-t 分配伪终端
 #可用于多终端，作用同tmux
 docker exec -ti &lt;container-name&gt; bash
+
  #查看容器中运行的进程信息
  docker top &lt;container-name&gt;
  #查看端口映射
