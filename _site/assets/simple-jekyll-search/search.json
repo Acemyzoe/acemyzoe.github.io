@@ -2,6 +2,15 @@
 [
   
     {
+      "title"    : "Linux",
+      "category" : "",
+      "tags"     : "wiki",
+      "date"     : "2020-05-26 00:00:00 +0800",
+      
+      "url"      : "https://acemyzoe.github.io/_posts/2020-05-26-/"
+    } ,
+  
+    {
       "title"    : "VsCode",
       "category" : "",
       "tags"     : "wiki",

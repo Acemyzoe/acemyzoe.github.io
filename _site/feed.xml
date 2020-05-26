@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-05-25T16:53:33+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-05-26T11:04:11+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
 真是&lt;br/&gt;
 太有趣了&lt;br/&gt;
 QAQ&lt;br/&gt;
@@ -9,7 +9,7 @@ QAQ&lt;br/&gt;
   &lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;
 &lt;/a&gt;
 &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=100% height=52 src=&quot;//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;
-</subtitle><entry><title type="html">VsCode</title><link href="https://acemyzoe.github.io/_posts/2020-05-13-VsCode/" rel="alternate" type="text/html" title="VsCode" /><published>2020-05-13T00:00:00+08:00</published><updated>2020-05-13T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/VsCode</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-13-VsCode/">&lt;h1 id=&quot;vscode&quot;&gt;VsCode&lt;/h1&gt;
+</subtitle><entry><title type="html">Linux</title><link href="https://acemyzoe.github.io/_posts/2020-05-26-/" rel="alternate" type="text/html" title="Linux" /><published>2020-05-26T00:00:00+08:00</published><updated>2020-05-26T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-26-/">&lt;h1 id=&quot;笨兔兔&quot;&gt;笨兔兔&lt;/h1&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">笨兔兔</summary></entry><entry><title type="html">VsCode</title><link href="https://acemyzoe.github.io/_posts/2020-05-13-VsCode/" rel="alternate" type="text/html" title="VsCode" /><published>2020-05-13T00:00:00+08:00</published><updated>2020-05-13T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/VsCode</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-13-VsCode/">&lt;h1 id=&quot;vscode&quot;&gt;VsCode&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -172,6 +172,8 @@ docker exec -ti &amp;lt;container-name&amp;gt; bash
 
 &lt;p&gt;&lt;a href=&quot;https://abcdabcd987.com/ssh/&quot;&gt;了解更多&lt;/a&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;a href=&quot;https://man.linuxde.net/ssh&quot;&gt;man ssh&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;linux&quot;&gt;LINUX&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;ssh user@remote -p port&lt;/code&gt;&lt;/p&gt;
@@ -210,9 +212,19 @@ sshssh user@remote -p port 'mkdir -p .ssh &amp;amp;&amp;amp; cat &amp;gt;&amp;gt
 
 &lt;p&gt;&lt;code&gt;scp&lt;/code&gt;&lt;/p&gt;
 
+&lt;pre&gt;&lt;code&gt;scp -P 6001 -r &amp;lt;files&amp;gt; root@host:&amp;lt;files&amp;gt;
+scp -P 6001 -r root@host:&amp;lt;files&amp;gt; &amp;lt;files&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://man.linuxde.net/scp&quot;&gt;man scp&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rsync&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://man.linuxde.net/rsync&quot;&gt;man rsync&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;图形界面&quot;&gt;图形界面&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;ssh-X remote&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh -X remote #开启X11转发功能&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;remote $ xeyes&lt;/code&gt; #可以运行gedit 等任何图形界面的程序&lt;/p&gt;
 
@@ -221,7 +233,11 @@ sshssh user@remote -p port 'mkdir -p .ssh &amp;amp;&amp;amp; cat &amp;gt;&amp;gt
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;ssh 远程的 docker，失败，待解决。&lt;/p&gt;
+  &lt;p&gt;ssh 远程docker，yes。&lt;/p&gt;
+
+  &lt;p&gt;ssh -X 远程主机开启图形界面，yes。&lt;/p&gt;
+
+  &lt;p&gt;ssh -X 远程docker，no。&lt;/p&gt;
 &lt;/blockquote&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">SSH</summary></entry><entry><title type="html">Tmux</title><link href="https://acemyzoe.github.io/_posts/2020-04-28-Tmux/" rel="alternate" type="text/html" title="Tmux" /><published>2020-04-28T00:00:00+08:00</published><updated>2020-04-28T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/Tmux</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-04-28-Tmux/">&lt;h1 id=&quot;tmux&quot;&gt;Tmux&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.ruanyifeng.com/blog/2019/10/tmux.html&quot;&gt;了解更多&lt;/a&gt;&lt;/p&gt;
@@ -232,7 +248,7 @@ sshssh user@remote -p port 'mkdir -p .ssh &amp;amp;&amp;amp; cat &amp;gt;&amp;gt
 
 &lt;p&gt;安装 ：&lt;code&gt;sudo apt-get install tmux&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;命令 ：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;命令&lt;/strong&gt; ：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# 新建
 tmux new -s  &amp;lt;session-name&amp;gt;
