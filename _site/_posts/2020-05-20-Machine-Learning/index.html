@@ -4,17 +4,19 @@
 <head>
   
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>似乎不存在这个页面 | Acemyzoe</title>
+<title>Machine Learning | Acemyzoe</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="似乎不存在这个页面" />
+<meta property="og:title" content="Machine Learning" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="人类世界 真是 太有趣了 QAQ &lt;iframe frameborder=”no” border=”0” marginwidth=”0” marginheight=”0” width=100% height=52 src=”//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32”&gt;&lt;/iframe&gt;" />
-<meta property="og:description" content="人类世界 真是 太有趣了 QAQ &lt;iframe frameborder=”no” border=”0” marginwidth=”0” marginheight=”0” width=100% height=52 src=”//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32”&gt;&lt;/iframe&gt;" />
-<link rel="canonical" href="https://acemyzoe.github.io/404" />
-<meta property="og:url" content="https://acemyzoe.github.io/404" />
+<meta name="description" content="占坑" />
+<meta property="og:description" content="占坑" />
+<link rel="canonical" href="https://acemyzoe.github.io/_posts/2020-05-20-Machine-Learning/" />
+<meta property="og:url" content="https://acemyzoe.github.io/_posts/2020-05-20-Machine-Learning/" />
 <meta property="og:site_name" content="Acemyzoe" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-20T00:00:00+08:00" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"https://acemyzoe.github.io/404","headline":"似乎不存在这个页面","description":"人类世界 真是 太有趣了 QAQ &lt;iframe frameborder=”no” border=”0” marginwidth=”0” marginheight=”0” width=100% height=52 src=”//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32”&gt;&lt;/iframe&gt;","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"https://acemyzoe.github.io/_posts/2020-05-20-Machine-Learning/","headline":"Machine Learning","dateModified":"2020-05-20T00:00:00+08:00","datePublished":"2020-05-20T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://acemyzoe.github.io/_posts/2020-05-20-Machine-Learning/"},"description":"占坑","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -247,7 +249,9 @@ QAQ<br/>
   }
 </style>
 
-      
+      <ol id="toc">
+  <li><a href="#%E5%8D%A0%E5%9D%91">占坑</a></li>
+</ol>
       
       
       <script defer="defer" src="https://cdn.jsdelivr.net/gh/poole/lanyon@v1.1.0/public/js/script.min.js"></script>
@@ -388,17 +392,186 @@ QAQ<br/>
   
   <div class="wrap">
     
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+/>
 <script
-  src='https://qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js'
-  async='async'
-  charset='utf-8'
-  homePageUrl='/'
-  homePageName='回到我的主页'
+  src="https://cdn.jsdelivr.net/combine/npm/katex@0.11.1/dist/katex.min.js,npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js,npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  defer="defer"
+  onload='renderMathInElement(document.body, { delimiters: [{ left: "$", right: "$", display: false }] })'
 ></script>
 
 
 
+<style>
+  pre.language-mermaid,
+  code.language-mermaid {
+    display: none;
+  }
+</style>
+<script
+  src="https://cdn.jsdelivr.net/npm/mermaid@8.5.1/dist/mermaid.min.js"
+  defer="defer"
+  onload='
+    for(let x of document.getElementsByClassName("language-mermaid"))
+      if(x.nodeName=="CODE")
+      {
+        let m = document.createElement("div");
+        m.classList.add("mermaid");
+        m.textContent = x.textContent;
+        x.parentNode.insertAdjacentElement("beforebegin", m);
+      }'
+></script>
 
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.css,gh/PrismJS/prism-themes@1955cfef6953b3a59e66016e8a1e016b45d6cc79/themes/prism-nord.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/components/prism-core.min.js,npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.js"
+  defer="defer"
+  onload='
+    Prism.plugins.autoloader.languages_path = "https:\/\/cdn.jsdelivr.net/npm/prismjs/components/";
+    for(let x of document.getElementsByTagName("pre"))
+      x.classList.add("line-numbers");
+    Prism.plugins.toolbar.registerButton("select-code", function (env) {
+      let button = document.createElement("button");
+      button.textContent = "select this " + env.language;
+      button.addEventListener("click", function () {
+        if (document.body.createTextRange) {
+          let range = document.body.createTextRange();
+          range.moveToElementText(env.element);
+          range.select();
+        } else if (window.getSelection) {
+          let selection = window.getSelection();
+          let range = document.createRange();
+          range.selectNodeContents(env.element);
+          selection.removeAllRanges();
+            selection.addRange(range);
+        }
+      });
+      return button;
+    })'
+></script>
+
+
+
+<style>
+  pre {
+    max-height: 50vh;
+    overflow: auto;
+  }
+</style>
+
+
+<style>
+  @media (min-width: 56em) {
+    .container {
+      max-width: 66.6%;
+    }
+  }
+</style>
+
+
+<style>
+  .masthead,
+  .container.content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    animation-duration: 2s;
+    animation-name: fadeIn;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+
+
+<div class="masthead">
+  <h3 class="container masthead-title">
+    
+    Machine Learning
+    <a href="/" title="Home">
+      <small>
+        Acemyzoe
+      </small>
+    </a>
+    
+  </h3>
+</div>
+
+<div class="container content">
+  <div class="post">
+  <span class="post-date">
+    
+    <i class="fas fa-calendar-day fa-fw"></i>
+    20 May 2020
+    
+    
+    <i class="fas fa-file-word fa-fw"></i>
+    2字
+    
+    
+    <i class="fas fa-clock fa-fw"></i>
+    1分
+    
+    
+    <span class="leancloud-visitors" id="/_posts/2020-05-20-Machine-Learning/" data-xid="/_posts/2020-05-20-Machine-Learning/" data-flag-title="Machine Learning">
+      <i class="fas fa-book-reader fa-fw"></i>
+      <span class="leancloud-visitors-count">
+        <i class="fas fa-spinner fa-pulse"></i>
+      </span>次
+    </span>
+    
+    
+    
+    <i class="fas fa-tag fa-fw"></i>
+    ML
+    
+    
+    <i class="fab fa-creative-commons-by fa-fw"></i>
+<a
+  href="https://creativecommons.org/licenses/by/4.0/deed.zh"
+  rel="license">
+  CC BY 4.0
+</a>
+（除特别声明或转载文章外）
+
+    
+  </span>
+  <h1 id="占坑">占坑</h1>
+
+</div>
+<div class="v">
+  <i class="fas fa-spinner fa-pulse"></i>
+</div>
+<script
+  src='https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js'
+  defer='defer'
+  onload='
+    new Valine({
+      "el": document.getElementsByClassName("v")[0],
+      "appId": "sJhaa5UF52fhugGM95buMpIT-gzGzoHsz",
+      "appKey": "Tp95IdLx1TBXyH9tXflqNnXx",
+      "placeholder": "在这里评论吧！填写邮箱可以获得Gravatar头像和回复通知",
+      "requiredFields": ["nick","mail"],
+      "visitor": true,
+      "recordIP": true
+    })'
+></script>
+
+</div>
   </div>
   
   <label for="sidebar-checkbox" class="sidebar-toggle"></label>

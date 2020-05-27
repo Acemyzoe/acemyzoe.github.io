@@ -39,12 +39,12 @@
   
   <link
   rel="apple-touch-icon-precomposed"
-  href="/images/Avatar.jpg"
+  href="/assets/image/Avatar.jpg"
 />
 <link
   rel="shortcut
   icon"
-  href="/images/Avatar.jpg"
+  href="/assets/image/Avatar.jpg"
 />
 
   
@@ -56,7 +56,7 @@
   
   <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"
 />
 
   
@@ -66,45 +66,57 @@
 ></script>
 
   
-  <script
-  async="async"
-  src="https://www.googletagmanager.com/gtag/js?id="
-  onload="
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '');"
-></script>
-
-  
   <style>
   .wrap {
-    min-height: 100vh;
+    transition-property: width,background-size,transform;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+    min-height: 100%;
     display: inline-block;
-    background-size: 100vw auto;
-    background-position: center top;
+    background-size: 100% auto;
+    background-position: 0% 0%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-image: url(/images/background-wap.jpg);
+    background-image: url(/assets/image/background-wap.jpg);
   }
   @media (min-aspect-ratio: 2400/1850) {
     .wrap {
-      background-image: url(/images/background.jpg);
+      background-image: url(/assets/image/background.jpg);
     }
+  }
+  .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    width: calc(100% - 14rem);
+    background-size: calc(100% - 14rem) auto;
+    transform: translateX(14rem);
+  }
+  .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    transform: translateX(0);
   }
 </style>
 
   
   <style>
+  .sidebar,
   html,
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6,
-  .sidebar {
+  h6 {
     font-family: PingFang SC, Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
+  }
+</style>
+
+  
+  <style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
   }
 </style>
 
@@ -152,7 +164,7 @@
     
     <div class="sidebar-item">
       <div class="effect effect-right_to_left">
-        <img class="effect-img" src="/images/Avatar.jpg" alt="img" />
+        <img class="effect-img" src="/assets/image/Avatar.jpg" alt="img" />
         <div class="effect-info">
           人类世界<br/>
 真是<br/>
@@ -195,8 +207,7 @@ QAQ<br/>
     </nav>
     <div class="sidebar-item">
       
-      <div>
-        <style>
+      <style>
   #sidebar-search-input {
     background: none;
     border: none;
@@ -216,7 +227,7 @@ QAQ<br/>
   id="sidebar-search-results-container"
 ></ol>
 <script
-  src='https://cdn.jsdelivr.net/npm/simple-jekyll-search/dest/simple-jekyll-search.min.js'
+  src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.7/dest/simple-jekyll-search.min.js'
   async='async'
   onload='
     SimpleJekyllSearch({
@@ -229,7 +240,19 @@ QAQ<br/>
     })'
 ></script>
 
-      </div>
+      
+      
+      <style>
+  #toc {
+    overflow: auto auto;
+    max-height: 50vh;
+  }
+</style>
+
+      <ol id="toc">
+  <li><a href="#%E4%B8%80%E4%BA%9B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E9%80%94%E5%BE%84">一些搭建博客的途径</a></li>
+  <li><a href="#%E4%B8%80%E4%BA%9B%E6%8F%92%E4%BB%B6">一些插件</a></li>
+</ol>
       
       
       <script defer="defer" src="https://cdn.jsdelivr.net/gh/poole/lanyon@v1.1.0/public/js/script.min.js"></script>
@@ -276,22 +299,6 @@ QAQ<br/>
 </style>
 
       
-      <style>
-  #toc {
-    overflow: auto auto;
-    max-height:50vh;
-  }
-</style>
-<aside id="toc">
-  目录
-</aside>
-<script
-  defer='defer'
-  src='https://cdn.jsdelivr.net/npm/html-contents/html-contents.min.js'
-  onload="htmlContents('#toc', {listType: 'o', filter: function(arr) {return !arr.matches('.masthead-title')}})"
-></script>
-
-      
       <div>
   <i class="fas fa-cog fa-spin fa-fw"></i>
   <span id="run_time_day">
@@ -307,29 +314,34 @@ QAQ<br/>
     <i class="fas fa-spinner fa-pulse"></i>
   </span>秒
   <script>
-    setInterval(function (BirthDay) {
+    setInterval(function (d,h,m,s,b) {
       function setzero(i) {
-        if (i < 10) return "0" + i;
-        return i;
+        return i < 10 ? "0" + i : i;
       }
-      BirthDay = new Date(BirthDay);
-      today = new Date();
-      timeold = (today.getTime() - BirthDay.getTime());
-      sectimeold = timeold / 1000;
-      secondsold = Math.floor(sectimeold);
-      msPerDay = 24 * 60 * 60 * 1000;
-      e_daysold = timeold / msPerDay;
-      daysold = Math.floor(e_daysold);
-      e_hrsold = (e_daysold - daysold) * 24;
-      hrsold = Math.floor(e_hrsold);
-      e_minsold = (e_hrsold - hrsold) * 60;
-      minsold = Math.floor((e_hrsold - hrsold) * 60);
-      seconds = Math.floor((e_minsold - minsold) * 60);
-      document.getElementById("run_time_day").innerHTML = daysold;
-      document.getElementById("run_time_hour").innerHTML = setzero(hrsold);
-      document.getElementById("run_time_minute").innerHTML = setzero(minsold);
-      document.getElementById("run_time_second").innerHTML = setzero(seconds);
-    }, 1000, "4/1/2020 12:00:00") // 这是我第一篇CSDN博客的时间
+      let BirthDay = new Date(b);
+      let today = new Date();
+      let timeold = (today.getTime() - BirthDay.getTime());
+      let sectimeold = timeold / 1000;
+      let secondsold = Math.floor(sectimeold);
+      let msPerDay = 24 * 60 * 60 * 1000;
+      let e_daysold = timeold / msPerDay;
+      let daysold = Math.floor(e_daysold);
+      let e_hrsold = (e_daysold - daysold) * 24;
+      let hrsold = Math.floor(e_hrsold);
+      let e_minsold = (e_hrsold - hrsold) * 60;
+      let minsold = Math.floor((e_hrsold - hrsold) * 60);
+      let seconds = Math.floor((e_minsold - minsold) * 60);
+      d.textContent = daysold;
+      h.textContent = setzero(hrsold);
+      m.textContent = setzero(minsold);
+      s.textContent = setzero(seconds);
+    },
+    1000,
+    document.getElementById("run_time_day"),
+    document.getElementById("run_time_hour"),
+    document.getElementById("run_time_minute"),
+    document.getElementById("run_time_second"),
+    "04/01/2020 12:00:00")// 这是我第一篇博客的时间
   </script>
 </div>
 
@@ -354,15 +366,9 @@ QAQ<br/>
     </span>人
   </div>
   <script
-    src='https://cdn.jsdelivr.net/npm/busuanzi'
+    src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0'
     async='async'
   ></script>
-</div>
-
-      
-      <div>
-  <i class="fas fa-copyright fa-fw"></i>
-  acemyzoe
 </div>
 
       
@@ -374,6 +380,12 @@ QAQ<br/>
 </div>
 
       
+      <div>
+  <i class="fas fa-copyright fa-fw"></i>
+  acemyzoe
+</div>
+
+      
       
     </div>
   </div>
@@ -381,81 +393,54 @@ QAQ<br/>
   
   <div class="wrap">
     
-<style>
-  pre {
-    max-height: 80vh;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0);
-  }
-</style>
-
-
-<style>
-  @media (min-width: 56em) {
-    .container {
-      max-width: 66.6%;
-    }
-  }
-</style>
-
-
-<style>
-  .masthead,
-  .container.content {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.9);
-    animation: animationAppear 2s;
-  }
-  @keyframes animationAppear {
-    0%,
-    33% {
-      opacity: 0;
-    }
-    100% {}
-  }
-</style>
-
-
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
 />
 <script
-  src="https://cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/mathtex-script-type.min.js,npm/katex/dist/contrib/auto-render.min.js"
+  src="https://cdn.jsdelivr.net/combine/npm/katex@0.11.1/dist/katex.min.js,npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js,npm/katex@0.11.1/dist/contrib/auto-render.min.js"
   defer="defer"
   onload='renderMathInElement(document.body, { delimiters: [{ left: "$", right: "$", display: false }] })'
 ></script>
 
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css"
-/>
+
+<style>
+  pre.language-mermaid,
+  code.language-mermaid {
+    display: none;
+  }
+</style>
 <script
-  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+  src="https://cdn.jsdelivr.net/npm/mermaid@8.5.1/dist/mermaid.min.js"
   defer="defer"
-  onload='mermaid.init({}, ".language-mermaid");'
+  onload='
+    for(let x of document.getElementsByClassName("language-mermaid"))
+      if(x.nodeName=="CODE")
+      {
+        let m = document.createElement("div");
+        m.classList.add("mermaid");
+        m.textContent = x.textContent;
+        x.parentNode.insertAdjacentElement("beforebegin", m);
+      }'
 ></script>
 
 
+
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/combine/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs/plugins/toolbar/prism-toolbar.min.css,gh/PrismJS/prism-themes@1955cfef6953b3a59e66016e8a1e016b45d6cc79/themes/prism-nord.min.css"
+  href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.css,gh/PrismJS/prism-themes@1955cfef6953b3a59e66016e8a1e016b45d6cc79/themes/prism-nord.min.css"
 />
 <script
-  src="https://cdn.jsdelivr.net/combine/npm/prismjs/components/prism-core.min.js,npm/prismjs/plugins/autoloader/prism-autoloader.min.js,npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs/plugins/toolbar/prism-toolbar.min.js"
+  src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/components/prism-core.min.js,npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.js"
   defer="defer"
   onload='
     Prism.plugins.autoloader.languages_path = "https:\/\/cdn.jsdelivr.net/npm/prismjs/components/";
-    for(let x=document.getElementsByTagName("pre"), i=0;i<x.length;i++)
-    {
-      x[i].classList.add("line-numbers");
-    }
+    for(let x of document.getElementsByTagName("pre"))
+      x.classList.add("line-numbers");
     Prism.plugins.toolbar.registerButton("select-code", function (env) {
       let button = document.createElement("button");
-      button.innerHTML = "select this " + env.language;
+      button.textContent = "select this " + env.language;
       button.addEventListener("click", function () {
         if (document.body.createTextRange) {
           let range = document.body.createTextRange();
@@ -475,11 +460,50 @@ QAQ<br/>
 
 
 
+<style>
+  pre {
+    max-height: 50vh;
+    overflow: auto;
+  }
+</style>
+
+
+<style>
+  @media (min-width: 56em) {
+    .container {
+      max-width: 66.6%;
+    }
+  }
+</style>
+
+
+<style>
+  .masthead,
+  .container.content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    animation-duration: 2s;
+    animation-name: fadeIn;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+
+
 <div class="masthead">
   <h3 class="container masthead-title">
     
     从零开始的blog搭建之路
-    <a href="https://acemyzoe.github.io/" title="Home">
+    <a href="/" title="Home">
       <small>
         Acemyzoe
       </small>
@@ -497,14 +521,14 @@ QAQ<br/>
     
     
     <i class="fas fa-file-word fa-fw"></i>
-    154字
+    733字
     
     
     <i class="fas fa-clock fa-fw"></i>
-    1分
+    3分
     
     
-    <span class="leancloud-visitors" data-xid="/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/" data-flag-title="从零开始的blog搭建之路">
+    <span class="leancloud-visitors" id="/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/" data-xid="/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/" data-flag-title="从零开始的blog搭建之路">
       <i class="fas fa-book-reader fa-fw"></i>
       <span class="leancloud-visitors-count">
         <i class="fas fa-spinner fa-pulse"></i>
@@ -512,15 +536,18 @@ QAQ<br/>
     </span>
     
     
+    
     <i class="fas fa-tag fa-fw"></i>
     just for fun
     
-    <br/>
-<i class="fas fa-coffee fa-fw"></i>
-<a href="/merger/">QAQ~</a>
-<br/>
-<i class="fab fa-creative-commons-by fa-fw"></i>
-<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a>（除特别声明或转载文章外）
+    
+    <i class="fab fa-creative-commons-by fa-fw"></i>
+<a
+  href="https://creativecommons.org/licenses/by/4.0/deed.zh"
+  rel="license">
+  CC BY 4.0
+</a>
+（除特别声明或转载文章外）
 
     
   </span>
@@ -640,15 +667,15 @@ QAQ<br/>
   <i class="fas fa-spinner fa-pulse"></i>
 </div>
 <script
-  #src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'
-  src='//unpkg.com/valine/dist/Valine.min.js'
+  src='https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js'
   defer='defer'
   onload='
     new Valine({
       "el": document.getElementsByClassName("v")[0],
       "appId": "sJhaa5UF52fhugGM95buMpIT-gzGzoHsz",
       "appKey": "Tp95IdLx1TBXyH9tXflqNnXx",
-      "placeholder": "在这里评论吧！",
+      "placeholder": "在这里评论吧！填写邮箱可以获得Gravatar头像和回复通知",
+      "requiredFields": ["nick","mail"],
       "visitor": true,
       "recordIP": true
     })'

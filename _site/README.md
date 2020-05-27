@@ -6,15 +6,16 @@
 
 ## 自我介绍
 
-- Name: Mr.Guo
-- Address:  SZ
-- Site: **<https://acemyzoe.github.io>**
+- Name : Guo Jun
+- Address :  ShenZhen , China
+- Site : **<https://acemyzoe.github.io>**
 
 <!-- slide vertical=true -->
 
-- E-mail:
+- E-mail : 
+  - **[ustbguojun@163.com](mailto:ustbguojun@163.com)**
   - **[acemyzoe@outlook.com](mailto:acemyzoe@outlook.com)**
-- QQ: 775051709
+- QQ : 775051709
 
 <!-- slide -->
 
@@ -22,7 +23,12 @@
 
 <!-- slide vertical=true -->
 
-- Automation，USTB(2014-2018)
+**School of Automation, University of Science and Technology Beijing, September 2014-July 2018**
+
+- Bachelor of Automatic Chemistry
+- Automatic control principle
+- Embedded systems and robots
+- artificial intelligence
 
 <!-- slide -->
 
@@ -30,11 +36,9 @@
 
 <!-- slide vertical=true -->
 
-- 身为Automan，进可干硬件，组电脑、调板子，玩ROS、造机器人。
+- 身为Automan，掌握了自动控制、计算机软硬件、人工智能和机器人领域相关知识。
 
-  退可干程序员，搞AI、ML，调参数、搬轮子、逛GH。
-
-- 典型射手座男生，花心:见一个爱一个的技术激情，多变:三分钟的学习热度。（Ctrl+D就完事了）
+- 典型射手座男生，花心:见一个爱一个的技术激情，多变:三分钟的学习热度。(泛而不精)
 
 <!-- slide vertical=true -->
 
@@ -49,8 +53,15 @@
 
 <!-- slide -->
 
+## 我的一些项目成果
+
+- **<https://github.com/Acemyzoe>**
+
 ## 我的一些思考
 
 - 人类世界真是太麻烦了U-U
+- TBD
 
 <!-- slide vertical=true -->
+
+### [Return : once again](https://acemyzoe.github.io)

@@ -2,12 +2,39 @@
 [
   
     {
-      "title"    : "Linux",
+      "title"    : "Crying",
       "category" : "",
       "tags"     : "wiki",
       "date"     : "2020-05-26 00:00:00 +0800",
       
-      "url"      : "https://acemyzoe.github.io/_posts/2020-05-26-/"
+      "url"      : "/_posts/2020-05-26-/"
+    } ,
+  
+    {
+      "title"    : "Keras",
+      "category" : "",
+      "tags"     : "tensorflow/keras",
+      "date"     : "2020-05-25 00:00:00 +0800",
+      
+      "url"      : "/_posts/2020-05-25-keras/"
+    } ,
+  
+    {
+      "title"    : "Tensorflow/keras",
+      "category" : "",
+      "tags"     : "tensorflow/keras",
+      "date"     : "2020-05-21 00:00:00 +0800",
+      
+      "url"      : "/_posts/2020-05-21-tensorflowkeras/"
+    } ,
+  
+    {
+      "title"    : "Machine Learning",
+      "category" : "",
+      "tags"     : "ML",
+      "date"     : "2020-05-20 00:00:00 +0800",
+      
+      "url"      : "/_posts/2020-05-20-Machine-Learning/"
     } ,
   
     {
@@ -16,7 +43,7 @@
       "tags"     : "wiki",
       "date"     : "2020-05-13 00:00:00 +0800",
       
-      "url"      : "https://acemyzoe.github.io/_posts/2020-05-13-VsCode/"
+      "url"      : "/_posts/2020-05-13-VsCode/"
     } ,
   
     {
@@ -25,7 +52,7 @@
       "tags"     : "else",
       "date"     : "2020-04-29 00:00:00 +0800",
       
-      "url"      : "https://acemyzoe.github.io/_posts/2020-04-29-%E8%87%AA%E5%8B%89/"
+      "url"      : "/_posts/2020-04-29-%E8%87%AA%E5%8B%89/"
     } ,
   
     {
@@ -34,7 +61,7 @@
       "tags"     : "wiki",
       "date"     : "2020-04-29 00:00:00 +0800",
       
-      "url"      : "https://acemyzoe.github.io/_posts/2020-04-29-Docker-&-GPU-server/"
+      "url"      : "/_posts/2020-04-29-Docker-&-GPU-server/"
     } ,
   
     {
@@ -43,7 +70,7 @@
       "tags"     : "wiki",
       "date"     : "2020-04-28 00:00:00 +0800",
       
-      "url"      : "https://acemyzoe.github.io/_posts/2020-04-28-Tmux/"
+      "url"      : "/_posts/2020-04-28-Tmux/"
     } ,
   
     {
@@ -52,7 +79,7 @@
       "tags"     : "wiki",
       "date"     : "2020-04-28 00:00:00 +0800",
       
-      "url"      : "https://acemyzoe.github.io/_posts/2020-04-28-SSH/"
+      "url"      : "/_posts/2020-04-28-SSH/"
     } ,
   
     {
@@ -61,7 +88,7 @@
       "tags"     : "just for fun",
       "date"     : "2020-04-27 00:00:00 +0800",
       
-      "url"      : "https://acemyzoe.github.io/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"
+      "url"      : "/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"
     } ,
   
     {
@@ -70,7 +97,7 @@
       "tags"     : "else",
       "date"     : "2020-04-26 00:00:00 +0800",
       
-      "url"      : "https://acemyzoe.github.io/_posts/2020-04-26-%E5%BC%80%E7%AF%87-Init-commit/"
+      "url"      : "/_posts/2020-04-26-%E5%BC%80%E7%AF%87-Init-commit/"
     } ,
   
     {
@@ -79,7 +106,7 @@
       "tags"     : "wiki",
       "date"     : "2020-04-26 00:00:00 +0800",
       
-      "url"      : "https://acemyzoe.github.io/_posts/2020-04-26-Linux/"
+      "url"      : "/_posts/2020-04-26-Linux/"
     } 
   
   ,
@@ -91,7 +118,7 @@
         "tags"     : "",
         "date"     : "",
         
-        "url"      : "https://acemyzoe.github.io/404"
+        "url"      : "/404"
      
    } ,
   
@@ -102,7 +129,7 @@
         "tags"     : "",
         "date"     : "",
         
-        "url"      : "https://acemyzoe.github.io/archive/"
+        "url"      : "/archive/"
      
    } ,
   
@@ -113,7 +140,7 @@
         "tags"     : "",
         "date"     : "",
         
-        "url"      : "https://acemyzoe.github.io/comments/"
+        "url"      : "/comments/"
      
    } ,
   
@@ -132,7 +159,7 @@
         "tags"     : "",
         "date"     : "",
         
-        "url"      : "https://acemyzoe.github.io/tags/"
+        "url"      : "/tags/"
      
    } ,
   
@@ -147,7 +174,7 @@
         "tags"     : "",
         "date"     : "",
         
-        "url"      : "https://acemyzoe.github.io/"
+        "url"      : "/"
      
    } ,
   

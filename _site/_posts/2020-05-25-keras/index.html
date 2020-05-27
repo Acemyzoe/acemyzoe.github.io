@@ -4,19 +4,19 @@
 <head>
   
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Docker &amp; GPU-server | Acemyzoe</title>
+<title>Keras | Acemyzoe</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Docker &amp; GPU-server" />
+<meta property="og:title" content="Keras" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="GPU-server" />
-<meta property="og:description" content="GPU-server" />
-<link rel="canonical" href="https://acemyzoe.github.io/_posts/2020-04-29-Docker-&-GPU-server/" />
-<meta property="og:url" content="https://acemyzoe.github.io/_posts/2020-04-29-Docker-&-GPU-server/" />
+<meta name="description" content="[TOC]" />
+<meta property="og:description" content="[TOC]" />
+<link rel="canonical" href="https://acemyzoe.github.io/_posts/2020-05-25-keras/" />
+<meta property="og:url" content="https://acemyzoe.github.io/_posts/2020-05-25-keras/" />
 <meta property="og:site_name" content="Acemyzoe" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-04-29T00:00:00+08:00" />
+<meta property="article:published_time" content="2020-05-25T00:00:00+08:00" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"https://acemyzoe.github.io/_posts/2020-04-29-Docker-&-GPU-server/","headline":"Docker &amp; GPU-server","dateModified":"2020-04-29T00:00:00+08:00","datePublished":"2020-04-29T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://acemyzoe.github.io/_posts/2020-04-29-Docker-&-GPU-server/"},"description":"GPU-server","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"https://acemyzoe.github.io/_posts/2020-05-25-keras/","headline":"Keras","dateModified":"2020-05-25T00:00:00+08:00","datePublished":"2020-05-25T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://acemyzoe.github.io/_posts/2020-05-25-keras/"},"description":"[TOC]","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -250,14 +250,13 @@ QAQ<br/>
 </style>
 
       <ol id="toc">
-  <li><a href="#gpu-server">GPU-server</a></li>
-  <li><a href="#docker">Docker</a>
+  <li><a href="#from-tensorflow-import-keras">from tensorflow import keras</a></li>
+  <li><a href="#kerasio">Keras.io</a>
     <ol>
-      <li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
-      <li><a href="#%E5%91%BD%E4%BB%A4">命令</a></li>
+      <li><a href="#%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8%E9%A2%84%E8%AE%AD%E7%BB%83%E7%9A%84%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E5%BE%AE%E8%B0%83%E6%A8%A1%E5%9E%8B">迁移学习:使用预训练的网络模型(特征提取|微调模型)</a></li>
+      <li><a href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE">数据预处理:图像数据</a></li>
     </ol>
   </li>
-  <li><a href="#lxd">LXD</a></li>
 </ol>
       
       
@@ -508,7 +507,7 @@ QAQ<br/>
 <div class="masthead">
   <h3 class="container masthead-title">
     
-    Docker & GPU-server
+    Keras
     <a href="/" title="Home">
       <small>
         Acemyzoe
@@ -523,18 +522,18 @@ QAQ<br/>
   <span class="post-date">
     
     <i class="fas fa-calendar-day fa-fw"></i>
-    29 Apr 2020
+    25 May 2020
     
     
     <i class="fas fa-file-word fa-fw"></i>
-    1947字
+    3180字
     
     
     <i class="fas fa-clock fa-fw"></i>
-    7分
+    11分
     
     
-    <span class="leancloud-visitors" id="/_posts/2020-04-29-Docker-&-GPU-server/" data-xid="/_posts/2020-04-29-Docker-&-GPU-server/" data-flag-title="Docker & GPU-server">
+    <span class="leancloud-visitors" id="/_posts/2020-05-25-keras/" data-xid="/_posts/2020-05-25-keras/" data-flag-title="Keras">
       <i class="fas fa-book-reader fa-fw"></i>
       <span class="leancloud-visitors-count">
         <i class="fas fa-spinner fa-pulse"></i>
@@ -544,7 +543,7 @@ QAQ<br/>
     
     
     <i class="fas fa-tag fa-fw"></i>
-    wiki
+    tensorflow/keras
     
     
     <i class="fab fa-creative-commons-by fa-fw"></i>
@@ -557,120 +556,121 @@ QAQ<br/>
 
     
   </span>
-  <h2 id="gpu-server">GPU-server</h2>
+  <p>[TOC]</p>
 
-<iframe src="https://ghbtns.com/github-btn.html?user=acemyzoe&amp;repo=gpu-server&amp;type=star&amp;size=large" frameborder="0" scrolling="0" width="220" height="30" title="Star acemyzoe/gpu-server on GitHub"></iframe>
+<h1 id="from-tensorflow-import-keras">from tensorflow import keras</h1>
 
-<iframe src="https://ghbtns.com/github-btn.html?user=acemyzoe&amp;type=follow&amp;size=large" frameborder="0" scrolling="0" width="2200" height="30" title="Follow @acemyzoe on GitHub"></iframe>
+<p><a href="https://www.tensorflow.org/guide/keras/overview">tf.kears</a></p>
 
-<p>构建GPU服务器的容器技术：<a href="https://docs.docker.com/">Docker</a>  /  <a href="https://linuxcontainers.org/">LXC&amp;LXD</a></p>
+<h1 id="kerasio">Keras.io</h1>
 
-<p>远程登陆：SSH(局域网)</p>
+<h2 id="迁移学习使用预训练的网络模型特征提取微调模型"><strong>迁移学习</strong>:使用预训练的网络模型(特征提取|微调模型)</h2>
 
-<blockquote>
-  <p><a href="http://wdom.net/">Hole</a> : 使用Holer服务端软件搭建Holer服务，通过Holer客户端软件经自己服务器实现公网访问。</p>
-</blockquote>
+<p><a href="https://keras.io/api/applications/">keras.applications</a></p>
 
-<p>容器管理：DaoCloud - <a href="https://dashboard.daocloud.io/">DCS</a>(可从公网访问管理多主机)</p>
+<p>所有的模型基本包含两部分的，一个是各种卷积层，即卷积基，最后是密集连接层（Dense）组成的分类器。调用的模型其实就在调取模型的卷积基部分，最后更换自己需要的分类器来数据处理。</p>
 
-<blockquote>
-  <p><a href="http://guide.daocloud.io/dcd/%E7%AE%80%E4%BB%8B-13044181.html">DCD</a> : 开发者版，<a href="http://localhost/#/">本地管理</a></p>
+<pre><code class="language-python">#使用VGG19从任意中间层提取特征
+from tensorflow.keras.applications.vgg19 import VGG19
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.vgg19 import preprocess_input
+from tensorflow.keras.models import Model
+import numpy as np
 
-  <p><a href="https://www.portainer.io/">Portainer</a> : docker管理功能更全，支持创建container，但好像只支持<a href="http://loaclhost:9000/#/home">本地管理</a></p>
-</blockquote>
+base_model = VGG19(weights='imagenet')
+model = Model(inputs=base_model.input, outputs=base_model.get_layer('block4_pool').output)
+#到block4_pool的所有层都冻结，后边的层是可进行训练的。
+img_path = 'elephant.jpg'
+img = image.load_img(img_path, target_size=(224, 224))
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis=0)
+x = preprocess_input(x)
 
-<hr />
-
-<h2 id="docker">Docker</h2>
-
-<p>容器的本质是进程。</p>
-
-<h3 id="安装"><a href="https://docs.docker.com/engine/install/linux-postinstall/">安装</a></h3>
-
-<pre><code class="language-bash">#安装docker，借助第三方不香么
-curl -sSL https://get.daocloud.io/docker | sh 
-
-#安装nvidia-docker : https://github.com/NVIDIA/nvidia-docker
-# Add the package repositories
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit
-sudo systemctl restart docker
-
-#非root用户身份管理
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker 
-
-#配置docker自启动
-sudo systemctl enable docker
+block4_pool_features = model.predict(x)
 </code></pre>
 
-<h3 id="命令">命令</h3>
+<pre><code class="language-python">#在一组新的类上微调InceptionV3
+from tensorflow.keras.applications.inception_v3 import InceptionV3
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Dense, GlobalAveragePooling2D
 
-<p><a href="https://www.runoob.com/docker/docker-command-manual.html">了解更多</a></p>
+# create the base pre-trained model
+base_model = InceptionV3(weights='imagenet', include_top=False)
 
-<pre><code class="language-bash">#info
-docker info
-###################
-#从dockerfile构建image
-docker build -t &lt;name&gt;:&lt;tag&gt;  dockerfile_path
-#从container构建image
-docker commit container &lt;images-name&gt;:&lt;tag&gt;
-#拉取镜像
-docker pull tensorflow:latest
-#查看image
-docker images
-#导出\导入镜像(优先)
-docker save -o &lt;name&gt;.tar.gz &lt;image-name&gt;
-docker load -i &lt;name&gt;.tar.gz 
-#导出\导入容器(导入后cuda 失效)
-docekr export -o &lt;name&gt;.tar.gz &lt;container-name&gt;
-docker import &lt;name&gt;.tar.gz &lt;images-name&gt;:&lt;tag&gt;
+# add a global spatial average pooling layer
+x = base_model.output
+x = GlobalAveragePooling2D()(x)
+# let's add a fully-connected layer
+x = Dense(1024, activation='relu')(x)
+# and a logistic layer -- let's say we have 200 classes
+predictions = Dense(200, activation='softmax')(x)
 
-####################
-#创建container
-docker run -ti \
-                        --gpus all \
-                        -p 6000:22 \
-                        --name &lt;name&gt; \
-                        -v server_dir : container_dir :ro \
-                        -w container_dir
-                        &lt;image&gt;
-                        bash
-#查看container
-docker ps -a
-#进入container ,attach可以带上--sig-proxy=false来确保CTRL-D或CTRL-C不会关闭容器
- docker attach &lt;container-name&gt;
- 
-#在运行的容器中执行命令。-d 后台运行；-i 保持STDIN打开；-t 分配伪终端
-#可用于多终端，作用同tmux
-docker exec -ti &lt;container-name&gt; bash
+# this is the model we will train
+model = Model(inputs=base_model.input, outputs=predictions)
 
- #查看容器中运行的进程信息
- docker top &lt;container-name&gt;
- #查看端口映射
- docker port &lt;contain-name&gt;
- #容器与主机之间的数据拷贝
- docker cp container:path host-path
+# first: train only the top layers (which were randomly initialized)
+# i.e. freeze all convolutional InceptionV3 layers
+for layer in base_model.layers:
+    layer.trainable = False
+
+# compile the model (should be done *after* setting layers to non-trainable)
+model.compile(optimizer='rmsprop', loss='categorical_crossentropy')
+
+# train the model on the new data for a few epochs
+model.fit(...)
+
+# at this point, the top layers are well trained and we can start fine-tuning
+# convolutional layers from inception V3. We will freeze the bottom N layers
+# and train the remaining top layers.
+
+# let's visualize layer names and layer indices to see how many layers
+# we should freeze:
+for i, layer in enumerate(base_model.layers):
+   print(i, layer.name)
+
+# we chose to train the top 2 inception blocks, i.e. we will freeze
+# the first 249 layers and unfreeze the rest:
+for layer in model.layers[:249]:
+   layer.trainable = False
+for layer in model.layers[249:]:
+   layer.trainable = True
+
+# we need to recompile the model for these modifications to take effect
+# we use SGD with a low learning rate
+from tensorflow.keras.optimizers import SGD
+model.compile(optimizer=SGD(lr=0.0001, momentum=0.9), loss='categorical_crossentropy')
+
+# we train our model again (this time fine-tuning the top 2 inception blocks
+# alongside the top Dense layers
+model.fit(...)
 </code></pre>
 
-<hr />
+<h2 id="数据预处理图像数据">数据预处理:图像数据</h2>
 
-<h2 id="lxd">LXD</h2>
+<p><a href="https://keras.io/api/preprocessing/">keras.preprocessing</a></p>
 
-<p>中道崩殂</p>
+<pre><code class="language-python">#从磁盘上的原始数据转到tf.data.Dataset可用于训练模型的对象
+from tensorflow import keras
+from tensorflow.keras.preprocessing.image import image_dataset_from_directory
 
-<p>可参考文章：</p>
+train_ds = image_dataset_from_directory(
+    directory='training_data/',
+    labels='inferred',
+    label_mode='categorical',
+    batch_size=32,
+    image_size=(256, 256))
+validation_ds = image_dataset_from_directory(
+    directory='validation_data/',
+    labels='inferred',
+    label_mode='categorical',
+    batch_size=32,
+    image_size=(256, 256))
 
-<ul>
-  <li>https://github.com/shenuiuin/LXD_GPU_SERVER</li>
-  <li>https://shenxiaohai.me/2018/12/03/gpu-server-lab/</li>
-  <li>https://butui.me/post/lxd-gpu-server/</li>
-  <li>https://abcdabcd987.com/setup-shared-gpu-server-for-labs/</li>
-</ul>
-
+model = keras.applications.Xception(weights=None, input_shape=(256, 256, 3), classes=10)
+model.compile(optimizer='rmsprop', loss='categorical_crossentropy')
+model.fit(train_ds, epochs=10, validation_data=validation_ds)
+</code></pre>
 
 </div>
 <div class="v">

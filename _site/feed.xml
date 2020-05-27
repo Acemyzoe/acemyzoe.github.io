@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-05-26T11:04:11+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-05-27T17:42:59+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
 真是&lt;br/&gt;
 太有趣了&lt;br/&gt;
 QAQ&lt;br/&gt;
@@ -9,7 +9,121 @@ QAQ&lt;br/&gt;
   &lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;
 &lt;/a&gt;
 &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=100% height=52 src=&quot;//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;
-</subtitle><entry><title type="html">Linux</title><link href="https://acemyzoe.github.io/_posts/2020-05-26-/" rel="alternate" type="text/html" title="Linux" /><published>2020-05-26T00:00:00+08:00</published><updated>2020-05-26T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-26-/">&lt;h1 id=&quot;笨兔兔&quot;&gt;笨兔兔&lt;/h1&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">笨兔兔</summary></entry><entry><title type="html">VsCode</title><link href="https://acemyzoe.github.io/_posts/2020-05-13-VsCode/" rel="alternate" type="text/html" title="VsCode" /><published>2020-05-13T00:00:00+08:00</published><updated>2020-05-13T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/VsCode</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-13-VsCode/">&lt;h1 id=&quot;vscode&quot;&gt;VsCode&lt;/h1&gt;
+</subtitle><entry><title type="html">Crying</title><link href="https://acemyzoe.github.io/_posts/2020-05-26-/" rel="alternate" type="text/html" title="Crying" /><published>2020-05-26T00:00:00+08:00</published><updated>2020-05-26T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-26-/">&lt;h1 id=&quot;太多东西要整理消化了&quot;&gt;太多东西要整理消化了&lt;/h1&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">太多东西要整理消化了</summary></entry><entry><title type="html">Keras</title><link href="https://acemyzoe.github.io/_posts/2020-05-25-keras/" rel="alternate" type="text/html" title="Keras" /><published>2020-05-25T00:00:00+08:00</published><updated>2020-05-25T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/keras</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-25-keras/">&lt;p&gt;[TOC]&lt;/p&gt;
+
+&lt;h1 id=&quot;from-tensorflow-import-keras&quot;&gt;from tensorflow import keras&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.tensorflow.org/guide/keras/overview&quot;&gt;tf.kears&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;kerasio&quot;&gt;Keras.io&lt;/h1&gt;
+
+&lt;h2 id=&quot;迁移学习使用预训练的网络模型特征提取微调模型&quot;&gt;&lt;strong&gt;迁移学习&lt;/strong&gt;:使用预训练的网络模型(特征提取|微调模型)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://keras.io/api/applications/&quot;&gt;keras.applications&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;所有的模型基本包含两部分的，一个是各种卷积层，即卷积基，最后是密集连接层（Dense）组成的分类器。调用的模型其实就在调取模型的卷积基部分，最后更换自己需要的分类器来数据处理。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;#使用VGG19从任意中间层提取特征
+from tensorflow.keras.applications.vgg19 import VGG19
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.vgg19 import preprocess_input
+from tensorflow.keras.models import Model
+import numpy as np
+
+base_model = VGG19(weights='imagenet')
+model = Model(inputs=base_model.input, outputs=base_model.get_layer('block4_pool').output)
+#到block4_pool的所有层都冻结，后边的层是可进行训练的。
+img_path = 'elephant.jpg'
+img = image.load_img(img_path, target_size=(224, 224))
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis=0)
+x = preprocess_input(x)
+
+block4_pool_features = model.predict(x)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;#在一组新的类上微调InceptionV3
+from tensorflow.keras.applications.inception_v3 import InceptionV3
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Dense, GlobalAveragePooling2D
+
+# create the base pre-trained model
+base_model = InceptionV3(weights='imagenet', include_top=False)
+
+# add a global spatial average pooling layer
+x = base_model.output
+x = GlobalAveragePooling2D()(x)
+# let's add a fully-connected layer
+x = Dense(1024, activation='relu')(x)
+# and a logistic layer -- let's say we have 200 classes
+predictions = Dense(200, activation='softmax')(x)
+
+# this is the model we will train
+model = Model(inputs=base_model.input, outputs=predictions)
+
+# first: train only the top layers (which were randomly initialized)
+# i.e. freeze all convolutional InceptionV3 layers
+for layer in base_model.layers:
+    layer.trainable = False
+
+# compile the model (should be done *after* setting layers to non-trainable)
+model.compile(optimizer='rmsprop', loss='categorical_crossentropy')
+
+# train the model on the new data for a few epochs
+model.fit(...)
+
+# at this point, the top layers are well trained and we can start fine-tuning
+# convolutional layers from inception V3. We will freeze the bottom N layers
+# and train the remaining top layers.
+
+# let's visualize layer names and layer indices to see how many layers
+# we should freeze:
+for i, layer in enumerate(base_model.layers):
+   print(i, layer.name)
+
+# we chose to train the top 2 inception blocks, i.e. we will freeze
+# the first 249 layers and unfreeze the rest:
+for layer in model.layers[:249]:
+   layer.trainable = False
+for layer in model.layers[249:]:
+   layer.trainable = True
+
+# we need to recompile the model for these modifications to take effect
+# we use SGD with a low learning rate
+from tensorflow.keras.optimizers import SGD
+model.compile(optimizer=SGD(lr=0.0001, momentum=0.9), loss='categorical_crossentropy')
+
+# we train our model again (this time fine-tuning the top 2 inception blocks
+# alongside the top Dense layers
+model.fit(...)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;数据预处理图像数据&quot;&gt;数据预处理:图像数据&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://keras.io/api/preprocessing/&quot;&gt;keras.preprocessing&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;#从磁盘上的原始数据转到tf.data.Dataset可用于训练模型的对象
+from tensorflow import keras
+from tensorflow.keras.preprocessing.image import image_dataset_from_directory
+
+train_ds = image_dataset_from_directory(
+    directory='training_data/',
+    labels='inferred',
+    label_mode='categorical',
+    batch_size=32,
+    image_size=(256, 256))
+validation_ds = image_dataset_from_directory(
+    directory='validation_data/',
+    labels='inferred',
+    label_mode='categorical',
+    batch_size=32,
+    image_size=(256, 256))
+
+model = keras.applications.Xception(weights=None, input_shape=(256, 256, 3), classes=10)
+model.compile(optimizer='rmsprop', loss='categorical_crossentropy')
+model.fit(train_ds, epochs=10, validation_data=validation_ds)
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="tensorflow/keras" /><summary type="html">[TOC]</summary></entry><entry><title type="html">Tensorflow/keras</title><link href="https://acemyzoe.github.io/_posts/2020-05-21-tensorflowkeras/" rel="alternate" type="text/html" title="Tensorflow/keras" /><published>2020-05-21T00:00:00+08:00</published><updated>2020-05-21T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/%20tensorflowkeras</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-21-tensorflowkeras/">&lt;h1 id=&quot;占坑&quot;&gt;占坑&lt;/h1&gt;</content><author><name></name></author><category term="tensorflow/keras" /><summary type="html">占坑</summary></entry><entry><title type="html">Machine Learning</title><link href="https://acemyzoe.github.io/_posts/2020-05-20-Machine-Learning/" rel="alternate" type="text/html" title="Machine Learning" /><published>2020-05-20T00:00:00+08:00</published><updated>2020-05-20T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/%20Machine%20Learning</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-20-Machine-Learning/">&lt;h1 id=&quot;占坑&quot;&gt;占坑&lt;/h1&gt;</content><author><name></name></author><category term="ML" /><summary type="html">占坑</summary></entry><entry><title type="html">VsCode</title><link href="https://acemyzoe.github.io/_posts/2020-05-13-VsCode/" rel="alternate" type="text/html" title="VsCode" /><published>2020-05-13T00:00:00+08:00</published><updated>2020-05-13T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/VsCode</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-13-VsCode/">&lt;h1 id=&quot;vscode&quot;&gt;VsCode&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -391,20 +505,4 @@ Ctrl+b ,：窗口重命名。
       &lt;p&gt;一款快速、简洁且高效的无后端评论系统。(推荐使用）&lt;/p&gt;
     &lt;/blockquote&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="just for fun" /><summary type="html">记录这次 blog 的搭建之路。</summary></entry><entry><title type="html">Linux</title><link href="https://acemyzoe.github.io/_posts/2020-04-26-Linux/" rel="alternate" type="text/html" title="Linux" /><published>2020-04-26T00:00:00+08:00</published><updated>2020-04-26T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/Linux</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-04-26-Linux/">&lt;h1 id=&quot;笨兔兔&quot;&gt;笨兔兔&lt;/h1&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">笨兔兔</summary></entry><entry><title type="html">开篇-Init commit</title><link href="https://acemyzoe.github.io/_posts/2020-04-26-%E5%BC%80%E7%AF%87-Init-commit/" rel="alternate" type="text/html" title="开篇-Init commit" /><published>2020-04-26T00:00:00+08:00</published><updated>2020-04-26T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/%E5%BC%80%E7%AF%87-Init%20commit</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-04-26-%E5%BC%80%E7%AF%87-Init-commit/">&lt;blockquote&gt;
-  &lt;p&gt;沁园春 长沙&lt;/p&gt;
-
-  &lt;p&gt;独立寒秋，湘江北去，橘子洲头。
-看万山红遍，层林尽染；
-漫江碧透，百舸争流。
-鹰击长空，鱼翔浅底，
-万类霜天竞自由。
-怅寥廓，问苍茫天地，谁主沉浮？
-携来百侣曾游，
-忆往昔峥嵘岁月稠。
-恰同学少年，风华正茂；
-书生意气，挥斥方遒。
-指点江山，激扬文字，
-粪土当年万户侯。
-曾记否，到中流击水，浪遏飞舟！&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><category term="else" /><summary type="html">沁园春 长沙 独立寒秋，湘江北去，橘子洲头。 看万山红遍，层林尽染； 漫江碧透，百舸争流。 鹰击长空，鱼翔浅底， 万类霜天竞自由。 怅寥廓，问苍茫天地，谁主沉浮？ 携来百侣曾游， 忆往昔峥嵘岁月稠。 恰同学少年，风华正茂； 书生意气，挥斥方遒。 指点江山，激扬文字， 粪土当年万户侯。 曾记否，到中流击水，浪遏飞舟！</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><category term="just for fun" /><summary type="html">记录这次 blog 的搭建之路。</summary></entry></feed>

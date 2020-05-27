@@ -37,12 +37,12 @@
   
   <link
   rel="apple-touch-icon-precomposed"
-  href="/images/Avatar.jpg"
+  href="/assets/image/Avatar.jpg"
 />
 <link
   rel="shortcut
   icon"
-  href="/images/Avatar.jpg"
+  href="/assets/image/Avatar.jpg"
 />
 
   
@@ -54,7 +54,7 @@
   
   <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"
 />
 
   
@@ -64,45 +64,57 @@
 ></script>
 
   
-  <script
-  async="async"
-  src="https://www.googletagmanager.com/gtag/js?id="
-  onload="
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '');"
-></script>
-
-  
   <style>
   .wrap {
-    min-height: 100vh;
+    transition-property: width,background-size,transform;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+    min-height: 100%;
     display: inline-block;
-    background-size: 100vw auto;
-    background-position: center top;
+    background-size: 100% auto;
+    background-position: 0% 0%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-image: url(/images/background-wap.jpg);
+    background-image: url(/assets/image/background-wap.jpg);
   }
   @media (min-aspect-ratio: 2400/1850) {
     .wrap {
-      background-image: url(/images/background.jpg);
+      background-image: url(/assets/image/background.jpg);
     }
+  }
+  .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    width: calc(100% - 14rem);
+    background-size: calc(100% - 14rem) auto;
+    transform: translateX(14rem);
+  }
+  .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    transform: translateX(0);
   }
 </style>
 
   
   <style>
+  .sidebar,
   html,
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6,
-  .sidebar {
+  h6 {
     font-family: PingFang SC, Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
+  }
+</style>
+
+  
+  <style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
   }
 </style>
 
@@ -150,7 +162,7 @@
     
     <div class="sidebar-item">
       <div class="effect effect-right_to_left">
-        <img class="effect-img" src="/images/Avatar.jpg" alt="img" />
+        <img class="effect-img" src="/assets/image/Avatar.jpg" alt="img" />
         <div class="effect-info">
           人类世界<br/>
 真是<br/>
@@ -193,8 +205,7 @@ QAQ<br/>
     </nav>
     <div class="sidebar-item">
       
-      <div>
-        <style>
+      <style>
   #sidebar-search-input {
     background: none;
     border: none;
@@ -214,7 +225,7 @@ QAQ<br/>
   id="sidebar-search-results-container"
 ></ol>
 <script
-  src='https://cdn.jsdelivr.net/npm/simple-jekyll-search/dest/simple-jekyll-search.min.js'
+  src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.7/dest/simple-jekyll-search.min.js'
   async='async'
   onload='
     SimpleJekyllSearch({
@@ -227,7 +238,16 @@ QAQ<br/>
     })'
 ></script>
 
-      </div>
+      
+      
+      <style>
+  #toc {
+    overflow: auto auto;
+    max-height: 50vh;
+  }
+</style>
+
+      
       
       
       <script defer="defer" src="https://cdn.jsdelivr.net/gh/poole/lanyon@v1.1.0/public/js/script.min.js"></script>
@@ -274,22 +294,6 @@ QAQ<br/>
 </style>
 
       
-      <style>
-  #toc {
-    overflow: auto auto;
-    max-height:50vh;
-  }
-</style>
-<aside id="toc">
-  目录
-</aside>
-<script
-  defer='defer'
-  src='https://cdn.jsdelivr.net/npm/html-contents/html-contents.min.js'
-  onload="htmlContents('#toc', {listType: 'o', filter: function(arr) {return !arr.matches('.masthead-title')}})"
-></script>
-
-      
       <div>
   <i class="fas fa-cog fa-spin fa-fw"></i>
   <span id="run_time_day">
@@ -305,29 +309,34 @@ QAQ<br/>
     <i class="fas fa-spinner fa-pulse"></i>
   </span>秒
   <script>
-    setInterval(function (BirthDay) {
+    setInterval(function (d,h,m,s,b) {
       function setzero(i) {
-        if (i < 10) return "0" + i;
-        return i;
+        return i < 10 ? "0" + i : i;
       }
-      BirthDay = new Date(BirthDay);
-      today = new Date();
-      timeold = (today.getTime() - BirthDay.getTime());
-      sectimeold = timeold / 1000;
-      secondsold = Math.floor(sectimeold);
-      msPerDay = 24 * 60 * 60 * 1000;
-      e_daysold = timeold / msPerDay;
-      daysold = Math.floor(e_daysold);
-      e_hrsold = (e_daysold - daysold) * 24;
-      hrsold = Math.floor(e_hrsold);
-      e_minsold = (e_hrsold - hrsold) * 60;
-      minsold = Math.floor((e_hrsold - hrsold) * 60);
-      seconds = Math.floor((e_minsold - minsold) * 60);
-      document.getElementById("run_time_day").innerHTML = daysold;
-      document.getElementById("run_time_hour").innerHTML = setzero(hrsold);
-      document.getElementById("run_time_minute").innerHTML = setzero(minsold);
-      document.getElementById("run_time_second").innerHTML = setzero(seconds);
-    }, 1000, "4/1/2020 12:00:00") // 这是我第一篇CSDN博客的时间
+      let BirthDay = new Date(b);
+      let today = new Date();
+      let timeold = (today.getTime() - BirthDay.getTime());
+      let sectimeold = timeold / 1000;
+      let secondsold = Math.floor(sectimeold);
+      let msPerDay = 24 * 60 * 60 * 1000;
+      let e_daysold = timeold / msPerDay;
+      let daysold = Math.floor(e_daysold);
+      let e_hrsold = (e_daysold - daysold) * 24;
+      let hrsold = Math.floor(e_hrsold);
+      let e_minsold = (e_hrsold - hrsold) * 60;
+      let minsold = Math.floor((e_hrsold - hrsold) * 60);
+      let seconds = Math.floor((e_minsold - minsold) * 60);
+      d.textContent = daysold;
+      h.textContent = setzero(hrsold);
+      m.textContent = setzero(minsold);
+      s.textContent = setzero(seconds);
+    },
+    1000,
+    document.getElementById("run_time_day"),
+    document.getElementById("run_time_hour"),
+    document.getElementById("run_time_minute"),
+    document.getElementById("run_time_second"),
+    "04/01/2020 12:00:00")// 这是我第一篇博客的时间
   </script>
 </div>
 
@@ -352,15 +361,9 @@ QAQ<br/>
     </span>人
   </div>
   <script
-    src='https://cdn.jsdelivr.net/npm/busuanzi'
+    src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0'
     async='async'
   ></script>
-</div>
-
-      
-      <div>
-  <i class="fas fa-copyright fa-fw"></i>
-  acemyzoe
 </div>
 
       
@@ -372,6 +375,12 @@ QAQ<br/>
 </div>
 
       
+      <div>
+  <i class="fas fa-copyright fa-fw"></i>
+  acemyzoe
+</div>
+
+      
       
     </div>
   </div>
@@ -380,7 +389,7 @@ QAQ<br/>
   <div class="wrap">
     <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/combine/npm/reveal.js/css/reveal.min.css,npm/reveal.js/css/theme/serif.min.css"
+  href="https://cdn.jsdelivr.net/combine/npm/reveal.js@4.0.0/dist/reveal.min.css,npm/reveal.js@4.0.0/dist/theme/serif.min.css"
 />
 <style>
   .sidebar {
@@ -389,34 +398,29 @@ QAQ<br/>
   .reveal .slides {
     text-align: left;
   }
+  .reveal a {
+    color: #268BD2;
+  }
 </style>
 <script
   defer="defer"
-  src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.min.js"
+  src="https://cdn.jsdelivr.net/combine/npm/reveal.js@4.0.0/dist/reveal.min.js,npm/reveal.js@4.0.0/plugin/markdown/markdown.js"
   onload="
   document.getElementsByClassName('wrap')[0].classList.add('reveal');
-  let path = 'https:\/\/cdn.jsdelivr.net/npm/reveal.js/';
   Reveal.initialize({
     height: '100%',
     hash: true,
     mouseWheel: true,
     navigationMode: 'linear',
-    parallaxBackgroundImage: 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAD8D+JaQAA3AA/uVqAAA=',//这是一张纯白图
-    dependencies: [
-        { src: path+'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: path+'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: path+'plugin/highlight/highlight.js', async: true },
-        { src: path+'plugin/zoom-js/zoom.js', async: true },
-        { src: path+'plugin/notes/notes.js', async: true },
-        { src: path+'plugin/math/math.js', async: true }
-    ]
-    });
-  "></script>
+    plugins: [ RevealMarkdown ]
+  });
+"></script>
 
 <div class="slides">
   <section
     data-markdown data-separator='&lt;!-- slide --&gt;'
      data-separator-vertical='&lt;!-- slide vertical=true --&gt;'
+     data-background-color='White'
      >
     <textarea data-template># 再一次
 
@@ -426,15 +430,16 @@ QAQ<br/>
 
 ## 自我介绍
 
-- Name: Mr.Guo
-- Address:  SZ
-- Site: **<https://acemyzoe.github.io>**
+- Name : Guo Jun
+- Address :  ShenZhen , China
+- Site : **<https://acemyzoe.github.io>**
 
 <!-- slide vertical=true -->
 
-- E-mail:
+- E-mail : 
+  - **[ustbguojun@163.com](mailto:ustbguojun@163.com)**
   - **[acemyzoe@outlook.com](mailto:acemyzoe@outlook.com)**
-- QQ: 775051709
+- QQ : 775051709
 
 <!-- slide -->
 
@@ -442,7 +447,12 @@ QAQ<br/>
 
 <!-- slide vertical=true -->
 
-- Automation，USTB(2014-2018)
+**School of Automation, University of Science and Technology Beijing, September 2014-July 2018**
+
+- Bachelor of Automatic Chemistry
+- Automatic control principle
+- Embedded systems and robots
+- artificial intelligence
 
 <!-- slide -->
 
@@ -450,11 +460,9 @@ QAQ<br/>
 
 <!-- slide vertical=true -->
 
-- 身为Automan，进可干硬件，组电脑、调板子，玩ROS、造机器人。
+- 身为Automan，掌握了自动控制、计算机软硬件、人工智能和机器人领域相关知识。
 
-  退可干程序员，搞AI、ML，调参数、搬轮子、逛GH。
-
-- 典型射手座男生，花心:见一个爱一个的技术激情，多变:三分钟的学习热度。（Ctrl+D就完事了）
+- 典型射手座男生，花心:见一个爱一个的技术激情，多变:三分钟的学习热度。(泛而不精)
 
 <!-- slide vertical=true -->
 
@@ -469,12 +477,18 @@ QAQ<br/>
 
 <!-- slide -->
 
+## 我的一些项目成果
+
+- **<https://github.com/Acemyzoe>**
+
 ## 我的一些思考
 
 - 人类世界真是太麻烦了U-U
+- TBD
 
 <!-- slide vertical=true -->
-</textarea>
+
+### [Return : once again](https://acemyzoe.github.io)</textarea>
   </section>
 </div>
   </div>
