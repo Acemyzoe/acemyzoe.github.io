@@ -7,7 +7,7 @@
 ## 自我介绍
 
 - Name : Guo Jun
-- Birth ：1995.12.08
+- Birth : 1995.12.08
 - Address :  ShenZhen , China
 - Site : **<https://acemyzoe.github.io>**
 
