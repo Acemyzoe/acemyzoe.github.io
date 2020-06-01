@@ -2,6 +2,24 @@
 [
   
     {
+      "title"    : "",
+      "category" : "",
+      "tags"     : "",
+      "date"     : "2020-06-01 16:47:08 +0800",
+      
+      "url"      : "/_posts/2020-06-01-2020-06-01-%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E6%96%B9%E5%90%91/"
+    } ,
+  
+    {
+      "title"    : "基础知识体系及结构",
+      "category" : "",
+      "tags"     : "studypath",
+      "date"     : "2020-06-01 00:00:00 +0800",
+      
+      "url"      : "/_posts/2020-06-01-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E5%8F%8A%E7%BB%93%E6%9E%84/"
+    } ,
+  
+    {
       "title"    : "Crying",
       "category" : "",
       "tags"     : "wiki",
@@ -25,7 +43,7 @@
       "tags"     : "tensorflow/keras",
       "date"     : "2020-05-21 00:00:00 +0800",
       
-      "url"      : "/_posts/2020-05-21-tensorflowkeras/"
+      "url"      : "/_posts/2020-05-21-tensorflow(keras)/"
     } ,
   
     {

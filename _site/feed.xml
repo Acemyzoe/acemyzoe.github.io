@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-05-28T15:39:30+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-06-01T16:47:08+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
 真是&lt;br/&gt;
 太有趣了&lt;br/&gt;
 QAQ&lt;br/&gt;
@@ -9,7 +9,84 @@ QAQ&lt;br/&gt;
   &lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;
 &lt;/a&gt;
 &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=100% height=52 src=&quot;//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;
-</subtitle><entry><title type="html">Crying</title><link href="https://acemyzoe.github.io/_posts/2020-05-26-/" rel="alternate" type="text/html" title="Crying" /><published>2020-05-26T00:00:00+08:00</published><updated>2020-05-26T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-26-/">&lt;h1 id=&quot;太多东西要整理消化了&quot;&gt;太多东西要整理消化了&lt;/h1&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">太多东西要整理消化了</summary></entry><entry><title type="html">Keras</title><link href="https://acemyzoe.github.io/_posts/2020-05-25-keras/" rel="alternate" type="text/html" title="Keras" /><published>2020-05-25T00:00:00+08:00</published><updated>2020-05-25T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/keras</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-25-keras/">&lt;p&gt;[TOC]&lt;/p&gt;
+</subtitle><entry><title type="html"></title><link href="https://acemyzoe.github.io/_posts/2020-06-01-2020-06-01-%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E6%96%B9%E5%90%91/" rel="alternate" type="text/html" title="" /><published>2020-06-01T16:47:08+08:00</published><updated>2020-06-01T16:47:08+08:00</updated><id>https://acemyzoe.github.io/_posts/2020-06-01-%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E6%96%B9%E5%90%91</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-06-01-2020-06-01-%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E6%96%B9%E5%90%91/">&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;
+    &lt;p&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;路由协议的优先级（Preference，即&lt;strong&gt;管理距离Administrative Distance&lt;/strong&gt;）一般为一个0到255之间的数字，数字越大则优先级越低。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;
+    &lt;p&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;#### Openstack&lt;/p&gt;
+
+    &lt;p&gt;openstack是一个搭建云平台的一个解决方案，可以搭建公有云，私有云，企业云。&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;包括：7个核心组件：Compute(计算)(代号为“Nova”)，Object Storage(对象存储)(代号为“Swift”)，Identity(身份认证)(代号为“Keystone”)，Dashboard(仪表盘)(代号为“Horizon”)， Block Storage(块存储)(代号为“Cinder”)， Network(网络) (代号为“Quantum”)和 Image Service(镜像服务) (代号为“Glance”)。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;
+    &lt;p&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;#### Hadoop&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;HDFS（Hadoop Distributed File System）是基于流数据模式访问和处理超大文件的需求而开发的，具有高容错、高可靠性、高可扩展性、高吞吐率等特征，适合的读写任务是一次写入，多次读取。&lt;/p&gt;
+
+      &lt;p&gt;MapReduce 是 Hadoop 的核心计算框架，是用于大规模数据集（大于1TB）并行运算的编程模型，主要包括Map(映射）和Reduce（规约）两部分。当启动一个Mapreduce任务时，Map端会读取HDFS上的数据，将数据映射成所需要的键值对类型并传到Reduce端。Reduce端接收Map端传过来的键值对类型的数据，根据不同键进行分组，对每一组键相同的数据进行处理，得到新的键值对并输出到HDFS，这就是MapReduce的核心思想。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;
+    &lt;p&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;#### 大数据&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;大数据的核心：整理，分析，预测，控制&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;
+    &lt;p&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;#### 5G&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;5G传输速率峰值&lt;/strong&gt;&lt;/p&gt;
+
+      &lt;p&gt;该标准要求单个5G基站至少能够支持20Gbps的下行链路以及10Gbps的上行链路，这是单个基站可以处理的总流量。理论上，如果固定的无线宽带用户使用专用的点到点连接，那么他们可以获得接近5G的速度。实际上，基站覆盖范围内的用户将分配使用20Gbps以及10Gbps这一数据吞吐量。&lt;/p&gt;
+
+      &lt;p&gt;&lt;strong&gt;5G连接密度&lt;/strong&gt;&lt;/p&gt;
+
+      &lt;p&gt;5G必须支持每平方公里内至少100万台连接设备。这听起来很夸张，但是这更像是为物联网准备的。当所有的交通灯、停车位、以及车辆都支持5G时，将会达到这一惊人的连接密度。&lt;/p&gt;
+
+      &lt;p&gt;&lt;strong&gt;5G移动性&lt;/strong&gt;&lt;/p&gt;
+
+      &lt;p&gt;与LTE和LTE-Advanced类似，5G标准要求基站能够支持速度高达500km/h的设备（比如高铁）连接。此外，该草案还讨论了不同物理位置对基站设置的不同需求。比如，室内以及人口面密度较高的城市中心则不需要担心高铁能否连接，但是农村或者郊区则需要支考虑到对行人、车辆以及高速列车的支持。&lt;/p&gt;
+
+      &lt;p&gt;&lt;strong&gt;5G能效&lt;/strong&gt;&lt;/p&gt;
+
+      &lt;p&gt;5G规范要求在负载下保持高能效，并且在空闲的状态下能够迅速切换成低能耗模式。为了实现这一点，5G无线电必须在10ms内从全速模式切换到节能模式。&lt;/p&gt;
+
+      &lt;p&gt;&lt;strong&gt;5G延迟&lt;/strong&gt;&lt;/p&gt;
+
+      &lt;p&gt;在理想情况下，5G网络的延迟最大不能超过4ms，而LTE网络对延迟的要求则是20ms。不过，要想实现超稳定低延迟通信（URLLC），5G的延迟必须低于1ms。&lt;/p&gt;
+
+      &lt;p&gt;&lt;strong&gt;5G频谱效率&lt;/strong&gt;&lt;/p&gt;
+
+      &lt;p&gt;从草案的规定来看，5G的峰值频谱效率（每赫兹频谱传输的比特）与LTE-advanced非常接近，都是上行30bits/Hz、下行15bits/Hz，这相当于8x4 MIMO。&lt;/p&gt;
+
+      &lt;p&gt;&lt;strong&gt;5G实际传输速率&lt;/strong&gt;&lt;/p&gt;
+
+      &lt;p&gt;最后，不管单个5G基站的峰值容量是多少，该草案要求每个用户的下载和上传速度必须达到100Mbps以及50Mbps。这些听起来和LTE-Advanced很接近，但是5G能够让你一直保持100Mbps的下载速度，而不是靠运气。&lt;/p&gt;
+
+      &lt;p&gt;除此之外，该草案还要求增强5G的稳定性和可靠性，例如数据包必须在1ms内到达基站，并且切换5G基站的中断时间应该为0ms，也就是说切换过程是瞬时的，中间不允许有数据丢失。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;
+    &lt;p&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;#### 云服务&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;3形式
+IaaS：基础设施即服务
+IaaS(Infrastructure-as-a- Service)：基础设施即服务。消费者通过Internet可以从完善的计算机基础设施获得服务。
+PaaS：平台即服务
+PaaS(Platform-as-a- Service)：平台即服务。PaaS实际上是指将软件研发的平台作为一种服务，以SaaS的模式提交给用户。因此，PaaS也是&lt;a href=&quot;https://www.baidu.com/s?wd=SaaS模式&amp;amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;amp;rsv_dl=gh_pc_zhidao&quot;&gt;SaaS模式&lt;/a&gt;的一种应用。但是，PaaS的出现可以加快SaaS的发展，尤其是加快SaaS应用的开发速度。
+SaaS：&lt;a href=&quot;https://www.baidu.com/s?wd=软件即服务&amp;amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;amp;rsv_dl=gh_pc_zhidao&quot;&gt;软件即服务&lt;/a&gt;
+SaaS(Software-as-a- Service)：&lt;a href=&quot;https://www.baidu.com/s?wd=软件即服务&amp;amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;amp;rsv_dl=gh_pc_zhidao&quot;&gt;软件即服务&lt;/a&gt;。它是一种通过Internet提供软件的模式，用户无需购买软件，而是向提供商租用基于Web的软件，来管理企业经营活动。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author></entry><entry><title type="html">基础知识体系及结构</title><link href="https://acemyzoe.github.io/_posts/2020-06-01-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E5%8F%8A%E7%BB%93%E6%9E%84/" rel="alternate" type="text/html" title="基础知识体系及结构" /><published>2020-06-01T00:00:00+08:00</published><updated>2020-06-01T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E5%8F%8A%E7%BB%93%E6%9E%84</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-06-01-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E5%8F%8A%E7%BB%93%E6%9E%84/"></content><author><name></name></author><category term="studypath" /><summary type="html"></summary></entry><entry><title type="html">Crying</title><link href="https://acemyzoe.github.io/_posts/2020-05-26-/" rel="alternate" type="text/html" title="Crying" /><published>2020-05-26T00:00:00+08:00</published><updated>2020-05-26T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-26-/">&lt;h1 id=&quot;太多东西要整理消化了&quot;&gt;太多东西要整理消化了&lt;/h1&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">太多东西要整理消化了</summary></entry><entry><title type="html">Keras</title><link href="https://acemyzoe.github.io/_posts/2020-05-25-keras/" rel="alternate" type="text/html" title="Keras" /><published>2020-05-25T00:00:00+08:00</published><updated>2020-05-25T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/keras</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-25-keras/">&lt;p&gt;[TOC]&lt;/p&gt;
 
 &lt;h1 id=&quot;from-tensorflow-import-keras&quot;&gt;from tensorflow import keras&lt;/h1&gt;
 
@@ -123,7 +200,7 @@ validation_ds = image_dataset_from_directory(
 model = keras.applications.Xception(weights=None, input_shape=(256, 256, 3), classes=10)
 model.compile(optimizer='rmsprop', loss='categorical_crossentropy')
 model.fit(train_ds, epochs=10, validation_data=validation_ds)
-&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="tensorflow/keras" /><summary type="html">[TOC]</summary></entry><entry><title type="html">Tensorflow/keras</title><link href="https://acemyzoe.github.io/_posts/2020-05-21-tensorflowkeras/" rel="alternate" type="text/html" title="Tensorflow/keras" /><published>2020-05-21T00:00:00+08:00</published><updated>2020-05-21T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/%20tensorflowkeras</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-21-tensorflowkeras/">&lt;h1 id=&quot;占坑&quot;&gt;占坑&lt;/h1&gt;</content><author><name></name></author><category term="tensorflow/keras" /><summary type="html">占坑</summary></entry><entry><title type="html">Machine Learning</title><link href="https://acemyzoe.github.io/_posts/2020-05-20-Machine-Learning/" rel="alternate" type="text/html" title="Machine Learning" /><published>2020-05-20T00:00:00+08:00</published><updated>2020-05-20T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/%20Machine%20Learning</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-20-Machine-Learning/">&lt;h1 id=&quot;占坑&quot;&gt;占坑&lt;/h1&gt;</content><author><name></name></author><category term="ML" /><summary type="html">占坑</summary></entry><entry><title type="html">VsCode</title><link href="https://acemyzoe.github.io/_posts/2020-05-13-VsCode/" rel="alternate" type="text/html" title="VsCode" /><published>2020-05-13T00:00:00+08:00</published><updated>2020-05-13T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/VsCode</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-13-VsCode/">&lt;h1 id=&quot;vscode&quot;&gt;VsCode&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="tensorflow/keras" /><summary type="html">[TOC]</summary></entry><entry><title type="html">Tensorflow/keras</title><link href="https://acemyzoe.github.io/_posts/2020-05-21-tensorflow(keras)/" rel="alternate" type="text/html" title="Tensorflow/keras" /><published>2020-05-21T00:00:00+08:00</published><updated>2020-05-21T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/%20tensorflow(keras)</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-21-tensorflow(keras)/">&lt;h1 id=&quot;占坑&quot;&gt;占坑&lt;/h1&gt;</content><author><name></name></author><category term="tensorflow/keras" /><summary type="html">占坑</summary></entry><entry><title type="html">Machine Learning</title><link href="https://acemyzoe.github.io/_posts/2020-05-20-Machine-Learning/" rel="alternate" type="text/html" title="Machine Learning" /><published>2020-05-20T00:00:00+08:00</published><updated>2020-05-20T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/%20Machine%20Learning</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-20-Machine-Learning/">&lt;h1 id=&quot;占坑&quot;&gt;占坑&lt;/h1&gt;</content><author><name></name></author><category term="ML" /><summary type="html">占坑</summary></entry><entry><title type="html">VsCode</title><link href="https://acemyzoe.github.io/_posts/2020-05-13-VsCode/" rel="alternate" type="text/html" title="VsCode" /><published>2020-05-13T00:00:00+08:00</published><updated>2020-05-13T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/VsCode</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-05-13-VsCode/">&lt;h1 id=&quot;vscode&quot;&gt;VsCode&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -352,157 +429,4 @@ scp -P 6001 -r root@host:&amp;lt;files&amp;gt; &amp;lt;files&amp;gt;
   &lt;p&gt;ssh -X 远程主机开启图形界面，yes。&lt;/p&gt;
 
   &lt;p&gt;ssh -X 远程docker，no。&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">SSH</summary></entry><entry><title type="html">Tmux</title><link href="https://acemyzoe.github.io/_posts/2020-04-28-Tmux/" rel="alternate" type="text/html" title="Tmux" /><published>2020-04-28T00:00:00+08:00</published><updated>2020-04-28T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/Tmux</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-04-28-Tmux/">&lt;h1 id=&quot;tmux&quot;&gt;Tmux&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ruanyifeng.com/blog/2019/10/tmux.html&quot;&gt;了解更多&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;这里作wiki提醒自己。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;用途&lt;/strong&gt; ：SSH 远程登录时只有命令行终端，tumx 可以使会话与窗口”解绑”，也可以分出多个窗口。&lt;/p&gt;
-
-&lt;p&gt;安装 ：&lt;code&gt;sudo apt-get install tmux&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;命令&lt;/strong&gt; ：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# 新建
-tmux new -s  &amp;lt;session-name&amp;gt;
-# 分离会话，进程仍在后台运行
-tmux detach   # 或者 Ctrl+b  d
-#接入会话
-tmux attach -t  &amp;lt;number / session-name&amp;gt;
-# 查看
-tmux ls
-# 杀死会话
-tmux kill-session -t  &amp;lt;number / session-name&amp;gt; # Ctrl+d 就完事了
-#切换会话
-tmux switch -t  &amp;lt;number / session-name&amp;gt;
-
-#划分窗格
-Ctrl+b %：划分左右两个窗格。
-Ctrl+b &quot; ：划分上下两个窗格。
-Ctrl+b &amp;lt;arrow key&amp;gt;：光标切换到其他窗格。&amp;lt;arrow key&amp;gt;是指向要切换到的窗格的方向键，比如切换到下方窗格，就按方向键↓。
-Ctrl+b {：当前窗格左移。
-Ctrl+b }：当前窗格右移。
-Ctrl+b Ctrl+o：当前窗格上移。
-Ctrl+b Alt+o：当前窗格下移。
-Ctrl+b z：当前窗格全屏显示，再使用一次会变回原来大小。
-Ctrl+b Ctrl+&amp;lt;arrow key&amp;gt;：按箭头方向调整窗格大小。
-Ctrl+b q：显示窗格编号。
-
-#窗口操作
-Ctrl+b c：创建一个新窗口，状态栏会显示多个窗口的信息。
-Ctrl+b p：切换到上一个窗口（按照状态栏上的顺序）。
-Ctrl+b n：切换到下一个窗口。
-Ctrl+b &amp;lt;number&amp;gt;：切换到指定编号的窗口，其中的&amp;lt;number&amp;gt;是状态栏上的窗口编号。
-Ctrl+b w：从列表中选择窗口。
-Ctrl+b ,：窗口重命名。
-&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">Tmux</summary></entry><entry><title type="html">从零开始的blog搭建之路</title><link href="https://acemyzoe.github.io/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/" rel="alternate" type="text/html" title="从零开始的blog搭建之路" /><published>2020-04-27T00:00:00+08:00</published><updated>2020-04-27T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/">&lt;p&gt;记录这次 blog 的搭建之路。&lt;/p&gt;
-
-&lt;p&gt;所用的 Markdown 编辑器 : &lt;a href=&quot;https://www.typora.io/&quot;&gt;typora&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;一些搭建博客的途径&quot;&gt;一些搭建博客的途径&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Github+jekyll&lt;/strong&gt; :&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;Github Pages和推荐的框架，blog 直接以 markdown 形式存放在项目里。&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;可以云端写作，直接生成页面部署上去。其他的框架都是本地写作，本地生成页面，感觉不太方便。&lt;/p&gt;
-
-      &lt;p&gt;&lt;a href=&quot;https://help.github.com/en/github/working-with-github-pages&quot;&gt;Github的文档&lt;/a&gt;&lt;/p&gt;
-
-      &lt;p&gt;&lt;a href=&quot;https://www.jekyll.com.cn/&quot;&gt;jekyll官网&lt;/a&gt;(挺多好看的主题)&lt;/p&gt;
-
-      &lt;ol&gt;
-        &lt;li&gt;&lt;a href=&quot;https://github.com/mzlogin/mzlogin.github.io&quot;&gt;theme&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;https://github.com/DONGChuan/Yummy-Jekyll&quot;&gt;theme&lt;/a&gt;  (这两个主题可以一试)&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;https://github.com/wu-kan/wu-kan.github.io&quot;&gt;theme&lt;/a&gt; (我fork的主题，后生可畏)&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;https://github.com/Drinkwang/drinkwang.github.io&quot;&gt;theme&lt;/a&gt; (馋那个看板娘)&lt;/li&gt;
-      &lt;/ol&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Github+issues&lt;/strong&gt; :&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;基于 Github 的问题系统，用 node.js 搭建的 blog 。&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;整个页面简洁，以后可以尝试下，但写作是直接在 issues 上提交 blog ，不知道以后 blog 怎么迁移出来。&lt;/p&gt;
-
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&quot;http://martin-liu.github.io/#/&quot;&gt;theme&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;https://github.com/Drinkwang/drinkwang.github.io&quot;&gt;theme&lt;/a&gt;(要试一试的，馋看板娘)&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://gridea.dev/&quot;&gt;&lt;strong&gt;Gridea&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;一个静态博客写作客户端，markdown、本地写作、一键部署到Github 或自己的服务器、主题轻松自定义。以后可以尝试下。&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://typecho.org/&quot;&gt;&lt;strong&gt;Typecho&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;官方文档有点恶心，没弄懂，以后再说。&lt;/p&gt;
-
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&quot;https://github.com/Dreamer-Paul/Single&quot;&gt;theme&lt;/a&gt; (真的挺好看，fantasy的主题也很梦幻，还有夜间模式，馋看板娘) (&lt;a href=&quot;https://paul.ren/&quot;&gt;更多)&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://tiddlywiki.com/&quot;&gt;&lt;strong&gt;TiddkyWiki&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;非线性个人笔记本（没弄明白，以后有空再研究下）&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://blog.getpelican.com/&quot;&gt;&lt;strong&gt;Pelican&lt;/strong&gt;&lt;/a&gt; : python 写的静态站点生成器&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://hexo.io/zh-cn/&quot;&gt;&lt;strong&gt;Hexo&lt;/strong&gt;&lt;/a&gt; : node.js 写的博客框架&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/theme-next/hexo-theme-next&quot;&gt;theme&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://gohugo.io/&quot;&gt;&lt;strong&gt;Hugo&lt;/strong&gt;&lt;/a&gt; : 开源静态站点生成器，自称速度最快&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.netlify.com/&quot;&gt;&lt;strong&gt;Netlify&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;优秀的静态博客托管平台-自动编译部署生成 Web 网站可绑域名支持 SSL。Netlify 支持自动编译Jekyll、Hexo、Hugo等常见的静态博客程序。可以一试。&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;一些插件&quot;&gt;一些插件&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://gitalk.github.io/&quot;&gt;Gittalk&lt;/a&gt;&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;评论插件(只能Github账户登陆评论，路走窄了yo)&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://valine.js.org/&quot;&gt;Valine&lt;/a&gt;&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;一款快速、简洁且高效的无后端评论系统。(推荐使用）&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="just for fun" /><summary type="html">记录这次 blog 的搭建之路。</summary></entry></feed>
+&lt;/blockquote&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">SSH</summary></entry></feed>
