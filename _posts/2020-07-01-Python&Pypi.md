@@ -20,9 +20,8 @@ tags:
 
 # 注释规范
 
-- [ ] 获取注释 `function().__doc__`
-
-      [Google 开源项目风格指南(中文版)] (https://zh-google-styleguide.readthedocs.io/en/latest/)
+- [ ] 获取注释 `function().__doc__`  
+  [Google 开源项目风格指南 (中文版)](https://zh-google-styleguide.readthedocs.io/en/latest/)
 
 
 
@@ -157,7 +156,7 @@ tags:
 
 # 补零
 
-- [ ] ```python
+  ```python
   n = "123"
   s = n.zfill(5)
   assert s == "00123"
@@ -168,7 +167,6 @@ tags:
   assert s == "00123"
   ```
 
-  
 
 # Json
 
