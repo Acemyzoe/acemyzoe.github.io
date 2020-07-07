@@ -22,7 +22,7 @@ tags:
 
 - [ ] 获取注释 `function().__doc__`
 
-  [Google 开源项目风格指南 (中文版)](https://zh-google-styleguide.readthedocs.io/en/latest/)
+      [Google 开源项目风格指南 (中文版)](https://zh-google-styleguide.readthedocs.io/en/latest/)
 
 
 
@@ -167,7 +167,6 @@ tags:
   s = "%05d" % n
   s = "{:05d}".format(n)
   assert s == "00123"
-  
   ```
 
   
