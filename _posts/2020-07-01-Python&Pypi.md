@@ -22,7 +22,7 @@ tags:
 
 - [ ] 获取注释 `function().__doc__`
 
-      [Google 开源项目风格指南 (中文版)](https://zh-google-styleguide.readthedocs.io/en/latest/)
+      [Google 开源项目风格指南(中文版)] (https://zh-google-styleguide.readthedocs.io/en/latest/)
 
 
 
@@ -158,11 +158,10 @@ tags:
 # 补零
 
 - [ ] ```python
-  # 字符串.zfill()
   n = "123"
   s = n.zfill(5)
   assert s == "00123"
-  # 数字
+
   n = 123
   s = "%05d" % n
   s = "{:05d}".format(n)
