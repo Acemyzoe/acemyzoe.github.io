@@ -89,9 +89,10 @@ tags:
   c8=crcmod.predefined.mkCrcFun('CRC-8')
   hex(c8("Test".encode()))
   #CRC16
-  c16=crcmod.predefined.mkCrcFun('CRC-16')
+  c16=crcmod.predefined.mkCrcFun('CRC-16') #'crc-16'默认为IBM
   crc16=crcmod.mkCrcFun(0x18005,rev=True,initCrc=0x0000,xorOut=0x0000)
   crc16modbus=crcmod.mkCrcFun(0x18005,rev=True,initCrc=0xFFFF,xorOut=0x0000)
+  crc16m = crcmod.predefined.mkCrcFun('modbus') 
   print(hex(crc16(b"Test")))
   
   # 自定义CRC算法的功能crcmod.mkCrcFun(...) ：CRC16-MODBUS
@@ -109,6 +110,22 @@ tags:
       print('增加Modbus CRC16校验：>>>',read)
       return read
    
+  #modbus rtu实现
+  def calc_crc(data): #modbus rtu
+      crc = 0xFFFF
+      for pos in data:
+          crc ^= pos 
+          for i in range(8):
+              if ((crc & 1) != 0):
+                  crc >>= 1
+                  crc ^= 0xA001
+              else:
+                  crc >>= 1
+      return crc
+  a="fc5a"
+  data = bytearray.fromhex(a)
+  print("crc校验modbus：",hex(calc_crc(data)),"%04X"%(calc_crc(data))) # 0x6d36 6D36
+  
   if __name__ == '__main__':
       crc16Add("01 03 08 00 01 00 01 00 01 00 01")
       # CRC16校验: 28 D7
