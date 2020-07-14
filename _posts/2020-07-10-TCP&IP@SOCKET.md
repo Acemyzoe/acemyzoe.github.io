@@ -1,5 +1,5 @@
 ---
-title: TCP/IP-Socket
+title: TCP/IP-Socket、http、websockets
 tags: 通信
 ---
 
@@ -127,7 +127,7 @@ if __name__ == "__main__":
     serverplus()
 ```
 
-## 多线程
+## 多线程->全双工
 
 将输入与接收分开来，将接收的函数（或方法）从主线程里抓出来丢到另一个线程里单独运行。
 
@@ -177,4 +177,26 @@ if __name__ == "__main__":
     server()
 	#client()
 ```
+
+# WebSocket
+
+- websocket&socket&http
+
+> WebSocket基于 TCP 协议之上的「长连接」协议，在网络七层协议上的层级等同于Http，属应用层协议，是在单个 **TCP 连接**上进行**全双工通讯**的协议。WebSocket常见于**客户端-服务端全双工**的场景，比如聊天，客户端可以发送消息给服务端，同时服务端也可以主动发送消息给客户端。
+>
+> HTTP 基于 TCP 协议之上的「短连接」应用层协议。Http是单向的，只能客户端发送请求，服务端被动接收，服务端没有主动发起请求的能力，只能维持Http长链接，或者客户端定时轮询服务端，获取最新的信息。
+>
+> 对于 WebSocket 来说，它必须依赖HTTP 协议进行一次握手，握手成功后，数据就直接从 TCP 通道传输，与 HTTP 无关了。
+>
+> Socket属于处于七层协议中的第四层，Socket是操作系统对TCP、UDP的封装，便于使用 TCP/UDP 的接口规范、API接口。
+
+- python `pip install websockets`  [docs](https://websockets.readthedocs.io/en/stable/intro.html)
+
+- 异步I/O ` pip install asyncio ` [docs](https://docs.python.org/zh-cn/3/library/asyncio-task.html)
+
+# c# socket
+
+# System.Net.HttpListener
+
+# More
 
