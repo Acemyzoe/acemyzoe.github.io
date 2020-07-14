@@ -111,4 +111,68 @@ b'\x02'(bytes)
 3. 为提高存储效率，可以通过将data2进一步转换为16进制表示形式data3。
 
 4. 将data3存入硬件。
+```c#
+////byte[]初始化赋值
+byte[] myByteArray = new byte[10]; //创建一个长度为10的byte数组，每个byte的值为0
+byte[] myByteArray = Enumerable.Repeat((byte)0x08, 10).ToArray(); //创建一个长度为10的byte数组，每个byte的值为0x08
+byte[] bytes = new byte[] { 0xfc, 0x5a }; //直接赋值
+////ascii编码
+string str = Encoding.ASCII.GetString(bytes);
+Console.WriteLine(str); // > ?Z
+////byte[] -> string
+string hexs = BitConverter.ToString(bytes);
+hexs=hexs.Replace("-", "");
+Console.WriteLine(hexs); // > FC5A
+////进制转换
+int d = 10;
+Console.WriteLine("十进制转二进制字符串:{0}",Convert.ToString(d, 2)); // > 1010
+Console.WriteLine("十进制转十六进制字符串:{0}", Convert.ToString(d, 16)); // > a
+string bin = "1010";
+Console.WriteLine("二进制字符串转十进制数:{0}", Convert.ToInt32(bin, 2)); // > 10
+Console.WriteLine(string.Format("二进制字符串转十六进制数:{0:x}", Convert.ToInt32(bin, 2))); // > a
+Console.WriteLine("十六进制转二进制字符串:{0}", Convert.ToString(0xa, 2)); // > 1010
+Console.WriteLine("十六进制转十进制数:{0}", Convert.ToString(0xa, 10)); // > 10
+////string -> bytes[]
+// https://stackoverflow.com/questions/321370/how-can-i-convert-a-hex-string-to-a-byte-array
+//string hex = "02 01 00 1f 10 11 11 11 01 2c 01 2c 00 00 00 00 00 00 00 02 01 00 37 03 e8 03 e8 64 05 03 e8 03 e8 00 00 11 11 00 01";
+string hex = "0201001F10111111006E00C8000000000000000201003703E803E8640503E803E8000011110001";
+//hex = hex.Replace(" ", "");
+//way1
+static byte[] StringToByteArray(string hex)
+{
+    return Enumerable.Range(0, hex.Length)
+                        .Where(x => x % 2 == 0)
+                        .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
+                        .ToArray();
+}
+byte[] cmd1 = StringToByteArray(hex); //LINQ示例
+//way2
+static byte[] StringToByteArray2(string hex)
+{
+    int NumberChars = hex.Length;
+    byte[] bytes = new byte[NumberChars / 2];
+    for (int i = 0; i < NumberChars; i += 2)
+        bytes[i / 2] = Convert.ToByte(hex.Substring(i, 2), 16);
+    return bytes;
+}
+byte[] cmd2 = StringToByteArray2(hex); //
+//way3
+static byte[] StrToByteArray3(string str)
+{
+    Dictionary<string, byte> hexindex = new Dictionary<string, byte>();
+    for (int i = 0; i <= 255; i++)
+        hexindex.Add(i.ToString("X2"), (byte)i);
 
+    List<byte> hexres = new List<byte>();
+    for (int i = 0; i < str.Length; i += 2)
+        hexres.Add(hexindex[str.Substring(i, 2)]);
+
+    return hexres.ToArray();
+}
+byte[] cmd3 = StrToByteArray3(hex);
+//显示
+Console.WriteLine("转成十六进制字符串：");
+Console.WriteLine(BitConverter.ToString(cmd1));
+Console.WriteLine(BitConverter.ToString(cmd2));
+Console.WriteLine(BitConverter.ToString(cmd3));
+```
