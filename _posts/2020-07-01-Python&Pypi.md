@@ -213,3 +213,11 @@ with open(filename,'r',encoding='utf-8') as file:
 
 ```
 
+# str() & repr() ->字符串
+```python
+print(str('now')) # > now
+# 调用对象.__str__(),只输出实例内容
+print(repr('now')) # > 'now'
+# 调用对象的__repr__()，输出实例内容和实例数据类型
+
+```
