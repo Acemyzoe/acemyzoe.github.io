@@ -196,7 +196,138 @@ if __name__ == "__main__":
 
 # c# socket
 
+```c#
+ ///字符串处理
+ string s = "fc2a0001000201010101000102009a4887009a4888020203e83c0000000000000000000000C6875a";
+ string s1 = string.Join(" ", System.Text.RegularExpressions.Regex.Split(s, "(?<=\\G.{2})(?!$)"));
+ string s2 = System.Text.RegularExpressions.Regex.Replace(s, @".{2}", "$0 ");
+ string s3=s;
+ for (int i = 2; i < s3.Length; i += 3)
+ {
+ s3 = s3.Insert(i, " ");
+ }
+```
+
+**服务端**
+
+```c#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Net;
+using System.Net.Sockets; 
+namespace server
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+             int port = 2000;
+            string host = "127.0.0.1";
+ 
+       	 ///创建终结点（EndPoint）
+            IPAddress ip = IPAddress.Parse(host);//把ip地址字符串转换为IPAddress类型的实例
+            IPEndPoint ipe = new IPEndPoint(ip, port);//用指定的端口和ip初始化IPEndPoint类的新实例
+ 
+         ///创建socket并开始监听
+            Socket s　=　new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            //创建一个socket对像，如果用udp协议，则要用SocketType.Dgram类型的套接字
+         	//Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+            s.Bind(ipe);//绑定EndPoint对像（2000端口和ip地址）
+            s.Listen(0);//开始监听
+            Console.WriteLine("等待客户端连接");
+ 
+         ///接受到client连接，为此连接建立新的socket，并接受信息
+            Socket temp = s.Accept();//为新建连接创建新的socket
+            Console.WriteLine("建立连接");
+            string recvStr = "";
+            byte[] recvBytes = new byte[1024];
+            int bytes;
+            bytes = temp.Receive(recvBytes, recvBytes.Length, 0);//从客户端接受信息
+            recvStr += Encoding.ASCII.GetString(recvBytes, 0, bytes);
+ 
+         ///给client端返回信息
+            Console.WriteLine("server get message:{0}", recvStr);//把客户端传来的信息显示出来
+            string sendStr = "ok!Client send message successful!";
+            byte[] bs = Encoding.ASCII.GetBytes(sendStr);
+            temp.Send(bs, bs.Length, 0);//返回信息给客户端
+            temp.Close();
+            s.Close();
+            Console.ReadLine();
+        }
+    }
+}
+```
+
+**客户端**
+
+```c#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Net;
+using System.Net.Sockets;
+ 
+namespace Client
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                int port = 2000;
+                string host = "127.0.0.1";
+                ///创建终结点EndPoint
+                IPAddress ip = IPAddress.Parse(host);
+                //IPAddress ipp = new IPAddress("127.0.0.1");
+                IPEndPoint ipe = new IPEndPoint(ip, port);//把ip和端口转化为IPEndpoint实例
+ 
+                ///创建socket并连接到服务器
+                Socket c = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);//创建Socket
+                Console.WriteLine("Conneting…");
+                c.Connect(ipe);//连接到服务器
+ 
+                ///向服务器发送信息
+                string sendStr = "hello!This is a socket test";
+                byte[] bs = Encoding.ASCII.GetBytes(sendStr);//把字符串编码为字节
+                Console.WriteLine("Send Message");
+                c.Send(bs, bs.Length, 0);//发送信息
+ 
+                ///接受从服务器返回的信息
+                string recvStr = "";
+                byte[] recvBytes = new byte[1024];
+                int bytes;
+                bytes = c.Receive(recvBytes, recvBytes.Length, 0);//从服务器端接受返回信息
+                recvStr += Encoding.ASCII.GetString(recvBytes, 0, bytes);
+                Console.WriteLine("client get message:{0}", recvStr);//显示服务器返回信息
+                ///一定记着用完socket后要关闭
+                c.Close();
+            }
+            catch (ArgumentNullException e)
+            {
+                Console.WriteLine("argumentNullException: {0}", e);
+            }
+            catch (SocketException e)
+            {
+                Console.WriteLine("SocketException:{0}", e);
+            }
+            Console.WriteLine("Press Enter to Exit");
+            Console.ReadLine();
+        }
+    }
+}
+```
+
 # System.Net.HttpListener
 
+[microsoft](https://docs.microsoft.com/en-us/dotnet/api/system.net.httplistener?view=netcore-3.1)
+
 # More
+
+- QUIC :  **快速UDP网络连接**
 
