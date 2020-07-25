@@ -47,6 +47,7 @@
 - **C/C++**:Familiar&Learning
 - **Python**:Frequent&Learning
 - **.net/c#**:Beginner
+- **ROS**:Familiar&Learning
 - **Deep learning**:Familiar&Learning
   - **Tensorflow/keras**:Familiar&Learning
 - **SQL/pymysql**:Familiar&Learning
