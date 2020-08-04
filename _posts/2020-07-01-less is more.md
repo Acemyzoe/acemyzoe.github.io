@@ -1,6 +1,6 @@
 --- 
 title: 至简
-tags: less is more
+tags: less_is_more
 ---
 
 - [ ] **少目标**	一年内，只专注于一个经过筛选的中心目标。
