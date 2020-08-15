@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>python Interview | Acemyzoe</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="python Interview" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="python Interview" />
+<meta property="og:description" content="python Interview" />
+<link rel="canonical" href="https://acemyzoe.github.io/_posts/2020-08-01-python-interview/" />
+<meta property="og:url" content="https://acemyzoe.github.io/_posts/2020-08-01-python-interview/" />
+<meta property="og:site_name" content="Acemyzoe" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-01T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","url":"https://acemyzoe.github.io/_posts/2020-08-01-python-interview/","headline":"python Interview","dateModified":"2020-08-01T00:00:00+08:00","datePublished":"2020-08-01T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://acemyzoe.github.io/_posts/2020-08-01-python-interview/"},"description":"python Interview","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  
+  <meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1"
+/>
+<meta
+  http-equiv="content-type"
+  content="text/html; charset=utf-8"
+/>
+<link
+  rel="alternate"
+  href="/feed.xml"
+  title="RSS"
+  type="application/rss+xml"
+/>
+
+  
+  <link
+  rel="apple-touch-icon-precomposed"
+  href="/assets/image/Avatar.jpg"
+/>
+<link
+  rel="shortcut
+  icon"
+  href="/assets/image/Avatar.jpg"
+/>
+
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css"
+/>
+
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"
+/>
+
+  
+  <script
+  src='https://zz.bdstatic.com/linksubmit/push.js'
+  async="async"
+></script>
+
+  
+  <style>
+  .wrap {
+    transition-property: width,background-size,transform;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+    min-height: 100%;
+    display: inline-block;
+    background-size: 100% auto;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(/assets/image/background-wap.jpg);
+  }
+  @media (min-aspect-ratio: 2400/1850) {
+    .wrap {
+      background-image: url(/assets/image/background.jpg);
+    }
+  }
+  .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    width: calc(100% - 14rem);
+    background-size: calc(100% - 14rem) auto;
+    transform: translateX(14rem);
+  }
+  .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    transform: translateX(0);
+  }
+</style>
+
+  
+  <style>
+  .sidebar,
+  html,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: PingFang SC, Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
+  }
+</style>
+
+  
+  <style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+</style>
+
+  
+  <style>
+  img {
+    display: inline-block;
+    margin: 0;
+  }
+</style>
+
+  
+  <style>
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%);
+  }
+</style>
+
+  
+  <style>
+  ::selection {
+    color: White;
+    background: Black;
+  }
+</style>
+
+  
+</head>
+
+<body
+  class="theme-base-07 layout-reverse sidebar-overlay">
+  
+  
+  
+  <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+  <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"
+     />
+  <!-- Toggleable sidebar -->
+  <div class="sidebar" id="sidebar">
+    
+    <div class="sidebar-item">
+      <div class="effect effect-right_to_left">
+        <img class="effect-img" src="/assets/image/Avatar.jpg" alt="img" />
+        <div class="effect-info">
+          人类世界<br/>
+真是<br/>
+太有趣了<br/>
+QAQ<br/>
+<a href="mailto:acemyzoe@outlook.com">
+  <i class="fas fa-envelope"></i>
+</a>
+<a href="https://github.com/acemyzoe">
+  <i class="fab fa-github"></i>
+</a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=52 src="//music.163.com/outchain/player?type=2&id=486806&auto=1&height=32"></iframe>
+
+        </div>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      
+      <a class="sidebar-nav-item" href="/">
+        <i class="fas fa-home fa-fw"></i> 首页
+      </a>
+      
+      <a class="sidebar-nav-item" href="/comments/">
+        <i class="fas fa-comments fa-fw"></i> 留言
+      </a>
+      
+      <a class="sidebar-nav-item" href="/tags/">
+        <i class="fas fa-tags fa-fw"></i> 标签
+      </a>
+      
+      <a class="sidebar-nav-item" href="/archive/">
+        <i class="fas fa-archive fa-fw"></i> 归档
+      </a>
+      
+      <a class="sidebar-nav-item" href="/merger/">
+        <i class="fas fa-coffee fa-fw"></i> 打赏
+      </a>
+      
+    </nav>
+    <div class="sidebar-item">
+      
+      <style>
+  #sidebar-search-input {
+    background: none;
+    border: none;
+    color: White;
+    width: 100%;
+  }
+  #sidebar-search-results-container {
+    overflow: auto auto;
+    max-height: 60vh;
+  }
+</style>
+<input
+  id="sidebar-search-input"
+  placeholder="搜索博文"
+/>
+<ol
+  id="sidebar-search-results-container"
+></ol>
+<script
+  src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.7/dest/simple-jekyll-search.min.js'
+  async='async'
+  onload='
+    SimpleJekyllSearch({
+      json: "/assets/simple-jekyll-search/search.json",
+      searchInput: document.getElementById("sidebar-search-input"),
+      resultsContainer: document.getElementById("sidebar-search-results-container"),
+      searchResultTemplate: `<li><a href="{url}">{title}</a></li>`,
+      limit: 999,
+      fuzzy: true
+    })'
+></script>
+
+      
+      
+      <style>
+  #toc {
+    overflow: auto auto;
+    max-height: 50vh;
+  }
+</style>
+
+      <ol id="toc">
+  <li><a href="#python-interview">python Interview</a></li>
+  <li><a href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95">基础语法</a>
+    <ol>
+      <li><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92">函数参数传递</a></li>
+      <li><a href="#%E5%85%83%E7%B1%BB">元类</a></li>
+      <li><a href="#%E7%B1%BB%E5%8F%98%E9%87%8F%E5%92%8C%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F">类变量和实例变量</a></li>
+      <li><a href="#python%E8%87%AA%E7%9C%81">python自省</a></li>
+      <li><a href="#%E6%8E%A8%E5%AF%BC%E5%BC%8F">推导式</a></li>
+      <li><a href="#%E5%8D%95%E4%B8%8B%E5%88%92%E7%BA%BF%E5%92%8C%E5%8F%8C%E4%B8%8B%E5%88%92%E7%BA%BF">单下划线和双下划线</a></li>
+      <li><a href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8">迭代器和生成器</a></li>
+      <li><a href="#args-and-kwargs">*args and **kwargs</a></li>
+      <li><a href="#%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8Baop%E5%92%8C%E8%A3%85%E9%A5%B0%E5%99%A8">面向切面编程AOP和装饰器</a></li>
+      <li><a href="#%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B-duck-typing">鸭子类型 duck typing</a></li>
+      <li><a href="#python%E4%B8%8D%E6%94%AF%E6%8C%81%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD">Python不支持函数重载</a></li>
+      <li>[<strong>new__和__init__的区别](#__new</strong>%E5%92%8C__init__%E7%9A%84%E5%8C%BA%E5%88%AB)</li>
+      <li><a href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F">单例模式</a></li>
+      <li><a href="#gil%E7%BA%BF%E7%A8%8B%E5%85%A8%E5%B1%80%E9%94%81global-interpreter-lock">GIL线程全局锁Global Interpreter Lock</a></li>
+      <li><a href="#%E9%97%AD%E5%8C%85closure">闭包closure</a></li>
+      <li><a href="#python%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B">Python函数式编程</a></li>
+      <li><a href="#python%E9%87%8C%E7%9A%84%E6%8B%B7%E8%B4%9D">Python里的拷贝</a></li>
+      <li><a href="#python%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6">Python垃圾回收机制</a></li>
+      <li><a href="#python%E4%B8%ADlist%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%9A%84">Python中list是如何实现的</a></li>
+      <li><a href="#python%E7%9A%84is">Python的is/==</a></li>
+      <li><a href="#python2%E5%92%8C3%E7%9A%84%E5%8C%BA%E5%88%AB">Python2和3的区别</a></li>
+    </ol>
+  </li>
+  <li><a href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95">数据结构&amp;算法</a>
+    <ol>
+      <li><a href="#%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91">台阶问题/斐波那契</a></li>
+      <li><a href="#%E5%8E%BB%E9%99%A4%E5%88%97%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0">去除列表中的重复元素</a></li>
+      <li><a href="#%E9%93%BE%E8%A1%A8%E6%88%90%E5%AF%B9%E8%B0%83%E6%8D%A2">链表成对调换</a></li>
+      <li><a href="#%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8">合并两个有序列表</a></li>
+      <li><a href="#python%E9%93%BE%E8%A1%A8">python链表</a>
+        <ol>
+          <li><a href="#%E5%8D%95%E9%93%BE%E8%A1%A8%E9%80%86%E7%BD%AE">单链表逆置</a></li>
+          <li><a href="#%E4%BA%A4%E5%8F%89%E9%93%BE%E8%A1%A8%E6%B1%82%E4%BA%A4%E7%82%B9">交叉链表求交点</a></li>
+        </ol>
+      </li>
+      <li><a href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE">二分查找</a></li>
+      <li><a href="#%E6%8E%92%E5%BA%8F">排序</a>
+        <ol>
+          <li><a href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F-on2">冒泡排序 O(n^2)</a></li>
+          <li><a href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-on2">选择排序 O(n^2)</a></li>
+          <li><a href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F-onlogn">快速排序 O(n*logn)</a></li>
+          <li><a href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-on2">插入排序 O(n^2)</a>
+            <ol>
+              <li><a href="#%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F--onlogn">希尔排序  O(nlogn)</a></li>
+            </ol>
+          </li>
+          <li><a href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-onlogn">归并排序 O(nlogn)</a></li>
+          <li><a href="#%E5%A0%86%E6%8E%92%E5%BA%8F-onlogn">堆排序 O(nlogn)</a></li>
+        </ol>
+      </li>
+      <li><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91">二叉树</a></li>
+      <li><a href="#%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E6%98%AF%E5%8F%98%E4%BD%8D%E8%AF%8D">判断两个字符串是否是变位词</a></li>
+    </ol>
+  </li>
+  <li><a href="#%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80">网络基础</a>
+    <ol>
+      <li><a href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B">三次握手</a></li>
+      <li><a href="#%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B">四次挥手</a></li>
+      <li><a href="#arp%E5%8D%8F%E8%AE%AE">ARP协议</a></li>
+      <li><a href="#%E5%B9%82%E7%AD%89-idempotence">幂等 Idempotence</a></li>
+      <li><a href="#restful%E6%9E%B6%E6%9E%84representational-state-transfer">RESTful架构(Representational State Transfer)</a></li>
+    </ol>
+  </li>
+  <li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+    <ol>
+      <li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B4%A2%E5%BC%95">数据库索引</a></li>
+    </ol>
+  </li>
+  <li><a href="#linux">Linux</a></li>
+  <li><a href="#%E9%A1%B9%E7%9B%AE">项目</a></li>
+</ol>
+      
+      
+      <script defer="defer" src="https://cdn.jsdelivr.net/gh/poole/lanyon@v1.1.0/public/js/script.min.js"></script>
+      
+      <style>
+  .sidebar-checkbox {
+    display: none;
+  }
+  .sidebar-toggle {
+    position: fixed;
+  }
+</style>
+
+      
+      <style>
+  .effect {
+    margin: 1rem;
+    perspective: 900px;
+  }
+  .effect-info {
+    text-align: center;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    transform-style: preserve-3d;
+  }
+  .effect-img {
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+  }
+  .effect-img:before {
+    position: absolute;
+    display: block;
+  }
+  .effect-right_to_left .effect-img {
+    transform-origin: 0% 50%;
+  }
+  .effect-right_to_left:hover .effect-img {
+    transform: rotate3d(0, 1, 0, -180deg);
+  }
+</style>
+
+      
+      <div>
+  <i class="fas fa-cog fa-spin fa-fw"></i>
+  <span id="run_time_day">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>天
+  <span id="run_time_hour">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>时
+  <span id="run_time_minute">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>分
+  <span id="run_time_second">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>秒
+  <script>
+    setInterval(function (d,h,m,s,b) {
+      function setzero(i) {
+        return i < 10 ? "0" + i : i;
+      }
+      let BirthDay = new Date(b);
+      let today = new Date();
+      let timeold = (today.getTime() - BirthDay.getTime());
+      let sectimeold = timeold / 1000;
+      let secondsold = Math.floor(sectimeold);
+      let msPerDay = 24 * 60 * 60 * 1000;
+      let e_daysold = timeold / msPerDay;
+      let daysold = Math.floor(e_daysold);
+      let e_hrsold = (e_daysold - daysold) * 24;
+      let hrsold = Math.floor(e_hrsold);
+      let e_minsold = (e_hrsold - hrsold) * 60;
+      let minsold = Math.floor((e_hrsold - hrsold) * 60);
+      let seconds = Math.floor((e_minsold - minsold) * 60);
+      d.textContent = daysold;
+      h.textContent = setzero(hrsold);
+      m.textContent = setzero(minsold);
+      s.textContent = setzero(seconds);
+    },
+    1000,
+    document.getElementById("run_time_day"),
+    document.getElementById("run_time_hour"),
+    document.getElementById("run_time_minute"),
+    document.getElementById("run_time_second"),
+    "04/01/2020 12:00:00")// 这是我第一篇博客的时间
+  </script>
+</div>
+
+      
+      <div>
+  <div>
+    <i class="fas fa-eye fa-fw"></i>
+    <span id="busuanzi_value_page_pv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>次
+  </div>
+  <div>
+    <i class="fas fa-paw fa-fw"></i>
+    <span id="busuanzi_value_site_pv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>枚
+  </div>
+  <div>
+    <i class="fas fa-user-friends fa-fw"></i>
+    <span id="busuanzi_value_site_uv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>人
+  </div>
+  <script
+    src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0'
+    async='async'
+  ></script>
+</div>
+
+      
+      <div>
+  <i class="fas fa-thumbs-up fa-fw"></i>
+  <a href="https://github.com/acemyzoe">
+    Github
+  </a>
+</div>
+
+      
+      <div>
+  <i class="fas fa-copyright fa-fw"></i>
+  acemyzoe
+</div>
+
+      
+      
+    </div>
+  </div>
+  <!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. -->
+  
+  <div class="wrap">
+    
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/katex@0.11.1/dist/katex.min.js,npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js,npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  defer="defer"
+  onload='renderMathInElement(document.body, { delimiters: [{ left: "$", right: "$", display: false }] })'
+></script>
+
+
+
+<style>
+  pre.language-mermaid,
+  code.language-mermaid {
+    display: none;
+  }
+</style>
+<script
+  src="https://cdn.jsdelivr.net/npm/mermaid@8.5.1/dist/mermaid.min.js"
+  defer="defer"
+  onload='
+    for(let x of document.getElementsByClassName("language-mermaid"))
+      if(x.nodeName=="CODE")
+      {
+        let m = document.createElement("div");
+        m.classList.add("mermaid");
+        m.textContent = x.textContent;
+        x.parentNode.insertAdjacentElement("beforebegin", m);
+      }'
+></script>
+
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.css,gh/PrismJS/prism-themes@1955cfef6953b3a59e66016e8a1e016b45d6cc79/themes/prism-nord.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/components/prism-core.min.js,npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.js"
+  defer="defer"
+  onload='
+    Prism.plugins.autoloader.languages_path = "https:\/\/cdn.jsdelivr.net/npm/prismjs/components/";
+    for(let x of document.getElementsByTagName("pre"))
+      x.classList.add("line-numbers");
+    Prism.plugins.toolbar.registerButton("select-code", function (env) {
+      let button = document.createElement("button");
+      button.textContent = "select this " + env.language;
+      button.addEventListener("click", function () {
+        if (document.body.createTextRange) {
+          let range = document.body.createTextRange();
+          range.moveToElementText(env.element);
+          range.select();
+        } else if (window.getSelection) {
+          let selection = window.getSelection();
+          let range = document.createRange();
+          range.selectNodeContents(env.element);
+          selection.removeAllRanges();
+            selection.addRange(range);
+        }
+      });
+      return button;
+    })'
+></script>
+
+
+
+<style>
+  pre {
+    max-height: 50vh;
+    overflow: auto;
+  }
+</style>
+
+
+<style>
+  @media (min-width: 56em) {
+    .container {
+      max-width: 66.6%;
+    }
+  }
+</style>
+
+
+<style>
+  .masthead,
+  .container.content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    animation-duration: 2s;
+    animation-name: fadeIn;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+
+
+<div class="masthead">
+  <h3 class="container masthead-title">
+    
+    python Interview
+    <a href="/" title="Home">
+      <small>
+        Acemyzoe
+      </small>
+    </a>
+    
+  </h3>
+</div>
+
+<div class="container content">
+  <div class="post">
+  <span class="post-date">
+    
+    <i class="fas fa-calendar-day fa-fw"></i>
+    01 Aug 2020
+    
+    
+    <i class="fas fa-file-word fa-fw"></i>
+    20521字
+    
+    
+    <i class="fas fa-clock fa-fw"></i>
+    69分
+    
+    
+    <span class="leancloud-visitors" id="/_posts/2020-08-01-python-interview/" data-xid="/_posts/2020-08-01-python-interview/" data-flag-title="python Interview">
+      <i class="fas fa-book-reader fa-fw"></i>
+      <span class="leancloud-visitors-count">
+        <i class="fas fa-spinner fa-pulse"></i>
+      </span>次
+    </span>
+    
+    
+    
+    <i class="fas fa-tag fa-fw"></i>
+    python
+    
+    
+    <i class="fab fa-creative-commons-by fa-fw"></i>
+<a
+  href="https://creativecommons.org/licenses/by/4.0/deed.zh"
+  rel="license">
+  CC BY 4.0
+</a>
+（除特别声明或转载文章外）
+
+    
+  </span>
+  <h1 id="python-interview">python Interview</h1>
+
+<blockquote>
+  <p>工作中真正的核心竞争力：写出整洁的代码和架构，面向对象的思维(原则与设计)，模式的使用。以及复杂性解决方法，抽象、分治、领域设计。</p>
+
+  <p>语言的特性，底层的原理，源码等特定细节的东西可以在使用时再去调研，但解决问题的能力，整洁的代码和架构并不是短期可以突击的。</p>
+
+  <p>系统：语言Python，Linux基础操作，SQL，消息队列，GIT…木桶理论</p>
+
+  <p>基础功扎实，新东西学得快，代码写得溜，命令敲得顺，bug解的好</p>
+</blockquote>
+
+<h1 id="基础语法">基础语法</h1>
+
+<ul>
+  <li>可变与不可变类型</li>
+  <li>浅拷贝与深拷贝的实现方式、区别；deepcopy如果你来设计，如何实现；</li>
+  <li><code>__new__() 与 __init__()</code>的区别；</li>
+  <li>你知道几种设计模式；</li>
+  <li>编码和解码你了解过么；</li>
+  <li>手写：正则邮箱地址；</li>
+  <li>介绍下垃圾回收：引用计数/分代回收/孤立引用环；</li>
+  <li>多进程与多线程的区别；CPU密集型适合用什么；</li>
+  <li>进程通信的方式有几种；</li>
+  <li>介绍下协程，为何比线程还快；</li>
+</ul>
+
+<h2 id="函数参数传递">函数参数传递</h2>
+
+<pre><code class="language-python"># Python的函数参数传递
+# http://stackoverflow.com/questions/986006/how-do-i-pass-a-variable-by-reference
+# 所有的变量都可以理解是内存中一个对象的“引用”
+
+# strings, tuples, 和numbers 不可变对象
+a=1
+def fun1(a):
+    print(id(a),id(1)) # 1798961072 1798961072
+    a=2
+    print(id(a),id(2)) # 1798961088 1798961088
+    print(a) # 2
+fun1(a)
+print(a) # 1
+
+# list, dict, set 可变对象
+b=[]
+def fun2(b):
+    print(id(b)) # 9174792
+    b.append(1)
+    print(id(b)) # 9174792
+    print(b) #[1]
+fun2(b)
+</code></pre>
+
+<h2 id="元类">元类</h2>
+
+<pre><code class="language-python"># 元类 metaclass
+# http://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python
+# 元类是类的类，定义类的行为，常用作类工厂。type是Python用于在幕后创建所有类的元类。
+class MyMeta(type):
+    '''
+        子类将获得一个class属性_order，该属性记录定义类的顺序。
+    '''
+    counter = 0
+    def __init__(cls, name, bases, dic): # name:class名称 bases：父类的元组 dic/attrs：包含属性名称和值的字典
+        type.__init__(cls, name, bases, dic)
+        cls._order = MyMeta.counter
+        MyMeta.counter += 1
+class MyType0(metaclass=MyMeta):  
+    pass
+
+class MyType1(metaclass=MyMeta):  
+    pass
+
+class MyType2(MyMeta):
+    pass
+
+print(MyType0._order，MyType1._orderMyType2.counter) # 0 1 2
+</code></pre>
+
+<h2 id="类变量和实例变量">类变量和实例变量</h2>
+
+<pre><code class="language-python"># 类变量和实例变量
+class Test(object):  
+    num_of_instance = 0  
+    name = 'test'
+    def __init__(self, name):  
+        self.name = name  
+        Test.num_of_instance += 1  
+  
+if __name__ == '__main__':  
+    print(Test.name,Test.num_of_instance) # test 0
+    t1 = Test('t1')  
+    t2 = Test('t2')  
+    print(t1.name , t1.num_of_instance) # t1 2
+    print(t2.name , t2.num_of_instance) # t2 2
+</code></pre>
+
+<h2 id="python自省">python自省</h2>
+
+<pre><code class="language-python"># 自省
+# 运行时能够获得对象的类型.比如type(),dir(),getattr(),hasattr(),isinstance().
+a = [1,2,3]
+b = {'a':1,'b':2,'c':3}
+c = True
+print(type(a),type(b),type(c)) # &lt;class 'list'&gt; &lt;class 'dict'&gt; &lt;class 'bool'&gt;
+print(isinstance(a,list))  # True
+</code></pre>
+
+<h2 id="推导式">推导式</h2>
+
+<pre><code class="language-python"># 推导式
+# 列表推导式list
+li=[i*2 for i in range(10) if i % 2 == 0]
+print(li)
+# 字典推导式dict
+m={"a":1, "b":2, "c":3, "d":4}
+di={v:k for k,v in m.items()}
+print(di)
+# 集合推导式set
+# 集合是一种无重复无序的序列
+s={i*2 for i in [1,1,2]}
+print(s)
+</code></pre>
+
+<h2 id="单下划线和双下划线">单下划线和双下划线</h2>
+
+<pre><code class="language-python"># 单下划线和双下划线
+# http://stackoverflow.com/questions/1301346/the-meaning-of-a-single-and-a-double-underscore-before-an-object-name-in-python
+class MyClass():
+    def __init__(self):
+            self.__superprivate = "Hello"  # 解释器将其替换为对象名._类名__xxx
+            self._semiprivate = ", world!" # 用来指定变量私有
+
+my = MyClass()
+print(my.__dict__)
+print(my._MyClass__superprivate)
+print(my._semiprivate)
+</code></pre>
+
+<h2 id="迭代器和生成器">迭代器和生成器</h2>
+
+<pre><code class="language-python"># 迭代器和生成器
+# https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do
+# 列表可一一阅读它的项目。逐一读取其项称为迭代,所有值存储在内存。
+# 生成器：边循环，边计算的机制—&gt;generator
+l = [x*x for x in range(10)] 
+g = (x*x for x in range(10))
+print(type(l),type(g)) # &lt;class 'list'&gt; &lt;class 'generator'&gt;
+# itertools模块包含用于操纵可迭代对象的特殊功能
+import itertools
+horses=[1,2,3]
+races = itertools.permutations(horses)
+print(list(races)) # 三匹马比赛的可能到达顺序
+</code></pre>
+
+<h2 id="args-and-kwargs">*args and **kwargs</h2>
+
+<pre><code class="language-python"># *args and **kwargs
+# https://stackoverflow.com/questions/3394835/use-of-args-and-kwargs
+# 用*args传递任意数量的参数
+def print_everything(*args):
+    for count, thing in enumerate(args):
+        print('{0}. {1}'.format(count, thing))
+print_everything('1','a')
+# **kwargs为函数提供任意关键字参数,并将它们作为字典使用。
+def table_things(**kwargs):
+    for name, value in kwargs.items():
+        print('{0}={1}'.format(name, value))
+table_things(apple='fruit', cabbage='vegetable')
+# 调用函数时用*和**语法
+def print_three_things(a, b, c):
+    print('a={0}, b={1}, c={2}'.format(a,b,c))
+mylist = ['1', '2', '3']
+print_three_things(*mylist)
+</code></pre>
+
+<h2 id="面向切面编程aop和装饰器">面向切面编程AOP和装饰器</h2>
+
+<pre><code class="language-python"># 面向切面编程AOP和装饰器
+# 装饰器的作用就是为已经存在的对象添加额外的功能,经常被用于有切面需求的场景
+# https://stackoverflow.com/questions/739654/how-to-make-a-chain-of-function-decorators
+'''装饰器只是语法糖
+@decorator
+def func():
+    ...
+等效于
+def func():
+    ...
+func = decorator(func)
+'''
+###############################
+# The decorator to make it bold
+def makebold(fn):
+    # The new function the decorator returns
+    def wrapper():
+        # Insertion of some code before and after
+        return "&lt;b&gt;" + fn() + "&lt;/b&gt;"
+    return wrapper
+
+# The decorator to make it italic
+def makeitalic(fn): 
+    return lambda: "&lt;i&gt;" + fn() + "&lt;/i&gt;"
+
+@makebold
+@makeitalic
+def say():
+    return "hello"
+print(say())
+#################################
+# This is the exact equivalent to
+def says():
+    return "hello"
+my = makebold(makeitalic(says))
+print(my())
+
+class sty(object):
+  def __init__(self, tag):
+    self.tag = tag
+  def __call__(self, f):
+    def newf():
+      return "&lt;{tag}&gt;{res}&lt;/{tag}&gt;".format(res=f(), tag=self.tag)
+    return newf
+
+@sty('b')
+@sty('i')
+def sayhi():
+  return 'hi'
+print(sayhi())
+###################################
+# 使用functools.wraps
+from functools import wraps
+def wrap_in_tag(tag):
+    def factory(func):
+        @wraps(func)
+        def decorator(val):
+            return func('&lt;%(tag)s&gt;%(val)s&lt;/%(tag)s&gt;' %
+                        {'tag': tag, 'val': val})
+        return decorator
+    return factory
+
+@wrap_in_tag('b')
+@wrap_in_tag('i')
+def log(s):
+    return s
+print(log('hello')) # &lt;b&gt;&lt;i&gt;hello&lt;/i&gt;&lt;/b&gt;
+</code></pre>
+
+<h2 id="鸭子类型-duck-typing">鸭子类型 duck typing</h2>
+
+<blockquote>
+  <p>当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子。</p>
+
+  <p>一个对象有效的语义，不是由继承自特定的类或实现特定的接口，而是由”当前方法和属性的集合”决定。</p>
+
+  <p>鸭子类型是多态性的一种表现，函数可以通过鸭子类型来处理不同类型的对象，函数重载在动态语言中就显得没有意义。</p>
+</blockquote>
+
+<h2 id="python不支持函数重载">Python不支持函数重载</h2>
+
+<blockquote>
+  <p>函数重载主要是为了解决两个问题。</p>
+
+  <ol>
+    <li>可变参数类型。而 python 可以接受任何类型的参数。</li>
+    <li>可变参数个数。而 python 使用缺省参数。</li>
+  </ol>
+</blockquote>
+
+<h2 id="__new__和__init__的区别"><code>__new__</code>和<code>__init__</code>的区别</h2>
+
+<blockquote>
+  <ol>
+    <li><code>__new__</code>是一个静态方法,而<code>__init__</code>是一个实例方法.</li>
+    <li><code>__new__</code>方法会返回一个创建的实例,而<code>__init__</code>什么都不返回.</li>
+    <li>只有在<code>__new__</code>返回一个cls的实例时后面的<code>__init__</code>才能被调用.</li>
+    <li>当创建一个新实例时调用<code>__new__</code>,初始化一个实例时用<code>__init__</code>.</li>
+    <li><code>__new__</code>除非要继承不可变类型（例如str，int，unicode或tuple），否则无需重写</li>
+    <li>可以分别使用<code>__metaclass__</code>,<code>__new__</code>和<code>__init__</code>来分别在类创建,实例创建和实例初始化的时候做一些小手脚.</li>
+  </ol>
+</blockquote>
+
+<h2 id="单例模式">单例模式</h2>
+
+<pre><code class="language-python"># 使用__new__方法
+class Singleton(object):
+    def __new__(cls, *args, **kw):
+        if not hasattr(cls, '_instance'):
+            orig = super(Singleton, cls)
+            cls._instance = orig.__new__(cls, *args, **kw)
+        return cls._instance
+class MyClass(Singleton):
+    a = 1
+
+# 共享属性:创建实例时把所有实例的__dict__指向同一个字典
+class Borg(object):
+    _state = {}
+    def __new__(cls, *args, **kw):
+        ob = super(Borg, cls).__new__(cls, *args, **kw)
+        ob.__dict__ = cls._state
+        return ob
+class MyClass2(Borg):
+    a = 1
+
+# 装饰器版本
+def singleton(cls):
+    instances = {}
+    def getinstance(*args, **kw):
+        if cls not in instances:
+            instances[cls] = cls(*args, **kw)
+        return instances[cls]
+    return getinstance
+@singleton
+class MyClass:
+    a = 1
+
+# import方法,作为python的模块是天然的单例模式
+# mysingleton.py
+class My_Singleton(object):
+    def foo(self):
+        pass
+my_singleton = My_Singleton()
+# to use
+from mysingleton import my_singleton
+my_singleton.foo()
+</code></pre>
+
+<h2 id="gil线程全局锁global-interpreter-lock">GIL线程全局锁Global Interpreter Lock</h2>
+
+<blockquote>
+  <p>Python为了保证线程安全而采取的独立线程运行的限制,一个核只能在同一时间运行一个线程。</p>
+
+  <p>https://www.oschina.net/translate/pythons-hardest-problem</p>
+
+  <p>对于io密集型任务，python的多线程起到作用，但对于cpu密集型任务，python的多线程几乎占不到任何优势，还有可能因为争夺资源而变慢。</p>
+
+  <p>解决办法就是多进程和协程。</p>
+
+  <p>协程是进程和线程的升级版,进程和线程都面临着内核态和用户态的切换问题而耗费许多切换时间,而协程就是用户自己控制切换的时机,不再需要陷入系统的内核态。Python里最常见的yield就是协程的思想</p>
+</blockquote>
+
+<pre><code class="language-python"># yield是与return一样使用的关键字return，不同之处在于该函数将返回生成器。
+# 第一次for调用从函数创建的生成器对象时，它将从头开始运行函数中的代码，直到命中yield，然后它将返回循环的第一个值。然后，每个后续调用将运行您在函数中编写的循环的另一个迭代，并返回下一个值。这将一直持续到生成器被认为是空的为止，这在函数运行时没有命中时就会发生yield。
+def createGenerator():
+    mylist = range(3)
+    for i in mylist:
+        yield i*i
+mygenerator = createGenerator()# 在调用该函数时，在函数主体中编写的代码不会运行。该函数仅返回生成器对象
+for i in mygenerator:
+    print(i)
+</code></pre>
+
+<h2 id="闭包closure">闭包closure</h2>
+
+<pre><code class="language-python"># 闭包
+# https://zhuanlan.zhihu.com/p/22229197
+# 在一个内部函数中，对外部作用域的变量进行引用，(并且一般外部函数的返回值为内部函数)
+# 闭包作用：函数运行后并不会被撤销，用于保存当前的运行环境
+def start(x):
+    def increment(y): # 闭包
+        return x+y
+    return increment
+a = start(1)
+print(a) # &lt;function start.&lt;locals&gt;.increment at 0x0384CC40&gt;
+print(a(1)) # 2
+</code></pre>
+
+<h2 id="python函数式编程">Python函数式编程</h2>
+
+<pre><code class="language-python"># Python函数式编程
+# https://coolshell.cn/articles/10822.html
+# lambda匿名函数
+a = map(lambda x:x*2,[1,2,3]) # map函数是对一个序列的每个项依次执行函数
+print((a))
+b = filter(lambda x: x &gt; 5, a) 
+# filter函数的功能相当于过滤器。
+# 调用一个布尔函数bool_func来迭代遍历每个seq中的元素；返回一个使bool_seq返回值为true的元素的序列
+print(list(b))
+</code></pre>
+
+<h2 id="python里的拷贝">Python里的拷贝</h2>
+
+<pre><code class="language-python"># 引用和copy(),deepcopy()的区别
+# https://www.geeksforgeeks.org/copy-python-deep-copy-shallow-copy/
+import copy
+a = [1, 2, 3, 4, ['a', 'b']]  #原始对象
+
+b = a  #赋值，传对象的引用
+c = copy.copy(a)  #对象拷贝，浅拷贝
+d = copy.deepcopy(a)  #对象拷贝，深拷贝
+
+a.append(5)  #修改对象a
+a[4].append('c')  #修改对象a中的['a', 'b']数组对象
+
+print('原始对象a = ',a) # [1, 2, 3, 4, ['a', 'b', 'c'], 5]
+print('引用b = ',b) # [1, 2, 3, 4, ['a', 'b', 'c'], 5]
+print('浅拷贝c = ',c) # [1, 2, 3, 4, ['a', 'b', 'c']]
+print('深拷贝d = ',d) # [1, 2, 3, 4, ['a', 'b']]
+</code></pre>
+
+<h2 id="python垃圾回收机制">Python垃圾回收机制</h2>
+
+<pre><code class="language-python"># Python垃圾回收机制
+# https://sutune.me/2018/10/14/python-GC/
+# https://juejin.im/post/6844903629556547598
+# http://www.ityouknow.com/python/2020/01/06/python-gc-111.html
+# Python GC主要使用引用计数（reference counting）来跟踪和回收垃圾
+# 通过“标记-清除”（mark and sweep）解决容器对象可能产生的循环引用问题
+# 通过“分代回收”（generation collection）以空间换时间的方法提高垃圾回收效率
+
+# 『引用计数法』的原理是：每个对象维护一个ob_ref字段，用来记录该对象当前被引用的次数，每当新的引用指向该对象时，它的引用计数ob_ref加1，每当该对象的引用失效时计数ob_ref减1，一旦对象的引用计数为0，该对象立即被回收，对象占用的内存空间将被释放。
+# 循环引用导致内存泄露。解决方法：gc模块提供一个接口给开发者设置垃圾回收的选项
+import sys
+import gc
+class A():
+    def __init__(self):
+        '''初始化对象'''
+        print('object born id:%s' %str(hex(id(self))))
+
+def func(c):
+    print('obejct refcount is: ',sys.getrefcount(c)) #getrefcount()方法用于返回对象的引用计数
+
+def fnrc():
+    #生成对象
+    a=A()
+    func(a)
+    #增加引用
+    b=a
+    func(a)
+    #销毁引用对象b
+    del b
+    func(a)
+
+def fngc():  
+    '''垃圾自动回收'''
+    gc.isenabled = True  
+    print(gc.get_count())
+    a=A()
+    print(gc.get_count())
+    del a
+    print(gc.get_count())
+
+if __name__ == '__main__':
+    fngc()
+</code></pre>
+
+<h2 id="python中list是如何实现的">Python中list是如何实现的</h2>
+
+<p>https://www.jianshu.com/p/J4U6rR</p>
+
+<h2 id="python的is">Python的is/==</h2>
+
+<pre><code class="language-python"># is 与 == 的区别
+# https://stackoverflow.com/questions/132988/is-there-a-difference-between-and-is
+# https://stackoverflow.com/questions/26595/is-there-any-difference-between-foo-is-none-and-foo-none
+a=1000
+b=1e3
+c=1000.0
+print(a is b) # False
+print(a is c) # False
+</code></pre>
+
+<h2 id="python2和3的区别">Python2和3的区别</h2>
+
+<pre><code class="language-python"># http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/	
+from __future__ import division,unicode_literals
+</code></pre>
+
+<h1 id="数据结构算法">数据结构&amp;算法</h1>
+
+<ul>
+  <li>手写：已知一个长度n的无序列表，元素均是数字，要求把所有间隔为d的组合找出来，你写的解法算法复杂度多少；</li>
+  <li>手写：一个列表A=[A1，A2，…,An]，要求把列表中所有的组合情况打印出来；</li>
+  <li>手写：用一行python写出1+2+3+…+10**8 ；</li>
+  <li>手写python：用递归的方式判断字符串是否为回文；</li>
+  <li>单向链表长度未知，如何判断其中是否有环；</li>
+  <li>单向链表如何使用快速排序算法进行排序；</li>
+  <li>手写：一个长度n的无序数字元素列表，如何求中位数，如何尽快的估算中位数，你的算法复杂度是多少；</li>
+  <li>如何遍历一个内部未知的文件夹（两种树的优先遍历方式）</li>
+  <li>给定一个数组，构建二叉树，并且按层次打印这个二叉树</li>
+</ul>
+
+<h2 id="台阶问题斐波那契">台阶问题/斐波那契</h2>
+
+<blockquote>
+  <p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
+</blockquote>
+
+<pre><code class="language-python"># 方法一
+fib = lambda n: n if n&lt;=2 else fib(n-1)+fib(n-2)
+# 第二种记忆方法
+def memo(func):
+    cache = {}
+    def wrap(*args):
+        if args not in cache:
+            cache[args] = func(*args)
+        return cache[args]
+    return wrap
+@memo
+def fib(i):
+    if i &lt; 2:
+        return 1
+    return fib(i-1)+fib(i-2)
+# 方法三
+def fib(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a+b
+    return b
+</code></pre>
+
+<blockquote>
+  <p>一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
+</blockquote>
+
+<pre><code class="language-python">fib = lambda n: n if n&lt;2 else 2*fib(n-1)
+</code></pre>
+
+<blockquote>
+  <p>用n个<code>2*1</code>的小矩形无重叠地覆盖一个<code>2*n</code>的大矩形，总共有多少种方法？</p>
+</blockquote>
+
+<pre><code class="language-python">f = lambda n: 1 if n &lt; 2 else f(n-1) + f(n-2)
+</code></pre>
+
+<h2 id="去除列表中的重复元素">去除列表中的重复元素</h2>
+
+<pre><code class="language-python"># 去除列表中的重复元素
+l = [1,1,2,2,3,4]
+# 用集合
+print(list(set(l)))
+# 用字典
+print({}.fromkeys(l).keys())
+# 列表推导式
+</code></pre>
+
+<h2 id="链表成对调换">链表成对调换</h2>
+
+<blockquote>
+  <p><code>1-&gt;2-&gt;3-&gt;4</code>转换成<code>2-&gt;1-&gt;4-&gt;3</code>.</p>
+</blockquote>
+
+<h2 id="合并两个有序列表">合并两个有序列表</h2>
+
+<pre><code class="language-python"># 尾递归
+a = [1,2,3,7]
+b = [3,4,5]
+def _recursion_merge_sort2(l1, l2, tmp):
+    if len(l1) == 0 or len(l2) == 0:
+        tmp.extend(l1)
+        tmp.extend(l2)
+        return tmp
+    else:
+        if l1[0] &lt; l2[0]:
+            tmp.append(l1[0])
+            del l1[0]
+        else:
+            tmp.append(l2[0])
+            del l2[0]
+        return _recursion_merge_sort2(l1, l2, tmp)
+def recursion_merge_sort2(l1, l2):
+    return _recursion_merge_sort2(l1, l2, [])
+print(recursion_merge_sort2(a,b))
+
+# 循环算法
+a = [1,2,3,7]
+b = [3,4,5]
+def loop_merge_sort(l1, l2):
+    tmp = []
+    while len(l1) &gt; 0 and len(l2) &gt; 0:
+        if l1[0] &lt; l2[0]:
+            tmp.append(l1[0])
+            del l1[0]
+        else:
+            tmp.append(l2[0])
+            del l2[0]
+    tmp.extend(l1)
+    tmp.extend(l2)
+    return tmp
+print(loop_merge_sort(a,b))
+
+# pop弹出
+a = [1,2,3,7]
+b = [3,4,5]
+def merge_sortedlist(a,b):
+    c = []
+    while a and b:
+        if a[0] &gt;= b[0]:
+            c.append(b.pop(0))
+        else:
+            c.append(a.pop(0))
+    while a:
+        c.append(a.pop(0))
+    while b:
+        c.append(b.pop(0))
+    return c
+print(merge_sortedlist(a,b))
+
+# 先合并后排序
+a = [1,2,3,7]
+b = [3,4,5]
+def merge_sort(a,b):
+    c=a+b
+    c.sort()
+    return c
+print(merge_sort(a,b))
+</code></pre>
+
+<h2 id="python链表">python链表</h2>
+
+<p>https://juejin.im/post/6844903672661409800</p>
+
+<p>https://www.jianshu.com/p/e4000619232b</p>
+
+<pre><code class="language-python"># 用python中的引用来实现链表
+# 节点类
+# 功能包括：更新数据，查询数据，更新后继节点和查询后继节点。
+class Node(object):
+    #初始化，需要传入节点的数据
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+    
+    #返回节点的数据
+    def get_data(self):
+        return self.data
+    
+    #更新节点的数据
+    def set_data(self, new_data):
+        self.data = new_data
+        
+    #返回后继节点
+    def get_next(self):
+        return self.next
+    
+    #变更后继节点
+    def set_next(self, new_next):
+        self.next = new_next
+
+# 链表类
+# 节点的增加、删除和查询，返回链表的长度，返回链表是否为空等
+class Linked_list(object):
+    #初始化，头结点为空
+    def __init__(self):
+        self.head = None
+    
+    #添加节点，添加的新节点作为新的头结点
+    def add(self, data):
+        new_node = Node(data)
+        new_node.set_next() = self.head
+        self.head = new_node
+        
+    #包含查询，传入值，返回该值在链表中是否存在
+    def search(self, data):
+        checking = self.head #从头结点开始查询
+        while checking != None :
+            if checking.get_data() == data: #查找到，返回True
+                return True
+            checking = checking.get_next() #查询下一个节点
+        return False #遍历到最后也未能找到，返回False
+        
+    #删除节点，将第一个具有传入值的节点从链表中删除
+    def remove(self, data):
+        checking = self.head #从头结点开始查询
+        previous = None #记录前一个节点，头结点的前一个节点为None
+        
+        while checking != None :
+            if checking.get_data() == data: #查找到，跳出查找循环
+                break
+            previous = checking # 更新前一个节点
+            checking = checking.get_next() #查询下一个节点
+
+        if previous == None:# 如果头结点便是查找的节点
+            self.head = checking.get_next()
+        else: # 查找的节点不在头结点，即，存在前驱节点
+            previous.set_next(checking.get_next())       
+    
+    #判断链表是否为空
+    def isEmpty(self):
+        return self.head == None
+    
+    #返回链表长度
+    def size(self):
+        count = 0
+        counting = self.head #从头结点开始计数
+        while counting != None :
+            count += 1
+            counting = counting.get_next()
+        return count
+</code></pre>
+
+<h3 id="单链表逆置">单链表逆置</h3>
+
+<pre><code class="language-python">class Node(object):
+    def __init__(self, data=None, next=None):
+        self.data = data
+        self.next = next
+
+def relink(link):
+    pre = link
+    cur = link.next
+    pre.next = None
+    while cur:
+        tmp = cur.next
+        cur.next = pre
+        pre = cur
+        cur = tmp
+    return pre
+
+link = Node(1, Node(2, Node(3, Node(4))))
+root = relink(link)
+while root:
+    print(root.data)
+    root = root.next
+</code></pre>
+
+<h3 id="交叉链表求交点">交叉链表求交点</h3>
+
+<pre><code class="language-python"># 使用a,b两个list来模拟链表，可以看出交叉点是 7这个节点
+a = [1,2,3,7,9,1,5]
+b = [4,5,7,9,1,5]
+# 从尾开始比较两个链表，如果相交，则从尾开始必然一致，只要从尾开始比较，直至不一致的地方即为交叉点
+for i in range(1,min(len(a),len(b))):
+    if i==1 and (a[-1] != b[-1]):
+        print("No")
+        break
+    else:
+        if a[-i] != b[-i]:
+            print("交叉节点：",a[-i+1])
+            break
+        else:
+            pass
+
+# 构造链表类
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+def node(l1, l2):
+    length1, length2 = 0, 0
+    # 求两个链表长度
+    while l1.next:
+        l1 = l1.next#尾节点
+        length1 += 1
+    while l2.next:
+        l2 = l2.next#尾节点
+        length2 += 1
+
+    #如果相交
+    if l1.next == l2.next:
+        # 长的链表先走
+        if length1 &gt; length2:
+            for _ in range(length1 - length2):
+                l1 = l1.next
+            return l1#返回交点
+        else:
+            for _ in range(length2 - length1):
+                l2 = l2.next
+            return l2#返回交点
+    # 如果不相交
+    else:
+        return
+</code></pre>
+
+<h2 id="二分查找">二分查找</h2>
+
+<pre><code class="language-python"># 二分查找
+# 给出一个已经排好序的列表,查找指定元素在列表中的位置
+def binary_search(list, item):
+    low = 0
+    high = len(list) - 1
+    while low &lt;= high:
+        mid = int((high-low)/2+low) # 避免(high+low)/2溢出
+        guess = list[mid]
+        if guess &gt; item:
+            high = mid - 1
+        elif guess &lt; item:
+            low = mid + 1
+        else:
+            return mid
+    return None
+mylist = [1,3,5,7,9]
+print(binary_search(mylist, 3))
+</code></pre>
+
+<h2 id="排序">排序</h2>
+
+<h3 id="冒泡排序-on2">冒泡排序 O(n^2)</h3>
+
+<pre><code class="language-python"># 冒泡排序
+def bubble_sort(list):
+    if len(list)&gt;2:
+        for i in range(len(list)):
+            flag=False
+            for j in range(1,len(list)):
+                if list[j] &lt; list[j-1]:
+                    list[j],list[j-1]=list[j-1],list[j] 
+                    flag=True
+            if flag is False: # 优化
+                return list             
+    return list
+</code></pre>
+
+<h3 id="选择排序-on2">选择排序 O(n^2)</h3>
+
+<pre><code class="language-python"># 选择排序
+# 找到数组中最小的元素，然后往新数组里追加，时间复杂度O(n^2)
+def min_index(list):
+    min_index = 0
+    min_value = list[min_index]
+    for index,value in enumerate(list):
+        if value&lt;min_value:
+            min_value=value
+            min_index=index
+    return min_index
+def select_sort(list):
+    new_list = []
+    for i in range(len(list)):
+        new_list.append(list.pop(min_index(list)))
+        '''等效于
+        new_list.append(min(list))
+        list.remove(min(list))
+        '''
+    return new_list
+
+# 方法二
+def selectSort(list):
+    for i in range(len(list)):
+        min_index = i
+        for j in range(i+1,len(list)):  # 这个循环会找到值比第i个索引所代表值小的索引
+            if list[j] &lt; list[min_index]:
+                min_index = j
+        list[i] ,list[min_index] = list[min_index], list[i]  # 互换两个索引位置
+    return list
+
+# 方法三，更加简便，但是注意和冒泡法进行区分
+def selectSort(list):
+    for i in range(len(list)):
+        for j in range(len(list)-i):
+            if list[i] &gt; list[i+j]:
+                list[i],list[i+j] = list[i+j],list[i]
+    return list
+</code></pre>
+
+<h3 id="快速排序-onlogn">快速排序 O(n*logn)</h3>
+
+<pre><code class="language-python"># 快排 分片的思想+递归的思想，
+# 栈高为O(log(n)),栈长O(n),运行时间为栈高x栈长，O(nlog(n))
+
+def quickSort(list):
+    if len(list) &lt; 2:
+        return list # 基线条件为空或者只包含一个元素的数组是有序的
+    else:
+        pivot = list[0] # 递归条件
+        less = [i for i in list[1:] if i &lt; pivot]
+        greater = [j for j in list[1:] if j &gt;= pivot]
+        return quickSort(less) + [pivot] + quickSort(greater)
+</code></pre>
+
+<h3 id="插入排序-on2">插入排序 O(n^2)</h3>
+
+<pre><code class="language-python"># 直接插入排序
+# 每一步都将一个待排数据按其大小插入到已经排序的数据中的适当位置，直到全部插入完毕。
+def insertSort(list):
+    len_ = len(list)
+    for i in range(1,len_):  
+        for j in range(i):
+            if list[i] &lt; list[j]:
+                list.insert(j,list[i])  # 首先碰到第一个比自己大的数字，赶紧刹车，停在那，所以选择insert
+                list.pop(i+1)  # 因为前面的insert操作，所以后面位数+1，这个位置的数已经insert到前面去了，所以pop弹出
+                break
+    return list
+</code></pre>
+
+<h4 id="希尔排序--onlogn">希尔排序  O(nlogn)</h4>
+
+<pre><code class="language-python"># 希尔(Shell)排序又称为缩小增量排序，它是一种插入排序。它是直接插入排序算法的一种威力加强版
+def shell_sort(list):
+    n = len(list)
+    gap = n//2  # 初始步长
+    while gap &gt; 0:
+        for i in range(gap,n): # 插排
+            for j in range(i):
+                if list[i]&lt;list[j]:
+                    list.insert(j,list[i])
+                    list.pop(i+1)
+                    break       
+        gap = gap//2  # 得到新的步长       
+    return list
+</code></pre>
+
+<h3 id="归并排序-onlogn">归并排序 O(nlogn)</h3>
+
+<pre><code class="language-python"># 归并排序
+# 使用分割的办法将这个序列分割成一个个已经排好序的子序列。然后再利用归并的方法将一个个的子序列合并成排序好的序列
+def merge(left,right): # 合并的过程
+    result = []
+    while left and right:
+        result.append(left.pop(0) if left[0] &lt;= right[0] else right.pop(0))
+    while left:
+        result.append(left.pop(0))
+    while right:
+        result.append(right.pop(0))       
+    return result
+
+def mergeSort(list):
+    if len(list) &lt; 2:
+        return list
+    mid_index = len(list)//2
+    left = mergeSort(list[:mid_index])  # 递归拆解的过程
+    right = mergeSort(list[mid_index:])
+    return merge(left,right)  
+</code></pre>
+
+<h3 id="堆排序-onlogn">堆排序 O(nlogn)</h3>
+
+<pre><code class="language-python"># 堆排
+def MAX_Heapify(heap,HeapSize,root):#在堆中做结构调整使得父节点的值大于子节点
+    left = 2*root + 1
+    right = left + 1
+    larger = root
+    if left &lt; HeapSize and heap[larger] &lt; heap[left]:
+        larger = left
+    if right &lt; HeapSize and heap[larger] &lt; heap[right]:
+        larger = right
+    if larger != root:#如果做了堆调整则larger的值等于左节点或者右节点的，这个时候做对调值操作
+        heap[larger],heap[root] = heap[root],heap[larger]
+        MAX_Heapify(heap, HeapSize, larger)
+
+def Build_MAX_Heap(heap):#构造一个堆，将堆中所有数据重新排序
+    HeapSize = len(heap)
+    for i in range((HeapSize -2)//2,-1,-1):#从后往前出数
+        MAX_Heapify(heap,HeapSize,i)
+
+def HeapSort(heap):#将根节点取出与最后一位做对调，对前面len-1个节点继续进行对调整过程。
+    Build_MAX_Heap(heap)
+    for i in range(len(heap)-1,-1,-1):
+        heap[0],heap[i] = heap[i],heap[0]
+        MAX_Heapify(heap, i, 0)
+    return heap
+</code></pre>
+
+<h2 id="二叉树">二叉树</h2>
+
+<pre><code class="language-python"># 二叉树节点
+class Node(object):
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+tree = Node(1,Node(2),Node(3))
+tree1 = Node(1, Node(3, Node(7, Node(0)), Node(6)), Node(2, Node(5), Node(4)))
+
+# 深度优先遍历DFS
+# 从根节点出发，沿着左子树方向进行纵向遍历，直到找到叶子节点为止。然后回溯到前一个节点，进行右子树节点的遍历，直到遍历完所有可达节点为止。
+def dfs(root):
+    if not root:
+        return
+    print(root.value)
+    dfs(root.left)
+    dfs(root.right)
+
+# 广度优先遍历BFS / 层次遍历
+# 从根节点出发，在横向遍历二叉树层段节点的基础上纵向遍历二叉树的层次。
+def bfs(root):
+    row = [root]
+    while row:
+        for i in range(len(row)):
+            print(row[i].value)
+        row = [kid for item in row for kid in (item.left, item.right) if kid]
+        
+
+# 中序遍历:遍历左子树,访问当前节点,遍历右子树
+def mid_travelsal(root):
+    if root.left is not None:
+        mid_travelsal(root.left)
+    #访问当前节点
+    print(root.value)
+    if root.right is not None:
+        mid_travelsal(root.right)
+
+# 前序遍历:访问当前节点,遍历左子树,遍历右子树
+def pre_travelsal(root):
+    print (root.value)
+    if root.left is not None:
+        pre_travelsal(root.left)
+    if root.right is not None:
+        pre_travelsal(root.right)
+
+# 后序遍历:遍历左子树,遍历右子树,访问当前节点
+def post_trvelsal(root):
+    if root.left is not None:
+        post_trvelsal(root.left)
+    if root.right is not None:
+        post_trvelsal(root.right)
+    print (root.value)
+
+# 最大树深
+def maxDepth(root):
+        if not root:
+            return 0
+        return max(maxDepth(root.left), maxDepth(root.right)) + 1
+
+# 判断俩树是否相同
+def isSameTree(p, q):
+    if p == None and q == None:
+        return True
+    elif p and q :
+        return p.value == q.value and isSameTree(p.left,q.left) and isSameTree(p.right,q.right)
+    else :
+        return False
+
+# 已知前序中序求后序
+def rebuild(pre, center): # 还原二叉树
+    if not pre:
+        return
+    cur = Node(pre[0]) # 前序遍历的第一个值就是根节点
+    index = center.index(pre[0]) # 在中序遍历中找到这个值
+    cur.left = rebuild(pre[1:index + 1], center[:index]) # 值的左边为左子树部分前序遍历结果
+    cur.right = rebuild(pre[index + 1:], center[index + 1:]) # 值的右边为右子树部分前序遍历结果
+    return cur
+</code></pre>
+
+<h2 id="判断两个字符串是否是变位词">判断两个字符串是否是变位词</h2>
+
+<pre><code class="language-python">class Anagram:
+    """判断两个字符串是否是变位词
+    @:param s1: The first string
+    @:param s2: The second string
+    @:return true or false
+    """
+    def Solution1(s1,s2):
+        alist = list(s2)
+        pos1 = 0
+        stillOK = True
+        while pos1 &lt; len(s1) and stillOK:
+            pos2 = 0
+            found = False
+            while pos2 &lt; len(alist) and not found:
+                if s1[pos1] == alist[pos2]:
+                    found = True
+                else:
+                    pos2 = pos2 + 1
+            if found:
+                alist[pos2] = None
+            else:
+                stillOK = False
+            pos1 = pos1 + 1
+        return stillOK
+
+    def Solution2(s1,s2):
+        alist1 = list(s1)
+        alist2 = list(s2)
+        alist1.sort()
+        alist2.sort()
+        pos = 0
+        matches = True
+        while pos &lt; len(s1) and matches:
+            if alist1[pos] == alist2[pos]:
+                pos = pos + 1
+            else:
+                matches = False
+        return matches
+
+    def Solution3(s1,s2):
+        c1 = [0]*26
+        c2 = [0]*26
+        for i in range(len(s1)):
+            pos = ord(s1[i])-ord('a')
+            c1[pos] = c1[pos] + 1
+        for i in range(len(s2)):
+            pos = ord(s2[i])-ord('a')
+            c2[pos] = c2[pos] + 1
+        j = 0
+        stillOK = True
+        while j&lt;26 and stillOK:
+            if c1[j] == c2[j]:
+                j = j + 1
+            else:
+                stillOK = False
+        return stillOK
+
+print(Anagram.Solution1('abcd','dcba'))
+print(Anagram.Solution2('abcde','edcbg'))
+print(Anagram.Solution3('apple','pleap'))
+</code></pre>
+
+<h1 id="网络基础">网络基础</h1>
+
+<ul>
+  <li>TCP/IP分别在模型的哪一层：传输层/网络层</li>
+  <li>socket长连接是什么意思；</li>
+  <li>select和epoll你了解么，区别在哪；</li>
+  <li>TIME_WAIT过多是因为什么；</li>
+  <li>http一次连接的全过程：你来说下从用户发起request——到用户接收到response；</li>
+  <li>http连接方式。get和post的区别，你还了解其他的方式么；</li>
+  <li>状态码你知道多少，比如200/403/404/504等等；</li>
+</ul>
+
+<h2 id="三次握手">三次握手</h2>
+
+<ol>
+  <li>客户端通过向服务器端发送一个SYN来创建一个主动打开，作为三次握手的一部分。客户端把这段连接的序号设定为随机数 A。</li>
+  <li>服务器端应当为一个合法的SYN回送一个SYN/ACK。ACK 的确认码应为 A+1，SYN/ACK 包本身又有一个随机序号 B。</li>
+  <li>最后，客户端再发送一个ACK。当服务端受到这个ACK的时候，就完成了三路握手，并进入了连接创建状态。此时包序号被设定为收到的确认号 A+1，而响应则为 B+1。</li>
+</ol>
+
+<h2 id="四次挥手">四次挥手</h2>
+
+<p>​	<em>以客户端断开连接举例</em></p>
+
+<ol>
+  <li>客户端发送一个数据分段, 其中的 FIN 标记设置为1. 客户端进入 FIN-WAIT 状态. 该状态下客户端只接收数据, 不再发送数据.</li>
+  <li>服务器接收到带有 FIN = 1 的数据分段, 发送带有 ACK = 1 的剩余数据分段, 确认收到客户端发来的 FIN 信息.</li>
+  <li>服务器等到所有数据传输结束, 向客户端发送一个带有 FIN = 1 的数据分段, 并进入 CLOSE-WAIT 状态, 等待客户端发来带有 ACK = 1 的确认报文.</li>
+  <li>客户端收到服务器发来带有 FIN = 1 的报文, 返回 ACK = 1 的报文确认, 为了防止服务器端未收到需要重发, 进入 TIME-WAIT 状态. 服务器接收到报文后关闭连接. 客户端等待 2MSL 后未收到回复, 则认为服务器成功关闭, 客户端关闭连接.</li>
+</ol>
+
+<h2 id="arp协议">ARP协议</h2>
+
+<p>地址解析协议(Address Resolution Protocol)，其基本功能为透过目标设备的IP地址，查询目标的MAC地址，以保证通信的顺利进行。它是IPv4网络层必不可少的协议，不过在IPv6中已不再适用，并被邻居发现协议（NDP）所替代。</p>
+
+<h2 id="幂等-idempotence">幂等 Idempotence</h2>
+
+<blockquote>
+  <p>HTTP方法的幂等性是指一次和多次请求某一个资源应该具有同样的<strong>副作用</strong>。(注意是副作用)</p>
+
+  <p><code>GET http://www.bank.com/account/123456</code>，不会改变资源的状态，不论调用一次还是N次都没有副作用。请注意，这里强调的是一次和N次具有相同的副作用，而不是每次GET的结果相同。<code>GET http://www.news.com/latest-news</code>这个HTTP请求可能会每次得到不同的结果，但它本身并没有产生任何副作用，因而是满足幂等性的。</p>
+
+  <p>DELETE方法用于删除资源，有副作用，但它应该满足幂等性。比如：<code>DELETE http://www.forum.com/article/4231</code>，调用一次和N次对系统产生的副作用是相同的，即删掉id为4231的帖子；因此，调用者可以多次调用或刷新页面而不必担心引起错误。</p>
+
+  <p>POST所对应的URI并非创建的资源本身，而是资源的接收者。比如：<code>POST http://www.forum.com/articles</code>的语义是在<code>http://www.forum.com/articles</code>下创建一篇帖子，HTTP响应中应包含帖子的创建状态以及帖子的URI。两次相同的POST请求会在服务器端创建两份资源，它们具有不同的URI；所以，POST方法不具备幂等性。</p>
+
+  <p>PUT所对应的URI是要创建或更新的资源本身。比如：<code>PUT http://www.forum/articles/4231</code>的语义是创建或更新ID为4231的帖子。对同一URI进行多次PUT的副作用和一次PUT是相同的；因此，PUT方法具有幂等性。</p>
+</blockquote>
+
+<h2 id="restful架构representational-state-transfer">RESTful架构(Representational State Transfer)</h2>
+
+<p>http://www.ruanyifeng.com/blog/2011/09/restful.html</p>
+
+<blockquote>
+  <p>每一个URI代表一种资源；</p>
+
+  <p>客户端和服务器之间，传递这种资源的某种表现层；</p>
+
+  <p>客户端通过四个HTTP动词 GET、POST、PUT、DELETE，对服务器端资源进行操作，实现”表现层状态转化”。</p>
+</blockquote>
+
+<blockquote>
+  <p>RPC -&gt; SOAP -&gt; RESTful</p>
+</blockquote>
+
+<h1 id="数据库">数据库</h1>
+
+<ul>
+  <li>MySQL锁有几种；死锁是怎么产生的；
+    <ul>
+      <li>悲观锁：假定会发生并发冲突，屏蔽一切可能违反数据完整性的操作</li>
+      <li>乐观锁：假设不会发生并发冲突，只在提交操作时检查是否违反数据完整性。</li>
+    </ul>
+  </li>
+  <li>为何，以及如何分区、分表；</li>
+  <li>了解join么，有几种，有何区别，A LEFT JOIN B，查询的结果中，B没有的那部分是如何显示的（NULL）；</li>
+  <li>索引类型有几种，BTree索引和hash索引的区别（我没答上来这俩在磁盘结构上的区别）；</li>
+  <li>手写：如何对查询命令进行优化；</li>
+  <li>NoSQL了解么，和关系数据库的区别；redis有几种常用存储类型；</li>
+  <li>谈谈mysql字符集和排序规则？</li>
+  <li>.varchar与char的区别是什么？大小限制？utf8字符集下varchar最多能存多少个字符</li>
+  <li>外键有什么用，是否该用外键？外键一定需要索引吗？</li>
+</ul>
+
+<h2 id="数据库索引">数据库索引</h2>
+
+<p><a href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html">MySQL索引背后的数据结构及算法原理</a></p>
+
+<h1 id="linux">Linux</h1>
+
+<ul>
+  <li>讲一下你常用的Linux/git命令和作用；</li>
+  <li>查看当前进程是用什么命令，除了文件相关的操作外，你平时还有什么操作命令；</li>
+</ul>
+
+<h1 id="项目">项目</h1>
+
+<ul>
+  <li>简单的介绍下你在公司的项目，不管是不是后端相关的，主要是要体现出你干了什么；</li>
+  <li>你在项目中遇到最难的部分是什么，你是怎么解决的；</li>
+  <li>你看过django的admin源码么；看过flask的源码么；你如何理解开源；</li>
+  <li>MVC / MTV；</li>
+  <li>缓存怎么用；</li>
+  <li>中间件是干嘛的；</li>
+</ul>
+
+
+</div>
+<div class="v">
+  <i class="fas fa-spinner fa-pulse"></i>
+</div>
+<script
+  src='https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js'
+  defer='defer'
+  onload='
+    new Valine({
+      "el": document.getElementsByClassName("v")[0],
+      "appId": "sJhaa5UF52fhugGM95buMpIT-gzGzoHsz",
+      "appKey": "Tp95IdLx1TBXyH9tXflqNnXx",
+      "placeholder": "在这里评论吧！填写邮箱可以获得Gravatar头像和回复通知",
+      "requiredFields": ["nick","mail"],
+      "visitor": true,
+      "recordIP": true
+    })'
+></script>
+
+</div>
+  </div>
+  
+  <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+  
+</body>
+
+</html>

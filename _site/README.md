@@ -39,18 +39,21 @@
 
 - 身为Automan，掌握了自动控制、计算机软硬件、人工智能和机器人领域相关知识。
 
-- 典型射手座男生，花心:见一个爱一个的技术激情，多变:三分钟的学习热度。(泛而不精)
+- 典型射手座男:见一个爱一个的技术激情,三分钟的学习热度。
 
 <!-- slide vertical=true -->
 
-- **Matlab**,Familiar&Learning
-- **C/C++**, Familiar&Learning
-- **Python**, Familiar&Learning
-
-- **Markdown**, Familiar
-- **Machine learning**, Familiar&Learning
-- **Linux**, Familiar
-- **Git**, Familiar
+- **Matlab**:Frequent&Learning
+- **C/C++**:Familiar&Learning
+- **Python**:Frequent&Learning
+- **.net/c#**:Beginner
+- **ROS**:Familiar&Learning
+- **Deep learning**:Familiar&Learning
+  - **Tensorflow/keras**:Familiar&Learning
+- **SQL/pymysql**:Familiar&Learning
+- **Linux/ubuntu**:Frequent
+- **Markdown**:Frequent
+- **Git**:Frequent
 
 <!-- slide -->
 

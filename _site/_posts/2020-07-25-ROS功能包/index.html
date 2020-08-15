@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>ROSPY | Acemyzoe</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="ROSPY" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Launch" />
+<meta property="og:description" content="Launch" />
+<link rel="canonical" href="https://acemyzoe.github.io/_posts/2020-07-25-ROS%E5%8A%9F%E8%83%BD%E5%8C%85/" />
+<meta property="og:url" content="https://acemyzoe.github.io/_posts/2020-07-25-ROS%E5%8A%9F%E8%83%BD%E5%8C%85/" />
+<meta property="og:site_name" content="Acemyzoe" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-25T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","url":"https://acemyzoe.github.io/_posts/2020-07-25-ROS%E5%8A%9F%E8%83%BD%E5%8C%85/","headline":"ROSPY","dateModified":"2020-07-25T00:00:00+08:00","datePublished":"2020-07-25T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://acemyzoe.github.io/_posts/2020-07-25-ROS%E5%8A%9F%E8%83%BD%E5%8C%85/"},"description":"Launch","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  
+  <meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1"
+/>
+<meta
+  http-equiv="content-type"
+  content="text/html; charset=utf-8"
+/>
+<link
+  rel="alternate"
+  href="/feed.xml"
+  title="RSS"
+  type="application/rss+xml"
+/>
+
+  
+  <link
+  rel="apple-touch-icon-precomposed"
+  href="/assets/image/Avatar.jpg"
+/>
+<link
+  rel="shortcut
+  icon"
+  href="/assets/image/Avatar.jpg"
+/>
+
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css"
+/>
+
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"
+/>
+
+  
+  <script
+  src='https://zz.bdstatic.com/linksubmit/push.js'
+  async="async"
+></script>
+
+  
+  <style>
+  .wrap {
+    transition-property: width,background-size,transform;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+    min-height: 100%;
+    display: inline-block;
+    background-size: 100% auto;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(/assets/image/background-wap.jpg);
+  }
+  @media (min-aspect-ratio: 2400/1850) {
+    .wrap {
+      background-image: url(/assets/image/background.jpg);
+    }
+  }
+  .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    width: calc(100% - 14rem);
+    background-size: calc(100% - 14rem) auto;
+    transform: translateX(14rem);
+  }
+  .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    transform: translateX(0);
+  }
+</style>
+
+  
+  <style>
+  .sidebar,
+  html,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: PingFang SC, Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
+  }
+</style>
+
+  
+  <style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+</style>
+
+  
+  <style>
+  img {
+    display: inline-block;
+    margin: 0;
+  }
+</style>
+
+  
+  <style>
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%);
+  }
+</style>
+
+  
+  <style>
+  ::selection {
+    color: White;
+    background: Black;
+  }
+</style>
+
+  
+</head>
+
+<body
+  class="theme-base-07 layout-reverse sidebar-overlay">
+  
+  
+  
+  <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+  <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"
+     />
+  <!-- Toggleable sidebar -->
+  <div class="sidebar" id="sidebar">
+    
+    <div class="sidebar-item">
+      <div class="effect effect-right_to_left">
+        <img class="effect-img" src="/assets/image/Avatar.jpg" alt="img" />
+        <div class="effect-info">
+          人类世界<br/>
+真是<br/>
+太有趣了<br/>
+QAQ<br/>
+<a href="mailto:acemyzoe@outlook.com">
+  <i class="fas fa-envelope"></i>
+</a>
+<a href="https://github.com/acemyzoe">
+  <i class="fab fa-github"></i>
+</a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=52 src="//music.163.com/outchain/player?type=2&id=486806&auto=1&height=32"></iframe>
+
+        </div>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      
+      <a class="sidebar-nav-item" href="/">
+        <i class="fas fa-home fa-fw"></i> 首页
+      </a>
+      
+      <a class="sidebar-nav-item" href="/comments/">
+        <i class="fas fa-comments fa-fw"></i> 留言
+      </a>
+      
+      <a class="sidebar-nav-item" href="/tags/">
+        <i class="fas fa-tags fa-fw"></i> 标签
+      </a>
+      
+      <a class="sidebar-nav-item" href="/archive/">
+        <i class="fas fa-archive fa-fw"></i> 归档
+      </a>
+      
+      <a class="sidebar-nav-item" href="/merger/">
+        <i class="fas fa-coffee fa-fw"></i> 打赏
+      </a>
+      
+    </nav>
+    <div class="sidebar-item">
+      
+      <style>
+  #sidebar-search-input {
+    background: none;
+    border: none;
+    color: White;
+    width: 100%;
+  }
+  #sidebar-search-results-container {
+    overflow: auto auto;
+    max-height: 60vh;
+  }
+</style>
+<input
+  id="sidebar-search-input"
+  placeholder="搜索博文"
+/>
+<ol
+  id="sidebar-search-results-container"
+></ol>
+<script
+  src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.7/dest/simple-jekyll-search.min.js'
+  async='async'
+  onload='
+    SimpleJekyllSearch({
+      json: "/assets/simple-jekyll-search/search.json",
+      searchInput: document.getElementById("sidebar-search-input"),
+      resultsContainer: document.getElementById("sidebar-search-results-container"),
+      searchResultTemplate: `<li><a href="{url}">{title}</a></li>`,
+      limit: 999,
+      fuzzy: true
+    })'
+></script>
+
+      
+      
+      <style>
+  #toc {
+    overflow: auto auto;
+    max-height: 50vh;
+  }
+</style>
+
+      <ol id="toc">
+  <li><a href="#launch">Launch</a></li>
+  <li><a href="#tf2">TF2</a>
+    1.  <a href="#tf2-broadcaster-python">tf2 broadcaster (Python)</a>
+    1.  <a href="#tf2-listener-python">tf2 listener (Python)</a>
+    1.  <a href="#%E5%9B%9B%E5%85%83%E6%95%B0">四元数</a></li>
+  <li><a href="#rviz">Rviz</a>
+    1.  <a href="#markers">Markers</a>
+    1.  <a href="#interactive-markers">Interactive Markers</a></li>
+  <li><a href="#urdf">urdf</a></li>
+  <li><a href="#gazebo">gazebo</a></li>
+</ol>
+      
+      
+      <script defer="defer" src="https://cdn.jsdelivr.net/gh/poole/lanyon@v1.1.0/public/js/script.min.js"></script>
+      
+      <style>
+  .sidebar-checkbox {
+    display: none;
+  }
+  .sidebar-toggle {
+    position: fixed;
+  }
+</style>
+
+      
+      <style>
+  .effect {
+    margin: 1rem;
+    perspective: 900px;
+  }
+  .effect-info {
+    text-align: center;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    transform-style: preserve-3d;
+  }
+  .effect-img {
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+  }
+  .effect-img:before {
+    position: absolute;
+    display: block;
+  }
+  .effect-right_to_left .effect-img {
+    transform-origin: 0% 50%;
+  }
+  .effect-right_to_left:hover .effect-img {
+    transform: rotate3d(0, 1, 0, -180deg);
+  }
+</style>
+
+      
+      <div>
+  <i class="fas fa-cog fa-spin fa-fw"></i>
+  <span id="run_time_day">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>天
+  <span id="run_time_hour">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>时
+  <span id="run_time_minute">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>分
+  <span id="run_time_second">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>秒
+  <script>
+    setInterval(function (d,h,m,s,b) {
+      function setzero(i) {
+        return i < 10 ? "0" + i : i;
+      }
+      let BirthDay = new Date(b);
+      let today = new Date();
+      let timeold = (today.getTime() - BirthDay.getTime());
+      let sectimeold = timeold / 1000;
+      let secondsold = Math.floor(sectimeold);
+      let msPerDay = 24 * 60 * 60 * 1000;
+      let e_daysold = timeold / msPerDay;
+      let daysold = Math.floor(e_daysold);
+      let e_hrsold = (e_daysold - daysold) * 24;
+      let hrsold = Math.floor(e_hrsold);
+      let e_minsold = (e_hrsold - hrsold) * 60;
+      let minsold = Math.floor((e_hrsold - hrsold) * 60);
+      let seconds = Math.floor((e_minsold - minsold) * 60);
+      d.textContent = daysold;
+      h.textContent = setzero(hrsold);
+      m.textContent = setzero(minsold);
+      s.textContent = setzero(seconds);
+    },
+    1000,
+    document.getElementById("run_time_day"),
+    document.getElementById("run_time_hour"),
+    document.getElementById("run_time_minute"),
+    document.getElementById("run_time_second"),
+    "04/01/2020 12:00:00")// 这是我第一篇博客的时间
+  </script>
+</div>
+
+      
+      <div>
+  <div>
+    <i class="fas fa-eye fa-fw"></i>
+    <span id="busuanzi_value_page_pv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>次
+  </div>
+  <div>
+    <i class="fas fa-paw fa-fw"></i>
+    <span id="busuanzi_value_site_pv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>枚
+  </div>
+  <div>
+    <i class="fas fa-user-friends fa-fw"></i>
+    <span id="busuanzi_value_site_uv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>人
+  </div>
+  <script
+    src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0'
+    async='async'
+  ></script>
+</div>
+
+      
+      <div>
+  <i class="fas fa-thumbs-up fa-fw"></i>
+  <a href="https://github.com/acemyzoe">
+    Github
+  </a>
+</div>
+
+      
+      <div>
+  <i class="fas fa-copyright fa-fw"></i>
+  acemyzoe
+</div>
+
+      
+      
+    </div>
+  </div>
+  <!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. -->
+  
+  <div class="wrap">
+    
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/katex@0.11.1/dist/katex.min.js,npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js,npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  defer="defer"
+  onload='renderMathInElement(document.body, { delimiters: [{ left: "$", right: "$", display: false }] })'
+></script>
+
+
+
+<style>
+  pre.language-mermaid,
+  code.language-mermaid {
+    display: none;
+  }
+</style>
+<script
+  src="https://cdn.jsdelivr.net/npm/mermaid@8.5.1/dist/mermaid.min.js"
+  defer="defer"
+  onload='
+    for(let x of document.getElementsByClassName("language-mermaid"))
+      if(x.nodeName=="CODE")
+      {
+        let m = document.createElement("div");
+        m.classList.add("mermaid");
+        m.textContent = x.textContent;
+        x.parentNode.insertAdjacentElement("beforebegin", m);
+      }'
+></script>
+
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.css,gh/PrismJS/prism-themes@1955cfef6953b3a59e66016e8a1e016b45d6cc79/themes/prism-nord.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/components/prism-core.min.js,npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.js"
+  defer="defer"
+  onload='
+    Prism.plugins.autoloader.languages_path = "https:\/\/cdn.jsdelivr.net/npm/prismjs/components/";
+    for(let x of document.getElementsByTagName("pre"))
+      x.classList.add("line-numbers");
+    Prism.plugins.toolbar.registerButton("select-code", function (env) {
+      let button = document.createElement("button");
+      button.textContent = "select this " + env.language;
+      button.addEventListener("click", function () {
+        if (document.body.createTextRange) {
+          let range = document.body.createTextRange();
+          range.moveToElementText(env.element);
+          range.select();
+        } else if (window.getSelection) {
+          let selection = window.getSelection();
+          let range = document.createRange();
+          range.selectNodeContents(env.element);
+          selection.removeAllRanges();
+            selection.addRange(range);
+        }
+      });
+      return button;
+    })'
+></script>
+
+
+
+<style>
+  pre {
+    max-height: 50vh;
+    overflow: auto;
+  }
+</style>
+
+
+<style>
+  @media (min-width: 56em) {
+    .container {
+      max-width: 66.6%;
+    }
+  }
+</style>
+
+
+<style>
+  .masthead,
+  .container.content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    animation-duration: 2s;
+    animation-name: fadeIn;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+
+
+<div class="masthead">
+  <h3 class="container masthead-title">
+    
+    ROSPY
+    <a href="/" title="Home">
+      <small>
+        Acemyzoe
+      </small>
+    </a>
+    
+  </h3>
+</div>
+
+<div class="container content">
+  <div class="post">
+  <span class="post-date">
+    
+    <i class="fas fa-calendar-day fa-fw"></i>
+    25 Jul 2020
+    
+    
+    <i class="fas fa-file-word fa-fw"></i>
+    13124字
+    
+    
+    <i class="fas fa-clock fa-fw"></i>
+    44分
+    
+    
+    <span class="leancloud-visitors" id="/_posts/2020-07-25-ROS%E5%8A%9F%E8%83%BD%E5%8C%85/" data-xid="/_posts/2020-07-25-ROS%E5%8A%9F%E8%83%BD%E5%8C%85/" data-flag-title="ROSPY">
+      <i class="fas fa-book-reader fa-fw"></i>
+      <span class="leancloud-visitors-count">
+        <i class="fas fa-spinner fa-pulse"></i>
+      </span>次
+    </span>
+    
+    
+    
+    <i class="fas fa-tag fa-fw"></i>
+    ros
+    
+    
+    <i class="fab fa-creative-commons-by fa-fw"></i>
+<a
+  href="https://creativecommons.org/licenses/by/4.0/deed.zh"
+  rel="license">
+  CC BY 4.0
+</a>
+（除特别声明或转载文章外）
+
+    
+  </span>
+  <h1 id="launch">Launch</h1>
+
+<blockquote>
+  <p><a href="http://wiki.ros.org/roslaunch">roslaunch</a>可通过SSH 轻松地在本地和远程启动多个ROS <a href="http://ros.org/wiki/Nodes">节点</a>，以及在<a href="http://ros.org/wiki/Parameter Server">Parameter Server</a>上设置参数。</p>
+</blockquote>
+
+<p>​	<a href="http://wiki.ros.org/roslaunch/CommandlineTools">roslaunch命令行用法</a></p>
+
+<pre><code class="language-shell">roslaunch package_name file.launch
+roslaunch -p 1234 package filename.launch # 远程端口
+roslaunch my_file.launch arg:=value # 参数传递
+</code></pre>
+
+<p>​	<a href="http://wiki.ros.org/roslaunch/XML">roslaunch .launch / XML格式</a></p>
+
+<pre><code class="language-xml">&lt;launch&gt;
+  &lt;!-- local machine already has a definition by default.
+       This tag overrides the default definition with
+       specific ROS_ROOT and ROS_PACKAGE_PATH values --&gt;
+  &lt;machine name="local_alt" address="localhost" default="true" ros-root="/u/user/ros/ros/" ros-package-path="/u/user/ros/ros-pkg" /&gt;
+  &lt;!-- a basic listener node --&gt;
+  &lt;node name="listener-1" pkg="rospy_tutorials" type="listener" /&gt;
+  &lt;!-- pass args to the listener node --&gt;
+  &lt;node name="listener-2" pkg="rospy_tutorials" type="listener" args="-foo arg2" /&gt;
+  &lt;!-- a respawn-able listener node --&gt;
+  &lt;node name="listener-3" pkg="rospy_tutorials" type="listener" respawn="true" /&gt;
+  &lt;!-- start listener node in the 'wg1' namespace --&gt;
+  &lt;node ns="wg1" name="listener-wg1" pkg="rospy_tutorials" type="listener" respawn="true" /&gt;
+  &lt;!-- start a group of nodes in the 'wg2' namespace --&gt;
+  &lt;group ns="wg2"&gt;
+    &lt;!-- remap applies to all future statements in this scope. --&gt;
+    &lt;remap from="chatter" to="hello"/&gt;
+    &lt;node pkg="rospy_tutorials" type="listener" name="listener" args="--test" respawn="true" /&gt;
+    &lt;node pkg="rospy_tutorials" type="talker" name="talker"&gt;
+      &lt;!-- set a private parameter for the node --&gt;
+      &lt;param name="talker_1_param" value="a value" /&gt;
+      &lt;!-- nodes can have their own remap args --&gt;
+      &lt;remap from="chatter" to="hello-1"/&gt;
+      &lt;!-- you can set environment variables for a node --&gt;
+      &lt;env name="ENV_EXAMPLE" value="some value" /&gt;
+    &lt;/node&gt;
+  &lt;/group&gt;
+&lt;/launch&gt;
+</code></pre>
+
+<p><a href="http://wiki.ros.org/roslaunch/APIUsage">roslaunch / PYTHON API</a></p>
+
+<pre><code class="language-python"># 从软件包rqt_gui启动和停止rqt_gui的实例
+import roslaunch
+package = 'rqt_gui'
+executable = 'rqt_gui'
+node = roslaunch.core.Node(package, executable)
+
+launch = roslaunch.scriptapi.ROSLaunch()
+launch.start()
+
+process = launch.launch(node)
+print process.is_alive()
+process.stop()
+</code></pre>
+
+<pre><code class="language-python"># 具有参数列表的多个启动文件
+import roslaunch
+uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
+roslaunch.configure_logging(uuid)
+
+cli_args1 = ['pkg1', 'file1.launch', 'arg1:=arg1', 'arg2:=arg2']
+cli_args2 = ['pkg2', 'file2.launch', 'arg1:=arg1', 'arg2:=arg2']
+cli_args3 = ['pkg3', 'file3.launch']
+roslaunch_file1 = roslaunch.rlutil.resolve_launch_arguments(cli_args1)
+roslaunch_args1 = cli_args1[2:]
+
+roslaunch_file2 = roslaunch.rlutil.resolve_launch_arguments(cli_args2)
+roslaunch_args2 = cli_args2[2:]
+
+roslaunch_file3 = roslaunch.rlutil.resolve_launch_arguments(cli_args3)
+
+launch_files = [(roslaunch_file1, roslaunch_args1), (roslaunch_file2, roslaunch_args2), roslaunch_file3]
+parent = roslaunch.parent.ROSLaunchParent(uuid, launch_files)
+parent.start()
+</code></pre>
+
+<pre><code class="language-python"># 从base启动文件“继承”
+import roslaunch
+roslaunch.configure_logging(uuid)
+launch = roslaunch.scriptapi.ROSLaunch()
+launch.parent = roslaunch.parent.ROSLaunchParent(uuid, "path/to/base.launch")
+launch.start()
+# Start another node
+node = roslaunch.core.Node(package, executable)
+launch.launch(node)
+try:
+  launch.spin()
+finally:
+  # After Ctrl+C, stop all nodes from running
+  launch.shutdown()
+</code></pre>
+
+<h1 id="tf2"><a href="http://wiki.ros.org/tf2">TF2</a></h1>
+
+<blockquote>
+  <p>TF是一个让用户随时间跟踪多个坐标系的功能包，它使用树型数据结构，根据时间缓冲并维护多个坐标系之间的坐标变换关系，可以帮助开发者在任意时间，在坐标系间完成点、向量等坐标的变换。</p>
+</blockquote>
+
+<pre><code class="language-shell"># 工作区
+source /opt/ros/noetic/setup.bash
+mkdir -p ~/tutorial_ws/src
+cd ~/tutorial_ws
+catkin_init_workspace src
+catkin_make
+source devel/setup.bash
+</code></pre>
+
+<pre><code class="language-python"># run demo
+# 该demo使用tf2库创建三个坐标系：世界框架，turtle1框架和turtle2框架。
+# 使用tf2广播器(broadcaster)发布乌龟坐标帧，并使用tf2侦听器(listener)计算乌龟帧中的差异并移动一只乌龟跟随另一只乌龟。
+sudo apt-get install ros-noetic-turtle-tf2 ros-noetic-tf2-tools ros-noetic-tf
+roslaunch turtle_tf2 turtle_tf2_demo.launch
+rosrun tf2_tools view_frames.py # 通过ROS广播的帧
+evince frames.pdf # 绘制帧连接方式的树
+rosrun tf tf_echo turtle1 turtle2 # 通过ROS广播的任何两个帧之间的转换
+rosrun rviz rviz -d `rospack find turtle_tf2`/rviz/turtle_rviz.rviz # 可视化tf2帧
+</code></pre>
+
+<h3 id="tf2-broadcaster-python">tf2 broadcaster (Python)</h3>
+
+<blockquote>
+  <p>如何将坐标系广播到tf2 : 广播海龟移动时不断变化的坐标系。</p>
+</blockquote>
+
+<pre><code class="language-shell"># 名为learning_tf2的catkin包将继承tf2，tf2_ros,roscpp,rospy和turtlesim.
+catkin_create_pkg learning_tf2 tf2 tf2_ros roscpp rospy turtlesim
+roscd learning_tf2
+mkdirs nodes
+</code></pre>
+
+<pre><code class="language-python"># nodes / turtle_tf2_broadcaster.py
+#!/usr/bin/env python  
+import rospy
+import tf_conversions # Because of transformations
+import tf2_ros
+import geometry_msgs.msg
+import turtlesim.msg
+def handle_turtle_pose(msg, turtlename):
+    br = tf2_ros.TransformBroadcaster()
+    t = geometry_msgs.msg.TransformStamped()
+
+    t.header.stamp = rospy.Time.now() # 时间戳
+    t.header.frame_id = "world" # 设置要创建的链接的父框架的名称
+    t.child_frame_id = turtlename # 设置要创建的链接的子节点的名称
+    # 从框架“world”到框架“turtle”的转换
+    t.transform.translation.x = msg.x
+    t.transform.translation.y = msg.y
+    t.transform.translation.z = 0.0
+    q = tf_conversions.transformations.quaternion_from_euler(0, 0, msg.theta)
+    t.transform.rotation.x = q[0]
+    t.transform.rotation.y = q[1]
+    t.transform.rotation.z = q[2]
+    t.transform.rotation.w = q[3]
+
+    br.sendTransform(t)
+
+if __name__ == '__main__':
+    rospy.init_node('tf2_turtle_broadcaster')
+    turtlename = rospy.get_param('turtle1') # 该节点采用一个参数
+    rospy.Subscriber('/%s/pose' % turtlename, # 订阅turtle/pose主题
+                     turtlesim.msg.Pose,
+                     handle_turtle_pose,
+                     turtlename)
+    rospy.spin()
+# chmod +x nodes/turtle_tf2_broadcaster.py
+</code></pre>
+
+<pre><code class="language-xml">&lt;!--start_demo.launch--&gt;
+&lt;launch&gt;
+    &lt;node pkg="turtlesim" type="turtlesim_node" name="sim"/&gt;
+    &lt;node pkg="turtlesim" type="turtle_teleop_key" name="teleop" output="screen"/&gt;
+
+    &lt;node name="turtle1_tf2_broadcaster" pkg="learning_tf2" type="turtle_tf2_broadcaster.py" respawn="false" output="screen" &gt;
+    &lt;param name="turtle" type="string" value="turtle1" /&gt;
+    &lt;/node&gt;
+    
+    &lt;node name="turtle2_tf2_broadcaster" pkg="learning_tf2" type="turtle_tf2_broadcaster.py" respawn="false" output="screen" &gt;
+    &lt;param name="turtle" type="string" value="turtle2" /&gt; 
+    &lt;/node&gt;
+    
+    &lt;!--tf2 listener--&gt;
+	&lt;node pkg="learning_tf2" type="turtle_tf2_listener.py" name="listener" output="screen"/&gt;
+&lt;/launch&gt;
+</code></pre>
+
+<pre><code class="language-shell">roslaunch learning_tf2 start_demo.launch
+rosrun tf tf_echo /world/turtle1
+</code></pre>
+
+<h3 id="tf2-listener-python">tf2 listener (Python)</h3>
+
+<pre><code class="language-python"># nodes/turtle_tf2_listener.py
+#!/usr/bin/env python  
+import rospy
+
+import math
+import tf2_ros # tf2_ros包提供了tf2_ros.TransformListener的实现
+import geometry_msgs.msg
+import turtlesim.srv
+
+if __name__ == '__main__':
+    rospy.init_node('tf2_turtle_listener')
+
+    tfBuffer = tf2_ros.Buffer()
+    listener = tf2_ros.TransformListener(tfBuffer) # 创建侦听器
+
+    rospy.wait_for_service('spawn')
+    spawner = rospy.ServiceProxy('spawn', turtlesim.srv.Spawn)
+    turtle_name = rospy.get_param('turtle', 'turtle2')
+    spawner(4, 2, 0, turtle_name)
+
+    turtle_vel = rospy.Publisher('%s/cmd_vel' % turtle_name, geometry_msgs.msg.Twist, queue_size=1)
+
+    rate = rospy.Rate(10.0)
+    while not rospy.is_shutdown():
+        try:
+            trans = tfBuffer.lookup_transform(turtle_name, 'turtle1', rospy.Time())
+        except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException):
+            rate.sleep()
+            continue
+
+        msg = geometry_msgs.msg.Twist()
+
+        msg.angular.z = 4 * math.atan2(trans.transform.translation.y, trans.transform.translation.x)
+        msg.linear.x = 0.5 * math.sqrt(trans.transform.translation.x ** 2 + trans.transform.translation.y ** 2)
+
+        turtle_vel.publish(msg)
+
+        rate.sleep()
+</code></pre>
+
+<h3 id="四元数">四元数</h3>
+
+<blockquote>
+  <p>四元数具有4个分量（<code>x</code>，<code>y</code>，<code>z</code>，<code>w</code>），不绕x / y / z轴旋转的常用单位四元数为（0,0,0,1）。</p>
+
+  <p>ROS使用两种四元数数据类型：msg和’tf’</p>
+</blockquote>
+
+<pre><code class="language-python">from geometry_msgs.msg import Quaternion
+# Create a list of floats, which is compatible with tf
+# quaternion methods
+quat_tf = [0, 1, 0, 0]
+quat_msg = Quaternion(quat_tf[0], quat_tf[1], quat_tf[2], quat_tf[3])
+
+#（绕X轴滚动）/（绕Y轴俯仰）/（绕Z轴偏航），然后转换为四元数
+# tf.transformations alternative is not yet available in tf2
+from tf.transformations import quaternion_from_euler  
+# RPY to convert: 90deg, 0, -90deg
+q = quaternion_from_euler(1.5707, 0, -1.5707)
+print("The quaternion representation is %s %s %s %s." % (q[0], q[1], q[2], q[3]))
+print(q[0], q[1], q[2], -q[3]) # 反转四元数的一种简单方法是对w分量求反
+# 在同一帧中从q1到q2的相对旋转qr
+# q2=qr*q1,故相对旋转qr=q2*q1_inverse
+
+# 将一个四元数的旋转应用于姿势，只需将姿势的前一个四元数乘以表示所需旋转的四元数即可
+q_orig = quaternion_from_euler(0, 0, 0)
+q_rot = quaternion_from_euler(pi, 0, 0)
+q_new = quaternion_multiply(q_rot, q_orig)
+print(q_new)
+</code></pre>
+
+<pre><code class="language-python"># 四元数&amp;欧拉角
+import sys
+import math
+
+def quart2rpy(w,x,y,z):
+    angles = {'roll': 0.0, 'pitch': 0.0, 'yaw': 0.0}
+    r = math.atan2(2*(w*x+y*z),1-2*(x*x+y*y))
+    p = math.asin(2*(w*y-z*x))
+    y = math.atan2(2*(w*z+x*y),1-2*(z*z+y*y))
+    angles['roll'] = r*180/math.pi
+    angles['pitch'] = p*180/math.pi
+    angles['yaw'] = y*180/math.pi
+    print(angles)
+    return [r,p,y]
+
+def rpy2quart(roll,pitch,yaw):
+    qx = math.sin(roll/2) * math.cos(pitch/2) * math.cos(yaw/2) - math.cos(roll/2) * math.sin(pitch/2) * math.sin(yaw/2)
+    qy = math.cos(roll/2) * math.sin(pitch/2) * math.cos(yaw/2) + math.sin(roll/2) * math.cos(pitch/2) * math.sin(yaw/2)
+    qz = math.cos(roll/2) * math.cos(pitch/2) * math.sin(yaw/2) - math.sin(roll/2) * math.sin(pitch/2) * math.cos(yaw/2)
+    qw = math.cos(roll/2) * math.cos(pitch/2) * math.cos(yaw/2) + math.sin(roll/2) * math.sin(pitch/2) * math.sin(yaw/2)
+    print([qw,qx,qy,qz])
+    return [qw,qx,qy,qz]
+
+if __name__ == "__main__":
+    rpy2quart(1,0,0)
+    q=quart2rpy(0.8775825618903728, 0.479425538604203, 0.0, 0.0)
+    rpy2quart(q[0],q[1],q[2])
+</code></pre>
+
+<h1 id="rviz"><a href="https://wiki.ros.org/rviz">Rviz</a></h1>
+
+<blockquote>
+  <p>机器人通过ROS发布数据，rviz订阅消息接收数据，然后3D可视化。</p>
+</blockquote>
+
+<h3 id="markers"><a href="https://wiki.ros.org/rviz/Tutorials/Markers%3A Basic Shapes">Markers</a></h3>
+
+<pre><code class="language-shell">rosrun rviz rviz --help
+# 发送四个基本形状（框，球体，圆柱体和箭头）
+catkin_create_pkg using_markers roscpp visualization_msgs
+</code></pre>
+
+<pre><code class="language-c++">//// src/basic_shapes.cpp
+#include &lt;ros/ros.h&gt;
+#include &lt;visualization_msgs/Marker.h&gt;
+//原始对象是通过visualization_msgs/Marker消息发送到显示器的。
+
+int main( int argc, char** argv )
+{
+  ros::init(argc, argv, "basic_shapes");
+  ros::NodeHandle n;
+  ros::Rate r(1);
+  ros::Publisher marker_pub = n.advertise&lt;visualization_msgs::Marker&gt;("visualization_marker", 1);
+
+  // Set our initial shape type to be a cube,创建一个整数来跟踪要发布的形状
+  uint32_t shape = visualization_msgs::Marker::CUBE;
+
+  while (ros::ok())
+  {
+    visualization_msgs::Marker marker;
+    // Set the frame ID and timestamp.  See the TF tutorials for information on these.
+    marker.header.frame_id = "/my_frame";
+    marker.header.stamp = ros::Time::now();
+
+    // Set the namespace and id for this marker.  This serves to create a unique ID
+    // Any marker sent with the same namespace and id will overwrite the old one
+    // 名称空间（ns）和id用于为此标记创建唯一的名称
+    marker.ns = "basic_shapes";
+    marker.id = 0;
+
+    // Set the marker type.  Initially this is CUBE, and cycles between that and SPHERE, ARROW, and CYLINDER
+    marker.type = shape;
+
+    // Set the marker action.  Options are ADD, DELETE, and new in ROS Indigo: 3 (DELETEALL)
+    marker.action = visualization_msgs::Marker::ADD;
+
+    // Set the pose of the marker.  This is a full 6DOF pose relative to the frame/time specified in the header
+    // xyz位置 &amp; xyzw方向
+    marker.pose.position.x = 0;
+    marker.pose.position.y = 0;
+    marker.pose.position.z = 0;
+    marker.pose.orientation.x = 0.0;
+    marker.pose.orientation.y = 0.0;
+    marker.pose.orientation.z = 0.0;
+    marker.pose.orientation.w = 1.0;
+
+    // Set the scale of the marker -- 1x1x1 here means 1m on a side
+    // 比例 1：1m
+    marker.scale.x = 1.0;
+    marker.scale.y = 1.0;
+    marker.scale.z = 1.0;
+
+    // Set the color -- be sure to set alpha to something non-zero!
+    marker.color.r = 0.0f;
+    marker.color.g = 1.0f;
+    marker.color.b = 0.0f;
+    marker.color.a = 1.0; //alpha（a）值0表示完全透明（不可见），而1则完全不透明。
+
+    marker.lifetime = ros::Duration(); //标记的持续时间/生命周期
+
+    // Publish the marker
+    while (marker_pub.getNumSubscribers() &lt; 1)
+    {
+      if (!ros::ok())
+      {
+        return 0;
+      }
+      ROS_WARN_ONCE("Please create a subscriber to the marker");
+      sleep(1);
+    }
+    marker_pub.publish(marker);
+
+    // Cycle between different shapes
+    // CUBE立方体 SPHERE球 ARROW箭头 CYLINDER圆柱
+    switch (shape)
+    {
+    case visualization_msgs::Marker::CUBE:
+      shape = visualization_msgs::Marker::SPHERE;
+      break;
+    case visualization_msgs::Marker::SPHERE:
+      shape = visualization_msgs::Marker::ARROW;
+      break;
+    case visualization_msgs::Marker::ARROW:
+      shape = visualization_msgs::Marker::CYLINDER;
+      break;
+    case visualization_msgs::Marker::CYLINDER:
+      shape = visualization_msgs::Marker::CUBE;
+      break;
+    }
+
+    r.sleep();
+  }
+}
+</code></pre>
+
+<pre><code class="language-cmake">add_executable(basic_shapes src/basic_shapes.cpp)
+target_link_libraries(basic_shapes ${catkin_LIBRARIES})
+# catkin_make
+</code></pre>
+
+<pre><code class="language-shell">rosmake rviz
+rosrun using_markers basic_shapes
+rosrun rviz rviz
+</code></pre>
+
+<pre><code class="language-c++">//产生一个旋转的螺旋线
+#include &lt;ros/ros.h&gt;
+#include &lt;visualization_msgs/Marker.h&gt;
+
+#include &lt;cmath&gt;
+
+int main( int argc, char** argv )
+{
+  ros::init(argc, argv, "points_and_lines");
+  ros::NodeHandle n;
+  ros::Publisher marker_pub = n.advertise&lt;visualization_msgs::Marker&gt;("visualization_marker", 10);
+  ros::Rate r(30);
+
+  float f = 0.0;
+  while (ros::ok())
+  {
+
+    visualization_msgs::Marker points, line_strip, line_list;
+    points.header.frame_id = line_strip.header.frame_id = line_list.header.frame_id = "/my_frame";
+    points.header.stamp = line_strip.header.stamp = line_list.header.stamp = ros::Time::now();
+    points.ns = line_strip.ns = line_list.ns = "points_and_lines";
+    points.action = line_strip.action = line_list.action = visualization_msgs::Marker::ADD;
+    points.pose.orientation.w = line_strip.pose.orientation.w = line_list.pose.orientation.w = 1.0;
+
+    points.id = 0;
+    line_strip.id = 1;
+    line_list.id = 2;
+
+    points.type = visualization_msgs::Marker::POINTS;
+    line_strip.type = visualization_msgs::Marker::LINE_STRIP;
+    line_list.type = visualization_msgs::Marker::LINE_LIST;
+
+    // POINTS markers use x and y scale for width/height respectively
+    points.scale.x = 0.2;
+    points.scale.y = 0.2;
+
+    // LINE_STRIP/LINE_LIST markers use only the x component of scale, for the line width
+    line_strip.scale.x = 0.1;
+    line_list.scale.x = 0.1;
+
+    // Points are green
+    points.color.g = 1.0f;
+    points.color.a = 1.0;
+
+    // Line strip is blue
+    line_strip.color.b = 1.0;
+    line_strip.color.a = 1.0;
+
+    // Line list is red
+    line_list.color.r = 1.0;
+    line_list.color.a = 1.0
+
+    // Create the vertices for the points and lines
+    for (uint32_t i = 0; i &lt; 100; ++i)
+    {
+      float y = 5 * sin(f + i / 100.0f * 2 * M_PI);
+      float z = 5 * cos(f + i / 100.0f * 2 * M_PI);
+
+      geometry_msgs::Point p;
+      p.x = (int32_t)i - 50;
+      p.y = y;
+      p.z = z;
+
+      points.points.push_back(p);
+      line_strip.points.push_back(p);
+
+      // The line list needs two points for each line
+      line_list.points.push_back(p);
+      p.z += 1.0;
+      line_list.points.push_back(p);
+    }
+
+    marker_pub.publish(points);
+    marker_pub.publish(line_strip);
+    marker_pub.publish(line_list);
+
+    r.sleep();
+    f += 0.04;
+  }
+}
+</code></pre>
+
+<h3 id="interactive-markers"><a href="https://wiki.ros.org/rviz/Tutorials/InteractiveMarkers%3AGettingStarted">Interactive Markers</a></h3>
+
+<h1 id="urdf"><a href="https://wiki.ros.org/urdf">urdf</a></h1>
+
+<blockquote>
+  <p>URDF（Unified Robot Description Format，统一机器人描述格式）是ROS中一个非常重要的机器人模型描述格式。</p>
+</blockquote>
+
+<pre><code class="language-shell">apt-get install urdf_tutorial
+roslaunch urdf_tutorial display.launch model:=urdf/01-myfirst.urdf
+roslaunch urdf_tutorial display.launch model:='$(find urdf_tutorial)/urdf/01-myfirst.urdf'
+</code></pre>
+
+<h1 id="gazebo"><a href="http://gazebosim.org/tutorials">gazebo</a></h1>
+
+<blockquote>
+  <p>gazebo是一款功能强大的三维物理仿真平台，其中的机器人模型与rviz使用的模型相同，但是需要在模型中加入机器人和周围环境的物理属性，例如质量、摩擦系数、弹性系数等。机器人的传感器信息也可以通过插件的形式加入仿真环境，以可视化的方式进行显示。</p>
+</blockquote>
+
+<pre><code class="language-shell">gazebo
+gazebo worlds/pioneer2dx.world
+# gzserver可执行文件运行物理更新循环和传感器数据生成。这是gazebo的核心，可以独立于图形界面使用。
+gzserver
+# gzclient可执行文件运行QT基于用户界面。
+gzclient
+</code></pre>
+
+</div>
+<div class="v">
+  <i class="fas fa-spinner fa-pulse"></i>
+</div>
+<script
+  src='https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js'
+  defer='defer'
+  onload='
+    new Valine({
+      "el": document.getElementsByClassName("v")[0],
+      "appId": "sJhaa5UF52fhugGM95buMpIT-gzGzoHsz",
+      "appKey": "Tp95IdLx1TBXyH9tXflqNnXx",
+      "placeholder": "在这里评论吧！填写邮箱可以获得Gravatar头像和回复通知",
+      "requiredFields": ["nick","mail"],
+      "visitor": true,
+      "recordIP": true
+    })'
+></script>
+
+</div>
+  </div>
+  
+  <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+  
+</body>
+
+</html>
