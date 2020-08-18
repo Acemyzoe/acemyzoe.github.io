@@ -2,6 +2,24 @@
 [
   
     {
+      "title"    : "",
+      "category" : "",
+      "tags"     : "",
+      "date"     : "2020-08-18 17:37:37 +0800",
+      
+      "url"      : "/_posts/2020-08-18-2020-08-15-%E8%8B%8F%E8%8F%B2%E7%9A%84%E4%B8%96%E7%95%8C/"
+    } ,
+  
+    {
+      "title"    : "python-QA",
+      "category" : "",
+      "tags"     : "python",
+      "date"     : "2020-08-18 00:00:00 +0800",
+      
+      "url"      : "/_posts/2020-08-18-python-QA/"
+    } ,
+  
+    {
       "title"    : "设计模式",
       "category" : "",
       "tags"     : "Software",
@@ -197,6 +215,15 @@
       "date"     : "2020-05-21 00:00:00 +0800",
       
       "url"      : "/_posts/2020-05-21-tensorflow(keras)/"
+    } ,
+  
+    {
+      "title"    : "Jetson nano 小试",
+      "category" : "",
+      "tags"     : "ML",
+      "date"     : "2020-05-20 00:00:00 +0800",
+      
+      "url"      : "/_posts/2020-05-20-Jetson/"
     } ,
   
     {
