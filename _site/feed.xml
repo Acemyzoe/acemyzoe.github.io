@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-08-18T18:19:51+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-08-20T14:46:00+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
 真是&lt;br/&gt;
 太有趣了&lt;br/&gt;
 QAQ&lt;br/&gt;
@@ -117,6 +117,55 @@ def testfun():
   
 for lb in testfun():
     print(lb(2))
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;笔试试题“一个芬兰人进了一个房间，房间有一排椅子，椅子上有一些人坐着，还剩一些空位，他要选择一个位子坐下，这个位子要尽可能远离已经坐着的人，请给出算法。请自行定义数据结构和输入输出。”&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;import unittest
+# 分析空位情况：1,首位有人；2，尾位有人；3中间占人
+# 输入：空位列表 输出：结果位置和最大距离
+# 1.输入：list=[1,0,0,0] 输出：[3],3
+# 2.输入：list=[0,0,0,1] 输出：[0],3
+# 3.输入：list=[1,0,0,0,1,0,1] 输出：[2],2
+# 4.输入：list=[1,0,0,1,0] 输出:[1,2,4],1
+  
+class Testlist(unittest.TestCase):
+  
+    def test_case1(self):
+        list=[1,0,0,0]
+        self.assertEqual(solution(list),([3], 3))
+      
+    def test_case2(self):
+        list=[0,0,0,1]
+        self.assertEqual(solution(list), ([0], 3))
+  
+    def test_case3(self):
+        list=[1,0,0,0,1,0,1]
+        self.assertEqual(solution(list), ([2], 2))
+  
+    def test_case4(self):
+        list=[1,0,0,1,0]
+        self.assertEqual(solution(list), ([1,2,4], 1))
+  
+def solution(seats):
+    &quot;&quot;&quot;
+    seats: List[int]
+    return: ans[int],int
+    &quot;&quot;&quot;
+    persons = [p for p, seat in enumerate(seats) if seat == 1]
+    nullseat = [p for p, seat in enumerate(seats) if seat == 0]
+    maxdict = max(persons[0], 
+              len(seats)-1-persons[-1], 
+              max([(persons[r]-persons[r-1])//2 for r in range(1, len(persons))]+[0]))
+    ans=[]
+    for i in nullseat:
+        if min([abs(i-j) for j in persons])==maxdict:
+           ans.append(i) 
+    return ans,maxdict
+  
+if __name__ == '__main__':
+    unittest.main()
 &lt;/code&gt;&lt;/pre&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content><author><name></name></author><category term="python" /><summary type="html">python Interview</summary></entry><entry><title type="html">苏菲的世界</title><link href="https://acemyzoe.github.io/_posts/2020-08-15-%E8%8B%8F%E8%8F%B2%E7%9A%84%E4%B8%96%E7%95%8C-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" rel="alternate" type="text/html" title="苏菲的世界" /><published>2020-08-15T00:00:00+08:00</published><updated>2020-08-15T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/%E3%80%8A%E8%8B%8F%E8%8F%B2%E7%9A%84%E4%B8%96%E7%95%8C%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-08-15-%E8%8B%8F%E8%8F%B2%E7%9A%84%E4%B8%96%E7%95%8C-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">&lt;h1 id=&quot;伊甸园&quot;&gt;伊甸园&lt;/h1&gt;
