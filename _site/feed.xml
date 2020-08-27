@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-08-20T14:46:00+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-08-27T09:34:24+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
 真是&lt;br/&gt;
 太有趣了&lt;br/&gt;
 QAQ&lt;br/&gt;
@@ -9,7 +9,22 @@ QAQ&lt;br/&gt;
   &lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;
 &lt;/a&gt;
 &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=100% height=52 src=&quot;//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;
-</subtitle><entry><title type="html">python-QA</title><link href="https://acemyzoe.github.io/_posts/2020-08-18-python-QA/" rel="alternate" type="text/html" title="python-QA" /><published>2020-08-18T00:00:00+08:00</published><updated>2020-08-18T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/python-QA</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-08-18-python-QA/">&lt;h1 id=&quot;python-interview&quot;&gt;python Interview&lt;/h1&gt;
+</subtitle><entry><title type="html">celery</title><link href="https://acemyzoe.github.io/_posts/2020-08-20-celery/" rel="alternate" type="text/html" title="celery" /><published>2020-08-20T00:00:00+08:00</published><updated>2020-08-20T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/celery</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-08-20-celery/">&lt;h1 id=&quot;celery&quot;&gt;Celery&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.celerycn.io/&quot;&gt;Celery 中文手册&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Celery 分布式任务队列，可用于处理实时数据以及任务调度。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;选择并且安装一个消息中间件（Broker）&lt;/li&gt;
+  &lt;li&gt;安装 Celery 并且创建第一个任务&lt;/li&gt;
+  &lt;li&gt;运行职程（Worker）以及调用任务&lt;/li&gt;
+  &lt;li&gt;跟踪任务的情况以及返回值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;使用 Redis 作为中间人（Broker）必须要安装 Celery 的依赖库&lt;/p&gt;</content><author><name></name></author><category term="python" /><summary type="html">Celery</summary></entry><entry><title type="html">python-QA</title><link href="https://acemyzoe.github.io/_posts/2020-08-18-python-QA/" rel="alternate" type="text/html" title="python-QA" /><published>2020-08-18T00:00:00+08:00</published><updated>2020-08-18T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/python-QA</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-08-18-python-QA/">&lt;h1 id=&quot;python-interview&quot;&gt;python Interview&lt;/h1&gt;
 
 &lt;p&gt;Python基本功和基本原理，重点考察运算符、装饰器、生成器的原理和实现，垃圾回收机制、各种数据类型，以及线程、进程、协程的概念和应用。&lt;/p&gt;
 
@@ -2461,7 +2476,7 @@ print(Anagram.Solution3('apple','pleap'))
       &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;删除&lt;/strong&gt;指定的元素。&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name></name></author><category term="Software" /><summary type="html">Software development process</summary></entry><entry><title type="html">ROSPY</title><link href="https://acemyzoe.github.io/_posts/2020-07-25-ROS%E5%8A%9F%E8%83%BD%E5%8C%85/" rel="alternate" type="text/html" title="ROSPY" /><published>2020-07-25T00:00:00+08:00</published><updated>2020-07-25T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/ROS%E5%8A%9F%E8%83%BD%E5%8C%85</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-07-25-ROS%E5%8A%9F%E8%83%BD%E5%8C%85/">&lt;h1 id=&quot;launch&quot;&gt;Launch&lt;/h1&gt;
+&lt;/table&gt;</content><author><name></name></author><category term="Software" /><summary type="html">Software development process</summary></entry><entry><title type="html">ROS-function</title><link href="https://acemyzoe.github.io/_posts/2020-07-25-ROS%E5%8A%9F%E8%83%BD%E5%8C%85/" rel="alternate" type="text/html" title="ROS-function" /><published>2020-07-25T00:00:00+08:00</published><updated>2020-07-25T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/ROS%E5%8A%9F%E8%83%BD%E5%8C%85</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-07-25-ROS%E5%8A%9F%E8%83%BD%E5%8C%85/">&lt;h1 id=&quot;launch&quot;&gt;Launch&lt;/h1&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;a href=&quot;http://wiki.ros.org/roslaunch&quot;&gt;roslaunch&lt;/a&gt;可通过SSH 轻松地在本地和远程启动多个ROS &lt;a href=&quot;http://ros.org/wiki/Nodes&quot;&gt;节点&lt;/a&gt;，以及在&lt;a href=&quot;http://ros.org/wiki/Parameter Server&quot;&gt;Parameter Server&lt;/a&gt;上设置参数。&lt;/p&gt;
@@ -4381,343 +4396,4 @@ SET GLOBAL log_output='FILE,TABLE';
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/PyMySQL/PyMySQL&quot;&gt;PyMySQL&lt;/a&gt; &lt;code&gt;import pymysql.cursors&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.runoob.com/python3/python3-mysql.html&quot;&gt;pymysql&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="数据库" /><summary type="html">数据库</summary></entry><entry><title type="html">TCP/IP-Socket、http、websockets</title><link href="https://acemyzoe.github.io/_posts/2020-07-10-TCP&IP@SOCKET/" rel="alternate" type="text/html" title="TCP/IP-Socket、http、websockets" /><published>2020-07-10T00:00:00+08:00</published><updated>2020-07-10T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/TCP&amp;IP@SOCKET</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-07-10-TCP&amp;IP@SOCKET/">&lt;h1 id=&quot;cs结构与套接字&quot;&gt;C/S结构与套接字&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/socketserver.html#module-socketserver&quot;&gt;docs&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;服务端socket&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;创建socket对象，调用socket构造函数：socket.socket()&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;将socket绑定到指定地址上，socket.bind()监听，准备好套接字，以便接受链接请求：socket.listen()&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;等待客户请求一个链接：socket.accept()&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;处理阶段，服务器与客户端通过send和recv方法通信(传输数据)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;传输结束，服务器调用socked的close方法以关闭连接&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;客户端socket&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;创建一个socket以连接服务器&lt;/li&gt;
-  &lt;li&gt;connect方法连接服务器&lt;/li&gt;
-  &lt;li&gt;客户端和服务器通过send和recv方法通信&lt;/li&gt;
-  &lt;li&gt;客户端通过调用socket的close方法关闭连接&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;import socket
-# socket.socket(familly,type)
-# AF_INET：IPv4协议
-# AF_INET6： IPv6协议
-# AF_UNIX：Unix域，用于同一台机器上的进程间通讯
-# SOCK_STREAM：面向流的TCP协议
-# SOCK_DGRAM： 面向无连接UDP协议
-
-def server():
-    # 1、创建服务端的socket对象
-    server = socket.socket()
-    # 2、绑定一个ip和端口
-    server.bind((&quot;127.0.0.1&quot;,2333))
-    # 3、服务器端一直监听是否有客户端进行连接
-    server.listen(5)
-    while True:
-        # 4、如果有客户端进行连接、则接受客户端的连接
-        conn,addr = server.accept() # 返回客户端socket通信对象和客户端的ip
-        # 5、客户端与服务端进行通信
-        rev_data = conn.recv(1024)
-        print('服务端收到客户端发来的消息:%s' % (rev_data.decode('GB2312')))
-        # 6、服务端给客户端回消息
-        conn.send(b&quot;HTTP/1.1 200 OK 、\r\n\r\n&quot;)  #http协议(B/S架构)-&amp;gt;浏览器
-        show_str = &quot;&amp;lt;h1&amp;gt; 不要回答！！！不要回答！！！不要回答！！！&amp;lt;/h1&amp;gt;&quot;
-        conn.send(show_str.encode('GB2312'))	# C/S架构
-    # 7、关闭socket对象
-    conn.close()
-          
-def client():
-    # 1、创建socket通信对象
-    clientSocket = socket.socket()
-    # 2、使用正确的ip和端口去链接服务器
-    clientSocket.connect((&quot;127.0.0.1&quot;,2333))
-    # 3、客户端与服务器端进行通信
-    while True:
-        # 给socket服务器发送信息
-        send_data = input(&quot;&amp;gt;&amp;gt;&quot;)
-        if not send_data:  # 如果传入空字符会阻塞
-            print(&quot;connect close..&quot;)
-            break
-        clientSocket.send(send_data.encode('GB2312'))
-        # 接收服务器的响应(服务器回复的消息)
-        recvData = clientSocket.recv(1024).decode('GB2312')
-        print('客户端收到服务器回复的消息:%s' % (recvData))
-    # 4、关闭socket对象
-    clientSocket.close()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&quot;文件传输&quot;&gt;文件传输&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;基于TCP&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Client打开文件，通过socket发送数据到Server&lt;/li&gt;
-  &lt;li&gt;Server保存数据到文件&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;多线程&quot;&gt;多线程&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/socketserver.html&quot;&gt;socketserver&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;threadingmixin&quot;&gt;&lt;strong&gt;ThreadingMixin&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/socketserver.html#asynchronous-mixins&quot;&gt;示例&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# ThreadingMixin 服务器，利用多线程实现异步，支持多用户。
-import socketserver
-class MyHandler(socketserver.BaseRequestHandler):
-    &quot;&quot;&quot;
-    从BaseRequestHander继承，并重写handle方法
-    &quot;&quot;&quot;
-    def handle(self):
-        while(self):
-            try:
-                self.data = self.request.recv(2048).strip()  # 接收
-                if not self.data:
-                    break
-                print(&quot;receive from (%r):%r&quot; % (self.client_address, self.data))
-                self.request.send(self.data.upper())  # 发送
-                #self.requset.sendall(data.upper())
-                if self.data == 'exit':
-                    print('server exit')
-                    break
-            except ConnectionResetError as e:
-                print(e)
-                break
-def serverplus():
-    host, port = &quot;127.0.0.1&quot;, 2333
-    # server = socketserver.TCPServer((host, port), MyHandler)   # 单线程交互
-    server = socketserver.ThreadingTCPServer((host, port), MyHandler)   # 多线程交互
-    print(&quot;服务器已开启&quot;)
-    server.serve_forever()
-
-if __name__ == &quot;__main__&quot;:
-    serverplus()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;多线程-全双工&quot;&gt;多线程-&amp;gt;全双工&lt;/h2&gt;
-
-&lt;p&gt;将输入与接收分开来，将接收的函数（或方法）从主线程里抓出来丢到另一个线程里单独运行。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;import socket
-import threading
-flag=True
-def rec(sock):
-    global flag
-    while flag:
-        t=sock.recv(1024).decode('utf8')
-        if t == &quot;exit&quot;:
-            flag=False
-        print(t)
-
-def io(sock):
-    '''多线程
-    '''
-    trd=threading.Thread(target=rec,args=(sock,))
-    trd.start()
-    global flag
-    while flag:
-        t=input()
-        sock.send(t.encode('utf8'))
-        if t == &quot;exit&quot;:
-            flag=False
-
-def server():
-    '''服务端
-    '''
-    s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    s.bind((&quot;127.0.0.1&quot;,2333))
-    s.listen(2)
-    sock,addr=s.accept()
-    io(sock)
-    s.close()
-
-def client():
-    '''客户端
-    '''
-    s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    s.connect((&quot;127.0.0.1&quot;,2333))
-    io(s)
-    s.close()
-
-if __name__ == &quot;__main__&quot;:
-    server()
-	#client()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&quot;websocket&quot;&gt;WebSocket&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;websocket&amp;amp;socket&amp;amp;http&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;WebSocket基于 TCP 协议之上的「长连接」协议，在网络七层协议上的层级等同于Http，属应用层协议，是在单个 &lt;strong&gt;TCP 连接&lt;/strong&gt;上进行&lt;strong&gt;全双工通讯&lt;/strong&gt;的协议。WebSocket常见于&lt;strong&gt;客户端-服务端全双工&lt;/strong&gt;的场景，比如聊天，客户端可以发送消息给服务端，同时服务端也可以主动发送消息给客户端。&lt;/p&gt;
-
-  &lt;p&gt;HTTP 基于 TCP 协议之上的「短连接」应用层协议。Http是单向的，只能客户端发送请求，服务端被动接收，服务端没有主动发起请求的能力，只能维持Http长链接，或者客户端定时轮询服务端，获取最新的信息。&lt;/p&gt;
-
-  &lt;p&gt;对于 WebSocket 来说，它必须依赖HTTP 协议进行一次握手，握手成功后，数据就直接从 TCP 通道传输，与 HTTP 无关了。&lt;/p&gt;
-
-  &lt;p&gt;Socket属于处于七层协议中的第四层，Socket是操作系统对TCP、UDP的封装，便于使用 TCP/UDP 的接口规范、API接口。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;python &lt;code&gt;pip install websockets&lt;/code&gt;  &lt;a href=&quot;https://websockets.readthedocs.io/en/stable/intro.html&quot;&gt;docs&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;异步I/O ` pip install asyncio ` &lt;a href=&quot;https://docs.python.org/zh-cn/3/library/asyncio-task.html&quot;&gt;docs&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;c-socket&quot;&gt;c# socket&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-c#&quot;&gt; ///字符串处理
- string s = &quot;fc2a0001000201010101000102009a4887009a4888020203e83c0000000000000000000000C6875a&quot;;
- string s1 = string.Join(&quot; &quot;, System.Text.RegularExpressions.Regex.Split(s, &quot;(?&amp;lt;=\\G.{2})(?!$)&quot;));
- string s2 = System.Text.RegularExpressions.Regex.Replace(s, @&quot;.{2}&quot;, &quot;$0 &quot;);
- string s3=s;
- for (int i = 2; i &amp;lt; s3.Length; i += 3)
- {
- s3 = s3.Insert(i, &quot; &quot;);
- }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;服务端&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-c#&quot;&gt;using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net;
-using System.Net.Sockets; 
-namespace server
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-             int port = 2000;
-            string host = &quot;127.0.0.1&quot;;
- 
-       	 ///创建终结点（EndPoint）
-            IPAddress ip = IPAddress.Parse(host);//把ip地址字符串转换为IPAddress类型的实例
-            IPEndPoint ipe = new IPEndPoint(ip, port);//用指定的端口和ip初始化IPEndPoint类的新实例
- 
-         ///创建socket并开始监听
-            Socket s　=　new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            //创建一个socket对像，如果用udp协议，则要用SocketType.Dgram类型的套接字
-         	//Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-            s.Bind(ipe);//绑定EndPoint对像（2000端口和ip地址）
-            s.Listen(0);//开始监听
-            Console.WriteLine(&quot;等待客户端连接&quot;);
- 
-         ///接受到client连接，为此连接建立新的socket，并接受信息
-            Socket temp = s.Accept();//为新建连接创建新的socket
-            Console.WriteLine(&quot;建立连接&quot;);
-            string recvStr = &quot;&quot;;
-            byte[] recvBytes = new byte[1024];
-            int bytes;
-            bytes = temp.Receive(recvBytes, recvBytes.Length, 0);//从客户端接受信息
-            recvStr += Encoding.ASCII.GetString(recvBytes, 0, bytes);
- 
-         ///给client端返回信息
-            Console.WriteLine(&quot;server get message:{0}&quot;, recvStr);//把客户端传来的信息显示出来
-            string sendStr = &quot;ok!Client send message successful!&quot;;
-            byte[] bs = Encoding.ASCII.GetBytes(sendStr);
-            temp.Send(bs, bs.Length, 0);//返回信息给客户端
-            temp.Close();
-            s.Close();
-            Console.ReadLine();
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;客户端&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-c#&quot;&gt;using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net;
-using System.Net.Sockets;
- 
-namespace Client
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            try
-            {
-                int port = 2000;
-                string host = &quot;127.0.0.1&quot;;
-                ///创建终结点EndPoint
-                IPAddress ip = IPAddress.Parse(host);
-                //IPAddress ipp = new IPAddress(&quot;127.0.0.1&quot;);
-                IPEndPoint ipe = new IPEndPoint(ip, port);//把ip和端口转化为IPEndpoint实例
- 
-                ///创建socket并连接到服务器
-                Socket c = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);//创建Socket
-                Console.WriteLine(&quot;Conneting…&quot;);
-                c.Connect(ipe);//连接到服务器
- 
-                ///向服务器发送信息
-                string sendStr = &quot;hello!This is a socket test&quot;;
-                byte[] bs = Encoding.ASCII.GetBytes(sendStr);//把字符串编码为字节
-                Console.WriteLine(&quot;Send Message&quot;);
-                c.Send(bs, bs.Length, 0);//发送信息
- 
-                ///接受从服务器返回的信息
-                string recvStr = &quot;&quot;;
-                byte[] recvBytes = new byte[1024];
-                int bytes;
-                bytes = c.Receive(recvBytes, recvBytes.Length, 0);//从服务器端接受返回信息
-                recvStr += Encoding.ASCII.GetString(recvBytes, 0, bytes);
-                Console.WriteLine(&quot;client get message:{0}&quot;, recvStr);//显示服务器返回信息
-                ///一定记着用完socket后要关闭
-                c.Close();
-            }
-            catch (ArgumentNullException e)
-            {
-                Console.WriteLine(&quot;argumentNullException: {0}&quot;, e);
-            }
-            catch (SocketException e)
-            {
-                Console.WriteLine(&quot;SocketException:{0}&quot;, e);
-            }
-            Console.WriteLine(&quot;Press Enter to Exit&quot;);
-            Console.ReadLine();
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&quot;systemnethttplistener&quot;&gt;System.Net.HttpListener&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/api/system.net.httplistener?view=netcore-3.1&quot;&gt;microsoft&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;more&quot;&gt;More&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;QUIC :  &lt;strong&gt;快速UDP网络连接&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="通信" /><summary type="html">C/S结构与套接字</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://www.runoob.com/python3/python3-mysql.html&quot;&gt;pymysql&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="数据库" /><summary type="html">数据库</summary></entry></feed>

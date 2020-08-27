@@ -2,6 +2,15 @@
 [
   
     {
+      "title"    : "celery",
+      "category" : "",
+      "tags"     : "python",
+      "date"     : "2020-08-20 00:00:00 +0800",
+      
+      "url"      : "/_posts/2020-08-20-celery/"
+    } ,
+  
+    {
       "title"    : "python-QA",
       "category" : "",
       "tags"     : "python",
@@ -65,7 +74,7 @@
     } ,
   
     {
-      "title"    : "ROSPY",
+      "title"    : "ROS-function",
       "category" : "",
       "tags"     : "ros",
       "date"     : "2020-07-25 00:00:00 +0800",
@@ -182,7 +191,7 @@
     } ,
   
     {
-      "title"    : "通信网络",
+      "title"    : "通信网络\大数据",
       "category" : "",
       "tags"     : "通信",
       "date"     : "2020-06-01 00:00:00 +0800",
