@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-08-29T21:52:26+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://acemyzoe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://acemyzoe.github.io/" rel="alternate" type="text/html" /><updated>2020-10-23T15:49:19+08:00</updated><id>https://acemyzoe.github.io/feed.xml</id><title type="html">Acemyzoe</title><subtitle>人类世界&lt;br/&gt;
 真是&lt;br/&gt;
 太有趣了&lt;br/&gt;
 QAQ&lt;br/&gt;
@@ -9,7 +9,574 @@ QAQ&lt;br/&gt;
   &lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;
 &lt;/a&gt;
 &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=100% height=52 src=&quot;//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;
-</subtitle><entry><title type="html">celery</title><link href="https://acemyzoe.github.io/_posts/2020-08-20-celery/" rel="alternate" type="text/html" title="celery" /><published>2020-08-20T00:00:00+08:00</published><updated>2020-08-20T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/celery</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-08-20-celery/">&lt;h1 id=&quot;celery&quot;&gt;Celery&lt;/h1&gt;
+</subtitle><entry><title type="html">损失函数&amp;amp;评价指标</title><link href="https://acemyzoe.github.io/_posts/2020-10-20-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0&%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" rel="alternate" type="text/html" title="损失函数&amp;评价指标" /><published>2020-10-20T00:00:00+08:00</published><updated>2020-10-20T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/%20%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0&amp;%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-10-20-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0&amp;%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/">&lt;h1 id=&quot;损失函数&quot;&gt;损失函数&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;损失函数&lt;/strong&gt;用来评价模型的&lt;strong&gt;预测值&lt;/strong&gt;和&lt;strong&gt;真实值&lt;/strong&gt;不一样的程度，损失函数越好，通常模型的性能越好。&lt;/p&gt;
+
+&lt;h2 id=&quot;回归问题&quot;&gt;回归问题&lt;/h2&gt;
+
+&lt;h3 id=&quot;平均损失函数最小二乘法&quot;&gt;平均损失函数（最小二乘法）&lt;/h3&gt;
+
+&lt;p&gt;回归问题中常用的损失函数，在线性回归中，可以通过极大似然估计（MLE）推导。计算的是预测值与真实值之间距离的平方和。实际更常用的是&lt;strong&gt;均方误差（MSE）&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;平均值绝对误差l1损失mae&quot;&gt;平均值绝对误差（L1损失）——MAE&lt;/h3&gt;
+
+&lt;p&gt;MAE是目标值和预测值之差的绝对值之和，可以用来衡量预测值和真实值的距离。&lt;/p&gt;
+
+&lt;h3 id=&quot;mael1损失-vs-msel2损失&quot;&gt;MAE（L1损失） VS MSE（L2损失）&lt;/h3&gt;
+
+&lt;p&gt;MSE计算简便，但MAE对异常点有更好的鲁棒性:当数据中存在异常点时，用RMSE计算损失的模型以牺牲了其他样本的误差为代价，朝着减小异常点误差的方向更新，会降低模型的整体性能。&lt;/p&gt;
+
+&lt;p&gt;NN中MAE更新梯度始终相同，而MSE则不同： MSE损失的梯度随损失增大而增大，而损失趋于0时则会减小。&lt;/p&gt;
+
+&lt;p&gt;使用MAE训练神经网络最大的一个问题就是不变的大梯度，这可能导致在使用梯度下降快要结束时，错过了最小点，为了解决这个缺陷，我们可以使用变化的学习率，在损失接近最小值时降低学习率。而对于MSE，梯度会随着损失的减小而减小，这使得在训练结束时，使用MSE模型的结果会更精确。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Loss选择建议：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;MSE：&lt;/strong&gt; 如果异常点代表在商业中很重要的异常情况，并且需要被检测出来&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;MAE：&lt;/strong&gt; 如果只把异常值当作受损数据&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;huber损失&quot;&gt;Huber损失&lt;/h3&gt;
+
+&lt;p&gt;Huber损失是绝对误差，只是在误差很小时，就变为平方误差。&lt;/p&gt;
+
+&lt;p&gt;当δ&lt;em&gt;很大时，等价为&lt;strong&gt;MSE&lt;/strong&gt;曲线，当&lt;/em&gt;δ很小时，等价为&lt;strong&gt;MAE&lt;/strong&gt;曲线。
+\(L_\delta(y,f(x))=\{ {
+{1\over2}(y-f(x))^2 \qquad for|y-f(x)|&amp;lt;\delta
+\atop 
+{\delta|y-f(x)|-{1\over2}\delta^2 \qquad otherwise}
+}\)&lt;/p&gt;
+
+&lt;h3 id=&quot;logloss&quot;&gt;LogLoss&lt;/h3&gt;
+
+&lt;p&gt;对数损失(Logarithmic Loss), 即对数似然损失(Log-likelihood Loss), 也称交叉熵损失(cross-entropy Loss)。&lt;/p&gt;
+
+&lt;p&gt;对数损失通过惩罚错误的分类,实现对分类器的准确度(Accuracy)的量化。 最小化对数损失基本等价于最大化分类器的准确度。&lt;/p&gt;
+
+&lt;p&gt;当使用sigmoid作为激活函数的时候，常用&lt;strong&gt;交叉熵损失函数&lt;/strong&gt;而不用&lt;strong&gt;均方误差损失函数&lt;/strong&gt;，因为它可以&lt;strong&gt;完美解决平方损失函数权重更新过慢&lt;/strong&gt;的问题，具有“误差大的时候，权重更新快；误差小的时候，权重更新慢”的良好性质。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;#!/usr/bin/env python
+# -*- coding: utf8 -*-
+# y_true: list, the true labels of input instances 
+# y_pred: list, the probability when the predicted label of input instances equals to 1
+def logloss(y_true, y_pred, eps=1e-15):
+    import numpy as np
+
+    # Prepare numpy array data
+    y_true = np.array(y_true)
+    y_pred = np.array(y_pred)
+    assert (len(y_true) and len(y_true) == len(y_pred))
+
+    # Clip y_pred between eps and 1-eps
+    p = np.clip(y_pred, eps, 1-eps)
+    loss = np.sum(- y_true * np.log(p) - (1 - y_true) * np.log(1-p))
+
+    return loss / len(y_true)
+
+def unitest():
+    y_true = [0, 0, 1, 1]
+    y_pred = [0.1, 0.2, 0.7, 0.99]
+
+    print (&quot;Use self-defined logloss() in binary classification, the result is {}&quot;.format(logloss(y_true, y_pred)))
+
+    from sklearn.metrics import log_loss
+    print (&quot;Use log_loss() in scikit-learn, the result is {} &quot;.format(log_loss(y_true, y_pred)))
+
+if __name__ == '__main__':
+    unitest()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;exponential-loss&quot;&gt;exponential loss&lt;/h3&gt;
+
+&lt;p&gt;指数损失函数，对离群点、噪声非常敏感。经常用在AdaBoost算法中。&lt;/p&gt;
+
+&lt;h1 id=&quot;评价指标&quot;&gt;评价指标&lt;/h1&gt;
+
+&lt;p&gt;如何评估机器学习算法模型是任何项目中一个非常重要的环节。分类问题一般会选择准确率（Accuracy）或者AUC作为metric，回归问题使用MSE。上述损失函数大部分可以直接作为评价指标来使用。&lt;/p&gt;
+
+&lt;h2 id=&quot;回归问题-1&quot;&gt;回归问题&lt;/h2&gt;
+
+&lt;h3 id=&quot;mse&quot;&gt;MSE&lt;/h3&gt;
+
+&lt;p&gt;均方误差 (Mean Square Error)
+\(MSE={1\over n}{\sum^{n}_{i=1}(\hat{y_i} -{y_i})^2}\)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;范围[0,+∞)，当预测值与真实值完全吻合时等于0，即完美模型；误差越大，该值越大。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;rmse&quot;&gt;RMSE&lt;/h3&gt;
+
+&lt;p&gt;均方根误差 (Root Mean Square Error)
+\(RMSE=\sqrt {MSE} = \sqrt {\frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2}\)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;数量级上比较直观，比如RMSE=10，可以认为回归效果相比真实值平均相差10。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;mae&quot;&gt;MAE&lt;/h3&gt;
+
+&lt;p&gt;平均绝对误差(Mean Absolute Error)
+\(MAE=\frac{1}{n} \sum_{i=1}^{n} |\hat{y}_i - y_i|\)&lt;/p&gt;
+
+&lt;h3 id=&quot;mape&quot;&gt;MAPE&lt;/h3&gt;
+
+&lt;p&gt;平方绝对百分比误差 (Mean Absolute Percentage Error)
+\(MAPE=\frac{100\%}{n}\sum_{i=1}^n |\frac{ \hat{y}_i - y_i }{ y_i }|\)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;当真实值有数据等于0时，存在分母0除问题，该公式不可用。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;smape&quot;&gt;SMAPE&lt;/h3&gt;
+
+&lt;p&gt;对称平均绝对百分比误差 (Symmetric Mean Absolute Percentage Error)
+\(SMAPE=\frac{100\%}{n}\sum_{i=1}^n \frac{ |\hat{y}_i - y_i| }{ (|\hat{y}_i| + |y_i|)/2 }\)&lt;/p&gt;
+
+&lt;h3 id=&quot;r-squared&quot;&gt;R Squared&lt;/h3&gt;
+
+&lt;p&gt;决定系数 (coefficient of determination)
+\(R^2=1-{\frac {\sum _i (\hat y_i-y_i)^2}{\sum _i (\overline y-y_i)^2}}\)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;分母代表baseline（平均值）的误差，分子代表模型的预测结果产生的误差；&lt;/li&gt;
+    &lt;li&gt;预测结果越大越好，R为1说明完美拟合， 为0说明和baseline一致；&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;分类问题&quot;&gt;分类问题&lt;/h2&gt;
+
+&lt;h3 id=&quot;confusion-matrix&quot;&gt;Confusion Matrix&lt;/h3&gt;
+
+&lt;p&gt;混淆矩阵，后续多个指标的基础。&lt;/p&gt;
+
+&lt;p&gt;eg. 二类混淆矩阵(训练目的：减少FP、FN)&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;预测正例&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;预测反例&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;真实正例&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;TP 真正例&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;FN 假反例&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;真实反例&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;FP 假反例&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;TN 真反例&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;accuracy&quot;&gt;Accuracy&lt;/h3&gt;
+
+&lt;p&gt;准确率：当样本类别均衡时，Accuracy是一个很好的指标。但在样本不平衡的情况下，产生效果较差。
+\(Acc=\frac {TP+TN}{TP+TN+FP+FN}\)&lt;/p&gt;
+
+&lt;h3 id=&quot;precision&quot;&gt;Precision&lt;/h3&gt;
+
+&lt;p&gt;精准率：预测为正例的样本中有多少实际为正。
+\(P=\frac {TP}{TP+FP}\)&lt;/p&gt;
+
+&lt;h3 id=&quot;recall&quot;&gt;Recall&lt;/h3&gt;
+
+&lt;p&gt;召回率：实际为正例的样本有多少被预测为正。
+\(R=\frac {TP}{TP+FN}\)&lt;/p&gt;
+
+&lt;h3 id=&quot;p-r曲线&quot;&gt;P-R曲线&lt;/h3&gt;
+
+&lt;p&gt;通过选择不同的阈值，得到Recall和Precision，以Recall为横坐标，Precision为纵坐标得到的曲线图。&lt;/p&gt;
+
+&lt;h3 id=&quot;加权调和平均调和平均&quot;&gt;加权调和平均&amp;amp;调和平均&lt;/h3&gt;
+
+&lt;p&gt;beta&amp;gt;1时召回率（Recall）影响更大。&lt;/p&gt;
+
+&lt;p&gt;beta&amp;lt;1时，精确率（Precision）影响更大。
+\(F_\beta=\frac{(1+\beta^2)PR}{\beta^2P+R},(\beta=1时)F_1=\frac {2PR}{P+R}\)&lt;/p&gt;
+
+&lt;h3 id=&quot;roc-auc&quot;&gt;ROC-AUC&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Area Under Curve(AUC)&lt;/strong&gt; 是&lt;strong&gt;二分类&lt;/strong&gt;问题中使用非常广泛的一个评价指标。&lt;strong&gt;AUC的本质是，任取一个正样本和负样本，模型输出正样本的值大于负样本值的概率&lt;/strong&gt;。构成AUC的两个基本指标是假正例率和真正例率。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;横轴-假正例率：&lt;/strong&gt; 实际为负的样本多少被预测为正。FPR。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;纵轴-真正例率：&lt;/strong&gt; 实际为正的样本多少被预测为正。TPR。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TPR和FPR的范围均是[0,1]，通过选择不同的阈值得到TPR和FPR，然后绘制ROC曲线。ROC曲线下的面积为AUC值。&lt;/p&gt;
+
+&lt;h2 id=&quot;代码&quot;&gt;代码&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# coding=utf-8
+import numpy as np
+from sklearn import metrics
+y_true=np.array([1.1,3.3,5.5,7.7])
+y_pred=np.array([1.0,3.0,5.0,7.0])
+
+# MSE
+def MSE(true, pred):
+    return np.sum((true - pred)**2)
+mse=metrics.mean_squared_error(y_true,y_pred)
+# RMSE
+rmse=np.sqrt(mse)
+# MAE
+def mae(true, pred):
+    return np.sum(np.abs(true - pred))
+mae=metrics.mean_absolute_error(y_true,y_pred)
+# MAPE
+mape=np.mean(np.abs(y_pred-y_true)/y_true)*100
+#SMPAE
+smape=np.mean(2*np.abs(y_pred-y_true)/(np.abs(y_pred)+np.abs(y_true)))*100
+# R Squared
+RS=metrics.r2_score(y_true,y_pred)
+# huber loss
+def huber(true, pred, delta):
+    loss = np.where(np.abs(true-pred) &amp;lt; delta , 0.5*((true-pred)**2), delta*np.abs(true - pred) - 0.5*(delta**2))
+    return np.sum(loss)
+
+y_trues = [1,1,1,1,0,0,1,1,1,0,0]
+y_preds = [1,1,1,0,1,1,0,1,1,1,0] 
+
+# ACC准确率
+acc=metrics.accuracy_score(y_trues,y_preds)
+# Precision精准率
+P=metrics.precision_score(y_trues,y_preds)
+# Recall召回率
+R=metrics.recall_score(y_trues,y_preds)
+# F
+F=metrics.fbeta_score(y_trues,y_preds,beta=1)
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="ML" /><summary type="html">损失函数</summary></entry><entry><title type="html">Markdown数学公式</title><link href="https://acemyzoe.github.io/_posts/2020-10-18-markdown%E5%85%AC%E5%BC%8F/" rel="alternate" type="text/html" title="Markdown数学公式" /><published>2020-10-18T00:00:00+08:00</published><updated>2020-10-18T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/%20markdown%E5%85%AC%E5%BC%8F</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-10-18-markdown%E5%85%AC%E5%BC%8F/">&lt;h1 id=&quot;markdown数学公式&quot;&gt;Markdown数学公式&lt;/h1&gt;
+
+&lt;h2 id=&quot;上标下标与组合&quot;&gt;上标、下标与组合&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;上标符号，符号：&lt;code&gt;^&lt;/code&gt;，如：$x^4$&lt;/li&gt;
+  &lt;li&gt;下标符号，符号：&lt;code&gt;_&lt;/code&gt;，如：$ x_1 $&lt;/li&gt;
+  &lt;li&gt;组合符号，符号：&lt;code&gt;{}&lt;/code&gt;，如：${16}&lt;em&gt;{8}O{2+}&lt;/em&gt;{2}$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;汉字字体与格式&quot;&gt;汉字、字体与格式&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;汉字形式，符号：&lt;code&gt;\mbox{}&lt;/code&gt;，如：$V_{\mbox{初始}}$&lt;/li&gt;
+  &lt;li&gt;字体控制，符号：&lt;code&gt;\displaystyle&lt;/code&gt;，如：$\displaystyle \frac{x+y}{y+z}$&lt;/li&gt;
+  &lt;li&gt;下划线符号，符号：&lt;code&gt;\underline&lt;/code&gt;，如：$\underline{x+y}$&lt;/li&gt;
+  &lt;li&gt;标签，符号&lt;code&gt;\tag{数字}&lt;/code&gt;，如：$\tag{11}$&lt;/li&gt;
+  &lt;li&gt;上大括号，符号：&lt;code&gt;\overbrace{算式}&lt;/code&gt;，如：$\overbrace{a+b+c+d}^{2.0}$&lt;/li&gt;
+  &lt;li&gt;下大括号，符号：&lt;code&gt;\underbrace{算式}&lt;/code&gt;，如：$a+\underbrace{b+c}_{1.0}+d$&lt;/li&gt;
+  &lt;li&gt;上位符号，符号：&lt;code&gt;\stacrel{上位符号}{基位符号}&lt;/code&gt;，如：$\vec{x}\stackrel{\mathrm{def}}{=}{x_1,\dots,x_n}$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;占位符&quot;&gt;占位符&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;两个quad空格，符号：&lt;code&gt;\qquad&lt;/code&gt;，如：$x \qquad y$&lt;/li&gt;
+  &lt;li&gt;quad空格，符号：&lt;code&gt;\quad&lt;/code&gt;，如：$x \quad y$&lt;/li&gt;
+  &lt;li&gt;大空格，符号&lt;code&gt;\&lt;/code&gt;，如：$x \  y$&lt;/li&gt;
+  &lt;li&gt;中空格，符号&lt;code&gt;\:&lt;/code&gt;，如：$x : y$&lt;/li&gt;
+  &lt;li&gt;小空格，符号&lt;code&gt;\,&lt;/code&gt;，如：$x , y$&lt;/li&gt;
+  &lt;li&gt;没有空格，符号``，如：$xy$&lt;/li&gt;
+  &lt;li&gt;紧贴，符号&lt;code&gt;\!&lt;/code&gt;，如：$x ! y$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;定界符与组合&quot;&gt;定界符与组合&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;括号，符号：&lt;code&gt;（）\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)&lt;/code&gt;，如：$（）\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)$&lt;/li&gt;
+  &lt;li&gt;中括号，符号：&lt;code&gt;[]&lt;/code&gt;，如：$[x+y]$&lt;/li&gt;
+  &lt;li&gt;大括号，符号：&lt;code&gt;\{ \}&lt;/code&gt;，如：${x+y}$&lt;/li&gt;
+  &lt;li&gt;自适应括号，符号：&lt;code&gt;\left \right&lt;/code&gt;，如：$\left(x\right)$，$\left(x{yz}\right)$&lt;/li&gt;
+  &lt;li&gt;组合公式，符号：&lt;code&gt;{上位公式 \choose 下位公式}&lt;/code&gt;，如：${n+1 \choose k}={n \choose k}+{n \choose k-1}$&lt;/li&gt;
+  &lt;li&gt;组合公式，符号：&lt;code&gt;{上位公式 \atop 下位公式}&lt;/code&gt;，如：$\sum_{k_0,k_1,\ldots&amp;gt;0 \atop k_0+k_1+\cdots=n}A_{k_0}A_{k_1}\cdots$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;四则运算&quot;&gt;四则运算&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;加法运算，符号：&lt;code&gt;+&lt;/code&gt;，如：$x+y=z$&lt;/li&gt;
+  &lt;li&gt;减法运算，符号：&lt;code&gt;-&lt;/code&gt;，如：$x-y=z$&lt;/li&gt;
+  &lt;li&gt;加减运算，符号：&lt;code&gt;\pm&lt;/code&gt;，如：$x \pm y=z$&lt;/li&gt;
+  &lt;li&gt;减甲运算，符号：&lt;code&gt;\mp&lt;/code&gt;，如：$x \mp y=z$&lt;/li&gt;
+  &lt;li&gt;乘法运算，符号：&lt;code&gt;\times&lt;/code&gt;，如：$x \times y=z$&lt;/li&gt;
+  &lt;li&gt;点乘运算，符号：&lt;code&gt;\cdot&lt;/code&gt;，如：$x \cdot y=z$&lt;/li&gt;
+  &lt;li&gt;星乘运算，符号：&lt;code&gt;\ast&lt;/code&gt;，如：$x \ast y=z$&lt;/li&gt;
+  &lt;li&gt;除法运算，符号：&lt;code&gt;\div&lt;/code&gt;，如：$x \div y=z$&lt;/li&gt;
+  &lt;li&gt;斜法运算，符号：&lt;code&gt;/&lt;/code&gt;，如：$x/y=z$&lt;/li&gt;
+  &lt;li&gt;分式表示，符号：&lt;code&gt;\frac{分子}{分母}&lt;/code&gt;，如：$\frac{x+y}{y+z}$&lt;/li&gt;
+  &lt;li&gt;分式表示，符号：&lt;code&gt;{分子} \voer {分母}&lt;/code&gt;，如：${x+y} \over {y+z}$&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;绝对值表示，符号：&lt;code&gt;||&lt;/code&gt;，如：$&lt;/td&gt;
+          &lt;td&gt;x+y&lt;/td&gt;
+          &lt;td&gt;$&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;高级运算&quot;&gt;高级运算&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;平均数运算，符号：&lt;code&gt;\overline{算式}&lt;/code&gt;，如：$\overline{xyz}$&lt;/li&gt;
+  &lt;li&gt;开二次方运算，符号：&lt;code&gt;\sqrt&lt;/code&gt;，如：$\sqrt x$&lt;/li&gt;
+  &lt;li&gt;开方运算，符号：&lt;code&gt;\sqrt[开方数]{被开方数}&lt;/code&gt;，如：$\sqrt[3]{x+y}$&lt;/li&gt;
+  &lt;li&gt;对数运算，符号：&lt;code&gt;\log&lt;/code&gt;，如：$\log(x)$&lt;/li&gt;
+  &lt;li&gt;极限运算，符号：&lt;code&gt;\lim&lt;/code&gt;，如：$\lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$&lt;/li&gt;
+  &lt;li&gt;极限运算，符号：&lt;code&gt;\displaystyle \lim&lt;/code&gt;，如：$\displaystyle \lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$&lt;/li&gt;
+  &lt;li&gt;求和运算，符号：&lt;code&gt;\sum&lt;/code&gt;，如：$\sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$&lt;/li&gt;
+  &lt;li&gt;求和运算，符号：&lt;code&gt;\displaystyle \sum&lt;/code&gt;，如：$\displaystyle \sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$&lt;/li&gt;
+  &lt;li&gt;积分运算，符号：&lt;code&gt;\int&lt;/code&gt;，如：$\int^{\infty}_{0}{xdx}$&lt;/li&gt;
+  &lt;li&gt;积分运算，符号：&lt;code&gt;\displaystyle \int&lt;/code&gt;，如：$\displaystyle \int^{\infty}_{0}{xdx}$&lt;/li&gt;
+  &lt;li&gt;微分运算，符号：&lt;code&gt;\partial&lt;/code&gt;，如：$\frac{\partial x}{\partial y}$&lt;/li&gt;
+  &lt;li&gt;矩阵表示，符号：&lt;code&gt;\begin{matrix} \end{matrix}&lt;/code&gt;，如：$\left[ \begin{matrix} 1 &amp;amp;2 &amp;amp;\cdots &amp;amp;4 &amp;amp;5 &amp;amp;6 &amp;amp;\cdots &amp;amp;8\vdots &amp;amp;\vdots &amp;amp;\ddots &amp;amp;\vdots&amp;amp;13 &amp;amp;14 &amp;amp;\cdots &amp;amp;16\end{matrix} \right]$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;逻辑运算&quot;&gt;逻辑运算&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;等于运算，符号：&lt;code&gt;=&lt;/code&gt;，如：$x+y=z$&lt;/li&gt;
+  &lt;li&gt;大于运算，符号：&lt;code&gt;&amp;gt;&lt;/code&gt;，如：$x+y&amp;gt;z$&lt;/li&gt;
+  &lt;li&gt;小于运算，符号：&lt;code&gt;&amp;lt;&lt;/code&gt;，如：$x+y&amp;lt;z$&lt;/li&gt;
+  &lt;li&gt;大于等于运算，符号：&lt;code&gt;\geq&lt;/code&gt;，如：$x+y \geq z$&lt;/li&gt;
+  &lt;li&gt;小于等于运算，符号：&lt;code&gt;\leq&lt;/code&gt;，如：$x+y \leq z$&lt;/li&gt;
+  &lt;li&gt;不等于运算，符号：&lt;code&gt;\neq&lt;/code&gt;，如：$x+y \neq z$&lt;/li&gt;
+  &lt;li&gt;不大于等于运算，符号：&lt;code&gt;\ngeq&lt;/code&gt;，如：$x+y \ngeq z$&lt;/li&gt;
+  &lt;li&gt;不大于等于运算，符号：&lt;code&gt;\not\geq&lt;/code&gt;，如：$x+y \not\geq z$&lt;/li&gt;
+  &lt;li&gt;不小于等于运算，符号：&lt;code&gt;\nleq&lt;/code&gt;，如：$x+y \nleq z$&lt;/li&gt;
+  &lt;li&gt;不小于等于运算，符号：&lt;code&gt;\not\leq&lt;/code&gt;，如：$x+y \not\leq z$&lt;/li&gt;
+  &lt;li&gt;约等于运算，符号：&lt;code&gt;\approx&lt;/code&gt;，如：$x+y \approx z$&lt;/li&gt;
+  &lt;li&gt;恒定等于运算，符号：&lt;code&gt;\equiv&lt;/code&gt;，如：$x+y \equiv z$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;集合运算&quot;&gt;集合运算&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;属于运算，符号：&lt;code&gt;\in&lt;/code&gt;，如：$x \in y$&lt;/li&gt;
+  &lt;li&gt;不属于运算，符号：&lt;code&gt;\notin&lt;/code&gt;，如：$x \notin y$&lt;/li&gt;
+  &lt;li&gt;不属于运算，符号：&lt;code&gt;\not\in&lt;/code&gt;，如：$x \not\in y$&lt;/li&gt;
+  &lt;li&gt;子集运算，符号：&lt;code&gt;\subset&lt;/code&gt;，如：$x \subset y$&lt;/li&gt;
+  &lt;li&gt;子集运算，符号：&lt;code&gt;\supset&lt;/code&gt;，如：$x \supset y$&lt;/li&gt;
+  &lt;li&gt;真子集运算，符号：&lt;code&gt;\subseteq&lt;/code&gt;，如：$x \subseteq y$&lt;/li&gt;
+  &lt;li&gt;非真子集运算，符号：&lt;code&gt;\subsetneq&lt;/code&gt;，如：$x \subsetneq y$&lt;/li&gt;
+  &lt;li&gt;真子集运算，符号：&lt;code&gt;\supseteq&lt;/code&gt;，如：$x \supseteq y$&lt;/li&gt;
+  &lt;li&gt;非真子集运算，符号：&lt;code&gt;\supsetneq&lt;/code&gt;，如：$x \supsetneq y$&lt;/li&gt;
+  &lt;li&gt;非子集运算，符号：&lt;code&gt;\not\subset&lt;/code&gt;，如：$x \not\subset y$&lt;/li&gt;
+  &lt;li&gt;非子集运算，符号：&lt;code&gt;\not\supset&lt;/code&gt;，如：$x \not\supset y$&lt;/li&gt;
+  &lt;li&gt;并集运算，符号：&lt;code&gt;\cup&lt;/code&gt;，如：$x \cup y$&lt;/li&gt;
+  &lt;li&gt;交集运算，符号：&lt;code&gt;\cap&lt;/code&gt;，如：$x \cap y$&lt;/li&gt;
+  &lt;li&gt;差集运算，符号：&lt;code&gt;\setminus&lt;/code&gt;，如：$x \setminus y$&lt;/li&gt;
+  &lt;li&gt;同或运算，符号：&lt;code&gt;\bigodot&lt;/code&gt;，如：$x \bigodot y$&lt;/li&gt;
+  &lt;li&gt;同与运算，符号：&lt;code&gt;\bigotimes&lt;/code&gt;，如：$x \bigotimes y$&lt;/li&gt;
+  &lt;li&gt;实数集合，符号：&lt;code&gt;\mathbb{R}&lt;/code&gt;，如：&lt;code&gt;\mathbb{R}&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;自然数集合，符号：&lt;code&gt;\mathbb{Z}&lt;/code&gt;，如：&lt;code&gt;\mathbb{Z}&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;空集，符号：&lt;code&gt;\emptyset&lt;/code&gt;，如：$\emptyset$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;数学符号&quot;&gt;数学符号&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;无穷，符号：&lt;code&gt;\infty&lt;/code&gt;，如：$\infty$&lt;/li&gt;
+  &lt;li&gt;虚数，符号：&lt;code&gt;\imath&lt;/code&gt;，如：$\imath$&lt;/li&gt;
+  &lt;li&gt;虚数，符号：&lt;code&gt;\jmath&lt;/code&gt;，如：$\jmath$&lt;/li&gt;
+  &lt;li&gt;数学符号，符号&lt;code&gt;\hat{a}&lt;/code&gt;，如：$\hat{a}$&lt;/li&gt;
+  &lt;li&gt;数学符号，符号&lt;code&gt;\check{a}&lt;/code&gt;，如：$\check{a}$&lt;/li&gt;
+  &lt;li&gt;数学符号，符号&lt;code&gt;\breve{a}&lt;/code&gt;，如：$\breve{a}$&lt;/li&gt;
+  &lt;li&gt;数学符号，符号&lt;code&gt;\tilde{a}&lt;/code&gt;，如：$\tilde{a}$&lt;/li&gt;
+  &lt;li&gt;数学符号，符号&lt;code&gt;\bar{a}&lt;/code&gt;，如：$\bar{a}$&lt;/li&gt;
+  &lt;li&gt;矢量符号，符号&lt;code&gt;\vec{a}&lt;/code&gt;，如：$\vec{a}$&lt;/li&gt;
+  &lt;li&gt;数学符号，符号&lt;code&gt;\acute{a}&lt;/code&gt;，如：$\acute{a}$&lt;/li&gt;
+  &lt;li&gt;数学符号，符号&lt;code&gt;\grave{a}&lt;/code&gt;，如：$\grave{a}$&lt;/li&gt;
+  &lt;li&gt;数学符号，符号&lt;code&gt;\mathring{a}&lt;/code&gt;，如：$\mathring{a}$&lt;/li&gt;
+  &lt;li&gt;一阶导数符号，符号&lt;code&gt;\dot{a}&lt;/code&gt;，如：$\dot{a}$&lt;/li&gt;
+  &lt;li&gt;二阶导数符号，符号&lt;code&gt;\ddot{a}&lt;/code&gt;，如：$\ddot{a}$&lt;/li&gt;
+  &lt;li&gt;上箭头，符号：&lt;code&gt;\uparrow&lt;/code&gt;，如：$\uparrow$&lt;/li&gt;
+  &lt;li&gt;上箭头，符号：&lt;code&gt;\Uparrow&lt;/code&gt;，如：$\Uparrow$&lt;/li&gt;
+  &lt;li&gt;下箭头，符号：&lt;code&gt;\downarrow&lt;/code&gt;，如：$\downarrow$&lt;/li&gt;
+  &lt;li&gt;下箭头，符号：&lt;code&gt;\Downarrow&lt;/code&gt;，如：$\Downarrow$&lt;/li&gt;
+  &lt;li&gt;左箭头，符号：&lt;code&gt;\leftarrow&lt;/code&gt;，如：$\leftarrow$&lt;/li&gt;
+  &lt;li&gt;左箭头，符号：&lt;code&gt;\Leftarrow&lt;/code&gt;，如：$\Leftarrow$&lt;/li&gt;
+  &lt;li&gt;右箭头，符号：&lt;code&gt;\rightarrow&lt;/code&gt;，如：$\rightarrow$&lt;/li&gt;
+  &lt;li&gt;右箭头，符号：&lt;code&gt;\Rightarrow&lt;/code&gt;，如：$\Rightarrow$&lt;/li&gt;
+  &lt;li&gt;底端对齐的省略号，符号：&lt;code&gt;\ldots&lt;/code&gt;，如：$1,2,\ldots,n$&lt;/li&gt;
+  &lt;li&gt;中线对齐的省略号，符号：&lt;code&gt;\cdots&lt;/code&gt;，如：$x_1^2 + x_2^2 + \cdots + x_n^2$&lt;/li&gt;
+  &lt;li&gt;竖直对齐的省略号，符号：&lt;code&gt;\vdots&lt;/code&gt;，如：$\vdots$&lt;/li&gt;
+  &lt;li&gt;斜对齐的省略号，符号：&lt;code&gt;\ddots&lt;/code&gt;，如：$\ddots$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;希腊字母&quot;&gt;希腊字母&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;字母&lt;/th&gt;
+      &lt;th&gt;实现&lt;/th&gt;
+      &lt;th&gt;字母&lt;/th&gt;
+      &lt;th&gt;实现&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;A&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;α&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\alhpa&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;B&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;B&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;β&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\beta&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Γ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Gamma&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;γ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\gamma&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Δ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Delta&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;δ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\delta&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;E&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;E&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;ϵ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\epsilon&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Z&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;Z&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;ζ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\zeta&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;H&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;H&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;η&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\eta&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Θ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Theta&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;θ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\theta&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;I&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;I&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;ι&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\iota&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;K&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;K&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;κ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\kappa&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Λ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Lambda&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;λ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\lambda&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;M&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;M&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;μ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\mu&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;N&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;N&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;ν&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\nu&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ξ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Xi&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;ξ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\xi&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;O&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;O&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;ο&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\omicron&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Π&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Pi&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;π&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\pi&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;P&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;ρ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\rho&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Σ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Sigma&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;σ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\sigma&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;T&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;T&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;τ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\tau&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Υ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Upsilon&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;υ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\upsilon&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Φ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Phi&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;ϕ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\phi&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;X&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;X&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;χ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\chi&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ψ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\Psi&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;ψ&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\psi&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ω&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\v&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;ω&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;\omega&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name></name></author><category term="wiki" /><summary type="html">Markdown数学公式</summary></entry><entry><title type="html">celery</title><link href="https://acemyzoe.github.io/_posts/2020-08-20-celery/" rel="alternate" type="text/html" title="celery" /><published>2020-08-20T00:00:00+08:00</published><updated>2020-08-20T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/celery</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-08-20-celery/">&lt;h1 id=&quot;celery&quot;&gt;Celery&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.celerycn.io/&quot;&gt;Celery 中文手册&lt;/a&gt;&lt;/p&gt;
 
@@ -2996,1404 +3563,4 @@ gazebo worlds/pioneer2dx.world
 gzserver
 # gzclient可执行文件运行QT基于用户界面。
 gzclient
-&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="ros" /><summary type="html">Launch</summary></entry><entry><title type="html">ROSPY</title><link href="https://acemyzoe.github.io/_posts/2020-07-25-rospy/" rel="alternate" type="text/html" title="ROSPY" /><published>2020-07-25T00:00:00+08:00</published><updated>2020-07-25T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/rospy</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-07-25-rospy/">&lt;h2 id=&quot;rospy参数--log&quot;&gt;Rospy参数 &amp;amp; log&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;# 从rospy设置参数
-roscd rospy_tutorials/006_parameters
-# 获取一个全局参数
-rospy.get_param('/global_param_name')
-# 从我们的父命名空间获取一个参数
-rospy.get_param('param_name')
-# 从我们的私有名称空间获取参数
-rospy.get_param('~private_param_name')
-# 参数不存在，指定默认值：
-rospy.get_param('foo', 'default_value')
-# 设置参数
-rospy.set_param(param_name, param_value)
-rospy.set_param('some_numbers', [1., 2., 3., 4.])
-rospy.set_param('truth', True)
-rospy.set_param('~private_bar', 1+2)
-# 判断删除
-if rospy.has_param('to_delete'):
-    rospy.delete_param('to_delete')
-# 重映射来打印参数的值 
-value = rospy.get_param('~foo')
-rospy.loginfo('Parameter %s has value %s', rospy.resolve_name('~foo'), value)
-# 搜索参数
-full_param_name = rospy.search_param（'foo'）
-param_value = rospy.get_param（full_param_name）
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;# 当您运行多个节点时，很难看到节点的命令行输出。相反，将调试消息发布到rosout然后使用rqt_console/rxconsole查看它要容易得多
-rospy.logdebug(msg, *args)
-rospy.logwarn(msg, *args)
-rospy.loginfo(msg, *args)
-rospy.logerr(msg, *args)
-rospy.logfatal(msg, *args)
-rospy.init_node('my_node', log_level=rospy.DEBUG)
-rospy.logerr(&quot;%s returned the invalid value %s&quot;, other_name, other_value)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# example
-def talker():
-    topic = 'floats'
-    pub = rospy.Publisher(topic, numpy_msg(Floats))
-    rospy.init_node(topic, anonymous=True)
-    rospy.loginfo(&quot;I will publish to the topic %s&quot;, topic)
-    while not rospy.is_shutdown():
-        a = numpy.array([1.0, 2.1, 3.2, 4.3, 5.4, 6.5], dtype=numpy.float32)
-        rospy.loginfo(a)
-        pub.publish(a)
-        rospy.sleep(0.1)
-
-if __name__ == '__main__':
-    talker()
-    
-# rostopic echo rosout
-# rqt_console
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;makefile&quot;&gt;Makefile&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;# 编写ROS Python Makefile
-# 这些构建文件CMakeLists.txt，Makefile提供的功能：自动生成消息和服务代码，运行测试
-cd ~/catkin_ws/src
-catkin_create_pkg my_pkg message_generation rospy
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-cmake&quot;&gt;cmake_minimum_required(VERSION 2.8.3)
-project(my_pkg)
-find_package(catkin REQUIRED COMPONENTS message_generation rospy)
-add_message_files(
-  FILES  # e.g. Floats.msg HeaderString.msg
-)
-add_service_files(
-  DIRECTORY srv 
-  FILES AddTwoInts.srv BadTwoInts.srv
-)
-## Generate services in the 'srv' folder
-# add_service_files(
-#  FILES  # e.g. Floats.srv HeaderString.srv
-#)
-## Generate added messages and services with any dependencies
-generate_messages()
-catkin_package(
-  CATKIN_DEPENDS message_runtime
-)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;安装脚本和导出模块&quot;&gt;安装脚本和导出模块&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;cd ~/catkin_ws/src/my_pkg    # new catkin package, in the workspace
-mkdir bin
-mkdir src
-mkdir src/tutorial_package
-touch src/tutorial_package/__init__.py
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# Within my_pkg, create file src/tutorial_package/hello.py
-def say(name):
-    print('Hello ' + name)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# create file bin/hello
-#! /usr/bin/env python
-import tutorial_package.hello
-if __name__ == '__main__':
-    tutorial_package.hello.say('my friend!')
-# chmod u+x bin/hello
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# create setup.py 定义一个安装过程，将文件移至PYTHONPATH中。
-## ! DO NOT MANUALLY INVOKE THIS setup.py, USE CATKIN INSTEAD
-from distutils.core import setup
-from catkin_pkg.python_setup import generate_distutils_setup
-# fetch values from package.xml
-# 仅需提供的信息就是package.xml中没有的信息，要安装的脚本的名称，python软件包的名称，在何处可以找到这些软件包以及python软件包的依赖关系
-setup_args = generate_distutils_setup(
-    packages=['tutorial_package'],
-    package_dir={'': 'src'},
-)
-setup(**setup_args)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-cmake&quot;&gt;## Uncomment if the package has a setup.py
-catkin_python_setup()
-catkin_install_python(PROGRAMS bin/hello
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;cd ~/catkin_ws
-catkin_make
-. devel/setup.bash
-rosrun my_pkg hello 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;设置pythonpath&quot;&gt;设置pythonpath&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;cd catkin_ws/src
-catkin_create_pkg listener_extend rospy beginner_tutorials
-cd listener_extend
-mkdir nodes
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# create a file listener_extend.py
-#!/usr/bin/env python
-import beginner_tutorials.msg
-num = beginner_tutorials.msg.Num()
-print(num)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;source ~/catkin_ws/devel/setup.bash
-chmod u+x nodes/listener_extend.py
-python nodes/listener_extend.py
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;numpy&quot;&gt;Numpy&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;catkin_create_pkg numpy_tutorial rospy rospy_tutorials
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt;&amp;lt;build_depend&amp;gt;python-numpy&amp;lt;/build_depend&amp;gt;
-&amp;lt;run_depend&amp;gt;python-numpy&amp;lt;/run_depend&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# numpy_listener.py
-#!/usr/bin/env python
-PKG = 'numpy_tutorial'
-import roslib; roslib.load_manifest(PKG)
-import rospy
-from rospy_tutorials.msg import Floats
-from rospy.numpy_msg import numpy_msg
-def callback(data):
-    print rospy.get_name(), &quot;I heard %s&quot;%str(data.data)
-def listener():
-    rospy.init_node('listener')
-    # rospy.Subscriber(&quot;floats&quot;, Floats, callback)
-    rospy.Subscriber(&quot;floats&quot;, numpy_msg(Floats), callback) # Numpy-ize the Listener
-    rospy.spin()
-if __name__ == '__main__':
-    listener()   
- # chmod +x numpy_listener.py
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;# terminal 1
-roscore
-# termianl 2
-rosrun numpy_tutorial numpy_listener.py
-# termianl 3
-rostopic pub -r 1 floats rospy_tutorials/Floats &quot;[1.1, 2.2, 3.3, 4.4, 5.5]&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# numpy_talker.py
-#!/usr/bin/env python
-PKG = 'numpy_tutorial'
-import roslib; roslib.load_manifest(PKG)
-import rospy
-from rospy.numpy_msg import numpy_msg
-from rospy_tutorials.msg import Floats
-import numpy
-def talker():
-    pub = rospy.Publisher('floats', numpy_msg(Floats),queue_size=10)
-    rospy.init_node('talker', anonymous=True)
-    r = rospy.Rate(10) # 10hz
-    while not rospy.is_shutdown():
-        a = numpy.array([1.0, 2.1, 3.2, 4.3, 5.4, 6.5], dtype=numpy.float32)
-        pub.publish(a)
-        r.sleep()
-if __name__ == '__main__':
-    talker()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;more-eg&quot;&gt;more eg&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# talker_color.py
-#!/usr/bin/env python
-import roslib; roslib.load_manifest('beginner_tutorials')
-import rospy
-from std_msgs.msg import ColorRGBA
-def talker():
-    #pub = rospy.Publisher('chatter', String)
-    pub = rospy.Publisher('chatter_color', ColorRGBA)
-    rospy.init_node('talker_color')
-    while not rospy.is_shutdown():
-        pub.publish(a=1.0)
-        rospy.sleep(1.0)
-if __name__ == '__main__':
-    try:
-        talker()
-    except rospy.ROSInterruptException: pass
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# listener_color.py
-#!/usr/bin/env python
-import roslib; roslib.load_manifest('beginner_tutorials')
-import rospy
-from std_msgs.msg import ColorRGBA
-def callback(data):
-    rospy.loginfo(rospy.get_name()+ &quot;I heard r=%s g=%s b=%s a=%s&quot;, data.r, data.g, data.b, data.a)
-
-def listener():
-    rospy.init_node('listener_color', anonymous=True)
-    rospy.Subscriber(&quot;chatter_color&quot;, ColorRGBA, callback)
-    rospy.spin()
-
-if __name__ == '__main__':
-    listener()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# Python CompressedImage订阅服务器发布者
-# 本示例订阅了一个包含sensor_msgs::CompressedImage的ros主题,
-# 将CompressedImage转换为numpy.ndarray,
-# 然后opencv检测并标记该图像中的特征,
-# 最后，它显示并发布新图像-再次作为CompressedImage主题。
-
-#!/usr/bin/env python
-&quot;&quot;&quot;OpenCV feature detectors with ros CompressedImage Topics in python.
-
-This example subscribes to a ros topic containing sensor_msgs 
-CompressedImage. It converts the CompressedImage into a numpy.ndarray, 
-then detects and marks features in that image. It finally displays 
-and publishes the new image - again as CompressedImage topic.
-&quot;&quot;&quot;
-__author__ =  'Simon Haller &amp;lt;simon.haller at uibk.ac.at&amp;gt;'
-__version__=  '0.1'
-__license__ = 'BSD'
-# Python libs
-import sys, time
-
-# numpy and scipy
-import numpy as np
-from scipy.ndimage import filters
-
-# OpenCV
-import cv2
-
-# Ros libraries
-import roslib
-import rospy
-
-# Ros Messages
-from sensor_msgs.msg import CompressedImage
-# We do not use cv_bridge it does not support CompressedImage in python
-# from cv_bridge import CvBridge, CvBridgeError
-
-VERBOSE=False # True将在命令行上打印一些其他信息(特征检测方法，点数，检测时间)
-
-class image_feature:
-    def __init__(self):
-        '''Initialize ros publisher, ros subscriber'''
-        # topic where we publish
-        self.image_pub = rospy.Publisher(&quot;/output/image_raw/compressed&quot;,
-            CompressedImage)
-        # self.bridge = CvBridge()
-        # subscribed Topic
-        self.subscriber = rospy.Subscriber(&quot;/camera/image/compressed&quot;,
-            CompressedImage, self.callback,  queue_size = 1)
-        if VERBOSE :
-            print &quot;subscribed to /camera/image/compressed&quot;
-            
-    def callback(self, ros_data):
-        '''Callback function of subscribed topic. 
-        Here images get converted and features detected'''
-        if VERBOSE :
-            print 'received image of type: &quot;%s&quot;' % ros_data.format
-            
-        #### direct conversion to CV2 #### 将压缩的图像直接转换为cv2
-        np_arr = np.fromstring(ros_data.data, np.uint8)
-        image_np = cv2.imdecode(np_arr, cv2.CV_LOAD_IMAGE_COLOR)
-        #image_np = cv2.imdecode(np_arr, cv2.IMREAD_COLOR) # OpenCV &amp;gt;= 3.0:
-        
-        #### Feature detectors using CV2 #### 选择并创建特征检测器
-        # &quot;&quot;,&quot;Grid&quot;,&quot;Pyramid&quot; + 
-        # &quot;FAST&quot;,&quot;GFTT&quot;,&quot;HARRIS&quot;,&quot;MSER&quot;,&quot;ORB&quot;,&quot;SIFT&quot;,&quot;STAR&quot;,&quot;SURF&quot;
-        method = &quot;GridFAST&quot;
-        feat_det = cv2.FeatureDetector_create(method)
-        time1 = time.time()
-
-        # convert np image to grayscale 
-        featPoints = feat_det.detect(
-            cv2.cvtColor(image_np, cv2.COLOR_BGR2GRAY))
-        time2 = time.time()
-        if VERBOSE :
-            print '%s detector found: %s points in: %s sec.'%(method,
-                len(featPoints),time2-time1)
-
-        for featpoint in featPoints:
-            x,y = featpoint.pt
-            cv2.circle(image_np,(int(x),int(y)), 3, (0,0,255), -1)
-        
-        cv2.imshow('cv_img', image_np)
-        cv2.waitKey(2)
-
-        #### Create CompressedIamge #### 创建要发布的压缩图像
-        msg = CompressedImage()
-        msg.header.stamp = rospy.Time.now()
-        msg.format = &quot;jpeg&quot;
-        msg.data = np.array(cv2.imencode('.jpg', image_np)[1]).tostring()
-        # Publish new image
-        self.image_pub.publish(msg)
-        
-        #self.subscriber.unregister()
-
-def main(args):
-    '''Initializes and cleanup ros node'''
-    ic = image_feature()
-    rospy.init_node('image_feature', anonymous=True)
-    try:
-        rospy.spin()
-    except KeyboardInterrupt:
-        print &quot;Shutting down ROS Image feature detector module&quot;
-    cv2.destroyAllWindows()
-
-if __name__ == '__main__':
-    main(sys.argv)
-&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="ros" /><summary type="html">Rospy参数 &amp;amp; log</summary></entry><entry><title type="html">初识SQL</title><link href="https://acemyzoe.github.io/_posts/2020-07-16-SQL/" rel="alternate" type="text/html" title="初识SQL" /><published>2020-07-16T00:00:00+08:00</published><updated>2020-07-16T00:00:00+08:00</updated><id>https://acemyzoe.github.io/_posts/SQL</id><content type="html" xml:base="https://acemyzoe.github.io/_posts/2020-07-16-SQL/">&lt;h1 id=&quot;数据库&quot;&gt;数据库&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;数据库按照数据结构来组织、存储和管理数据：层次模型HDB、网状模型、关系模型RDB。&lt;/li&gt;
-  &lt;li&gt;主流的关系数据库：
-    &lt;ol&gt;
-      &lt;li&gt;商用数据库，例如：&lt;a href=&quot;https://www.oracle.com/&quot;&gt;Oracle&lt;/a&gt;，&lt;a href=&quot;https://www.microsoft.com/sql-server/&quot;&gt;SQL Server&lt;/a&gt;，&lt;a href=&quot;https://www.ibm.com/db2/&quot;&gt;DB2&lt;/a&gt;等；&lt;/li&gt;
-      &lt;li&gt;开源数据库，例如：&lt;a href=&quot;https://www.mysql.com/&quot;&gt;MySQL&lt;/a&gt;，&lt;a href=&quot;https://www.postgresql.org/&quot;&gt;PostgreSQL&lt;/a&gt;等；&lt;/li&gt;
-      &lt;li&gt;桌面数据库，以微软&lt;a href=&quot;https://products.office.com/access&quot;&gt;Access&lt;/a&gt;为代表，适合桌面应用程序使用；&lt;/li&gt;
-      &lt;li&gt;嵌入式数据库，以&lt;a href=&quot;https://sqlite.org/&quot;&gt;Sqlite&lt;/a&gt;为代表，适合手机应用和桌面程序。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;NoSQL
-    &lt;ul&gt;
-      &lt;li&gt;非关系型数据库又被称为 &lt;a href=&quot;http://c.biancheng.net/nosql/&quot;&gt;NoSQL&lt;/a&gt;（Not Only SQL )，意为不仅仅是 SQL。通常指数据以对象的形式存储在数据库中，而对象之间的关系通过每个对象自身的属性来决定。&lt;/li&gt;
-      &lt;li&gt;面向文档数据库有 MongDB 和 CouchDB。&lt;/li&gt;
-      &lt;li&gt;列存储数据库有 Cassandra 和 &lt;a href=&quot;http://c.biancheng.net/hbase/&quot;&gt;HBase&lt;/a&gt;。&lt;/li&gt;
-      &lt;li&gt;键值存储数据库有 &lt;a href=&quot;http://c.biancheng.net/redis/&quot;&gt;Redis&lt;/a&gt;、Memcached 和 MemcachedDB。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;sql&quot;&gt;SQL&lt;/h1&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Structured Query Language (结构化查询语言)，用来访问和操作数据库系统。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;BIGINT&lt;/code&gt; &lt;em&gt;长整型&lt;/em&gt;  \  &lt;code&gt;VARCHAR(N)&lt;/code&gt;  &lt;em&gt;变长字符串&lt;/em&gt; 是日常用于最广泛的数据类型。&lt;/li&gt;
-  &lt;li&gt;DDL-定义数据（增删表，修改表结构）、DML-管理数据（增删改数据）、DQL-查询数据。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;关系模型&quot;&gt;关系模型&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;表的每一&lt;strong&gt;行&lt;/strong&gt;称为&lt;strong&gt;记录（Record）&lt;/strong&gt;，记录是一个逻辑意义上的数据。&lt;/p&gt;
-
-  &lt;p&gt;表的每一&lt;strong&gt;列&lt;/strong&gt;称为&lt;strong&gt;字段（Column）&lt;/strong&gt;，同一个表的每一行记录都拥有相同的若干字段。&lt;/p&gt;
-
-  &lt;p&gt;字段定义了数据类型（整型、浮点型、字符串、日期等）。NULL是空的，不是0也不是空字符串。&lt;/p&gt;
-
-  &lt;p&gt;通常情况下，字段应该避免允许为NULL。不允许为NULL可以简化查询条件，加快查询速度，也利于应用程序读取数据后无需判断是否为NULL。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;主键&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;主键是关系表中记录的唯一标识，即&lt;code&gt;id&lt;/code&gt;，如身份证号。&lt;/p&gt;
-
-      &lt;p&gt;主键的选取非常重要：&lt;strong&gt;不使用任何业务相关的字段作为主键。&lt;/strong&gt;，而应该使用BIGINT自增或者GUID类型。主键也不应该允许&lt;code&gt;NULL&lt;/code&gt;。可以使用多个列作为联合主键，但联合主键并不常用。&lt;/p&gt;
-
-      &lt;p&gt;GUID算法通过网卡MAC地址、时间戳和随机数保证任意计算机在任意时间生成的字符串都是不同的，大部分编程语言都内置了GUID算法，可以自己预算出主键。类似&lt;code&gt;8f55d96b-8acc-4636-8cb8-76bf8abc2f57&lt;/code&gt;。&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;p&gt;python &lt;a href=&quot;https://docs.python.org/3/library/uuid.html&quot;&gt;uuid&lt;/a&gt;&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# UUID是128位的通用唯一识别码（universally unique identifier）。
-import uuid 
-# 基于MAC地址，时间戳，随机数来生成唯一的uuid，可以保证全球范围内的唯一性。
-guid1 = uuid.uuid1() # &amp;gt; 2879f1ea-c703-11ea-88ab-2cf05d0031b3
-guid4 = uuid.uuid4()
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;外键&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;关系数据库通过外键可以实现一对多、多对多和一对一的关系。&lt;/p&gt;
-
-      &lt;p&gt;外键既可以通过数据库来约束（即在中间表的字段上设置外键），也可以不设置约束，仅依靠应用程序的逻辑来保证。&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;索引&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;索引是关系数据库中对某一列或多个列的值进行预排序的数据结构。&lt;/p&gt;
-
-      &lt;p&gt;对于主键，关系数据库会自动对其创建主键索引。&lt;/p&gt;
-
-      &lt;p&gt;在设计关系数据表的时候，看上去唯一的列，例如身份证号、邮箱地址等，因为他们具有业务含义，因此不宜作为主键。&lt;/p&gt;
-
-      &lt;p&gt;但是，这些列根据业务要求，又具有唯一性约束：即不能出现两条记录存储了同一个身份证号。这个时候，就可以给该列添加一个&lt;strong&gt;唯一索引&lt;/strong&gt;。&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;sql语法&quot;&gt;SQL语法&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/1177760294764384/1179611432985088&quot;&gt;在线sql&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://c.biancheng.net/mysql/function/&quot;&gt;MySQL 常用函数汇总&lt;/a&gt;：数值型函数、字符串型函数、日期时间函数、聚合函数。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/functions.html&quot;&gt;Mysql官方8.0参考手册&lt;/a&gt; ：强制转换函数、加密压缩、JSON函数等。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;MYSQL数据库名表名列名在Linux区分大小写，建议以小写字母方式来存储；关键字不区分，建议大写。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;中文&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;英文&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;意思&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/SQL&quot;&gt;SQL&lt;/a&gt;&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;HTTP&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/表现层状态转换&quot;&gt;REST表现层状态转换&lt;/a&gt;&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;数据分散服务&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/MongoDB&quot;&gt;MongoDB&lt;/a&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;增加&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Create&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;创建&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/插入_(SQL)&quot;&gt;INSERT&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;PUT / POST&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;POST&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;WRITE&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Insert&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;删除&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Delete&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;删除&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/删除_(SQL)&quot;&gt;DELETE&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;DELETE&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;DELETE&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;DISPOSE&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Remove&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;查询&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Read&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;读取&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/查询_(SQL)&quot;&gt;SELECT&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;GET&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;GET&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;READ / TAKE&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Find&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;改正&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Update&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;更新&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/更新_(SQL)&quot;&gt;UPDATE&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;PUT / POST / PATCH&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;PUT&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;WRITE&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Update&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;查询数据&quot;&gt;查询数据&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 语句格式
-SELECT
-[DISTINCT] -- 去重
-{* | &amp;lt;字段列名&amp;gt;}
-[
-FROM &amp;lt;表 1&amp;gt;, &amp;lt;表 2&amp;gt;…
-[WHERE &amp;lt;表达式&amp;gt; -- 条件
-[GROUP BY &amp;lt;group by definition&amp;gt; -- 分组
-[HAVING &amp;lt;expression&amp;gt; [{&amp;lt;operator&amp;gt; &amp;lt;expression&amp;gt;}…]] --过滤分组后的数据~WHERE
-[ORDER BY &amp;lt;order by definition&amp;gt;] -- 排序
-[LIMIT[&amp;lt;offset&amp;gt;,] &amp;lt;row count&amp;gt;] -- 分页
-]
-------
--- 查询students表的所有数据，结果是一个二维表
--- SELECT是关键字，表示将要执行一个查询，*表示“所有列”，FROM表示将要从哪个表查询
-SELECT * FROM &amp;lt;表名&amp;gt;;
--- 判断当前到数据库的连接是否有效
-SELECT 1;
-
--- 按条件查询students:
-SELECT * FROM &amp;lt;表名&amp;gt; WHERE &amp;lt;条件表达式&amp;gt;
-SELECT * FROM students WHERE (score &amp;lt; 80 OR score &amp;gt; 90) AND gender = 'M';
--- 去重
-SELECT COUNT(DISTINCT name,age) FROM students;
--- 模糊查询
-[NOT] LIKE  '字符串'
-SELECT * FROM students WHERE name LIKE [BINARY] 't%' 
--- 通配符%代表任何长度的字符串(含0)，通配符_只能代表单个字符(不含0),BINARY区分大小写
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;​	&lt;strong&gt;算术运算符&lt;/strong&gt;：&lt;strong&gt;+ - * / % mod&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;​	&lt;strong&gt;逻辑运算符&lt;/strong&gt;：**NOT或!  ； AND或&amp;amp;&amp;amp; ； OR或&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;； XOR**&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;​	&lt;strong&gt;比较运算符 :&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;条件&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;表达式举例1&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;表达式举例2&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;说明&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;使用=判断相等&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;score = 80&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;name = ‘ace’&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;字符串需要用单引号括起来。安全等于&amp;lt;=&amp;gt;,可判断NULL&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;使用&amp;gt;判断大于&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;score &amp;gt; 80&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;name &amp;gt; ‘ace’&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;字符串比较根据ASCII码，中文字符比较根据数据库设置&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;使用&amp;gt;=判断大于或相等&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;score &amp;gt;= 80&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;name &amp;gt;= ‘ace’&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;使用&amp;lt;判断小于&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;score &amp;lt; 80&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;name &amp;lt;= ‘ace’&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;使用&amp;lt;=判断小于或相等&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;score &amp;lt;= 80&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;name &amp;lt;= ‘ace’&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;使用&amp;lt;&amp;gt;判断不相等&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;score &amp;lt;&amp;gt; 80&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;name &amp;lt;&amp;gt; ‘ace’&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;!=&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;使用LIKE判断相似&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;name LIKE ‘ab%’&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;name LIKE ‘%bc%’&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;%表示任意字符，例如’ab%’将匹配’ab’，’abc’，’abcd’&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;IS NULL(ISNULL)&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;10 IS NULL&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;ISNULL(10)&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;空值查询&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;IS NOT NULL&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;BETWEEN AND 运算符&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;4 BETWEEN 2 AND 5&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;age BETWEEN 20 AND 23&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;范围查询&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;IN&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;集合内查询&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;NOT IN&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;​	&lt;strong&gt;位运算符&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;运算符&lt;/th&gt;
-      &lt;th&gt;说明&lt;/th&gt;
-      &lt;th&gt;使用形式&lt;/th&gt;
-      &lt;th&gt;举例&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;|&lt;/td&gt;
-      &lt;td&gt;位或&lt;/td&gt;
-      &lt;td&gt;a | b&lt;/td&gt;
-      &lt;td&gt;5 | 8&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&amp;amp;&lt;/td&gt;
-      &lt;td&gt;位与&lt;/td&gt;
-      &lt;td&gt;a &amp;amp; b&lt;/td&gt;
-      &lt;td&gt;5 &amp;amp; 8&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;^&lt;/td&gt;
-      &lt;td&gt;位异或&lt;/td&gt;
-      &lt;td&gt;a ^ b&lt;/td&gt;
-      &lt;td&gt;5 ^ 8&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;~&lt;/td&gt;
-      &lt;td&gt;位取反&lt;/td&gt;
-      &lt;td&gt;~a&lt;/td&gt;
-      &lt;td&gt;~5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;«&lt;/td&gt;
-      &lt;td&gt;位左移&lt;/td&gt;
-      &lt;td&gt;a « b&lt;/td&gt;
-      &lt;td&gt;5 « 2，表示整数 5 按位左移 2 位&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;»&lt;/td&gt;
-      &lt;td&gt;位右移&lt;/td&gt;
-      &lt;td&gt;a » b&lt;/td&gt;
-      &lt;td&gt;5 » 2，表示整数 5 按位右移 2 位&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 投影查询，仅返回指定列并进行重名
-SELECT 列1 [AS] 别名1, 列2 别名2, 列3 别名3 FROM &amp;lt;表名&amp;gt; 别名4 WHERE &amp;lt;条件&amp;gt;
-SELECT id, score points, name FROM students AS STU;
-
--- 排序，ASC升序(default)，DESC降序
--- WHERE子句在前，按score(降序), gender排序(前一字段值可排序时才对后面字段排	序)
-SELECT id, name, gender, score
-FROM students
-WHERE class_id = 1
-ORDER BY score DESC,gender;
-
--- 分页查询
-LIMIT &amp;lt;M&amp;gt; OFFSET &amp;lt;N&amp;gt; --M记录数，N初始位置
--- LIMIT总是设定为pageSize；OFFSET计算公式为pageSize * (pageIndex - 1)。
-LIMIT 3 OFFSET 0;
-LIMIT 3 OFFSET 3;
-LIMIT 3 OFFSET 6;
-LIMIT 6,3;
-
--- 聚合查询：返回该表的记录总数量，结果仍是一行一列，列名是COUNT(*)的二维表，可设置别名便于处理。
-SELECT COUNT(*) num FROM students;
-SELECT COUNT(*) boys FROM students WHERE gender = 'M';
--- SUM()数值列的合计值，AVG()数值列的平均值，MAX()列最大值，MIN()列最小值
-SELECT AVG(score) average FROM students WHERE gender = 'M';
-
--- 每页3条记录，如何通过聚合查询获得总页数
--- round() 遵循四舍五入，round(1.45,0) = 1；
--- ceiling()向上舍入为指定小数位数，ceiling(1.45,0) = 2；
--- floor()向下舍入为指定小数位数，floor(1.45,0)= 1;
-SELECT CEILING(COUNT(*) / 3) FROM students;
-
--- 分组聚合，按class_id分组，得出每个class的男女生人数
--- GROUP_CONCAT() 函数：把每个分组的字段值都显示出来
--- WITH ROLLUP关键词：统计记录数量
-SELECT class_id , gender, COUNT(*) num FROM students GROUP BY class_id;
-SELECT age,sex,GROUP_CONCAT(name) FROM students GROUP BY age,sex;
-
--- 多表查询，返回多表的乘积(M*N行)，尽量不使用。
--- 要使用‘表名.列名’这样的方式来引用列和设置别名，避免了结果集的列名重复问题。同时表也可以设置别名。
--- set table alias:
-SELECT
-    s.id sid,
-    s.name,
-    s.gender,
-    s.score,
-    c.id cid,
-    c.name cname
-FROM students s, classes c;
-WHERE s.gender = 'M' AND c.id = 1;
-
--- 连接查询(Join查询)
-SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score
-FROM students s -- 主表
-INNER JOIN classes c -- 内连接，返回同时存在于两张表的行数据
-ON s.class_id = c.id; -- 连接条件
--- RIGHT OUTER JOIN返回右表都存在的行；LEFT OUTER JOIN则返回左表都存在的行；FULL OUTER JOIN。
-
--- 子查询
-SELECT name FROM students 
-WHERE course_id IN (SELECT id FROM tb_course WHERE course_name = 'Java');
-
--- 正则表达式
-属性名 REGEXP '匹配方式'
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;选项&lt;/th&gt;
-      &lt;th&gt;说明&lt;/th&gt;
-      &lt;th&gt;例子&lt;/th&gt;
-      &lt;th&gt;匹配值示例&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;^&lt;/td&gt;
-      &lt;td&gt;匹配文本的开始字符&lt;/td&gt;
-      &lt;td&gt;‘^b’ 匹配以字母 b 开头的字符串&lt;/td&gt;
-      &lt;td&gt;book、big、banana、bike&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;$&lt;/td&gt;
-      &lt;td&gt;匹配文本的结束字符&lt;/td&gt;
-      &lt;td&gt;‘st$’ 匹配以 st 结尾的字符串&lt;/td&gt;
-      &lt;td&gt;test、resist、persist&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;.&lt;/td&gt;
-      &lt;td&gt;匹配任何单个字符&lt;/td&gt;
-      &lt;td&gt;‘b.t’ 匹配任何 b 和 t 之间有一个字符&lt;/td&gt;
-      &lt;td&gt;bit、bat、but、bite&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;*&lt;/td&gt;
-      &lt;td&gt;匹配零个或多个在它前面的字符&lt;/td&gt;
-      &lt;td&gt;‘f*n’ 匹配字符 n 前面有任意个字符 f&lt;/td&gt;
-      &lt;td&gt;fn、fan、faan、abcn&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;+&lt;/td&gt;
-      &lt;td&gt;匹配前面的字符 1 次或多次&lt;/td&gt;
-      &lt;td&gt;‘ba+’ 匹配以 b 开头，后面至少紧跟一个 a&lt;/td&gt;
-      &lt;td&gt;ba、bay、bare、battle&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;字符串&gt;&lt;/字符串&gt;&lt;/td&gt;
-      &lt;td&gt;匹配包含指定字符的文本&lt;/td&gt;
-      &lt;td&gt;‘fa’ 匹配包含‘fa’的文本&lt;/td&gt;
-      &lt;td&gt;fan、afa、faad&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;[字符集合]&lt;/td&gt;
-      &lt;td&gt;匹配字符集合中的任何一个字符&lt;/td&gt;
-      &lt;td&gt;‘[xz]’ 匹配 x 或者 z&lt;/td&gt;
-      &lt;td&gt;dizzy、zebra、x-ray、extra&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;[^]&lt;/td&gt;
-      &lt;td&gt;匹配不在括号中的任何字符&lt;/td&gt;
-      &lt;td&gt;’[ ^abc]’ 匹配任何不包含 a、b 或 c 的字符串&lt;/td&gt;
-      &lt;td&gt;desk、fox、f8ke&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;字符串{n,}&lt;/td&gt;
-      &lt;td&gt;匹配前面的字符串至少 n 次&lt;/td&gt;
-      &lt;td&gt;‘b{2}’ 匹配 2 个或更多的 b&lt;/td&gt;
-      &lt;td&gt;bbb、bbbb、bbbbbbb&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;字符串 {n,m}&lt;/td&gt;
-      &lt;td&gt;匹配前面的字符串至少 n 次， 至多 m 次&lt;/td&gt;
-      &lt;td&gt;‘b{2,4}’ 匹配最少 2 个，最多 4 个 b&lt;/td&gt;
-      &lt;td&gt;bbb、bbbb&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;修改数据&quot;&gt;修改数据&lt;/h2&gt;
-
-&lt;h3 id=&quot;insert&quot;&gt;INSERT&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 添加多条新记录
-INSERT INTO &amp;lt;表名&amp;gt; (字段1, 字段2, ...) VALUES (值1, 值2, ...);
-INSERT INTO students (class_id, name, gender, score) VALUES
-(1, '大宝', 'M', 87),
-(2, '二宝', 'M', 81);
--- 方式二
-INSERT INTO &amp;lt;表名&amp;gt;
-SET &amp;lt;列名1&amp;gt; = &amp;lt;值1&amp;gt;,
-    &amp;lt;列名2&amp;gt; = &amp;lt;值2&amp;gt;;
--- 使用 INSERT INTO…FROM 语句复制表数据
-INSERT INTO &amp;lt;表2&amp;gt;
-(字段1, 字段2,...)
-SELECT 字段1, 字段2,...
-FROM &amp;lt;表1&amp;gt;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;update&quot;&gt;UPDATE&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 更新id=1的记录
-UPDATE &amp;lt;表名&amp;gt; SET 字段1=值1 [,字段2=值2… ] [WHERE 子句 ] [ORDER BY 子句] [LIMIT 子句];
-UPDATE students SET name='大牛', score=66 WHERE id=1;
-UPDATE students SET score=score+10 WHERE score&amp;lt;80; -- 更新字段可用表达式
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;delete&quot;&gt;DELETE&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 删除id=1，3，5的记录
-DELETE FROM &amp;lt;表名&amp;gt; WHERE ...;
-DELETE FROM students WHERE  id IN (1,3,5);
--- 清空表数据,无法回滚
-TRUNCATE [TABLE] 表名;
--- 当不需要该表时，用 DROP；当仍要保留该表，但要删除所有记录时，用 TRUNCATE；当要删除部分记录时，用 DELETE。
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&quot;mysql&quot;&gt;MYSQL&lt;/h1&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;MySQL适用场景：web网站系统、日志记录系统、数据仓库系统、嵌入式系统。&lt;/p&gt;
-
-  &lt;p&gt;MySQL Client的可执行程序是mysql，MySQL Server的可执行程序是mysqld，在后台运行。&lt;/p&gt;
-
-  &lt;p&gt;可视化图形界面&lt;a href=&quot;https://dev.mysql.com/downloads/workbench/&quot;&gt;MySQL Workbench&lt;/a&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;mysql数据格式&quot;&gt;Mysql数据格式&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;整数类型有 &lt;strong&gt;TINYINT&lt;/strong&gt;、&lt;strong&gt;SMALLINT&lt;/strong&gt;、&lt;strong&gt;MEDIUMINT&lt;/strong&gt;、&lt;strong&gt;INT&lt;/strong&gt;、&lt;strong&gt;BIGINT&lt;/strong&gt;。&lt;/li&gt;
-  &lt;li&gt;小数类型有单精度浮点数（&lt;strong&gt;FLOAT&lt;/strong&gt;）和双精度浮点数（&lt;strong&gt;DOUBLE&lt;/strong&gt;），定点类型 &lt;strong&gt;DECIMAL&lt;/strong&gt;。&lt;/li&gt;
-  &lt;li&gt;日期的数据类型：&lt;strong&gt;YEAR&lt;/strong&gt;、&lt;strong&gt;TIME&lt;/strong&gt;、&lt;strong&gt;DATE&lt;/strong&gt;、&lt;strong&gt;DTAETIME&lt;/strong&gt;、&lt;strong&gt;TIMESTAMP&lt;/strong&gt;。&lt;/li&gt;
-  &lt;li&gt;字符串类型有 &lt;strong&gt;CHAR&lt;/strong&gt;(M)、&lt;strong&gt;VARCHAR&lt;/strong&gt;(M)、&lt;strong&gt;TINYTEXT&lt;/strong&gt;、&lt;strong&gt;TEXT&lt;/strong&gt;、&lt;strong&gt;MEDIUMTEXT&lt;/strong&gt;、&lt;strong&gt;LONGTEXT&lt;/strong&gt;、&lt;strong&gt;ENUM&lt;/strong&gt;、&lt;strong&gt;SET&lt;/strong&gt;。
-    &lt;ul&gt;
-      &lt;li&gt;CHAR 是固定长度字符，VARCHAR 是可变长度字符。&lt;/li&gt;
-      &lt;li&gt;性别字段适合定义，为 ENUM；要存储一个人兴趣爱好，最好使用SET类型。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;二进制字符串有 &lt;strong&gt;BIT&lt;/strong&gt;(M)、&lt;strong&gt;BINARY&lt;/strong&gt;(M)、&lt;strong&gt;VARBINARY&lt;/strong&gt;(M)、&lt;strong&gt;TINYBLOB&lt;/strong&gt;(M)、&lt;strong&gt;BLOB&lt;/strong&gt;(M)、&lt;strong&gt;MEDIUMBLOB&lt;/strong&gt;(M) 和 &lt;strong&gt;LONGBLOB&lt;/strong&gt;(M)。
-    &lt;ul&gt;
-      &lt;li&gt;BLOB 主要存储图片、音频信息等&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;mysqlcrud&quot;&gt;MYSQL(CRUD)&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;# 连接 MySQL Server
-mysql -u root -p
-mysql -h 10.0.1.99 -u root -p
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;HELP 查询内容;
-/*多行
-  注释*/
--- 列出所有数据库
-show databases;
-SHOW DATABASES [LIKE '数据库名']; --匹配数据库,部分匹配‘%db’、‘%db%’
--- 创建数据库
-create database test;
--- 语法格式
-CREATE DATABASE [IF NOT EXISTS] &amp;lt;数据库名&amp;gt;
-[[DEFAULT] CHARACTER SET &amp;lt;字符集名&amp;gt;] 
-[[DEFAULT] COLLATE &amp;lt;校对规则名&amp;gt;];
-show create database test;
--- 修改数据库，只能对数据库使用的字符集和校对规则进行修改
-ALTER DATABASE [数据库名] { 
-[ DEFAULT ] CHARACTER SET &amp;lt;字符集名&amp;gt; |
-[ DEFAULT ] COLLATE &amp;lt;校对规则名&amp;gt;}
--- 删除数据库
-DROP DATABASE [ IF EXISTS ] &amp;lt;数据库名&amp;gt;
--- 切换数据库
-use test;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;information_schema：主要存储了系统中的一些数据库对象信息，比如用户表信息、列信息、权限信息、字符集信息和分区信息等。&lt;/li&gt;
-    &lt;li&gt;mysql：MySQL 的核心数据库，类似于 SQL Server 中的 master 表，主要负责存储数据库用户、用户访问权限等 MySQL 自己需要使用的控制和管理信息。常用的比如在 mysql 数据库的 user 表中修改 root 用户密码。&lt;/li&gt;
-    &lt;li&gt;performance_schema：主要用于收集数据库服务器性能参数。&lt;/li&gt;
-    &lt;li&gt;sakila：MySQL 提供的样例数据库，该数据库共有 16 张表，这些数据表都是比较常见的，在设计数据库时，可以参照这些样例数据表来快速完成所需的数据表。&lt;/li&gt;
-    &lt;li&gt;sys：MySQL 5.7 安装完成后会多一个 sys 数据库。sys 数据库主要提供了一些视图，数据都来自于 performation_schema，主要是让开发者和使用者更方便地查看性能问题。&lt;/li&gt;
-    &lt;li&gt;world：world 数据库是 MySQL 自动创建的数据库，该数据库中只包括 3 张数据表，分别保存城市，国家和国家使用的语言等内容。&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 列出当前数据库所有表
-show tables;
-
--- MYSQL视图
--- 查看表结构 DESCRIBE
-desc students;
-	-- 字段含义:
-    -- Null：表示该列是否可以存储 NULL 值。
-    -- Key：表示该列是否已编制索引。PRI 表示该列是表主键的一部分，UNI 表示该列是 UNIQUE 索引的一部分，MUL 表示在列中某个给定值允许出现多次。
-    -- Default：表示该列是否有默认值，如果有，值是多少。
-    -- Extra：表示可以获取的与给定列有关的附加信息，如 AUTO_INCREMENT 等。
-CREATE VIEW &amp;lt;视图名&amp;gt; AS &amp;lt;SELECT语句&amp;gt;
-ALTER VIEW &amp;lt;视图名&amp;gt; AS &amp;lt;SELECT语句&amp;gt;
-
--- 参考创建表的sql语句
-show create table students;
-+----------+-------------------------------------------------------+
-| students | CREATE TABLE `students` (                             |
-|          |   `id` bigint(20) NOT NULL AUTO_INCREMENT,            |
-|          |   `class_id` bigint(20) NOT NULL,                     |
-|          |   `name` varchar(100) NOT NULL,                       |
-|          |   `gender` varchar(1) NOT NULL,                       |
-|          |   `score` int(11) NOT NULL,                           |
-|          |   PRIMARY KEY (`id`)                                  |
-|          | ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 |
-+----------+-------------------------------------------------------+
--- 删除表
-DROP TABLE [IF EXISTS] 表名1 [ ,表名2, 表名3 ...]
-drop table students;
-
--- 修改表
-ALTER TABLE &amp;lt;表名&amp;gt; [修改选项]
--- 修改选项
-{ ADD COLUMN &amp;lt;列名&amp;gt; &amp;lt;类型&amp;gt;[约束条件]; -- 在末尾添加字段
-  ADD COLUMN &amp;lt;列名&amp;gt; &amp;lt;类型&amp;gt;[约束条件]FIRST; -- 在开头添加字段
-  ADD COLUMN &amp;lt;列名&amp;gt; &amp;lt;类型&amp;gt;[约束条件]AFTER &amp;lt;已经存在的字段名&amp;gt;; -- 在已有字段后添加
-| CHANGE COLUMN &amp;lt;旧列名&amp;gt; &amp;lt;新列名&amp;gt; &amp;lt;新列类型&amp;gt; -- 修改字段名称
-| ALTER COLUMN &amp;lt;列名&amp;gt; { SET DEFAULT &amp;lt;默认值&amp;gt; | DROP DEFAULT }
-| MODIFY COLUMN &amp;lt;列名&amp;gt; &amp;lt;类型&amp;gt; -- 修改字段数据类型
-| DROP COLUMN &amp;lt;列名&amp;gt;
-| RENAME [TO] &amp;lt;新表名&amp;gt;
-| CHARACTER SET &amp;lt;字符集名&amp;gt;
-| COLLATE &amp;lt;校对规则名&amp;gt; }
-
-ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL; -- 新增一列birth
-ALTER TABLE students CHANGE COLUMN birth birthday VARCHAR(20) NOT NULL; -- 把列名改为birthday，类型改为VARCHAR(20)
-ALTER TABLE students DROP COLUMN birthday; -- 删除列
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;mysql约束constraint&quot;&gt;MYSQL约束(CONSTRAINT)&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;主键约束(一个表中只有一个)&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 在创建表时设置主键约束
-CREATE TABLE &amp;lt;数据表名&amp;gt; 
-(
-[CONSTRAINT &amp;lt;约束名&amp;gt;] PRIMARY KEY [字段名] -- 单字段主键
-PRIMARY KEY [字段1，字段2，…,字段n] -- 设置联合主键
-字段名 数据类型 AUTO_INCREMENT -- 给字段(只能是整数类型)添加 AUTO_INCREMENT 属性来实现主键自增长
-AUTO_INCREMENT=1 -- 指定自增字段初始值
-);
-  
--- 在修改表时添加主键约束
-ALTER TABLE &amp;lt;数据表名&amp;gt; 
-ADD PRIMARY KEY(&amp;lt;字段名&amp;gt;);
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;外键约束&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 在创建表时设置外键约束
-CREATE TABLE &amp;lt;数据表名&amp;gt; 
-(
-[CONSTRAINT &amp;lt;外键名&amp;gt;] FOREIGN KEY 字段名 [，字段名2，…] 
-REFERENCES &amp;lt;主表名&amp;gt; 主键列1 [，主键列2，…]
-);
-  
--- 在修改表时添加外键约束
-ALTER TABLE &amp;lt;数据表名&amp;gt; 
-ADD CONSTRAINT &amp;lt;外键名&amp;gt;
-FOREIGN KEY(&amp;lt;列名&amp;gt;) REFERENCES &amp;lt;主表名&amp;gt; (&amp;lt;列名&amp;gt;);
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;唯一约束(一个表中可有多个)&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;&amp;lt;字段名&amp;gt; &amp;lt;数据类型&amp;gt; UNIQUE
-  
-ALTER TABLE &amp;lt;数据表名&amp;gt; ADD CONSTRAINT &amp;lt;唯一约束名&amp;gt; UNIQUE(&amp;lt;列名&amp;gt;);
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;检查约束(检查数据表中字段值有效性)&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 创建表时
-CHECK(&amp;lt;检查约束&amp;gt;)
-CHECK(salary&amp;gt;0 AND salary&amp;lt;100)
--- 修改表
-ALTER TABLE &amp;lt;数据表名&amp;gt;
-ADD CONSTRAINT &amp;lt;检查约束名&amp;gt; 
-CHECK(&amp;lt;检查约束&amp;gt;);
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;默认值约束&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 创建表时
-&amp;lt;字段名&amp;gt; &amp;lt;数据类型&amp;gt; DEFAULT &amp;lt;默认值&amp;gt;;
--- 修改表
-ALTER TABLE &amp;lt;数据表名&amp;gt;
-CHANGE COLUMN &amp;lt;字段名&amp;gt;	
-&amp;lt;字段名&amp;gt; &amp;lt;数据类型&amp;gt; DEFAULT &amp;lt;默认值&amp;gt;;
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;非空约束&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 创建表时
-&amp;lt;字段名&amp;gt; &amp;lt;数据类型&amp;gt; NOT NULL;
--- 修改表
-ALTER TABLE &amp;lt;数据表名&amp;gt;
-CHANGE COLUMN &amp;lt;字段名&amp;gt;
-&amp;lt;字段名&amp;gt; &amp;lt;数据类型&amp;gt; NOT NULL;
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;mysql索引&quot;&gt;MYSQL索引&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;在物理上分为  BTREE 索引和 HASH 索引&lt;/p&gt;
-
-  &lt;p&gt;哈希（Hash）：把任意长度的输入（又叫作预映射，pre-image）通过散列算法变换成固定长度的输出（散列值）。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 创建表时
-CREATE TABLE &amp;lt;数据表名&amp;gt; 
-KEY|INDEX [&amp;lt;索引名&amp;gt;] [&amp;lt;索引类型&amp;gt;] (&amp;lt;列名&amp;gt;,…) -- 普通索引
-UNIQUE [INDEX|KEY] [&amp;lt;索引名&amp;gt;] [&amp;lt;索引类型&amp;gt;] (&amp;lt;列名&amp;gt;,…) -- 唯一索引
--- 修改表
-ALTER TABLE &amp;lt;数据表名&amp;gt;
-ADD INDEX [&amp;lt;索引名&amp;gt;] [&amp;lt;索引类型&amp;gt;] (&amp;lt;列名&amp;gt;,…)
-ADD UNIQUE [INDEX|KEY] [&amp;lt;索引名&amp;gt;] [&amp;lt;索引类型&amp;gt;] (&amp;lt;列名&amp;gt;,…)
--- 查看索引
-SHOW INDEX FROM &amp;lt;表名&amp;gt; [ FROM &amp;lt;数据库名&amp;gt;]\G;
-show index from students\G;
-        Table: students -- 数据表名
-   Non_unique: 0        -- 是否是唯一索引
-     Key_name: PRIMARY  -- 索引的名称:主键索引
- Seq_in_index: 1		-- 该列在索引中的位置，如果索引是单列的，则该列的值为1
-  Column_name: id		-- 定义索引的列字段
-    Collation: A		-- 升序显示值“A”（升序），若显示为 NULL，则表示无分类
-  Cardinality: 10		-- 索引中唯一值数目的估计值
-     Sub_part: NULL		-- 列中被编入索引的字符的数量，列的值为 NULL表示整列被编入索引。
-       Packed: NULL		-- 关键字如何被压缩
-         Null:			-- 显示索引列中是否包含 NULL
-   Index_type: BTREE	-- 索引使用的类型和方法（BTREE、FULLTEXT、HASH、RTREE）
-      Comment:			-- 评注
-Index_comment:
-      Visible: YES
-   Expression: NULL
--- 删除索引
-DROP INDEX &amp;lt;索引名&amp;gt; ON &amp;lt;表名&amp;gt;
-DROP PRIMARY KEY
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;实用sql语句&quot;&gt;实用SQL语句&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 查看系统所支持的存储引擎类型
--- 常用引擎：MyISAM、InnoDB 和 MEMORY 
-show engines;
-SHOW VARIABLES LIKE 'default_storage_engine%'; -- 查看默认引擎
-SET default_storage_engine=InnoDB; -- 设置默认引擎
--- 修改数据表的存储引擎
-ALTER TABLE &amp;lt;表名&amp;gt; ENGINE=&amp;lt;存储引擎名&amp;gt;;
-
--- 插入或替换
-REPLACE INTO students (id, class_id, name, gender, score) VALUES (1, 1, '小明', 'F', 99);
--- 插入或更新
-INSERT INTO students (id, class_id, name, gender, score) VALUES (1, 1, '小明', 'F', 99) ON DUPLICATE KEY UPDATE name='小明', gender='F', score=99;
--- 插入或忽略
-INSERT IGNORE INTO students (id, class_id, name, gender, score) VALUES (1, 1, '小明', 'F', 99);
--- 快照
-CREATE TABLE students_of_class1 SELECT * FROM students WHERE class_id=1;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;操作示例&quot;&gt;操作示例&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;set character set utf8;
--- 如果test数据库不存在，就创建test数据库：
-CREATE DATABASE IF NOT EXISTS test;
-
--- 切换到test数据库
-USE test;
-
--- 删除classes表和students表（如果存在）：
-DROP TABLE IF EXISTS classes;
-DROP TABLE IF EXISTS students;
-
--- 创建classes表：
-CREATE TABLE classes (
-    id BIGINT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- 创建students表：
-CREATE TABLE students (
-    id BIGINT NOT NULL AUTO_INCREMENT,
-    class_id BIGINT NOT NULL,
-    name VARCHAR(100) NOT NULL,
-    gender VARCHAR(1) NOT NULL,
-    score INT NOT NULL,
-    PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- 插入classes记录：
-INSERT INTO classes(id, name) VALUES (1, '一班');
-INSERT INTO classes(id, name) VALUES (2, '二班');
-
--- 插入students记录：
-INSERT INTO students (id, class_id, name, gender, score) VALUES (1, 1, '小明', 'M', 90);
-INSERT INTO students (id, class_id, name, gender, score) VALUES (2, 1, '小红', 'F', 95);
-INSERT INTO students (id, class_id, name, gender, score) VALUES (5, 2, '小白', 'F', 81);
-
--- OK:
-SELECT 'ok' as 'result:';
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;存储过程&quot;&gt;存储过程&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;（可编程函数）一组为了完成特定功能的 SQL 语句集合，经编译和优化后存储在数据库服务器中，可以被 Java 和 C# 等编程语言调用。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;CREATE PROCEDURE &amp;lt;过程名&amp;gt; ([过程参数[,…]]) &amp;lt;过程体&amp;gt;
--- [过程参数[,…] ] 格式
-[IN|OUT|INOUT] &amp;lt;参数名&amp;gt; &amp;lt;类型&amp;gt;
--- &amp;lt;过程体&amp;gt; 以关键字 BEGIN 开始，以关键字 END 结束
--- 使用命令行创建存储过程时，使用 DELIMITER 命令将结束命令修改为其他字符
-DELIMITER $$
-CREATE PROCEDURE ShowStuScore()
-BEGIN
-SELECT * FROM tb_students_score;
-END $$
--- 查看存储过程的状态
-SHOW PROCEDURE STATUS LIKE 存储过程名;
--- 查看存储过程的定义
-SHOW CREATE PROCEDURE 存储过程名;
--- 删除
-DROP PROCEDURE [ IF EXISTS ] &amp;lt;过程名&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;触发器&quot;&gt;触发器&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;在 MySQL 中，只有执行 INSERT、UPDATE 和 DELETE 操作时才能激活触发器&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 创建触发器
-CREATE TRIGGER &amp;lt;触发器名&amp;gt; 
-&amp;lt;BEFORE|AFTER&amp;gt; &amp;lt;INSERT| UPDATE| DELETE &amp;gt; ON &amp;lt;表名&amp;gt; 
-FOR EACH Row
-&amp;lt;触发器主体&amp;gt;;	
--- 创建一个名为 SumOfSalary 的触发器，触发的条件是向数据表 tb_emp8 中插入数据之前，对新插入的 salary 字段值进行求和计算。
-CREATE TRIGGER SumOfSalary
-BEFORE INSERT ON tb_emp8
-FOR EACH ROW
-SET @sum=@sum+NEW.salary;
--- 查看触发器
-SHOW TRIGGERS;
-SELECT * FROM information_schema.triggers WHERE trigger_name= '触发器名';
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;事件&quot;&gt;事件&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;执行定时任务，事件调度器Event Scheduler&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 查看even_scheduler是否开启
-show processlist;
-select @@event_scheduler;
-show variables like 'event_scheduler';
--- 开启关闭调度器
-set global event_scheduler=On;
--- 创建事件
-CREATE EVENT [IF NOT EXISTS] event_name
-    ON SCHEDULE &amp;lt;schedule&amp;gt; -- 用于定义执行的时间和时间间隔,schedule 的值为一个 AT 子句
-    [ON COMPLETION [NOT] PRESERVE] -- 用于定义事件是否循环执行，默认为一次执行，即 NOT PRESERVE
-    [ENABLE | DISABLE | DISABLE ON SLAVE] -- 用于指定事件的一种属性
-    [COMMENT 'comment'] -- 定义事件的注释
-    DO &amp;lt;event_body&amp;gt;; -- 指定事件启动时所要执行的代码： SQL 语句、存储过程或者一个计划执行的事件
-    
-CREATE EVENT IF NOT EXISTS e_test 
-ON SCHEDULE EVERY 5 SECOND
-ON COMPLETION PRESERVE
-DO INSERT INTO tb_eventtest(user,createtime) VALUES ('MySQL',NOW());
--- 查看事件
-show events;
-SELECT * FROM information_schema.events limit 1\G;
--- 修改事件，同创建。
-ALTER EVENT event_name DISABLE;-- 临时关闭事件
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;数据库事务&quot;&gt;数据库事务&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;数据库事务用来保证多条SQL的全部执行，可以确保该事务范围内的所有操作都可以全部成功或者全部失败，如转账。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A：Atomic，原子性，将所有SQL作为原子工作单元执行，要么全部执行，要么全部不执行；&lt;/li&gt;
-  &lt;li&gt;C：Consistent，一致性，事务完成后，所有数据的状态都是一致的，即A账户只要减去了100，B账户则必定加上了100；&lt;/li&gt;
-  &lt;li&gt;I：Isolation，隔离性，如果有多个事务并发执行，每个事务作出的修改必须与其他事务隔离；&lt;/li&gt;
-  &lt;li&gt;D：Duration，持久性，即事务完成后，对数据库数据的修改被持久化存储。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 从id=1的账户给id=2的账户转账100元
-BEGIN; -- 开启一个事务
-UPDATE accounts SET balance = balance - 100 WHERE id = 1;
-UPDATE accounts SET balance = balance + 100 WHERE id = 2;
-COMMIT; -- 提交该显式事务
-ROLLBACK; -- 回滚，主动事务失败
-
--- 查看当前事务自动提交模式，默认开启即每一条sql指令为一个事务
-SHOW VARIABLES LIKE 'autocommit';
-SET autocommit = 0|1|ON|OFF;-- 开启关闭
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;mysql-事务隔离级别&quot;&gt;MySQL 事务隔离级别&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;隔离级别&lt;/th&gt;
-      &lt;th&gt;脏读&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;不可重复读&lt;/th&gt;
-      &lt;th&gt;幻读&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;READ UNCOMITTED 读未提交&lt;/td&gt;
-      &lt;td&gt;√&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;√&lt;/td&gt;
-      &lt;td&gt;√&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;READ COMMITTED 读提交&lt;/td&gt;
-      &lt;td&gt;×&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;√&lt;/td&gt;
-      &lt;td&gt;√&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;REPEATABLE READ 可重复读&lt;/td&gt;
-      &lt;td&gt;×&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;×&lt;/td&gt;
-      &lt;td&gt;√&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;SERIALIZABLE 串行化&lt;/td&gt;
-      &lt;td&gt;×&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;×&lt;/td&gt;
-      &lt;td&gt;×&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;用户管理&quot;&gt;用户管理&lt;/h2&gt;
-
-&lt;h2 id=&quot;数据库备份恢复&quot;&gt;数据库备份恢复&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;# 数据库备份
-mysqldump -u username -p &amp;lt;数据库&amp;gt; [&amp;lt;数据表&amp;gt; ...]&amp;gt; filename.sql
-mysqldump -u root -p test &amp;gt; C:\student.sql
-mysqldump -u username -p --databases &amp;lt;数据库1&amp;gt; &amp;lt;数据库2&amp;gt; ... &amp;gt; filename.sql #备份多个库
-mysqldump -u username -p --all-databases &amp;gt; filename.sql #备份all
-
-#student.sql 文件中的所有表和记录必须恢复到一个已经存在的数据库中。
-#恢复数据时，CREATE TABLE 语句会在数据库中创建表，然后执行 INSERT 语句向表中插入记录。
-#数据库恢复
-mysql -u username -p [&amp;lt;数据库&amp;gt;] &amp;lt; filename.sql
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 数据表导出
-SELECT 列名 FROM table [WHERE 语句] INTO OUTFILE '目标文件'[OPTIONS]
-SELECT * FROM test.person INTO OUTFILE 'C://person.txt';
--- 数据表导入
-CREATE TABLE tb_students_copy LIKE tb_students_info;
-
-LOAD DATA INFILE 'C:/file.txt' INTO TABLE test_db.tb_students_copy
-FIELDS TERMINATED BY ',' -- 设置字符串为字段之间的分隔符
-OPTIONALLY ENCLOSED BY '&quot;' --设置字符来括上 CHAR、VARCHAR 和 TEXT 等字符型字段。
-LINES TERMINATED BY '?'; -- 设置每行结尾的字符
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;日志&quot;&gt;日志&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;如果 MySQL 数据库系统意外停止服务，通过&lt;strong&gt;错误日志&lt;/strong&gt;查看出现错误的原因。&lt;/p&gt;
-
-  &lt;p&gt;通过&lt;strong&gt;二进制日志&lt;/strong&gt;来查看用户分别执行了哪些操作、对数据库文件做了哪些修改，然后来修复数据库。&lt;/p&gt;
-
-  &lt;p&gt;&lt;strong&gt;通用查询日志&lt;/strong&gt;记录用户的所有操作，包括启动和关闭 MySQL 服务、更新语句和查询语句等。&lt;/p&gt;
-
-  &lt;p&gt;&lt;strong&gt;慢查询日志&lt;/strong&gt;记录执行事件超过指定时间的操作，通过工具分析慢查询日志可以定位 MySQL 服务器性能瓶颈所在。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;在 MySQL 配置文件添加相应选项来开启日志
-[mysqld]
-log-bin=dir/filename # 二进制日志
-log-error=dir/filename # 错误日志
-log=dir/filename # 通用查询日志
-log-slow-queries=dir\filename # 慢查询日志
-long_query_time=n # 设置慢查询时间值(s)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;-- 错误日志
--- 默认路径：C:\ProgramData\MySQL\MySQL Server\Data\
-SHOW VARIABLES LIKE 'log_error';
--- mysqladmin -u root -p flush-logs # 开启新的日志
-
--- 二进制日志
-SHOW VARIABLES LIKE 'log_bin';
-SHOW binary logs; -- 查看二进制日志文件列表
-SHOW master status; -- 查看当前正在写入的二进制日志文件
--- mysqlbinlog filename.number # 在当前文件夹下查找指定的二进制日志
-RESET MASTER; -- 重置
-PURGE MASTER LOGS TO 'filename.number'; -- 删除指定
-PURGE MASTER LOGS TO 'yyyy-mm-dd hh:MM:ss'; -- 按时间
-SET SQL_LOG_BIN=0/1; -- 暂停/开启
--- mysqlbinlog filename.number | mysql -u root -p # 还原数据库
-
--- 通用查询日志
-SHOW VARIABLES LIKE '%general%';
-SET GLOBAL general_log=off;
-
--- 慢查询日志
-SHOW VARIABLES LIKE 'slow_query%';
-SHOW VARIABLES LIKE 'long_query_time';
-SET GLOBAL slow_query_log=ON;
-SET GLOBAL long_query_time=0.001;
-
--- 日志输出方式：文件或数据表
-SHOW VARIABLES LIKE '%log_out%';
-SET GLOBAL log_output='FILE,TABLE';
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&quot;python-mysql&quot;&gt;PYTHON-MYSQL&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://wiki.python.org/moin/MySQL&quot;&gt;DRIVER&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://dev.mysql.com/doc/connector-python/en/&quot;&gt;MySQL Connector&lt;/a&gt; &lt;code&gt;pip install mysql-connector-python&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.runoob.com/python3/python-mysql-connector.html&quot;&gt;mysql-connector&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/PyMySQL/PyMySQL&quot;&gt;PyMySQL&lt;/a&gt; &lt;code&gt;import pymysql.cursors&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.runoob.com/python3/python3-mysql.html&quot;&gt;pymysql&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="数据库" /><summary type="html">数据库</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="ros" /><summary type="html">Launch</summary></entry></feed>

@@ -2,6 +2,24 @@
 [
   
     {
+      "title"    : "损失函数&amp;评价指标",
+      "category" : "",
+      "tags"     : "ML",
+      "date"     : "2020-10-20 00:00:00 +0800",
+      
+      "url"      : "/_posts/2020-10-20-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0&%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/"
+    } ,
+  
+    {
+      "title"    : "Markdown数学公式",
+      "category" : "",
+      "tags"     : "wiki",
+      "date"     : "2020-10-18 00:00:00 +0800",
+      
+      "url"      : "/_posts/2020-10-18-markdown%E5%85%AC%E5%BC%8F/"
+    } ,
+  
+    {
       "title"    : "celery",
       "category" : "",
       "tags"     : "python",
@@ -196,7 +214,7 @@
       "tags"     : "通信",
       "date"     : "2020-06-01 00:00:00 +0800",
       
-      "url"      : "/_posts/2020-06-01-%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E6%96%B9%E5%90%91/"
+      "url"      : "/_posts/2020-06-01-%E9%80%9A%E4%BF%A1&%E6%95%B0%E6%8D%AE/"
     } ,
   
     {
