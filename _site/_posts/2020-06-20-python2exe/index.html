@@ -527,11 +527,11 @@ QAQ<br/>
     
     
     <i class="fas fa-file-word fa-fw"></i>
-    877字
+    1804字
     
     
     <i class="fas fa-clock fa-fw"></i>
-    3分
+    7分
     
     
     <span class="leancloud-visitors" id="/_posts/2020-06-20-python2exe/" data-xid="/_posts/2020-06-20-python2exe/" data-flag-title="python to exe">
@@ -582,18 +582,43 @@ Nuitka直接将python编译成C++代码 ,再编译C++代码产生可执行文件
 <pre><code class="language-shell">
 pip install -U nuitka
 
-# 编译单个文件
+# 编译单个文件,linux下生成二进制可执行文件*.bin
 nuitka ./hello.py
+# 指定模块
+nuitka --follow-import-to=MODULE/PACKAGE hello.py
 # 嵌入所有模块的程编译 
 nuitka --follow-imports program.py
 # 编译某个目录的所有文件
-nuitka ./hello.py  --include-plugin-directory=./ --remove-output --output-dir=./output -o ./output/hello        
+nuitka ./hello.py  --include-plugin-directory=./
+					--remove-output 
+					--output-dir=./output 
+					-o ./output/hello        
 
 	--include-plugin-directory: 编译依赖的目录
-	--remove-output: 移除编译输出的中间态文件
-	--output-dir: 指定输出信息的文件目录
+	--remove-output: 移除编译输出的中间态文件，即自动删除build目录
+	--output-dir: 指定输出信息的文件目录，默认为当前目录
 	-o: 指定输出的文件名（需包含所在目录）
+# 用来显示详细打包过程
+	 --show-scons        Operate Scons in non-quiet mode, showing the executed
+                        commands. Defaults to off.
+    --show-progress     Provide progress information and statistics. Defaults
+                        to off.
+    --show-memory       Provide memory information and statistics. Defaults to
+                        off.
+    --show-modules      Provide a final summary on included modules. Defaults
+                        to off.
+    --verbose           Output details of actions taken, esp. in
+                        optimizations. Can become a lot. Defaults to off.
 
+
+###### 发布一个程序 ######
+# 参数--standalone默认包含参数--follow-imports，即对所有的引用到的库都进行打包，将这些库中的py或者pyc打包进exe，然后再将所依赖的二进制文件（dll或者pyd）拷贝到exe所在文件夹。只要命令能够执行完成不出错，生成的exe就可以完全脱离python环境独立运行。
+nuitka --standalone ./hello.py
+# 参数plugin control
+# 这部分参数用于设置对某些第三方库或者python功能进行支持，在使用--standalone时才会用到。
+# 如果使用了这些库或功能，但是忘了进行插件参数设置，命令运行过程中会以红字今天提醒，按照提醒对命令进行调整
+# 程序中使用了pyqt或者pyside，numpy, scipy, pandas, matplotlib
+--plugin-enable=numpy   --plugin-enable=qt-plugins  --plugin-enable=tensorflow
 </code></pre>
 
 <h2 id="py2exe">py2exe</h2>
