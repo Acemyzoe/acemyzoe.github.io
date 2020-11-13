@@ -8,15 +8,15 @@
 <meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Java调用Python" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="人类世界 真是 太有趣了 QAQ &lt;iframe frameborder=”no” border=”0” marginwidth=”0” marginheight=”0” width=100% height=52 src=”//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32”&gt;&lt;/iframe&gt;" />
-<meta property="og:description" content="人类世界 真是 太有趣了 QAQ &lt;iframe frameborder=”no” border=”0” marginwidth=”0” marginheight=”0” width=100% height=52 src=”//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32”&gt;&lt;/iframe&gt;" />
+<meta name="description" content="在java类中直接执行python语句" />
+<meta property="og:description" content="在java类中直接执行python语句" />
 <link rel="canonical" href="https://acemyzoe.github.io/_posts/2020-10-28-Java%E8%B0%83%E7%94%A8Python/" />
 <meta property="og:url" content="https://acemyzoe.github.io/_posts/2020-10-28-Java%E8%B0%83%E7%94%A8Python/" />
 <meta property="og:site_name" content="Acemyzoe" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-10-28T00:00:00+08:00" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","headline":"Java调用Python","url":"https://acemyzoe.github.io/_posts/2020-10-28-Java%E8%B0%83%E7%94%A8Python/","datePublished":"2020-10-28T00:00:00+08:00","dateModified":"2020-10-28T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://acemyzoe.github.io/_posts/2020-10-28-Java%E8%B0%83%E7%94%A8Python/"},"description":"人类世界 真是 太有趣了 QAQ &lt;iframe frameborder=”no” border=”0” marginwidth=”0” marginheight=”0” width=100% height=52 src=”//music.163.com/outchain/player?type=2&amp;id=486806&amp;auto=1&amp;height=32”&gt;&lt;/iframe&gt;","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","headline":"Java调用Python","url":"https://acemyzoe.github.io/_posts/2020-10-28-Java%E8%B0%83%E7%94%A8Python/","datePublished":"2020-10-28T00:00:00+08:00","dateModified":"2020-10-28T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://acemyzoe.github.io/_posts/2020-10-28-Java%E8%B0%83%E7%94%A8Python/"},"description":"在java类中直接执行python语句","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -249,7 +249,12 @@ QAQ<br/>
   }
 </style>
 
-      
+      <ol id="toc">
+  <li><a href="#%E5%9C%A8java%E7%B1%BB%E4%B8%AD%E7%9B%B4%E6%8E%A5%E6%89%A7%E8%A1%8Cpython%E8%AF%AD%E5%8F%A5">在java类中直接执行python语句</a></li>
+  <li><a href="#%E5%9C%A8java%E7%B1%BB%E4%B8%AD%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8%E6%9C%AC%E5%9C%B0python%E8%84%9A%E6%9C%AC">在java类中直接调用本地python脚本</a></li>
+  <li><a href="#%E4%BD%BF%E7%94%A8runtimegetruntime%E6%89%A7%E8%A1%8Cpython%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6%E6%8E%A8%E8%8D%90">使用Runtime.getRuntime()执行python脚本文件（推荐）</a></li>
+  <li><a href="#%E8%B0%83%E7%94%A8python%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0">调用python脚本中的函数</a></li>
+</ol>
       
       
       <script defer="defer" src="https://cdn.jsdelivr.net/gh/poole/lanyon@v1.1.0/public/js/script.min.js"></script>
@@ -518,7 +523,7 @@ QAQ<br/>
     
     
     <i class="fas fa-file-word fa-fw"></i>
-    0字
+    92字
     
     
     <i class="fas fa-clock fa-fw"></i>
@@ -548,7 +553,13 @@ QAQ<br/>
 
     
   </span>
-  
+  <h1 id="在java类中直接执行python语句">在java类中直接执行python语句</h1>
+
+<h1 id="在java类中直接调用本地python脚本">在java类中直接调用本地python脚本</h1>
+
+<h1 id="使用runtimegetruntime执行python脚本文件推荐">使用Runtime.getRuntime()执行python脚本文件（推荐）</h1>
+
+<h1 id="调用python脚本中的函数">调用python脚本中的函数</h1>
 
 </div>
 <div class="v">

@@ -2,6 +2,15 @@
 [
   
     {
+      "title"    : "pyecharts",
+      "category" : "",
+      "tags"     : "python",
+      "date"     : "2020-11-01 00:00:00 +0800",
+      
+      "url"      : "/_posts/2020-11-01-pyecharts/"
+    } ,
+  
+    {
       "title"    : "毛选阅读摘录",
       "category" : "",
       "tags"     : "阅读",
@@ -26,6 +35,15 @@
       "date"     : "2020-10-28 00:00:00 +0800",
       
       "url"      : "/_posts/2020-10-28-Java%E8%B0%83%E7%94%A8Python/"
+    } ,
+  
+    {
+      "title"    : "pandas",
+      "category" : "",
+      "tags"     : "python",
+      "date"     : "2020-10-20 00:00:00 +0800",
+      
+      "url"      : "/_posts/2020-10-20-pandas/"
     } ,
   
     {
@@ -173,12 +191,12 @@
     } ,
   
     {
-      "title"    : "Python-Pypi",
+      "title"    : "Python基础",
       "category" : "",
       "tags"     : "python",
       "date"     : "2020-07-01 00:00:00 +0800",
       
-      "url"      : "/_posts/2020-07-01-Python&Pypi/"
+      "url"      : "/_posts/2020-07-01-Python%E5%9F%BA%E7%A1%80/"
     } ,
   
     {
