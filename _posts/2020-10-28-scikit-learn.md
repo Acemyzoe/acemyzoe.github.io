@@ -1,6 +1,6 @@
 ---
 title: scikit-learn
-tags: python
+tags: ML
 ---
 
 # scikit-learn
