@@ -27,7 +27,15 @@ tags:
 
 ## Docker
 
-容器的本质是进程。
+**容器的本质是进程**
+
+**Docker本身并不是容器**，它是创建容器的工具，是应用容器引擎。
+
+Docker技术的三大核心概念，分别是：
+
+- **镜像（Image）**
+- **容器（Container）**
+- **仓库（Repository）**
 
 ### [安装](https://docs.docker.com/engine/install/linux-postinstall/)
 
@@ -106,7 +114,7 @@ docker exec -ti <container-name> bash
 
 ## LXD
 
-中道崩殂
+不太行，中道崩殂
 
 可参考文章：
 
@@ -114,4 +122,30 @@ docker exec -ti <container-name> bash
 - https://shenxiaohai.me/2018/12/03/gpu-server-lab/
 - https://butui.me/post/lxd-gpu-server/
 - https://abcdabcd987.com/setup-shared-gpu-server-for-labs/
+
+## K8S
+
+**kubernetes**：K8S，就是基于容器的集群管理平台。将Docker应用于具体的业务实现，对Docker及容器进行更高级更灵活的管理。
+
+### K8S的架构
+
+一个K8S系统，通常称为一个**K8S集群（Cluster）**。主要包括两个部分：
+
+- **一个Master节点（主节点）**：负责管理和控制。
+
+  Master节点包括API Server、Scheduler、Controller manager、etcd。
+
+  - API Server是整个系统的对外接口，供客户端和其它组件调用
+  - Scheduler负责对集群内部的资源进行调度
+  - Controller manager负责管理控制器
+
+- **一群Node节点（计算节点）**：工作负载节点，里面是具体的容器。
+
+  Node节点包括Docker、kubelet、kube-proxy、Fluentd、kube-dns（可选），还有就是**Pod**。
+
+  - Pod是Kubernetes最基本的操作单元。一个Pod代表着集群中运行的一个进程，它内部封装了一个或多个紧密相关的容器。
+  - Docker 创建容器
+  - Kubelet 主要负责监视指派到它所在Node上的Pod，包括创建、修改、监控、删除等。
+  - Kube-proxy 主要负责为Pod对象提供代理。
+  - Fluentd 主要负责日志收集、存储与查询。
 
