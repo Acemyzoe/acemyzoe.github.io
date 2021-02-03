@@ -151,7 +151,7 @@ jekyll-theme-WuK: # 我的主题的自定义样式都在这个命名空间
           href: /tags/
         - title: '<i class="fas fa-archive fa-fw"></i> 归档'
           href: /archive/
-        - title: '<i class="fas fa-coffee fa-fw"></i> 打赏'
+        - title: '<i class="fas fa-coffee fa-fw"></i> 打劫'
           href: /merger/
       simple_jekyll_search: # 侧边栏的全站搜索
         enable: true
@@ -283,7 +283,7 @@ jekyll-theme-WuK: # 我的主题的自定义样式都在这个命名空间
               document.getElementById("run_time_hour"),
               document.getElementById("run_time_minute"),
               document.getElementById("run_time_second"),
-              "04/01/2020 12:00:00")// 这是我第一篇博客的时间
+              "09/09/2019 12:00:00")// 这是我第一篇博客的时间
             </script>
           </div>
         - | # 不蒜子页面统计，看不懂可不改
