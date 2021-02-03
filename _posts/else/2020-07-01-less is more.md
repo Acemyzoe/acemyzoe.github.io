@@ -1,6 +1,6 @@
 ---
 title: less is more
-tags: 道简
+tags: else
 ---
 
 - [ ] **少目标**	一年内，只专注于一个经过筛选的中心目标。

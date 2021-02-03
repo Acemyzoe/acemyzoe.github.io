@@ -1,5 +1,5 @@
 ---
-title: 开篇-Init commit
+title: 开篇
 tags:
   - else
 jekyll-theme-WuK:
