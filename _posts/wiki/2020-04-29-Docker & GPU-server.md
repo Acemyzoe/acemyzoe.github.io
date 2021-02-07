@@ -124,7 +124,7 @@ docker exec -ti <container-name> bash
 
 ## K8S
 
-**kubernetes**：K8S，就是基于容器的集群管理平台。将Docker应用于具体的业务实现，对Docker及容器进行更高级更灵活的管理。
+[**kubernetes**](https://kubernetes.io/zh/docs/home/)：一个开源的容器编排引擎，用来对容器化应用进行自动化部署、 扩缩和管理。
 
 ### K8S的架构
 
