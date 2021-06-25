@@ -7,4 +7,4 @@ bundle exec jekyll build
 git add .
 #git commit -m "upload blog"
 git commit -m "upload blog $(date "+%Y-%m-%d")"
-git push origin master
+git push
