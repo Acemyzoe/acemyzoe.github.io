@@ -17,6 +17,7 @@
   - **[ustbguojun@163.com](mailto:ustbguojun@163.com)**
   - **[acemyzoe@outlook.com](mailto:acemyzoe@outlook.com)**
 - QQ : 775051709
+- Phone：13121984699
 
 <!-- slide -->
 
@@ -37,23 +38,35 @@
 
 <!-- slide vertical=true -->
 
-- 身为Automan，掌握了自动控制、计算机软硬件、人工智能和机器人领域相关知识。
-
-- 典型射手座男:见一个爱一个的技术激情,三分钟的学习热度。
+- 工作：非标自动化设备——>智能机器人——>国网电力终端
+- 领域：Matlab+C的桌面控制程序——>ROS+深度学习算法——>AI落地嵌入式终端、物联网设备
+- 角色：自动控制工程师——>半个算法工程师半个后端——>技术产品管理、项目管理
 
 <!-- slide vertical=true -->
 
 - **Matlab**:Frequent&Learning
 - **C/C++**:Familiar&Learning
 - **Python**:Frequent&Learning
-- **.net/c#**:Beginner
-- **ROS**:Familiar&Learning
+- **ROS**:Familiar
 - **Deep learning**:Familiar&Learning
   - **Tensorflow/keras**:Familiar&Learning
+  - **Pytorch**：Learning
 - **SQL/pymysql**:Familiar&Learning
 - **Linux/ubuntu**:Frequent
 - **Markdown**:Frequent
 - **Git**:Frequent
+
+<!-- slide -->
+
+## 关于我
+
+**INTP**
+
+“慢热，沉默，喜欢独处。三观正，不记仇，健忘体质”
+
+“慧极必伤，情深不寿，强极则辱”
+
+“谦谦君子，温润如玉”
 
 <!-- slide -->
 
