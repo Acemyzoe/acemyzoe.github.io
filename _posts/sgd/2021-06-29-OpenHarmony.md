@@ -159,7 +159,7 @@ ohos_build_out_dir = /home/ace/Desktop/异常识别与负荷预测项目/harmony
 ++++++++++++++++++++++++++++++++++++++++
 ```
 
-![image-20210702110633943](/home/ace/Desktop/github/acemyzoe.github.io/_posts/sgd/2021-06-29-OpenHarmony.assets/image-20210702110633943.png)
+![image-20210702110633943](2021-06-29-OpenHarmony.assets/image-20210702110633943.png)
 
 ### 场景2：单独编译修改后的内核(文档不全)
 
@@ -217,7 +217,7 @@ Hi3516系列开发板中，只有Hi3516DV300支持烧录标准系统，其烧录
 
 当前已支持的开发板：海思Hi3516系列、Hi3518系列、Hi3861系列开发板的烧录，此次2.0 Beta1新增搭载 NXP IMX6ULL、Realtek RTL8720、Xradio XR872等
 
-![image-20210702110351318](/home/ace/Desktop/github/acemyzoe.github.io/_posts/sgd/2021-06-29-OpenHarmony.assets/image-20210702110351318.png)
+![image-20210702110351318](2021-06-29-OpenHarmony.assets/image-20210702110351318.png)
 
 V2.2 Beta1新增支持Neptune（w800芯片）开发板、BearPi-HM Nano（Hi3861芯片）、Rtl8720开发板、基于BL602芯片模组、基于Asr582x芯片模组
 

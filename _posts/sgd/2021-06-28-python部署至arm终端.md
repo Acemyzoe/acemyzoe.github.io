@@ -1,7 +1,7 @@
 ---
 title: arm/python容器
 tags:
-  - wiki
+  - sgd
 ---
 
 # Python -> 可执行 -> arm架构设备
