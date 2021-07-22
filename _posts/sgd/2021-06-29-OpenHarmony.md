@@ -1,6 +1,7 @@
 ---
 title: OpenHarmony
 tags: sgd
+typora-root-url: ../../assets
 ---
 
 # liteOS移植教程

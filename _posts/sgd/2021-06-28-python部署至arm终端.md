@@ -2,6 +2,7 @@
 title: arm/python容器
 tags:
   - sgd
+typora-root-url: ../../assets
 ---
 
 # Python -> 可执行 -> arm架构设备
