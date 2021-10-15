@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git pull
+## git pull
 # bundle install
 # bundle exec jekyll build
 # bundle exec jekyll serve
