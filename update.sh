@@ -8,5 +8,5 @@
 git add .
 #git commit -m "upload blog"
 git commit -m "upload blog $(date "+%Y-%m-%d")"
-echo "git push"
-git push
+#echo "git push"
+#git push
