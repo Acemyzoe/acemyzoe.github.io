@@ -24,18 +24,18 @@ typora-root-url: ../../assets
 
 不足：经过精简后大小达600MB，后续添加其他库大小会继续增加。
 
-![图片1](2021-06-28-python部署至arm终端.assets/图片1.png)
+![图片1](https://raw.githubusercontent.com/Acemyzoe/myblog/master/blog-img/%E5%9B%BE%E7%89%871.png)
 
 
 ## 运行情况
 
 在容器中运行：`python tepo_level2_copy.cpython-37.pyc --path data.csv`
 
-![图片2](2021-06-28-python部署至arm终端.assets/图片2.png)
+![图片2](https://raw.githubusercontent.com/Acemyzoe/myblog/master/blog-img/%E5%9B%BE%E7%89%872.png)
 
 结果：在原路径生成data_tepo2文件（节点的邻接表）、data_tepo2.png（节点拓扑图）
 
-![图片3](2021-06-28-python部署至arm终端.assets/图片3.png)
+![图片3](https://raw.githubusercontent.com/Acemyzoe/myblog/master/blog-img/%E5%9B%BE%E7%89%873.png)
 
 
 ## 资源消耗
@@ -44,7 +44,7 @@ typora-root-url: ../../assets
 
 （笔记本测试耗时4-5s，由于开发板CPU算力有限，耗时翻倍）
 
-![图片4](2021-06-28-python部署至arm终端.assets/图片4.png)
+![图片4](https://raw.githubusercontent.com/Acemyzoe/myblog/master/blog-img/%E5%9B%BE%E7%89%874.png)
 
 
 ## 测试AI程序
@@ -53,7 +53,7 @@ typora-root-url: ../../assets
 
 测试程序：minimal（基于TF-lite框架，使用c语言交叉编译的示例程序，用于检测模型内部参数。）
 
-![图片5](2021-06-28-python部署至arm终端.assets/图片5.png)
+![图片5](https://raw.githubusercontent.com/Acemyzoe/myblog/master/blog-img/%E5%9B%BE%E7%89%875.png)
 
 # 方案二
 
@@ -72,7 +72,7 @@ optional arguments:
 	 --path PATH  data path , for example: ./tepo.py --path data.csv
 ```
 
-![图片6](2021-06-28-python部署至arm终端.assets/图片6.png)
+![图片6](https://raw.githubusercontent.com/Acemyzoe/myblog/master/blog-img/%E5%9B%BE%E7%89%876.png)
 
 
 ## **使用说明**
@@ -92,7 +92,7 @@ docker exec -ti tepo-container ./tepo_lv2/tepo_lv2 -h
 docker exec -tid tepo-container ./tepo_lv2/tepo_lv2 --path data.csv
 ```
 
-![图片7](2021-06-28-python部署至arm终端.assets/图片7.png)
+![图片7](https://raw.githubusercontent.com/Acemyzoe/myblog/master/blog-img/%E5%9B%BE%E7%89%877.png)
 
 ### build.sh
 

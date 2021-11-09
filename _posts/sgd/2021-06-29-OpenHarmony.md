@@ -230,7 +230,7 @@ V2.2 Beta1新增支持Neptune（w800芯片）开发板、BearPi-HM Nano（Hi3861
 
 ### OpenHarmony三方芯片移植主要过程
 
-![img](https://weharmony.github.io/assets/img/%E8%8A%AF%E7%89%87%E7%A7%BB%E6%A4%8D%E5%85%B3%E9%94%AE%E6%AD%A5%E9%AA%A4.26d507ba.png)
+![img](https://weharmony.github.io/assets/img/芯片移植关键步骤.26d507ba.png)
 
 ### 编译构建适配流程
 
