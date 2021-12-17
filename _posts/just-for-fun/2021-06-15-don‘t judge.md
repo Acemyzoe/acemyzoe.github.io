@@ -1,7 +1,7 @@
 ---
 title: Don‘t judge
 tags:
-  - else
+ - just for fun
 ---
 
 

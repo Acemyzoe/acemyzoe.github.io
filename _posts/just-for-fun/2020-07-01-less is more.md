@@ -1,6 +1,7 @@
 ---
 title: less is more
-tags: else
+tags:
+ - just for fun
 ---
 
 - [ ] **少目标**	一年内，只专注于一个经过筛选的中心目标。
