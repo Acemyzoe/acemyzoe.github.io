@@ -4,14 +4,44 @@ tags:
   - wiki
 ---
 
-# CMakeLists 
+# CMAKE&MAKE
+
+## CMakeLists 
+
+```cmake
+cmake_minimum_required(VERSION 3.5)
+project(MAIN VERSION 1.0 LANGUAGES CXX C)
+add_library(${PROJECT_NAME} INTERFACE)
+target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_11 c_std_99)
+include_directories(${PROJECT_SOURCE_DIR}/include)
+link_directories(${PROJECT_SOURCE_DIR}/lib)
+
+# build options
+option(EXAMPLES "Build examples?" ON)
+
+# Build examples
+if(EXAMPLES)
+    find_package(Threads REQUIRED)
+    add_executable(MQTTClient_subscribe src/MQTTClient_subscribe.c)
+    target_link_libraries(MQTTClient_subscribe Threads::Threads paho-mqtt3c)
+
+endif()
+```
+
+## Cmake
 
 ```cmake
 # 指定 cmake 的最小版本
 cmake_minimum_required(VERSION 3.4.1)
 
-# 设置项目名称
-project(demo)
+# 设置项目名称、版本、语言
+project(MAIN VERSION 1.0 LANGUAGES CXX C)
+
+# 编译器
+target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_11 c_std_99)
+
+# 设置头文件路径
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
 # 设置编译类型，add_library 默认生成是静态库
 add_executable(demo demo.cpp) # 生成可执行文件
@@ -31,6 +61,9 @@ add_library(common SHARED util.cpp) # 生成动态库或共享库
 # 明确指定包含哪些源文件
 add_library(demo demo.cpp test.cpp util.cpp)
 
+# 用于添加一个需要进行构建的子目录，意味着该目录下也有个CMakeLists.txt 文件
+add_subdirectory(Lib)
+
 # 设置变量
 # set 直接设置变量的值
 set(SRC_LIST main.cpp test.cpp)
@@ -48,7 +81,7 @@ list(APPEND SRC_LIST test.cpp)
 list(REMOVE_ITEM SRC_LIST main.cpp)
 add_executable(demo ${SRC_LIST})
 
-# 搜索当前目录下的所有.cpp文件，并命名为SRC_LIST，它会查找目录下的.c,.cpp ,.mm,.cc 等等C/C++语言后缀的文件名
+# 搜索当前目录下的所有源文件，并存在变量SRC_LIST，它会查找目录下的.c,.cpp ,.mm,.cc 等等C/C++语言后缀的文件名
 aux_source_directory(. SRC_LIST) 
 add_library(demo ${SRC_LIST})
 
@@ -98,6 +131,9 @@ target_link_libraries(demo
     boost_system.a
     boost_thread
     pthread)
+    
+ # 获取整个依赖包的头文件包含路径、库路径、库名字、版本号等情况
+ find_package(OpenCV 3.2.0 REQUIRED )
 
 # 打印信息
 message(${PROJECT_SOURCE_DIR})
@@ -177,5 +213,154 @@ BUILD_SHARED_LIBS ：#这个开关用来控制默认的库编译方式，如果�
 CMAKE_C_FLAGS：#设置 C 编译选项，也可以通过指令 add_definitions() 添加
 CMAKE_CXX_FLAGS：#设置 C++ 编译选项，也可以通过指令 add_definitions() 添加
 add_definitions(-DENABLE_DEBUG -DABC) # 参数之间用空格分隔
+
+CMAKE_BUILD_TYPE #设置模式是Debug还是Release模式
+SET(CMAKE_BUILD_TYPE "Release")
+SET(CMAKE_BUILD_TYPE "Debug”)
+```
+
+## gcc/g++
+
+```gcc
+gcc中常用的编译选项
+-c 只编译并生成目标文件：将汇编代码编译成.o目标文件，即二进制代码。直接把 C/C++ 代码编译成机器代码。
+-g 生成调试信息。GNU 调试器可利用该信息。
+-S 只是编译不汇编，生成汇编代码
+-shared 生成共享目标文件。通常用在建立共享库时。
+-W 开启所有 gcc 能提供的警告。 
+-w 不生成任何警告信息。 
+-Wall 生成所有警告信息。
+
+-O0 -O1 -O2 -O3 四级优化选项：
+-O0 不做任何优化，这是默认的编译选项 。
+-O 或 -O1 优化生成代码，优化会消耗编译时间，主要对代码的分支，常量以及表达式等进行优化。
+-O2 进一步优化，会尝试更多的寄存器级的优化以及指令级的优化，在编译期间占用更多的内存和编译时间 。
+-Os 相当于-O2.5。是使用了所有-O2的优化选项，但又不缩减代码尺寸的方法。
+-O3 比 -O2 更进一步优化，包括 inline 函数。在O2的基础上进行更多的优化。 
+```
+
+```shell
+# ar 命令将.o文件打包成静态链接库
+ar rcs libdemo.a demo.o # ar rcs + 静态库文件的名字 + 目标文件列表
+# 参数 r 用来替换库中已有的目标文件，或者加入新的目标文件。
+# 参数 c 表示创建一个库。不管库否存在，都将创建。　
+# 参数 s 用来创建目标文件索引，这在创建较大的库时能提高速度。
+
+# -I选项指明头文件的包含路径，使用-L选项指明静态库的包含路径，使用-l（小写字母L）选项指明静态库的名字
+gcc src/main.c -I include/ -L lib/ -l test -o math.out
+
+# 直接编译
+g++ main.cpp function.cpp function.h -o main.out
+# function静态库
+g++ -c function.cpp 
+ar cr libfunction.a function.o 
+g++ main.cpp -o main.out -static -l function -L include/
+# function动态库
+g++ -shared -fPIC -o libfunction.so function.o  
+sudo cp libfunction.so /usr/lib
+g++ main.cpp -L include/ -l function -o main.out
+```
+
+## make
+
+```make
+make all：编译程序、库、文档等（等同于make）
+make install：安装已经编译好的程序。复制文件树中到文件到指定的位置
+make unistall：卸载已经安装的程序。
+make clean：删除由make命令产生的文件
+make distclean：删除由./configure产生的文件
+make check：测试刚刚编译的软件（某些程序可能不支持）
+make installcheck：检查安装的库和程序（某些程序可能不支持）
+make dist：重新打包成packname-version.tar.gz
+```
+
+```makefile
+# Makefile
+# source object target
+SRC	:= $(wildcard *.cpp)  # wildcard作用找到所有的.cpp文件
+OBJS	:=	$(SRC: %.cpp=%.o)  #通过变量的替换操作，可得到对应的.o文件列表
+TARGET	:= output_without_lib_makefile  # 最后生成的可执行文件的名字
+# compile and lib parameter
+CC		:= g++
+LDFLAGS := -L lib/
+INCLUDE := -I include/
+all:
+	$(CC) -o $(TARGET) $(SRC)
+# clean
+clean:
+	rm -fr *.o
+	rm -fr $(TARGET)
+```
+
+```makefile
+# Makefile生成静态库并编译
+# source object target
+SRC	:= $(wildcard *.cpp)
+OBJS	:=	$(SRC: %.cpp=%.o)
+LIB	:= libfunction_makefile.a 
+AR	:= ar
+# compile and lib parameter
+CC		:= g++
+INCLUDE := -I.
+#link
+$(LIB):function.o
+	$(AR) -r $@ -o $^
+function.o:function.cpp
+	$(CC) -c $^ -o $@
+# clean
+clean:
+	rm -fr *.o
+```
+
+```makefile
+# Makefile使用静态库
+TARGET := output_makefile_a
+# compile and lib parameter
+CC		:= g++
+INCLUDE := -I.
+LDFLAGS := -L.
+LIBS := libfunction_makefile.a
+# link
+$(TARGET):main.o
+	$(CC) -o $@ $^ $(LIBS)
+#compile
+main.o:main.cpp
+	$(CC) -c $^ -o $@
+# clean
+clean:
+	rm -fr *.o
+```
+
+```makefile
+# Makefile生成动态库
+# compile and lib parameter
+CC		:= g++
+INCLUDE := -I.
+LIBS := libfunction_makefile.so
+# link
+$(LIBS): function.o
+	$(CC) -shared -o $@ $^
+function.o:function.cpp
+	$(CC) -c $^ -o $@
+# clean
+clean:
+	rm -fr *.o
+```
+
+```makefile
+# Makefile动态库使用
+TARGET := output_makefile_so
+# compile and lib parameter
+CC		:= g++
+INCLUDE := -I.
+LIBS    := -lfunction_makefile
+# link
+$(TARGET): main.o
+	$(CC)  $^  -o  $(TARGET) -lfunction_makefile
+main.o:main.cpp
+	$(CC) -c $^ -o $@
+# clean
+clean:
+	rm -fr *.o
 ```
 
