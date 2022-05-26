@@ -219,6 +219,24 @@ SET(CMAKE_BUILD_TYPE "Release")
 SET(CMAKE_BUILD_TYPE "Debug”)
 ```
 
+## 交叉编译
+
+[cmake-toolchains](https://cmake.org/cmake/help/v3.6/manual/cmake-toolchains.7.html#cross-compiling-for-linux)
+
+```cmake
+#arm_linux_setup.cmake
+set(CMAKE_SYSTEM_NAME Linux)
+set(CMAKE_SYSTEM_PROCESSOR arm)
+
+set(tools /home/cross_compile/gcc-linaro-7.3.1-2018.05-x86_64_arm-linux-gnueabihf)
+set(CMAKE_C_COMPILER ${tools}/bin/arm-linux-gnueabihf-gcc)
+set(CMAKE_CXX_COMPILER ${tools}/bin/arm-linux-gnueabihf-g++)
+```
+
+```shell
+cmake -DCMAKE_TOOLCHAIN_FILE=../arm_linux_setup.cmake ..
+```
+
 ## gcc/g++
 
 ```gcc
