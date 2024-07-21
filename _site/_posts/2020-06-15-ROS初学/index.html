@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>ROS初学 | Acemyzoe</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="ROS初学" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ROS" />
+<meta property="og:description" content="ROS" />
+<link rel="canonical" href="https://acemyzoe.github.io/_posts/2020-06-15-ROS%E5%88%9D%E5%AD%A6/" />
+<meta property="og:url" content="https://acemyzoe.github.io/_posts/2020-06-15-ROS%E5%88%9D%E5%AD%A6/" />
+<meta property="og:site_name" content="Acemyzoe" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-15T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"ROS初学","url":"https://acemyzoe.github.io/_posts/2020-06-15-ROS%E5%88%9D%E5%AD%A6/","datePublished":"2020-06-15T00:00:00+08:00","dateModified":"2020-06-15T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://acemyzoe.github.io/_posts/2020-06-15-ROS%E5%88%9D%E5%AD%A6/"},"description":"ROS","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  
+  <meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1"
+/>
+<meta
+  http-equiv="content-type"
+  content="text/html; charset=utf-8"
+/>
+<link
+  rel="alternate"
+  href="/feed.xml"
+  title="RSS"
+  type="application/rss+xml"
+/>
+
+  
+  <link
+  rel="apple-touch-icon-precomposed"
+  href="/assets/image/Avatar.jpg"
+/>
+<link
+  rel="shortcut
+  icon"
+  href="/assets/image/Avatar.jpg"
+/>
+
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css"
+/>
+
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"
+/>
+
+  
+  <script
+  src='https://zz.bdstatic.com/linksubmit/push.js'
+  async="async"
+></script>
+
+  
+  <style>
+  .wrap {
+    transition-property: width,background-size,transform;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+    min-height: 100%;
+    display: inline-block;
+    background-size: 100% auto;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(/assets/image/background-wap.jpg);
+  }
+  @media (min-aspect-ratio: 2400/1850) {
+    .wrap {
+      background-image: url(/assets/image/background.jpg);
+    }
+  }
+  .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    width: calc(100% - 14rem);
+    background-size: calc(100% - 14rem) auto;
+    transform: translateX(14rem);
+  }
+  .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    transform: translateX(0);
+  }
+</style>
+
+  
+  <style>
+  .sidebar,
+  html,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: PingFang SC, Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
+  }
+</style>
+
+  
+  <style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+</style>
+
+  
+  <style>
+  img {
+    display: inline-block;
+    margin: 0;
+  }
+</style>
+
+  
+  <style>
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%);
+  }
+</style>
+
+  
+  <style>
+  ::selection {
+    color: White;
+    background: Black;
+  }
+</style>
+
+  
+</head>
+
+<body
+  class="theme-base-07 layout-reverse sidebar-overlay">
+  
+  
+  
+  <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+  <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"
+     />
+  <!-- Toggleable sidebar -->
+  <div class="sidebar" id="sidebar">
+    
+    <div class="sidebar-item">
+      <div class="effect effect-right_to_left">
+        <img class="effect-img" src="/assets/image/Avatar.jpg" alt="img" />
+        <div class="effect-info">
+          人类世界<br/>
+真是<br/>
+太有趣了<br/>
+QAQ<br/>
+<a href="mailto:acemyzoe@outlook.com">
+  <i class="fas fa-envelope"></i>
+</a>
+<a href="https://github.com/acemyzoe">
+  <i class="fab fa-github"></i>
+</a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=52 src="//music.163.com/outchain/player?type=2&id=486806&auto=1&height=32"></iframe>
+
+        </div>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      
+      <a class="sidebar-nav-item" href="/">
+        <i class="fas fa-home fa-fw"></i> 首页
+      </a>
+      
+      <a class="sidebar-nav-item" href="/comments/">
+        <i class="fas fa-comments fa-fw"></i> 留言
+      </a>
+      
+      <a class="sidebar-nav-item" href="/tags/">
+        <i class="fas fa-tags fa-fw"></i> 标签
+      </a>
+      
+      <a class="sidebar-nav-item" href="/archive/">
+        <i class="fas fa-archive fa-fw"></i> 归档
+      </a>
+      
+      <a class="sidebar-nav-item" href="/merger/">
+        <i class="fas fa-coffee fa-fw"></i> 打赏
+      </a>
+      
+    </nav>
+    <div class="sidebar-item">
+      
+      <style>
+  #sidebar-search-input {
+    background: none;
+    border: none;
+    color: White;
+    width: 100%;
+  }
+  #sidebar-search-results-container {
+    overflow: auto auto;
+    max-height: 60vh;
+  }
+</style>
+<input
+  id="sidebar-search-input"
+  placeholder="搜索博文"
+/>
+<ol
+  id="sidebar-search-results-container"
+></ol>
+<script
+  src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.7/dest/simple-jekyll-search.min.js'
+  async='async'
+  onload='
+    SimpleJekyllSearch({
+      json: "/assets/simple-jekyll-search/search.json",
+      searchInput: document.getElementById("sidebar-search-input"),
+      resultsContainer: document.getElementById("sidebar-search-results-container"),
+      searchResultTemplate: `<li><a href="{url}">{title}</a></li>`,
+      limit: 999,
+      fuzzy: true
+    })'
+></script>
+
+      
+      
+      <style>
+  #toc {
+    overflow: auto auto;
+    max-height: 50vh;
+  }
+</style>
+
+      <ol id="toc">
+  <li><a href="#ros">ROS</a></li>
+  <li><a href="#ros-client-libraries">ROS Client Libraries</a></li>
+  <li><a href="#ros-2-developer-guide">ROS 2 developer guide¶</a></li>
+  <li><a href="#ros-tutorials">ROS-Tutorials¶</a>
+    <ol>
+      <li><a href="#%E6%B5%8F%E8%A7%88ros%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F">浏览ros文件系统</a></li>
+      <li><a href="#%E5%88%9B%E5%BB%BAros%E5%8C%85">创建ros包</a></li>
+      <li><a href="#%E6%9E%84%E5%BB%BAros%E5%8C%85">构建ros包</a></li>
+      <li><a href="#ros-node">ros node</a></li>
+      <li><a href="#ros-topics">ros topics</a></li>
+      <li><a href="#ros-services--parameters">ros services &amp; parameters</a></li>
+      <li><a href="#rqt_console--roslaunch">rqt_console &amp; roslaunch</a></li>
+      <li><a href="#rosed">rosed</a></li>
+      <li><a href="#rosmsg--rossrv">rosmsg &amp; rossrv</a>
+        <ol>
+          <li><a href="#rosmsg">rosmsg</a></li>
+          <li><a href="#rossrc">rossrc</a></li>
+        </ol>
+      </li>
+      <li><a href="#%E7%BC%96%E5%86%99%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E5%B8%83%E8%80%85%E5%92%8C%E8%AE%A2%E9%98%85%E8%80%85python">编写简单的发布者和订阅者(Python)</a></li>
+      <li><a href="#%E7%BC%96%E5%86%99%E7%AE%80%E5%8D%95%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AFpython">编写简单的服务和客户端(Python)</a></li>
+      <li><a href="#%E8%AE%B0%E5%BD%95%E5%9B%9E%E6%94%BE%E6%95%B0%E6%8D%AEbag">记录&amp;回放数据(.bag)</a></li>
+      <li><a href="#roswtf">roswtf</a></li>
+    </ol>
+  </li>
+</ol>
+      
+      
+      <script defer="defer" src="https://cdn.jsdelivr.net/gh/poole/lanyon@v1.1.0/public/js/script.min.js"></script>
+      
+      <style>
+  .sidebar-checkbox {
+    display: none;
+  }
+  .sidebar-toggle {
+    position: fixed;
+  }
+</style>
+
+      
+      <style>
+  .effect {
+    margin: 1rem;
+    perspective: 900px;
+  }
+  .effect-info {
+    text-align: center;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    transform-style: preserve-3d;
+  }
+  .effect-img {
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+  }
+  .effect-img:before {
+    position: absolute;
+    display: block;
+  }
+  .effect-right_to_left .effect-img {
+    transform-origin: 0% 50%;
+  }
+  .effect-right_to_left:hover .effect-img {
+    transform: rotate3d(0, 1, 0, -180deg);
+  }
+</style>
+
+      
+      <div>
+  <i class="fas fa-cog fa-spin fa-fw"></i>
+  <span id="run_time_day">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>天
+  <span id="run_time_hour">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>时
+  <span id="run_time_minute">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>分
+  <span id="run_time_second">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>秒
+  <script>
+    setInterval(function (d,h,m,s,b) {
+      function setzero(i) {
+        return i < 10 ? "0" + i : i;
+      }
+      let BirthDay = new Date(b);
+      let today = new Date();
+      let timeold = (today.getTime() - BirthDay.getTime());
+      let sectimeold = timeold / 1000;
+      let secondsold = Math.floor(sectimeold);
+      let msPerDay = 24 * 60 * 60 * 1000;
+      let e_daysold = timeold / msPerDay;
+      let daysold = Math.floor(e_daysold);
+      let e_hrsold = (e_daysold - daysold) * 24;
+      let hrsold = Math.floor(e_hrsold);
+      let e_minsold = (e_hrsold - hrsold) * 60;
+      let minsold = Math.floor((e_hrsold - hrsold) * 60);
+      let seconds = Math.floor((e_minsold - minsold) * 60);
+      d.textContent = daysold;
+      h.textContent = setzero(hrsold);
+      m.textContent = setzero(minsold);
+      s.textContent = setzero(seconds);
+    },
+    1000,
+    document.getElementById("run_time_day"),
+    document.getElementById("run_time_hour"),
+    document.getElementById("run_time_minute"),
+    document.getElementById("run_time_second"),
+    "04/01/2020 12:00:00")// 这是我第一篇博客的时间
+  </script>
+</div>
+
+      
+      <div>
+  <div>
+    <i class="fas fa-eye fa-fw"></i>
+    <span id="busuanzi_value_page_pv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>次
+  </div>
+  <div>
+    <i class="fas fa-paw fa-fw"></i>
+    <span id="busuanzi_value_site_pv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>枚
+  </div>
+  <div>
+    <i class="fas fa-user-friends fa-fw"></i>
+    <span id="busuanzi_value_site_uv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>人
+  </div>
+  <script
+    src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0'
+    async='async'
+  ></script>
+</div>
+
+      
+      <div>
+  <i class="fas fa-thumbs-up fa-fw"></i>
+  <a href="https://github.com/acemyzoe">
+    Github
+  </a>
+</div>
+
+      
+      <div>
+  <i class="fas fa-copyright fa-fw"></i>
+  acemyzoe
+</div>
+
+      
+      
+    </div>
+  </div>
+  <!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. -->
+  
+  <div class="wrap">
+    
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/katex@0.11.1/dist/katex.min.js,npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js,npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  defer="defer"
+  onload='renderMathInElement(document.body, { delimiters: [{ left: "$", right: "$", display: false }] })'
+></script>
+
+
+
+<style>
+  pre.language-mermaid,
+  code.language-mermaid {
+    display: none;
+  }
+</style>
+<script
+  src="https://cdn.jsdelivr.net/npm/mermaid@8.5.1/dist/mermaid.min.js"
+  defer="defer"
+  onload='
+    for(let x of document.getElementsByClassName("language-mermaid"))
+      if(x.nodeName=="CODE")
+      {
+        let m = document.createElement("div");
+        m.classList.add("mermaid");
+        m.textContent = x.textContent;
+        x.parentNode.insertAdjacentElement("beforebegin", m);
+      }'
+></script>
+
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.css,gh/PrismJS/prism-themes@1955cfef6953b3a59e66016e8a1e016b45d6cc79/themes/prism-nord.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/components/prism-core.min.js,npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.js"
+  defer="defer"
+  onload='
+    Prism.plugins.autoloader.languages_path = "https:\/\/cdn.jsdelivr.net/npm/prismjs/components/";
+    for(let x of document.getElementsByTagName("pre"))
+      x.classList.add("line-numbers");
+    Prism.plugins.toolbar.registerButton("select-code", function (env) {
+      let button = document.createElement("button");
+      button.textContent = "select this " + env.language;
+      button.addEventListener("click", function () {
+        if (document.body.createTextRange) {
+          let range = document.body.createTextRange();
+          range.moveToElementText(env.element);
+          range.select();
+        } else if (window.getSelection) {
+          let selection = window.getSelection();
+          let range = document.createRange();
+          range.selectNodeContents(env.element);
+          selection.removeAllRanges();
+            selection.addRange(range);
+        }
+      });
+      return button;
+    })'
+></script>
+
+
+
+<style>
+  pre {
+    max-height: 50vh;
+    overflow: auto;
+  }
+</style>
+
+
+<style>
+  @media (min-width: 56em) {
+    .container {
+      max-width: 66.6%;
+    }
+  }
+</style>
+
+
+<style>
+  .masthead,
+  .container.content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    animation-duration: 2s;
+    animation-name: fadeIn;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+
+
+<div class="masthead">
+  <h3 class="container masthead-title">
+    
+    ROS初学
+    <a href="/" title="Home">
+      <small>
+        Acemyzoe
+      </small>
+    </a>
+    
+  </h3>
+</div>
+
+<div class="container content">
+  <div class="post">
+  <span class="post-date">
+    
+    <i class="fas fa-calendar-day fa-fw"></i>
+    15 Jun 2020
+    
+    
+    <i class="fas fa-file-word fa-fw"></i>
+    13376字
+    
+    
+    <i class="fas fa-clock fa-fw"></i>
+    45分
+    
+    
+    <span class="leancloud-visitors" id="/_posts/2020-06-15-ROS%E5%88%9D%E5%AD%A6/" data-xid="/_posts/2020-06-15-ROS%E5%88%9D%E5%AD%A6/" data-flag-title="ROS初学">
+      <i class="fas fa-book-reader fa-fw"></i>
+      <span class="leancloud-visitors-count">
+        <i class="fas fa-spinner fa-pulse"></i>
+      </span>次
+    </span>
+    
+    
+    
+    <i class="fas fa-tag fa-fw"></i>
+    ros
+    
+    
+    <i class="fab fa-creative-commons-by fa-fw"></i>
+<a
+  href="https://creativecommons.org/licenses/by/4.0/deed.zh"
+  rel="license">
+  CC BY 4.0
+</a>
+（除特别声明或转载文章外）
+
+    
+  </span>
+  <h1 id="ros">ROS</h1>
+
+<p><a href="http://wiki.ros.org/">wiki</a></p>
+
+<p><a href="http://wiki.ros.org/cn/ROS/Introduction">wiki_cn</a></p>
+
+<blockquote>
+  <p>提供了操作系统应有的服务，包括硬件抽象，底层设备控制，常用函数的实现，进程间消息传递，以及包管理。</p>
+
+  <p>提供用于获取、编译、编写、和跨计算机运行代码所需的工具和库函数。</p>
+
+  <p>ROS是围绕着基于驱动传感器（倾斜式激光，盘式/斜试头部传感器，机械臂传感器）的复杂移动处理平台设计的</p>
+</blockquote>
+
+<p><strong>“graph”</strong>：图概念，基于ROS通信基础结构的松耦合点对点进程网络</p>
+
+<ul>
+  <li><a href="http://wiki.ros.org/Nodes">nodes</a>：节点是使用ROS与其他节点通信的可执行文件。</li>
+  <li><a href="http://wiki.ros.org/Messages">msg</a>：订阅或发布主题时使用的ROS数据类型。</li>
+  <li><a href="http://wiki.ros.org/Topics">topics</a>：节点可以将消息<em>发布</em>到主题，也可以<em>订阅</em>主题以接收消息。</li>
+  <li><a href="http://wiki.ros.org/Master">master</a>：ROS的名称服务（即帮助节点相互查找）</li>
+  <li><a href="http://wiki.ros.org/rosout">rosout</a>：该节点等效于stdout / stderr,收集并记录节点的调试输出</li>
+  <li><a href="http://wiki.ros.org/roscore">roscore</a>：Master + rosout +参数服务器（参数服务器将在以后介绍）</li>
+</ul>
+
+<p><strong>通信方式</strong>：</p>
+
+<ul>
+  <li>基于同步RPC样式通信的<a href="http://wiki.ros.org/Services">服务（services）</a>机制</li>
+  <li>基于异步流媒体数据的<a href="http://wiki.ros.org/Topics">话题（topics）</a>机制</li>
+  <li>用于数据存储的<a href="http://wiki.ros.org/Parameter Server">参数服务器（Parameter Server）</a></li>
+</ul>
+
+<h1 id="ros-client-libraries">ROS Client Libraries</h1>
+
+<p><a href="http://wiki.ros.org/rospy">rospy</a>：</p>
+
+<blockquote>
+  <p>rospy是ROS的纯Python客户端库，旨在为ROS提供面向对象的脚本语言的优点。rospy的设计优先于实现速度（即开发人员时间）而不是运行时性能，以便可以在ROS中快速对算法进行原型设计和测试。对于非关键路径代码（例如配置和初始化代码），它也是理想的选择。许多ROS工具都是用rospy编写的，以利用类型自省功能。ROS Master，roslaunch和其他ros工具是用rospy开发的，因此Python是ROS的核心依赖项。</p>
+</blockquote>
+
+<h1 id="ros-2-developer-guide">ROS 2 developer guide<a href="https://index.ros.org/doc/ros2/Contributing/Developer-Guide/#ros-2-developer-guide">¶</a></h1>
+
+<h1 id="ros-tutorials">ROS-Tutorials<a href="http://wiki.ros.org/ROS/Tutorials">¶</a></h1>
+
+<blockquote>
+  <p>Thew new build system for ROS is “catkin”</p>
+</blockquote>
+
+<h2 id="浏览ros文件系统">浏览ros文件系统</h2>
+
+<pre><code class="language-shell">sudo apt-get install ros-noetic-ros-tutorials # 轻量级模拟器，ros版本Noetic
+# packages : 每个软件包可以包含库，可执行文件，脚本或其他工件
+# package.xml ： 清单用于定义软件包之间的依赖关系并捕获有关软件包的元信息
+
+# rospack获取有关软件包的信息
+rospack find [package_name]
+rospack find roscpp # &gt; /opt/ros/kinetic/share/roscpp
+# roscd
+roscd [locationname[/subdir]]
+roscd log # 日志
+echo $ ROS_PACKAGE_PATH  # &gt;环境变量 /opt/ros/kinetic/base/install/share
+# rosls
+rosls roscpp_tutorials # cmake launch package.xml srv
+</code></pre>
+
+<h2 id="创建ros包">创建ros包</h2>
+
+<pre><code class="language-shell"># package结构
+my_package /
+  CMakeLists.txt
+  package.xml #软件包清单
+# catkin workspace
+workspace_folder/        -- WORKSPACE 工作空间
+  src/                   -- SOURCE SPACE 源空间
+    CMakeLists.txt       -- 'Toplevel' CMake file, provided by catkin
+    package_1/
+      CMakeLists.txt     -- CMakeLists.txt file for package_1
+      package.xml        -- Package manifest for package_1
+    ...
+    package_n/
+      CMakeLists.txt     -- CMakeLists.txt file for package_n
+      package.xml        -- Package manifest for package_n
+
+# 安装catkin
+sudo apt-get install ros-noetic-catkin
+source /opt/ros/noetic/setup.bash
+# 创建工作区
+mkdir -p〜/catkin_ws/src
+# Creating a catkin Package
+cd〜/ catkin_ws/src
+# 创建名为“ beginner_tutorials”的新程序包，取决于std_msgs，roscpp和rospy：
+catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+# 构建软件包
+cd〜/catkin_ws
+catkin_make # 生成CMakeLists.txt
+. ~/catkin_ws/devel/setup.bash # 将工作空间添加到您的ROS环境
+
+# 查看一阶依赖，依赖同样保存在package.xml
+rospack depends1 beginner_tutorials 
+roscd beginner_tutorials
+cat package.xml
+# 递归确定所有嵌套的依赖项
+rospack depends beginner_tutorials
+</code></pre>
+
+<pre><code class="language-xml">&lt;!-- package.xml --&gt;
+&lt;!-- 注释 --&gt;
+&lt;?xml version="1.0"?&gt;
+&lt;package format="2"&gt;
+  &lt;name&gt;beginner_tutorials&lt;/name&gt;
+  &lt;version&gt;0.1.0&lt;/version&gt;
+  &lt;description&gt;描述标签&lt;/description&gt;
+
+  &lt;maintainer email="you@yourdomain.tld"&gt;Your Name&lt;/maintainer&gt;
+  &lt;license&gt;BSD&lt;/license&gt;
+  &lt;url type="website"&gt;http://wiki.ros.org/beginner_tutorials&lt;/url&gt;
+  &lt;author email="you@yourdomain.tld"&gt;Jane Doe&lt;/author&gt;
+
+  &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
+
+  &lt;build_depend&gt;roscpp&lt;/build_depend&gt;
+  &lt;build_depend&gt;rospy&lt;/build_depend&gt;
+  &lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
+    
+&lt;!-- 添加一个exec_depend标记，构建和运行时都可用 --&gt;
+  &lt;exec_depend&gt;roscpp&lt;/exec_depend&gt;
+  &lt;exec_depend&gt;rospy&lt;/exec_depend&gt;
+  &lt;exec_depend&gt;std_msgs&lt;/exec_depend&gt;
+
+&lt;/package&gt;
+</code></pre>
+
+<h2 id="构建ros包">构建ros包</h2>
+
+<pre><code class="language-shell"># 设置环境变量
+source /opt/ros/noetic/setup.bash
+
+# catkin_make在标准CMake工作流程中结合了对cmake和make的调用。
+# In a CMake project # 标准CMake工作流程
+mkdir build
+cd build
+cmake ..
+make
+make install  # (optionally)
+# In a catkin workspace
+catkin_make # 构建在src文件夹中找到的所有catkin项目
+catkin_make --source my_src # 自定src位置
+catkin_make install  # (optionally)
+
+ls # &gt;build,devel,src
+</code></pre>
+
+<h2 id="ros-node">ros node</h2>
+
+<pre><code class="language-shell"># 使用ros运行第一步
+roscore
+# ros未初始化，修改网络配置
+# 修改权限
+sudo chown -R &lt;your_username&gt; ~/.ros
+
+# new terminal
+rosnode list # &gt; /rosout
+rosnode info /rosout
+# new node
+rosrun [软件包名称] [节点名称]
+rosrun turtlesim turtlesim_node
+rosnode cleanup # 清理node
+rosrun turtlesim turtlesim_node __name：= my_turtle # 自定名称
+rosnode ping my_turtle # ping来测试它是否启动
+</code></pre>
+
+<h2 id="ros-topics">ros topics</h2>
+
+<pre><code class="language-shell">roscore
+rosrun turtlesim turtlesim_node
+rosrun turtlesim turtle_teleop_key # 键盘操纵小乌龟
+# turtlesim_node和turtle_teleop_key节点彼此通过topics通信。
+# turtle_teleop_key正在发布(publish)主题的按键，而turtlesim订阅(subscribes)同一主题以接收这些按键
+
+# rqt_graph创建有关系统中发生的情况的动态图
+rosrun rqt_graph rqt_graph 
+# turtlesim_node和turtle_teleop_key节点在名为/turtle1/command_velocity的主题上进行通信
+
+rostopic -h
+rostopic bw     # display bandwidth used by topic 带宽
+rostopic echo   # print messages to screen 
+rostopic hz     # display publishing rate of topic 显示主题的发布率    
+rostopic list   # print information about active topics
+rostopic pub    # publish data to topic 将数据发布到主题
+rostopic type   # print topic type
+rostopic echo /turtle1/cmd_vel # 显示turtle_teleop_key节点发布的命令速度数据
+
+rostopic list -h
+</code></pre>
+
+<pre><code class="language-shell"># ros messages ： 通过在节点之间发送ROS消息来进行主题交流
+rostopic type [topic] # 返回主题的消息类型
+rostopic type /turtle1/cmd_vel # &gt; geometry_msgs/Twist
+rosmsg show geometry_msgs/Twist
+rostopic type /turtle1/cmd_vel | rosmsg show # 一起使用
+# rostopic pub
+rostopic pub [topic] [msg_type] [args]
+# 让小乌龟以线速度2.0和角速度1.8移动
+rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, 1.8]'
+# 参数是YAML语法：[YAML command line documentation](http://wiki.ros.org/ROS/YAMLCommandLine).
+# 乌龟需要1 Hz的稳定命令流才能继续移动
+rostopic pub /turtle1/cmd_vel geometry_msgs/Twist -r 1 -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, -1.8]'
+# new terminal
+rostopic echo /turtle1/pose
+rostopic hz /turtle1/pose
+</code></pre>
+
+<pre><code class="language-shell"># rqt_plot显示有关主题发布的数据的滚动时间图
+rosrun rqt_plot rqt_plot
+#  /turtle1/pose/x; /turtle1/pose/y; /turtle1/pose/theta 
+</code></pre>
+
+<h2 id="ros-services--parameters">ros services &amp; parameters</h2>
+
+<pre><code class="language-shell"># 服务允许节点发送请求并接收响应
+rosservice list         # print information about active services
+rosservice call [service] [args] # call the service with the provided args 使用提供的参数调用服务
+rosservice type         # print service type
+rosservice find         # find services by service type
+rosservice uri          # print service ROSRPC uri
+
+rosservice list
+# turtlesim提供的服务：
+/clear
+/kill
+/reset
+/spawn
+...
+
+rosservice type /clear # &gt; std_srvs/Empty 服务调用时不接受任何参数
+rosservice call /clear # 调用该服务
+
+rosservice type /spawn | rossrv show # 通过查看服务产生的信息来查看服务具有参数
+'''
+float32 x
+float32 y
+float32 theta
+string name
+---
+string name
+'''
+rosservice call /spawn 2 2 0.2 ""    # &gt; name: turtle2
+
+# rosparam允许您在ROS参数服务器上存储和处理数据
+# 参数服务器可以存储整数，浮点数，布尔值，字典和列表
+# YAML标记语言用于语法
+# YAML: 1是整数，1.0是浮点数，一个是字符串，true是布尔值，[1、2、3]是整数列表，并且{a：b，c： d}是字典。
+rosparam set            # set parameter
+rosparam get            # get parameter
+rosparam load           # load parameters from file 从文件加载参数
+rosparam dump           # dump parameters to file 将参数转储到文件
+rosparam delete         # delete parameter
+rosparam list           # list parameter names
+
+rosparam get /  # 展示整个Parameter Server的内容
+rosparam set /turtlesim/background_r 150 # 改变背景颜色RGB
+rosservice call /clear # 调用清除服务以使参数更改生效
+rosparam dump params.yaml
+rosparam load params.yaml copy_turtle
+</code></pre>
+
+<h2 id="rqt_console--roslaunch">rqt_console &amp; roslaunch</h2>
+
+<pre><code class="language-shell">sudo apt-get install ros-noetic-rqt ros-noetic-rqt-common-plugins ros-noetic-turtlesim
+# rqt_console附加到ROS的日志记录框架以显示节点的输出
+rosrun rqt_console rqt_console
+# rqt_logger_level允许我们在节点运行时更改日志记录级别（Fatal、Error、Warn、Info、Debug）
+rosrun rqt_logger_level rqt_logger_level
+rosrun turtlesim turtlesim_node
+rostopic pub /turtle1/cmd_vel geometry_msgs/Twist -r 1 -- '{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}'
+
+# roslaunch 按照启动文件中的定义启动节点
+# roslaunch [package] [filename.launch]
+roscd beginner_tutorials
+mkdir launch
+cd launch
+</code></pre>
+
+<p>​		<strong>turtlemimic.launch</strong></p>
+
+<pre><code class="language-xml">&lt;launch&gt;
+
+  &lt;group ns="turtlesim1"&gt;	&lt;!-- 命名空间标签 --&gt;
+    &lt;node pkg="turtlesim" name="sim" type="turtlesim_node"/&gt;	&lt;!--名为sim的turtlesim节点--&gt;
+  &lt;/group&gt;
+
+  &lt;group ns="turtlesim2"&gt;
+    &lt;node pkg="turtlesim" name="sim" type="turtlesim_node"/&gt;
+  &lt;/group&gt;
+
+  &lt;node pkg="turtlesim" name="mimic" type="mimic"&gt;  &lt;!--mimic 模仿--&gt;
+    &lt;remap from="input" to="turtlesim1/turtle1"/&gt;	&lt;!--重映射使turtlesim2模仿turtlesim1--&gt;
+    &lt;remap from="output" to="turtlesim2/turtle1"/&gt;
+  &lt;/node&gt;
+
+&lt;/launch&gt;
+</code></pre>
+
+<pre><code class="language-shell"># 启动两个turtlesim
+roslaunch beginner_tutorials turtlemimic.launch
+# 发布命令发送到turtlesim1，turtlesims2也移动
+rostopic pub / turtlesim1 / turtle1 / cmd_vel geometry_msgs / Twist -r 1-'[2.0，0.0，0.0]''[0.0，0.0，-1.8]'
+rqt_graph
+</code></pre>
+
+<h2 id="rosed">rosed</h2>
+
+<pre><code class="language-shell"># 通过使用包名称直接编辑包中的文件
+rosed [package_name] [filename]
+rosed roscpp Logger.msg # 使用vim
+export EDITOR='nano -w' # 修改编辑器
+rosed roscpp &lt;tab&gt;&lt;tab&gt; # 查看和选择编辑程序包中的所有文件
+</code></pre>
+
+<h2 id="rosmsg--rossrv">rosmsg &amp; rossrv</h2>
+
+<ul>
+  <li><a href="http://wiki.ros.org/msg">msg</a>：msg文件是描述ROS消息字段的简单文本文件。它们用于为不同语言的消息生成源代码。</li>
+  <li><a href="http://wiki.ros.org/srv">srv</a>：srv文件描述服务。它由两部分组成：请求和响应。</li>
+  <li><code>Header</code>：标头包含时间戳和ROS中常用的坐标帧信息。</li>
+</ul>
+
+<pre><code class="language-cmake"># msg示例
+Header header
+string child_frame_id
+geometry_msgs/PoseWithCovariance pose
+geometry_msgs/TwistWithCovariance twist
+
+# srv示例
+int64 A
+int64 B
+---
+int64 Sum
+</code></pre>
+
+<h3 id="rosmsg">rosmsg</h3>
+
+<pre><code class="language-shell">roscd beginner_tutorials
+mkdir msg
+echo "int64 num" &gt; msg/Num.msg
+</code></pre>
+
+<p><code>package.xml</code>：在构建时，我们需要“ message_generation”，而在运行时，我们仅需要“ message_runtime”。</p>
+
+<pre><code class="language-xml">&lt;build_depend&gt;message_generation&lt;/build_depend&gt;
+&lt;exec_depend&gt;message_runtime&lt;/exec_depend&gt;
+</code></pre>
+
+<p><code>CMakeLists.txt</code>：将<code>message_generation</code>依赖项添加到<code>CMakeLists.txt中</code>已经存在的<code>find_package</code>调用中，以便可以生成消息。</p>
+
+<pre><code class="language-cmake"># Do not just add this to your CMakeLists.txt, modify the existing text to add message_generation before the closing parenthesis
+find_package(catkin REQUIRED COMPONENTS
+   roscpp
+   rospy
+   std_msgs
+   message_generation
+)
+#确保导出消息运行时依赖项
+catkin_package(
+  ...
+  CATKIN_DEPENDS message_runtime ...
+  ...)
+# 通过手动添加.msg文件，我们确保在添加其他.msg文件之后CMake知道何时需要重新配置项目。  
+add_message_files(
+  FILES
+  Num.msg
+)
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
+</code></pre>
+
+<pre><code class="language-shell"> rosmsg show beginner_tutorials/Num # &gt; int64 num
+ rosmsg show Num # &gt; [beginner_tutorials/Num]:int64 num
+</code></pre>
+
+<h3 id="rossrc">rossrc</h3>
+
+<pre><code class="language-shell">roscd beginner_tutorials
+mkdir srv
+# roscp用于将文件从一个软件包复制到另一个软件包
+roscp [package_name] [file_to_copy_path] [copy_path]
+roscp rospy_tutorials AddTwoInts.srv srv/AddTwoInts.srv
+</code></pre>
+
+<p>修改<code>CMakeLists.txt</code></p>
+
+<pre><code class="language-cmake">find_package(catkin REQUIRED COMPONENTS
+   roscpp
+   rospy
+   std_msgs
+   message_generation
+) 
+add_service_files(
+  FILES
+  AddTwoInts.srv
+)
+
+</code></pre>
+
+<pre><code class="language-sehll">rossrv show beginner_tutorials/AddTwoInts
+rossrv show AddTwoInts
+</code></pre>
+
+<pre><code class="language-shell"># 再次制作软件包，msg目录中的任何.msg文件都将生成用于所有受支持语言的代码。
+# In your catkin workspace
+roscd beginner_tutorials
+cd ../..
+catkin_make
+cd -
+</code></pre>
+
+<h2 id="编写简单的发布者和订阅者python">编写简单的发布者和订阅者(Python)</h2>
+
+<pre><code class="language-shell"># Writing the Publisher Node，该节点将不断广播消息
+roscd beginner_tutorials
+mkdir scripts
+cd scripts
+wget https://raw.github.com/ros/ros_tutorials/kinetic-devel/rospy_tutorials/001_talker_listener/talker.py
+chmod + x talker.py
+rosed beginner_tutorials talker.py # show the code
+</code></pre>
+
+<pre><code class="language-python">#!/usr/bin/env python
+import rospy
+from std_msgs.msg import String
+
+def talker():
+    pub = rospy.Publisher('chatter', String, queue_size=10)
+    rospy.init_node('talker', anonymous=True) # 告诉rospy节点的名称，之后它与Master进行通信
+    rate = rospy.Rate(10) # 10hz,借助其方法sleep(),每秒10次循环
+    while not rospy.is_shutdown():
+        hello_str = "hello world %s" % rospy.get_time()
+        rospy.loginfo(hello_str) # 将消息打印到屏幕上，将消息写入Node的日志文件，并将消息写入rosout。
+        pub.publish(hello_str)
+        rate.sleep()
+
+if __name__ == '__main__':
+    try:
+        talker()
+    except rospy.ROSInterruptException:
+        pass
+</code></pre>
+
+<p><code>CMakeLists.txt</code>：确保正确安装了python脚本，并使用了正确的python解释器</p>
+
+<pre><code class="language-cmake">catkin_install_python(PROGRAMS scripts/talker.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+</code></pre>
+
+<pre><code class="language-shell"># Writing the Subscriber Node
+roscd beginner_tutorials/scripts/
+wget https://raw.github.com/ros/ros_tutorials/kinetic-devel/rospy_tutorials/001_talker_listener/listener.py
+chmod +x listener.py
+</code></pre>
+
+<pre><code class="language-python">#!/usr/bin/env python
+import rospy
+from std_msgs.msg import String
+
+def callback(data):
+    rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
+    
+def listener():
+
+    # In ROS, nodes are uniquely named. If two nodes with the same
+    # name are launched, the previous one is kicked off. The
+    # anonymous=True flag means that rospy will choose a unique
+    # name for our 'listener' node so that multiple listeners can
+    # run simultaneously.
+    
+    rospy.init_node('listener', anonymous=True)
+    rospy.Subscriber("chatter", String, callback) # 收到新消息时，将以消息作为第一个参数来调用回调。
+
+    # spin() simply keeps python from exiting until this node is stopped
+    rospy.spin()
+
+if __name__ == '__main__':
+    listener()
+</code></pre>
+
+<p><code>CMakeLists.txt</code></p>
+
+<pre><code class="language-cmake">catkin_install_python(PROGRAMS scripts/talker.py scripts/listener.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+</code></pre>
+
+<pre><code class="language-shell"># use CMake building nodes
+cd〜/ catkin_ws
+catkin_make
+</code></pre>
+
+<pre><code class="language-shell"># 运行检查
+roscore
+cd ~/catkin_ws
+source ./devel/setup.bash
+# Running the Publisher
+rosrun beginner_tutorials talker.py
+# Running the Subscriber
+rosrun beginner_tutorials listener.py
+</code></pre>
+
+<h2 id="编写简单的服务和客户端python">编写简单的服务和客户端(Python)</h2>
+
+<pre><code class="language-python">#Create the scripts/add_two_ints_server.py
+#!/usr/bin/env python
+
+from __future__ import print_function
+
+from beginner_tutorials.srv import AddTwoInts,AddTwoIntsResponse
+import rospy
+
+def handle_add_two_ints(req):
+    print("Returning [%s + %s = %s]"%(req.a, req.b, (req.a + req.b)))
+    return AddTwoIntsResponse(req.a + req.b)
+
+def add_two_ints_server():
+    rospy.init_node('add_two_ints_server') # 声明节点
+    # 声明服务add_two_ints、服务类型AddTwoInts、请求传递给handle_add_two_ints
+    s = rospy.Service('add_two_ints', AddTwoInts, handle_add_two_ints) 
+    print("Ready to add two ints.")
+    rospy.spin()
+
+if __name__ == "__main__":
+    add_two_ints_server()
+</code></pre>
+
+<pre><code class="language-python">#Create the scripts/add_two_ints_client.py
+#!/usr/bin/env python
+
+from __future__ import print_function
+
+import sys
+import rospy
+from beginner_tutorials.srv import *
+
+def add_two_ints_client(x, y):
+    rospy.wait_for_service('add_two_ints') # 阻塞直到名为add_two_ints的服务可用
+    try:
+        add_two_ints = rospy.ServiceProxy('add_two_ints', AddTwoInts) # 创建一个用于调用服务的句柄
+        resp1 = add_two_ints(x, y)
+        return resp1.sum
+    except rospy.ServiceException as e:
+        print("Service call failed: %s"%e)
+
+def usage():
+    return "%s [x y]"%sys.argv[0]
+
+if __name__ == "__main__":
+    if len(sys.argv) == 3:
+        x = int(sys.argv[1])
+        y = int(sys.argv[2])
+    else:
+        print(usage())
+        sys.exit(1)
+    print("Requesting %s+%s"%(x, y))
+    print("%s + %s = %s"%(x, y, add_two_ints_client(x, y)))
+
+# rosrun beginner_tutorials add_two_ints_server.py
+# rosrun beginner_tutorials add_two_ints_client.py 1 3
+</code></pre>
+
+<h2 id="记录回放数据bag">记录&amp;回放数据(.bag)</h2>
+
+<pre><code class="language-shell"># 记录所有已发布的主题
+mkdir ~/bagfiles
+cd ~/bagfiles
+rosbag record -a 
+# 检查目录〜/ bagfiles的内容(.bag文件)
+rosbag info &lt;your bagfile&gt; # 查看
+rosbag play &lt;your bagfile&gt; # 运行
+# 记录指定主题至subset.bag
+rosbag record -O subset /turtle1/cmd_vel /turtle1/pose
+
+# 从bag文件中读取消息
+wget https://open-source-webviz-ui.s3.amazonaws.com/demo.bag
+time rosbag info demo.bag # time记录命令时间
+time rosbag info mybag.bag | grep -E "(topic1|topic2|topic3)" # 指定主题
+
+roscore # In terminal 1
+rostopic echo /obs1/gps/fix | tee topic1.yaml # In terminal 2
+rostopic echo /diagnostics_agg | tee topic2.yaml # In terminal 3
+# --immediate 即刻运行demo.bag
+time rosbag play --immediate demo.bag --topics /obs1/gps/fix /diagnostics_agg	
+</code></pre>
+
+<pre><code class="language-shell"># 使用ros_readbagfile脚本轻松提取感兴趣的主题
+# rosbag仅在Python2中运行，而不在Python3中运行？？
+# Download the file
+wget https://raw.githubusercontent.com/ElectricRCAircraftGuy/eRCaGuy_dotfiles/master/useful_scripts/ros_readbagfile.py
+# Make it executable
+chmod +x ros_readbagfile.py
+# Ensure you have the ~/bin directory for personal binaries
+mkdir -p ~/bin
+# Move this executable script into that directory as `ros_readbagfile`, so that it will
+# be available as that command
+mv ros_readbagfile.py ~/bin/ros_readbagfile
+# Re-source your ~/.bashrc file to ensure ~/bin is in your PATH, so you can use this
+# new `ros_readbagfile` command you just installed
+. ~/.bashrc
+rosbag info demo.bag # 确定要从bag文件中读取的主题名称
+time ros_readbagfile demo.bag /obs1/gps/fix /diagnostics_agg | tee topics.yaml
+</code></pre>
+
+<h2 id="roswtf">roswtf</h2>
+
+<pre><code class="language-sh"># 检查roscore是否仍在运行
+ps -ef | grep -i rosmaster
+roscd rosmaster
+roswtf # 检查您的系统以尝试发现问题
+</code></pre>
+
+
+</div>
+<div class="v">
+  <i class="fas fa-spinner fa-pulse"></i>
+</div>
+<script
+  src='https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js'
+  defer='defer'
+  onload='
+    new Valine({
+      "el": document.getElementsByClassName("v")[0],
+      "appId": "sJhaa5UF52fhugGM95buMpIT-gzGzoHsz",
+      "appKey": "Tp95IdLx1TBXyH9tXflqNnXx",
+      "placeholder": "在这里评论吧！填写邮箱可以获得Gravatar头像和回复通知",
+      "requiredFields": ["nick","mail"],
+      "visitor": true,
+      "recordIP": true
+    })'
+></script>
+
+</div>
+  </div>
+  
+  <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+  
+</body>
+
+</html>

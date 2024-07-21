@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>初识SQL | Acemyzoe</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="初识SQL" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="数据库" />
+<meta property="og:description" content="数据库" />
+<link rel="canonical" href="https://acemyzoe.github.io/_posts/2020-07-16-SQL/" />
+<meta property="og:url" content="https://acemyzoe.github.io/_posts/2020-07-16-SQL/" />
+<meta property="og:site_name" content="Acemyzoe" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-16T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"初识SQL","url":"https://acemyzoe.github.io/_posts/2020-07-16-SQL/","datePublished":"2020-07-16T00:00:00+08:00","dateModified":"2020-07-16T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://acemyzoe.github.io/_posts/2020-07-16-SQL/"},"description":"数据库","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  
+  <meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1"
+/>
+<meta
+  http-equiv="content-type"
+  content="text/html; charset=utf-8"
+/>
+<link
+  rel="alternate"
+  href="/feed.xml"
+  title="RSS"
+  type="application/rss+xml"
+/>
+
+  
+  <link
+  rel="apple-touch-icon-precomposed"
+  href="/assets/image/Avatar.jpg"
+/>
+<link
+  rel="shortcut
+  icon"
+  href="/assets/image/Avatar.jpg"
+/>
+
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css"
+/>
+
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"
+/>
+
+  
+  <script
+  src='https://zz.bdstatic.com/linksubmit/push.js'
+  async="async"
+></script>
+
+  
+  <style>
+  .wrap {
+    transition-property: width,background-size,transform;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+    min-height: 100%;
+    display: inline-block;
+    background-size: 100% auto;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(/assets/image/background-wap.jpg);
+  }
+  @media (min-aspect-ratio: 2400/1850) {
+    .wrap {
+      background-image: url(/assets/image/background.jpg);
+    }
+  }
+  .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    width: calc(100% - 14rem);
+    background-size: calc(100% - 14rem) auto;
+    transform: translateX(14rem);
+  }
+  .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    transform: translateX(0);
+  }
+</style>
+
+  
+  <style>
+  .sidebar,
+  html,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: PingFang SC, Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
+  }
+</style>
+
+  
+  <style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+</style>
+
+  
+  <style>
+  img {
+    display: inline-block;
+    margin: 0;
+  }
+</style>
+
+  
+  <style>
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%);
+  }
+</style>
+
+  
+  <style>
+  ::selection {
+    color: White;
+    background: Black;
+  }
+</style>
+
+  
+</head>
+
+<body
+  class="theme-base-07 layout-reverse sidebar-overlay">
+  
+  
+  
+  <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+  <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"
+     />
+  <!-- Toggleable sidebar -->
+  <div class="sidebar" id="sidebar">
+    
+    <div class="sidebar-item">
+      <div class="effect effect-right_to_left">
+        <img class="effect-img" src="/assets/image/Avatar.jpg" alt="img" />
+        <div class="effect-info">
+          人类世界<br/>
+真是<br/>
+太有趣了<br/>
+QAQ<br/>
+<a href="mailto:acemyzoe@outlook.com">
+  <i class="fas fa-envelope"></i>
+</a>
+<a href="https://github.com/acemyzoe">
+  <i class="fab fa-github"></i>
+</a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=52 src="//music.163.com/outchain/player?type=2&id=486806&auto=1&height=32"></iframe>
+
+        </div>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      
+      <a class="sidebar-nav-item" href="/">
+        <i class="fas fa-home fa-fw"></i> 首页
+      </a>
+      
+      <a class="sidebar-nav-item" href="/comments/">
+        <i class="fas fa-comments fa-fw"></i> 留言
+      </a>
+      
+      <a class="sidebar-nav-item" href="/tags/">
+        <i class="fas fa-tags fa-fw"></i> 标签
+      </a>
+      
+      <a class="sidebar-nav-item" href="/archive/">
+        <i class="fas fa-archive fa-fw"></i> 归档
+      </a>
+      
+      <a class="sidebar-nav-item" href="/merger/">
+        <i class="fas fa-coffee fa-fw"></i> 打赏
+      </a>
+      
+    </nav>
+    <div class="sidebar-item">
+      
+      <style>
+  #sidebar-search-input {
+    background: none;
+    border: none;
+    color: White;
+    width: 100%;
+  }
+  #sidebar-search-results-container {
+    overflow: auto auto;
+    max-height: 60vh;
+  }
+</style>
+<input
+  id="sidebar-search-input"
+  placeholder="搜索博文"
+/>
+<ol
+  id="sidebar-search-results-container"
+></ol>
+<script
+  src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.7/dest/simple-jekyll-search.min.js'
+  async='async'
+  onload='
+    SimpleJekyllSearch({
+      json: "/assets/simple-jekyll-search/search.json",
+      searchInput: document.getElementById("sidebar-search-input"),
+      resultsContainer: document.getElementById("sidebar-search-results-container"),
+      searchResultTemplate: `<li><a href="{url}">{title}</a></li>`,
+      limit: 999,
+      fuzzy: true
+    })'
+></script>
+
+      
+      
+      <style>
+  #toc {
+    overflow: auto auto;
+    max-height: 50vh;
+  }
+</style>
+
+      <ol id="toc">
+  <li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></li>
+  <li><a href="#sql">SQL</a>
+    <ol>
+      <li><a href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B">关系模型</a></li>
+    </ol>
+  </li>
+  <li><a href="#sql%E8%AF%AD%E6%B3%95">SQL语法</a>
+    <ol>
+      <li><a href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE">查询数据</a></li>
+      <li><a href="#%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE">修改数据</a>
+        <ol>
+          <li><a href="#insert">INSERT</a></li>
+          <li><a href="#update">UPDATE</a></li>
+          <li><a href="#delete">DELETE</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#mysql">MYSQL</a>
+    <ol>
+      <li><a href="#mysql%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F">Mysql数据格式</a></li>
+      <li><a href="#mysqlcrud">MYSQL(CRUD)</a></li>
+      <li><a href="#mysql%E7%BA%A6%E6%9D%9Fconstraint">MYSQL约束(CONSTRAINT)</a></li>
+      <li><a href="#mysql%E7%B4%A2%E5%BC%95">MYSQL索引</a></li>
+      <li><a href="#%E5%AE%9E%E7%94%A8sql%E8%AF%AD%E5%8F%A5">实用SQL语句</a>
+        <ol>
+          <li><a href="#%E6%93%8D%E4%BD%9C%E7%A4%BA%E4%BE%8B">操作示例</a></li>
+        </ol>
+      </li>
+      <li><a href="#%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B">存储过程</a></li>
+      <li><a href="#%E8%A7%A6%E5%8F%91%E5%99%A8">触发器</a></li>
+      <li><a href="#%E4%BA%8B%E4%BB%B6">事件</a></li>
+      <li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1">数据库事务</a>
+        <ol>
+          <li><a href="#mysql-%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB">MySQL 事务隔离级别</a></li>
+        </ol>
+      </li>
+      <li><a href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86">用户管理</a></li>
+      <li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D">数据库备份恢复</a></li>
+      <li><a href="#%E6%97%A5%E5%BF%97">日志</a></li>
+    </ol>
+  </li>
+  <li><a href="#python-mysql">PYTHON-MYSQL</a></li>
+</ol>
+      
+      
+      <script defer="defer" src="https://cdn.jsdelivr.net/gh/poole/lanyon@v1.1.0/public/js/script.min.js"></script>
+      
+      <style>
+  .sidebar-checkbox {
+    display: none;
+  }
+  .sidebar-toggle {
+    position: fixed;
+  }
+</style>
+
+      
+      <style>
+  .effect {
+    margin: 1rem;
+    perspective: 900px;
+  }
+  .effect-info {
+    text-align: center;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    transform-style: preserve-3d;
+  }
+  .effect-img {
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+  }
+  .effect-img:before {
+    position: absolute;
+    display: block;
+  }
+  .effect-right_to_left .effect-img {
+    transform-origin: 0% 50%;
+  }
+  .effect-right_to_left:hover .effect-img {
+    transform: rotate3d(0, 1, 0, -180deg);
+  }
+</style>
+
+      
+      <div>
+  <i class="fas fa-cog fa-spin fa-fw"></i>
+  <span id="run_time_day">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>天
+  <span id="run_time_hour">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>时
+  <span id="run_time_minute">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>分
+  <span id="run_time_second">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>秒
+  <script>
+    setInterval(function (d,h,m,s,b) {
+      function setzero(i) {
+        return i < 10 ? "0" + i : i;
+      }
+      let BirthDay = new Date(b);
+      let today = new Date();
+      let timeold = (today.getTime() - BirthDay.getTime());
+      let sectimeold = timeold / 1000;
+      let secondsold = Math.floor(sectimeold);
+      let msPerDay = 24 * 60 * 60 * 1000;
+      let e_daysold = timeold / msPerDay;
+      let daysold = Math.floor(e_daysold);
+      let e_hrsold = (e_daysold - daysold) * 24;
+      let hrsold = Math.floor(e_hrsold);
+      let e_minsold = (e_hrsold - hrsold) * 60;
+      let minsold = Math.floor((e_hrsold - hrsold) * 60);
+      let seconds = Math.floor((e_minsold - minsold) * 60);
+      d.textContent = daysold;
+      h.textContent = setzero(hrsold);
+      m.textContent = setzero(minsold);
+      s.textContent = setzero(seconds);
+    },
+    1000,
+    document.getElementById("run_time_day"),
+    document.getElementById("run_time_hour"),
+    document.getElementById("run_time_minute"),
+    document.getElementById("run_time_second"),
+    "04/01/2020 12:00:00")// 这是我第一篇博客的时间
+  </script>
+</div>
+
+      
+      <div>
+  <div>
+    <i class="fas fa-eye fa-fw"></i>
+    <span id="busuanzi_value_page_pv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>次
+  </div>
+  <div>
+    <i class="fas fa-paw fa-fw"></i>
+    <span id="busuanzi_value_site_pv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>枚
+  </div>
+  <div>
+    <i class="fas fa-user-friends fa-fw"></i>
+    <span id="busuanzi_value_site_uv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>人
+  </div>
+  <script
+    src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0'
+    async='async'
+  ></script>
+</div>
+
+      
+      <div>
+  <i class="fas fa-thumbs-up fa-fw"></i>
+  <a href="https://github.com/acemyzoe">
+    Github
+  </a>
+</div>
+
+      
+      <div>
+  <i class="fas fa-copyright fa-fw"></i>
+  acemyzoe
+</div>
+
+      
+      
+    </div>
+  </div>
+  <!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. -->
+  
+  <div class="wrap">
+    
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/katex@0.11.1/dist/katex.min.js,npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js,npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  defer="defer"
+  onload='renderMathInElement(document.body, { delimiters: [{ left: "$", right: "$", display: false }] })'
+></script>
+
+
+
+<style>
+  pre.language-mermaid,
+  code.language-mermaid {
+    display: none;
+  }
+</style>
+<script
+  src="https://cdn.jsdelivr.net/npm/mermaid@8.5.1/dist/mermaid.min.js"
+  defer="defer"
+  onload='
+    for(let x of document.getElementsByClassName("language-mermaid"))
+      if(x.nodeName=="CODE")
+      {
+        let m = document.createElement("div");
+        m.classList.add("mermaid");
+        m.textContent = x.textContent;
+        x.parentNode.insertAdjacentElement("beforebegin", m);
+      }'
+></script>
+
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.css,gh/PrismJS/prism-themes@1955cfef6953b3a59e66016e8a1e016b45d6cc79/themes/prism-nord.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/components/prism-core.min.js,npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.js"
+  defer="defer"
+  onload='
+    Prism.plugins.autoloader.languages_path = "https:\/\/cdn.jsdelivr.net/npm/prismjs/components/";
+    for(let x of document.getElementsByTagName("pre"))
+      x.classList.add("line-numbers");
+    Prism.plugins.toolbar.registerButton("select-code", function (env) {
+      let button = document.createElement("button");
+      button.textContent = "select this " + env.language;
+      button.addEventListener("click", function () {
+        if (document.body.createTextRange) {
+          let range = document.body.createTextRange();
+          range.moveToElementText(env.element);
+          range.select();
+        } else if (window.getSelection) {
+          let selection = window.getSelection();
+          let range = document.createRange();
+          range.selectNodeContents(env.element);
+          selection.removeAllRanges();
+            selection.addRange(range);
+        }
+      });
+      return button;
+    })'
+></script>
+
+
+
+<style>
+  pre {
+    max-height: 50vh;
+    overflow: auto;
+  }
+</style>
+
+
+<style>
+  @media (min-width: 56em) {
+    .container {
+      max-width: 66.6%;
+    }
+  }
+</style>
+
+
+<style>
+  .masthead,
+  .container.content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    animation-duration: 2s;
+    animation-name: fadeIn;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+
+
+<div class="masthead">
+  <h3 class="container masthead-title">
+    
+    初识SQL
+    <a href="/" title="Home">
+      <small>
+        Acemyzoe
+      </small>
+    </a>
+    
+  </h3>
+</div>
+
+<div class="container content">
+  <div class="post">
+  <span class="post-date">
+    
+    <i class="fas fa-calendar-day fa-fw"></i>
+    16 Jul 2020
+    
+    
+    <i class="fas fa-file-word fa-fw"></i>
+    16091字
+    
+    
+    <i class="fas fa-clock fa-fw"></i>
+    54分
+    
+    
+    <span class="leancloud-visitors" id="/_posts/2020-07-16-SQL/" data-xid="/_posts/2020-07-16-SQL/" data-flag-title="初识SQL">
+      <i class="fas fa-book-reader fa-fw"></i>
+      <span class="leancloud-visitors-count">
+        <i class="fas fa-spinner fa-pulse"></i>
+      </span>次
+    </span>
+    
+    
+    
+    <i class="fas fa-tag fa-fw"></i>
+    数据库
+    
+    
+    <i class="fab fa-creative-commons-by fa-fw"></i>
+<a
+  href="https://creativecommons.org/licenses/by/4.0/deed.zh"
+  rel="license">
+  CC BY 4.0
+</a>
+（除特别声明或转载文章外）
+
+    
+  </span>
+  <h1 id="数据库">数据库</h1>
+
+<ul>
+  <li>数据库按照数据结构来组织、存储和管理数据：层次模型HDB、网状模型、关系模型RDB。</li>
+  <li>主流的关系数据库：
+    <ol>
+      <li>商用数据库，例如：<a href="https://www.oracle.com/">Oracle</a>，<a href="https://www.microsoft.com/sql-server/">SQL Server</a>，<a href="https://www.ibm.com/db2/">DB2</a>等；</li>
+      <li>开源数据库，例如：<a href="https://www.mysql.com/">MySQL</a>，<a href="https://www.postgresql.org/">PostgreSQL</a>等；</li>
+      <li>桌面数据库，以微软<a href="https://products.office.com/access">Access</a>为代表，适合桌面应用程序使用；</li>
+      <li>嵌入式数据库，以<a href="https://sqlite.org/">Sqlite</a>为代表，适合手机应用和桌面程序。</li>
+    </ol>
+  </li>
+  <li>NoSQL
+    <ul>
+      <li>非关系型数据库又被称为 <a href="http://c.biancheng.net/nosql/">NoSQL</a>（Not Only SQL )，意为不仅仅是 SQL。通常指数据以对象的形式存储在数据库中，而对象之间的关系通过每个对象自身的属性来决定。</li>
+      <li>面向文档数据库有 MongDB 和 CouchDB。</li>
+      <li>列存储数据库有 Cassandra 和 <a href="http://c.biancheng.net/hbase/">HBase</a>。</li>
+      <li>键值存储数据库有 <a href="http://c.biancheng.net/redis/">Redis</a>、Memcached 和 MemcachedDB。</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="sql">SQL</h1>
+
+<blockquote>
+  <p>Structured Query Language (结构化查询语言)，用来访问和操作数据库系统。</p>
+</blockquote>
+
+<ul>
+  <li><code>BIGINT</code> <em>长整型</em>  \  <code>VARCHAR(N)</code>  <em>变长字符串</em> 是日常用于最广泛的数据类型。</li>
+  <li>DDL-定义数据（增删表，修改表结构）、DML-管理数据（增删改数据）、DQL-查询数据。</li>
+</ul>
+
+<h2 id="关系模型">关系模型</h2>
+
+<blockquote>
+  <p>表的每一<strong>行</strong>称为<strong>记录（Record）</strong>，记录是一个逻辑意义上的数据。</p>
+
+  <p>表的每一<strong>列</strong>称为<strong>字段（Column）</strong>，同一个表的每一行记录都拥有相同的若干字段。</p>
+
+  <p>字段定义了数据类型（整型、浮点型、字符串、日期等）。NULL是空的，不是0也不是空字符串。</p>
+
+  <p>通常情况下，字段应该避免允许为NULL。不允许为NULL可以简化查询条件，加快查询速度，也利于应用程序读取数据后无需判断是否为NULL。</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p><strong>主键</strong></p>
+
+    <blockquote>
+      <p>主键是关系表中记录的唯一标识，即<code>id</code>，如身份证号。</p>
+
+      <p>主键的选取非常重要：<strong>不使用任何业务相关的字段作为主键。</strong>，而应该使用BIGINT自增或者GUID类型。主键也不应该允许<code>NULL</code>。可以使用多个列作为联合主键，但联合主键并不常用。</p>
+
+      <p>GUID算法通过网卡MAC地址、时间戳和随机数保证任意计算机在任意时间生成的字符串都是不同的，大部分编程语言都内置了GUID算法，可以自己预算出主键。类似<code>8f55d96b-8acc-4636-8cb8-76bf8abc2f57</code>。</p>
+    </blockquote>
+
+    <p>python <a href="https://docs.python.org/3/library/uuid.html">uuid</a></p>
+
+    <pre><code class="language-python"># UUID是128位的通用唯一识别码（universally unique identifier）。
+import uuid 
+# 基于MAC地址，时间戳，随机数来生成唯一的uuid，可以保证全球范围内的唯一性。
+guid1 = uuid.uuid1() # &gt; 2879f1ea-c703-11ea-88ab-2cf05d0031b3
+guid4 = uuid.uuid4()
+</code></pre>
+  </li>
+  <li>
+    <p><strong>外键</strong></p>
+
+    <blockquote>
+      <p>关系数据库通过外键可以实现一对多、多对多和一对一的关系。</p>
+
+      <p>外键既可以通过数据库来约束（即在中间表的字段上设置外键），也可以不设置约束，仅依靠应用程序的逻辑来保证。</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><strong>索引</strong></p>
+
+    <blockquote>
+      <p>索引是关系数据库中对某一列或多个列的值进行预排序的数据结构。</p>
+
+      <p>对于主键，关系数据库会自动对其创建主键索引。</p>
+
+      <p>在设计关系数据表的时候，看上去唯一的列，例如身份证号、邮箱地址等，因为他们具有业务含义，因此不宜作为主键。</p>
+
+      <p>但是，这些列根据业务要求，又具有唯一性约束：即不能出现两条记录存储了同一个身份证号。这个时候，就可以给该列添加一个<strong>唯一索引</strong>。</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h1 id="sql语法">SQL语法</h1>
+
+<p><a href="https://www.liaoxuefeng.com/wiki/1177760294764384/1179611432985088">在线sql</a></p>
+
+<p><a href="http://c.biancheng.net/mysql/function/">MySQL 常用函数汇总</a>：数值型函数、字符串型函数、日期时间函数、聚合函数。</p>
+
+<p><a href="https://dev.mysql.com/doc/refman/8.0/en/functions.html">Mysql官方8.0参考手册</a> ：强制转换函数、加密压缩、JSON函数等。</p>
+
+<blockquote>
+  <p>MYSQL数据库名表名列名在Linux区分大小写，建议以小写字母方式来存储；关键字不区分，建议大写。</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">中文</th>
+      <th style="text-align: center">英文</th>
+      <th style="text-align: center">意思</th>
+      <th style="text-align: center"><a href="https://zh.wikipedia.org/wiki/SQL">SQL</a></th>
+      <th style="text-align: center">HTTP</th>
+      <th style="text-align: center"><a href="https://zh.wikipedia.org/wiki/表现层状态转换">REST表现层状态转换</a></th>
+      <th style="text-align: center">数据分散服务</th>
+      <th style="text-align: center"><a href="https://zh.wikipedia.org/wiki/MongoDB">MongoDB</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">增加</td>
+      <td style="text-align: center">Create</td>
+      <td style="text-align: center">创建</td>
+      <td style="text-align: center"><a href="https://zh.wikipedia.org/wiki/插入_(SQL)">INSERT</a></td>
+      <td style="text-align: center">PUT / POST</td>
+      <td style="text-align: center">POST</td>
+      <td style="text-align: center">WRITE</td>
+      <td style="text-align: center">Insert</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">删除</td>
+      <td style="text-align: center">Delete</td>
+      <td style="text-align: center">删除</td>
+      <td style="text-align: center"><a href="https://zh.wikipedia.org/wiki/删除_(SQL)">DELETE</a></td>
+      <td style="text-align: center">DELETE</td>
+      <td style="text-align: center">DELETE</td>
+      <td style="text-align: center">DISPOSE</td>
+      <td style="text-align: center">Remove</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">查询</td>
+      <td style="text-align: center">Read</td>
+      <td style="text-align: center">读取</td>
+      <td style="text-align: center"><a href="https://zh.wikipedia.org/wiki/查询_(SQL)">SELECT</a></td>
+      <td style="text-align: center">GET</td>
+      <td style="text-align: center">GET</td>
+      <td style="text-align: center">READ / TAKE</td>
+      <td style="text-align: center">Find</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">改正</td>
+      <td style="text-align: center">Update</td>
+      <td style="text-align: center">更新</td>
+      <td style="text-align: center"><a href="https://zh.wikipedia.org/wiki/更新_(SQL)">UPDATE</a></td>
+      <td style="text-align: center">PUT / POST / PATCH</td>
+      <td style="text-align: center">PUT</td>
+      <td style="text-align: center">WRITE</td>
+      <td style="text-align: center">Update</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="查询数据">查询数据</h2>
+
+<pre><code class="language-sql">-- 语句格式
+SELECT
+[DISTINCT] -- 去重
+{* | &lt;字段列名&gt;}
+[
+FROM &lt;表 1&gt;, &lt;表 2&gt;…
+[WHERE &lt;表达式&gt; -- 条件
+[GROUP BY &lt;group by definition&gt; -- 分组
+[HAVING &lt;expression&gt; [{&lt;operator&gt; &lt;expression&gt;}…]] --过滤分组后的数据~WHERE
+[ORDER BY &lt;order by definition&gt;] -- 排序
+[LIMIT[&lt;offset&gt;,] &lt;row count&gt;] -- 分页
+]
+------
+-- 查询students表的所有数据，结果是一个二维表
+-- SELECT是关键字，表示将要执行一个查询，*表示“所有列”，FROM表示将要从哪个表查询
+SELECT * FROM &lt;表名&gt;;
+-- 判断当前到数据库的连接是否有效
+SELECT 1;
+
+-- 按条件查询students:
+SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
+SELECT * FROM students WHERE (score &lt; 80 OR score &gt; 90) AND gender = 'M';
+-- 去重
+SELECT COUNT(DISTINCT name,age) FROM students;
+-- 模糊查询
+[NOT] LIKE  '字符串'
+SELECT * FROM students WHERE name LIKE [BINARY] 't%' 
+-- 通配符%代表任何长度的字符串(含0)，通配符_只能代表单个字符(不含0),BINARY区分大小写
+</code></pre>
+
+<p>​	<strong>算术运算符</strong>：<strong>+ - * / % mod</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>​	<strong>逻辑运算符</strong>：**NOT或!  ； AND或&amp;&amp; ； OR或</td>
+      <td> </td>
+      <td>； XOR**</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>​	<strong>比较运算符 :</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">条件</th>
+      <th style="text-align: left">表达式举例1</th>
+      <th style="text-align: left">表达式举例2</th>
+      <th style="text-align: left">说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">使用=判断相等</td>
+      <td style="text-align: left">score = 80</td>
+      <td style="text-align: left">name = ‘ace’</td>
+      <td style="text-align: left">字符串需要用单引号括起来。安全等于&lt;=&gt;,可判断NULL</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">使用&gt;判断大于</td>
+      <td style="text-align: left">score &gt; 80</td>
+      <td style="text-align: left">name &gt; ‘ace’</td>
+      <td style="text-align: left">字符串比较根据ASCII码，中文字符比较根据数据库设置</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">使用&gt;=判断大于或相等</td>
+      <td style="text-align: left">score &gt;= 80</td>
+      <td style="text-align: left">name &gt;= ‘ace’</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">使用&lt;判断小于</td>
+      <td style="text-align: left">score &lt; 80</td>
+      <td style="text-align: left">name &lt;= ‘ace’</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">使用&lt;=判断小于或相等</td>
+      <td style="text-align: left">score &lt;= 80</td>
+      <td style="text-align: left">name &lt;= ‘ace’</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">使用&lt;&gt;判断不相等</td>
+      <td style="text-align: left">score &lt;&gt; 80</td>
+      <td style="text-align: left">name &lt;&gt; ‘ace’</td>
+      <td style="text-align: left">!=</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">使用LIKE判断相似</td>
+      <td style="text-align: left">name LIKE ‘ab%’</td>
+      <td style="text-align: left">name LIKE ‘%bc%’</td>
+      <td style="text-align: left">%表示任意字符，例如’ab%’将匹配’ab’，’abc’，’abcd’</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">IS NULL(ISNULL)</td>
+      <td style="text-align: left">10 IS NULL</td>
+      <td style="text-align: left">ISNULL(10)</td>
+      <td style="text-align: left">空值查询</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">IS NOT NULL</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BETWEEN AND 运算符</td>
+      <td style="text-align: left">4 BETWEEN 2 AND 5</td>
+      <td style="text-align: left">age BETWEEN 20 AND 23</td>
+      <td style="text-align: left">范围查询</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">IN</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">集合内查询</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NOT IN</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>​	<strong>位运算符</strong>：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>运算符</th>
+      <th>说明</th>
+      <th>使用形式</th>
+      <th>举例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>|</td>
+      <td>位或</td>
+      <td>a | b</td>
+      <td>5 | 8</td>
+    </tr>
+    <tr>
+      <td>&amp;</td>
+      <td>位与</td>
+      <td>a &amp; b</td>
+      <td>5 &amp; 8</td>
+    </tr>
+    <tr>
+      <td>^</td>
+      <td>位异或</td>
+      <td>a ^ b</td>
+      <td>5 ^ 8</td>
+    </tr>
+    <tr>
+      <td>~</td>
+      <td>位取反</td>
+      <td>~a</td>
+      <td>~5</td>
+    </tr>
+    <tr>
+      <td>«</td>
+      <td>位左移</td>
+      <td>a « b</td>
+      <td>5 « 2，表示整数 5 按位左移 2 位</td>
+    </tr>
+    <tr>
+      <td>»</td>
+      <td>位右移</td>
+      <td>a » b</td>
+      <td>5 » 2，表示整数 5 按位右移 2 位</td>
+    </tr>
+  </tbody>
+</table>
+
+<pre><code class="language-sql">-- 投影查询，仅返回指定列并进行重名
+SELECT 列1 [AS] 别名1, 列2 别名2, 列3 别名3 FROM &lt;表名&gt; 别名4 WHERE &lt;条件&gt;
+SELECT id, score points, name FROM students AS STU;
+
+-- 排序，ASC升序(default)，DESC降序
+-- WHERE子句在前，按score(降序), gender排序(前一字段值可排序时才对后面字段排	序)
+SELECT id, name, gender, score
+FROM students
+WHERE class_id = 1
+ORDER BY score DESC,gender;
+
+-- 分页查询
+LIMIT &lt;M&gt; OFFSET &lt;N&gt; --M记录数，N初始位置
+-- LIMIT总是设定为pageSize；OFFSET计算公式为pageSize * (pageIndex - 1)。
+LIMIT 3 OFFSET 0;
+LIMIT 3 OFFSET 3;
+LIMIT 3 OFFSET 6;
+LIMIT 6,3;
+
+-- 聚合查询：返回该表的记录总数量，结果仍是一行一列，列名是COUNT(*)的二维表，可设置别名便于处理。
+SELECT COUNT(*) num FROM students;
+SELECT COUNT(*) boys FROM students WHERE gender = 'M';
+-- SUM()数值列的合计值，AVG()数值列的平均值，MAX()列最大值，MIN()列最小值
+SELECT AVG(score) average FROM students WHERE gender = 'M';
+
+-- 每页3条记录，如何通过聚合查询获得总页数
+-- round() 遵循四舍五入，round(1.45,0) = 1；
+-- ceiling()向上舍入为指定小数位数，ceiling(1.45,0) = 2；
+-- floor()向下舍入为指定小数位数，floor(1.45,0)= 1;
+SELECT CEILING(COUNT(*) / 3) FROM students;
+
+-- 分组聚合，按class_id分组，得出每个class的男女生人数
+-- GROUP_CONCAT() 函数：把每个分组的字段值都显示出来
+-- WITH ROLLUP关键词：统计记录数量
+SELECT class_id , gender, COUNT(*) num FROM students GROUP BY class_id;
+SELECT age,sex,GROUP_CONCAT(name) FROM students GROUP BY age,sex;
+
+-- 多表查询，返回多表的乘积(M*N行)，尽量不使用。
+-- 要使用‘表名.列名’这样的方式来引用列和设置别名，避免了结果集的列名重复问题。同时表也可以设置别名。
+-- set table alias:
+SELECT
+    s.id sid,
+    s.name,
+    s.gender,
+    s.score,
+    c.id cid,
+    c.name cname
+FROM students s, classes c;
+WHERE s.gender = 'M' AND c.id = 1;
+
+-- 连接查询(Join查询)
+SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score
+FROM students s -- 主表
+INNER JOIN classes c -- 内连接，返回同时存在于两张表的行数据
+ON s.class_id = c.id; -- 连接条件
+-- RIGHT OUTER JOIN返回右表都存在的行；LEFT OUTER JOIN则返回左表都存在的行；FULL OUTER JOIN。
+
+-- 子查询
+SELECT name FROM students 
+WHERE course_id IN (SELECT id FROM tb_course WHERE course_name = 'Java');
+
+-- 正则表达式
+属性名 REGEXP '匹配方式'
+</code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>选项</th>
+      <th>说明</th>
+      <th>例子</th>
+      <th>匹配值示例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>^</td>
+      <td>匹配文本的开始字符</td>
+      <td>‘^b’ 匹配以字母 b 开头的字符串</td>
+      <td>book、big、banana、bike</td>
+    </tr>
+    <tr>
+      <td>$</td>
+      <td>匹配文本的结束字符</td>
+      <td>‘st$’ 匹配以 st 结尾的字符串</td>
+      <td>test、resist、persist</td>
+    </tr>
+    <tr>
+      <td>.</td>
+      <td>匹配任何单个字符</td>
+      <td>‘b.t’ 匹配任何 b 和 t 之间有一个字符</td>
+      <td>bit、bat、but、bite</td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>匹配零个或多个在它前面的字符</td>
+      <td>‘f*n’ 匹配字符 n 前面有任意个字符 f</td>
+      <td>fn、fan、faan、abcn</td>
+    </tr>
+    <tr>
+      <td>+</td>
+      <td>匹配前面的字符 1 次或多次</td>
+      <td>‘ba+’ 匹配以 b 开头，后面至少紧跟一个 a</td>
+      <td>ba、bay、bare、battle</td>
+    </tr>
+    <tr>
+      <td><字符串></字符串></td>
+      <td>匹配包含指定字符的文本</td>
+      <td>‘fa’ 匹配包含‘fa’的文本</td>
+      <td>fan、afa、faad</td>
+    </tr>
+    <tr>
+      <td>[字符集合]</td>
+      <td>匹配字符集合中的任何一个字符</td>
+      <td>‘[xz]’ 匹配 x 或者 z</td>
+      <td>dizzy、zebra、x-ray、extra</td>
+    </tr>
+    <tr>
+      <td>[^]</td>
+      <td>匹配不在括号中的任何字符</td>
+      <td>’[ ^abc]’ 匹配任何不包含 a、b 或 c 的字符串</td>
+      <td>desk、fox、f8ke</td>
+    </tr>
+    <tr>
+      <td>字符串{n,}</td>
+      <td>匹配前面的字符串至少 n 次</td>
+      <td>‘b{2}’ 匹配 2 个或更多的 b</td>
+      <td>bbb、bbbb、bbbbbbb</td>
+    </tr>
+    <tr>
+      <td>字符串 {n,m}</td>
+      <td>匹配前面的字符串至少 n 次， 至多 m 次</td>
+      <td>‘b{2,4}’ 匹配最少 2 个，最多 4 个 b</td>
+      <td>bbb、bbbb</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="修改数据">修改数据</h2>
+
+<h3 id="insert">INSERT</h3>
+
+<pre><code class="language-sql">-- 添加多条新记录
+INSERT INTO &lt;表名&gt; (字段1, 字段2, ...) VALUES (值1, 值2, ...);
+INSERT INTO students (class_id, name, gender, score) VALUES
+(1, '大宝', 'M', 87),
+(2, '二宝', 'M', 81);
+-- 方式二
+INSERT INTO &lt;表名&gt;
+SET &lt;列名1&gt; = &lt;值1&gt;,
+    &lt;列名2&gt; = &lt;值2&gt;;
+-- 使用 INSERT INTO…FROM 语句复制表数据
+INSERT INTO &lt;表2&gt;
+(字段1, 字段2,...)
+SELECT 字段1, 字段2,...
+FROM &lt;表1&gt;;
+</code></pre>
+
+<h3 id="update">UPDATE</h3>
+
+<pre><code class="language-sql">-- 更新id=1的记录
+UPDATE &lt;表名&gt; SET 字段1=值1 [,字段2=值2… ] [WHERE 子句 ] [ORDER BY 子句] [LIMIT 子句];
+UPDATE students SET name='大牛', score=66 WHERE id=1;
+UPDATE students SET score=score+10 WHERE score&lt;80; -- 更新字段可用表达式
+</code></pre>
+
+<h3 id="delete">DELETE</h3>
+
+<pre><code class="language-sql">-- 删除id=1，3，5的记录
+DELETE FROM &lt;表名&gt; WHERE ...;
+DELETE FROM students WHERE  id IN (1,3,5);
+-- 清空表数据,无法回滚
+TRUNCATE [TABLE] 表名;
+-- 当不需要该表时，用 DROP；当仍要保留该表，但要删除所有记录时，用 TRUNCATE；当要删除部分记录时，用 DELETE。
+</code></pre>
+
+<h1 id="mysql">MYSQL</h1>
+
+<blockquote>
+  <p>MySQL适用场景：web网站系统、日志记录系统、数据仓库系统、嵌入式系统。</p>
+
+  <p>MySQL Client的可执行程序是mysql，MySQL Server的可执行程序是mysqld，在后台运行。</p>
+
+  <p>可视化图形界面<a href="https://dev.mysql.com/downloads/workbench/">MySQL Workbench</a>。</p>
+</blockquote>
+
+<h2 id="mysql数据格式">Mysql数据格式</h2>
+
+<ul>
+  <li>整数类型有 <strong>TINYINT</strong>、<strong>SMALLINT</strong>、<strong>MEDIUMINT</strong>、<strong>INT</strong>、<strong>BIGINT</strong>。</li>
+  <li>小数类型有单精度浮点数（<strong>FLOAT</strong>）和双精度浮点数（<strong>DOUBLE</strong>），定点类型 <strong>DECIMAL</strong>。</li>
+  <li>日期的数据类型：<strong>YEAR</strong>、<strong>TIME</strong>、<strong>DATE</strong>、<strong>DTAETIME</strong>、<strong>TIMESTAMP</strong>。</li>
+  <li>字符串类型有 <strong>CHAR</strong>(M)、<strong>VARCHAR</strong>(M)、<strong>TINYTEXT</strong>、<strong>TEXT</strong>、<strong>MEDIUMTEXT</strong>、<strong>LONGTEXT</strong>、<strong>ENUM</strong>、<strong>SET</strong>。
+    <ul>
+      <li>CHAR 是固定长度字符，VARCHAR 是可变长度字符。</li>
+      <li>性别字段适合定义，为 ENUM；要存储一个人兴趣爱好，最好使用SET类型。</li>
+    </ul>
+  </li>
+  <li>二进制字符串有 <strong>BIT</strong>(M)、<strong>BINARY</strong>(M)、<strong>VARBINARY</strong>(M)、<strong>TINYBLOB</strong>(M)、<strong>BLOB</strong>(M)、<strong>MEDIUMBLOB</strong>(M) 和 <strong>LONGBLOB</strong>(M)。
+    <ul>
+      <li>BLOB 主要存储图片、音频信息等</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="mysqlcrud">MYSQL(CRUD)</h2>
+
+<pre><code class="language-shell"># 连接 MySQL Server
+mysql -u root -p
+mysql -h 10.0.1.99 -u root -p
+</code></pre>
+
+<pre><code class="language-sql">HELP 查询内容;
+/*多行
+  注释*/
+-- 列出所有数据库
+show databases;
+SHOW DATABASES [LIKE '数据库名']; --匹配数据库,部分匹配‘%db’、‘%db%’
+-- 创建数据库
+create database test;
+-- 语法格式
+CREATE DATABASE [IF NOT EXISTS] &lt;数据库名&gt;
+[[DEFAULT] CHARACTER SET &lt;字符集名&gt;] 
+[[DEFAULT] COLLATE &lt;校对规则名&gt;];
+show create database test;
+-- 修改数据库，只能对数据库使用的字符集和校对规则进行修改
+ALTER DATABASE [数据库名] { 
+[ DEFAULT ] CHARACTER SET &lt;字符集名&gt; |
+[ DEFAULT ] COLLATE &lt;校对规则名&gt;}
+-- 删除数据库
+DROP DATABASE [ IF EXISTS ] &lt;数据库名&gt;
+-- 切换数据库
+use test;
+</code></pre>
+
+<blockquote>
+  <ul>
+    <li>information_schema：主要存储了系统中的一些数据库对象信息，比如用户表信息、列信息、权限信息、字符集信息和分区信息等。</li>
+    <li>mysql：MySQL 的核心数据库，类似于 SQL Server 中的 master 表，主要负责存储数据库用户、用户访问权限等 MySQL 自己需要使用的控制和管理信息。常用的比如在 mysql 数据库的 user 表中修改 root 用户密码。</li>
+    <li>performance_schema：主要用于收集数据库服务器性能参数。</li>
+    <li>sakila：MySQL 提供的样例数据库，该数据库共有 16 张表，这些数据表都是比较常见的，在设计数据库时，可以参照这些样例数据表来快速完成所需的数据表。</li>
+    <li>sys：MySQL 5.7 安装完成后会多一个 sys 数据库。sys 数据库主要提供了一些视图，数据都来自于 performation_schema，主要是让开发者和使用者更方便地查看性能问题。</li>
+    <li>world：world 数据库是 MySQL 自动创建的数据库，该数据库中只包括 3 张数据表，分别保存城市，国家和国家使用的语言等内容。</li>
+  </ul>
+</blockquote>
+
+<pre><code class="language-sql">-- 列出当前数据库所有表
+show tables;
+
+-- MYSQL视图
+-- 查看表结构 DESCRIBE
+desc students;
+	-- 字段含义:
+    -- Null：表示该列是否可以存储 NULL 值。
+    -- Key：表示该列是否已编制索引。PRI 表示该列是表主键的一部分，UNI 表示该列是 UNIQUE 索引的一部分，MUL 表示在列中某个给定值允许出现多次。
+    -- Default：表示该列是否有默认值，如果有，值是多少。
+    -- Extra：表示可以获取的与给定列有关的附加信息，如 AUTO_INCREMENT 等。
+CREATE VIEW &lt;视图名&gt; AS &lt;SELECT语句&gt;
+ALTER VIEW &lt;视图名&gt; AS &lt;SELECT语句&gt;
+
+-- 参考创建表的sql语句
+show create table students;
++----------+-------------------------------------------------------+
+| students | CREATE TABLE `students` (                             |
+|          |   `id` bigint(20) NOT NULL AUTO_INCREMENT,            |
+|          |   `class_id` bigint(20) NOT NULL,                     |
+|          |   `name` varchar(100) NOT NULL,                       |
+|          |   `gender` varchar(1) NOT NULL,                       |
+|          |   `score` int(11) NOT NULL,                           |
+|          |   PRIMARY KEY (`id`)                                  |
+|          | ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 |
++----------+-------------------------------------------------------+
+-- 删除表
+DROP TABLE [IF EXISTS] 表名1 [ ,表名2, 表名3 ...]
+drop table students;
+
+-- 修改表
+ALTER TABLE &lt;表名&gt; [修改选项]
+-- 修改选项
+{ ADD COLUMN &lt;列名&gt; &lt;类型&gt;[约束条件]; -- 在末尾添加字段
+  ADD COLUMN &lt;列名&gt; &lt;类型&gt;[约束条件]FIRST; -- 在开头添加字段
+  ADD COLUMN &lt;列名&gt; &lt;类型&gt;[约束条件]AFTER &lt;已经存在的字段名&gt;; -- 在已有字段后添加
+| CHANGE COLUMN &lt;旧列名&gt; &lt;新列名&gt; &lt;新列类型&gt; -- 修改字段名称
+| ALTER COLUMN &lt;列名&gt; { SET DEFAULT &lt;默认值&gt; | DROP DEFAULT }
+| MODIFY COLUMN &lt;列名&gt; &lt;类型&gt; -- 修改字段数据类型
+| DROP COLUMN &lt;列名&gt;
+| RENAME [TO] &lt;新表名&gt;
+| CHARACTER SET &lt;字符集名&gt;
+| COLLATE &lt;校对规则名&gt; }
+
+ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL; -- 新增一列birth
+ALTER TABLE students CHANGE COLUMN birth birthday VARCHAR(20) NOT NULL; -- 把列名改为birthday，类型改为VARCHAR(20)
+ALTER TABLE students DROP COLUMN birthday; -- 删除列
+</code></pre>
+
+<h2 id="mysql约束constraint">MYSQL约束(CONSTRAINT)</h2>
+
+<ul>
+  <li>
+    <p>主键约束(一个表中只有一个)</p>
+
+    <pre><code class="language-sql">-- 在创建表时设置主键约束
+CREATE TABLE &lt;数据表名&gt; 
+(
+[CONSTRAINT &lt;约束名&gt;] PRIMARY KEY [字段名] -- 单字段主键
+PRIMARY KEY [字段1，字段2，…,字段n] -- 设置联合主键
+字段名 数据类型 AUTO_INCREMENT -- 给字段(只能是整数类型)添加 AUTO_INCREMENT 属性来实现主键自增长
+AUTO_INCREMENT=1 -- 指定自增字段初始值
+);
+  
+-- 在修改表时添加主键约束
+ALTER TABLE &lt;数据表名&gt; 
+ADD PRIMARY KEY(&lt;字段名&gt;);
+</code></pre>
+  </li>
+  <li>
+    <p>外键约束</p>
+
+    <pre><code class="language-sql">-- 在创建表时设置外键约束
+CREATE TABLE &lt;数据表名&gt; 
+(
+[CONSTRAINT &lt;外键名&gt;] FOREIGN KEY 字段名 [，字段名2，…] 
+REFERENCES &lt;主表名&gt; 主键列1 [，主键列2，…]
+);
+  
+-- 在修改表时添加外键约束
+ALTER TABLE &lt;数据表名&gt; 
+ADD CONSTRAINT &lt;外键名&gt;
+FOREIGN KEY(&lt;列名&gt;) REFERENCES &lt;主表名&gt; (&lt;列名&gt;);
+</code></pre>
+  </li>
+  <li>
+    <p>唯一约束(一个表中可有多个)</p>
+
+    <pre><code class="language-sql">&lt;字段名&gt; &lt;数据类型&gt; UNIQUE
+  
+ALTER TABLE &lt;数据表名&gt; ADD CONSTRAINT &lt;唯一约束名&gt; UNIQUE(&lt;列名&gt;);
+</code></pre>
+  </li>
+  <li>
+    <p>检查约束(检查数据表中字段值有效性)</p>
+
+    <pre><code class="language-sql">-- 创建表时
+CHECK(&lt;检查约束&gt;)
+CHECK(salary&gt;0 AND salary&lt;100)
+-- 修改表
+ALTER TABLE &lt;数据表名&gt;
+ADD CONSTRAINT &lt;检查约束名&gt; 
+CHECK(&lt;检查约束&gt;);
+</code></pre>
+  </li>
+  <li>
+    <p>默认值约束</p>
+
+    <pre><code class="language-sql">-- 创建表时
+&lt;字段名&gt; &lt;数据类型&gt; DEFAULT &lt;默认值&gt;;
+-- 修改表
+ALTER TABLE &lt;数据表名&gt;
+CHANGE COLUMN &lt;字段名&gt;	
+&lt;字段名&gt; &lt;数据类型&gt; DEFAULT &lt;默认值&gt;;
+</code></pre>
+  </li>
+  <li>
+    <p>非空约束</p>
+
+    <pre><code class="language-sql">-- 创建表时
+&lt;字段名&gt; &lt;数据类型&gt; NOT NULL;
+-- 修改表
+ALTER TABLE &lt;数据表名&gt;
+CHANGE COLUMN &lt;字段名&gt;
+&lt;字段名&gt; &lt;数据类型&gt; NOT NULL;
+</code></pre>
+  </li>
+</ul>
+
+<h2 id="mysql索引">MYSQL索引</h2>
+
+<blockquote>
+  <p>在物理上分为  BTREE 索引和 HASH 索引</p>
+
+  <p>哈希（Hash）：把任意长度的输入（又叫作预映射，pre-image）通过散列算法变换成固定长度的输出（散列值）。</p>
+</blockquote>
+
+<pre><code class="language-sql">-- 创建表时
+CREATE TABLE &lt;数据表名&gt; 
+KEY|INDEX [&lt;索引名&gt;] [&lt;索引类型&gt;] (&lt;列名&gt;,…) -- 普通索引
+UNIQUE [INDEX|KEY] [&lt;索引名&gt;] [&lt;索引类型&gt;] (&lt;列名&gt;,…) -- 唯一索引
+-- 修改表
+ALTER TABLE &lt;数据表名&gt;
+ADD INDEX [&lt;索引名&gt;] [&lt;索引类型&gt;] (&lt;列名&gt;,…)
+ADD UNIQUE [INDEX|KEY] [&lt;索引名&gt;] [&lt;索引类型&gt;] (&lt;列名&gt;,…)
+-- 查看索引
+SHOW INDEX FROM &lt;表名&gt; [ FROM &lt;数据库名&gt;]\G;
+show index from students\G;
+        Table: students -- 数据表名
+   Non_unique: 0        -- 是否是唯一索引
+     Key_name: PRIMARY  -- 索引的名称:主键索引
+ Seq_in_index: 1		-- 该列在索引中的位置，如果索引是单列的，则该列的值为1
+  Column_name: id		-- 定义索引的列字段
+    Collation: A		-- 升序显示值“A”（升序），若显示为 NULL，则表示无分类
+  Cardinality: 10		-- 索引中唯一值数目的估计值
+     Sub_part: NULL		-- 列中被编入索引的字符的数量，列的值为 NULL表示整列被编入索引。
+       Packed: NULL		-- 关键字如何被压缩
+         Null:			-- 显示索引列中是否包含 NULL
+   Index_type: BTREE	-- 索引使用的类型和方法（BTREE、FULLTEXT、HASH、RTREE）
+      Comment:			-- 评注
+Index_comment:
+      Visible: YES
+   Expression: NULL
+-- 删除索引
+DROP INDEX &lt;索引名&gt; ON &lt;表名&gt;
+DROP PRIMARY KEY
+</code></pre>
+
+<h2 id="实用sql语句">实用SQL语句</h2>
+
+<pre><code class="language-sql">-- 查看系统所支持的存储引擎类型
+-- 常用引擎：MyISAM、InnoDB 和 MEMORY 
+show engines;
+SHOW VARIABLES LIKE 'default_storage_engine%'; -- 查看默认引擎
+SET default_storage_engine=InnoDB; -- 设置默认引擎
+-- 修改数据表的存储引擎
+ALTER TABLE &lt;表名&gt; ENGINE=&lt;存储引擎名&gt;;
+
+-- 插入或替换
+REPLACE INTO students (id, class_id, name, gender, score) VALUES (1, 1, '小明', 'F', 99);
+-- 插入或更新
+INSERT INTO students (id, class_id, name, gender, score) VALUES (1, 1, '小明', 'F', 99) ON DUPLICATE KEY UPDATE name='小明', gender='F', score=99;
+-- 插入或忽略
+INSERT IGNORE INTO students (id, class_id, name, gender, score) VALUES (1, 1, '小明', 'F', 99);
+-- 快照
+CREATE TABLE students_of_class1 SELECT * FROM students WHERE class_id=1;
+</code></pre>
+
+<h3 id="操作示例">操作示例</h3>
+
+<pre><code class="language-sql">set character set utf8;
+-- 如果test数据库不存在，就创建test数据库：
+CREATE DATABASE IF NOT EXISTS test;
+
+-- 切换到test数据库
+USE test;
+
+-- 删除classes表和students表（如果存在）：
+DROP TABLE IF EXISTS classes;
+DROP TABLE IF EXISTS students;
+
+-- 创建classes表：
+CREATE TABLE classes (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 创建students表：
+CREATE TABLE students (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    class_id BIGINT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    gender VARCHAR(1) NOT NULL,
+    score INT NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 插入classes记录：
+INSERT INTO classes(id, name) VALUES (1, '一班');
+INSERT INTO classes(id, name) VALUES (2, '二班');
+
+-- 插入students记录：
+INSERT INTO students (id, class_id, name, gender, score) VALUES (1, 1, '小明', 'M', 90);
+INSERT INTO students (id, class_id, name, gender, score) VALUES (2, 1, '小红', 'F', 95);
+INSERT INTO students (id, class_id, name, gender, score) VALUES (5, 2, '小白', 'F', 81);
+
+-- OK:
+SELECT 'ok' as 'result:';
+</code></pre>
+
+<h2 id="存储过程">存储过程</h2>
+
+<blockquote>
+  <p>（可编程函数）一组为了完成特定功能的 SQL 语句集合，经编译和优化后存储在数据库服务器中，可以被 Java 和 C# 等编程语言调用。</p>
+</blockquote>
+
+<pre><code class="language-sql">CREATE PROCEDURE &lt;过程名&gt; ([过程参数[,…]]) &lt;过程体&gt;
+-- [过程参数[,…] ] 格式
+[IN|OUT|INOUT] &lt;参数名&gt; &lt;类型&gt;
+-- &lt;过程体&gt; 以关键字 BEGIN 开始，以关键字 END 结束
+-- 使用命令行创建存储过程时，使用 DELIMITER 命令将结束命令修改为其他字符
+DELIMITER $$
+CREATE PROCEDURE ShowStuScore()
+BEGIN
+SELECT * FROM tb_students_score;
+END $$
+-- 查看存储过程的状态
+SHOW PROCEDURE STATUS LIKE 存储过程名;
+-- 查看存储过程的定义
+SHOW CREATE PROCEDURE 存储过程名;
+-- 删除
+DROP PROCEDURE [ IF EXISTS ] &lt;过程名&gt;
+</code></pre>
+
+<h2 id="触发器">触发器</h2>
+
+<blockquote>
+  <p>在 MySQL 中，只有执行 INSERT、UPDATE 和 DELETE 操作时才能激活触发器</p>
+</blockquote>
+
+<pre><code class="language-sql">-- 创建触发器
+CREATE TRIGGER &lt;触发器名&gt; 
+&lt;BEFORE|AFTER&gt; &lt;INSERT| UPDATE| DELETE &gt; ON &lt;表名&gt; 
+FOR EACH Row
+&lt;触发器主体&gt;;	
+-- 创建一个名为 SumOfSalary 的触发器，触发的条件是向数据表 tb_emp8 中插入数据之前，对新插入的 salary 字段值进行求和计算。
+CREATE TRIGGER SumOfSalary
+BEFORE INSERT ON tb_emp8
+FOR EACH ROW
+SET @sum=@sum+NEW.salary;
+-- 查看触发器
+SHOW TRIGGERS;
+SELECT * FROM information_schema.triggers WHERE trigger_name= '触发器名';
+</code></pre>
+
+<h2 id="事件">事件</h2>
+
+<blockquote>
+  <p>执行定时任务，事件调度器Event Scheduler</p>
+</blockquote>
+
+<pre><code class="language-sql">-- 查看even_scheduler是否开启
+show processlist;
+select @@event_scheduler;
+show variables like 'event_scheduler';
+-- 开启关闭调度器
+set global event_scheduler=On;
+-- 创建事件
+CREATE EVENT [IF NOT EXISTS] event_name
+    ON SCHEDULE &lt;schedule&gt; -- 用于定义执行的时间和时间间隔,schedule 的值为一个 AT 子句
+    [ON COMPLETION [NOT] PRESERVE] -- 用于定义事件是否循环执行，默认为一次执行，即 NOT PRESERVE
+    [ENABLE | DISABLE | DISABLE ON SLAVE] -- 用于指定事件的一种属性
+    [COMMENT 'comment'] -- 定义事件的注释
+    DO &lt;event_body&gt;; -- 指定事件启动时所要执行的代码： SQL 语句、存储过程或者一个计划执行的事件
+    
+CREATE EVENT IF NOT EXISTS e_test 
+ON SCHEDULE EVERY 5 SECOND
+ON COMPLETION PRESERVE
+DO INSERT INTO tb_eventtest(user,createtime) VALUES ('MySQL',NOW());
+-- 查看事件
+show events;
+SELECT * FROM information_schema.events limit 1\G;
+-- 修改事件，同创建。
+ALTER EVENT event_name DISABLE;-- 临时关闭事件
+</code></pre>
+
+<h2 id="数据库事务">数据库事务</h2>
+
+<blockquote>
+  <p>数据库事务用来保证多条SQL的全部执行，可以确保该事务范围内的所有操作都可以全部成功或者全部失败，如转账。</p>
+</blockquote>
+
+<ul>
+  <li>A：Atomic，原子性，将所有SQL作为原子工作单元执行，要么全部执行，要么全部不执行；</li>
+  <li>C：Consistent，一致性，事务完成后，所有数据的状态都是一致的，即A账户只要减去了100，B账户则必定加上了100；</li>
+  <li>I：Isolation，隔离性，如果有多个事务并发执行，每个事务作出的修改必须与其他事务隔离；</li>
+  <li>D：Duration，持久性，即事务完成后，对数据库数据的修改被持久化存储。</li>
+</ul>
+
+<pre><code class="language-sql">-- 从id=1的账户给id=2的账户转账100元
+BEGIN; -- 开启一个事务
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+COMMIT; -- 提交该显式事务
+ROLLBACK; -- 回滚，主动事务失败
+
+-- 查看当前事务自动提交模式，默认开启即每一条sql指令为一个事务
+SHOW VARIABLES LIKE 'autocommit';
+SET autocommit = 0|1|ON|OFF;-- 开启关闭
+</code></pre>
+
+<h3 id="mysql-事务隔离级别">MySQL 事务隔离级别</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>隔离级别</th>
+      <th>脏读</th>
+      <th style="text-align: left">不可重复读</th>
+      <th>幻读</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>READ UNCOMITTED 读未提交</td>
+      <td>√</td>
+      <td style="text-align: left">√</td>
+      <td>√</td>
+    </tr>
+    <tr>
+      <td>READ COMMITTED 读提交</td>
+      <td>×</td>
+      <td style="text-align: left">√</td>
+      <td>√</td>
+    </tr>
+    <tr>
+      <td>REPEATABLE READ 可重复读</td>
+      <td>×</td>
+      <td style="text-align: left">×</td>
+      <td>√</td>
+    </tr>
+    <tr>
+      <td>SERIALIZABLE 串行化</td>
+      <td>×</td>
+      <td style="text-align: left">×</td>
+      <td>×</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="用户管理">用户管理</h2>
+
+<h2 id="数据库备份恢复">数据库备份恢复</h2>
+
+<pre><code class="language-shell"># 数据库备份
+mysqldump -u username -p &lt;数据库&gt; [&lt;数据表&gt; ...]&gt; filename.sql
+mysqldump -u root -p test &gt; C:\student.sql
+mysqldump -u username -p --databases &lt;数据库1&gt; &lt;数据库2&gt; ... &gt; filename.sql #备份多个库
+mysqldump -u username -p --all-databases &gt; filename.sql #备份all
+
+#student.sql 文件中的所有表和记录必须恢复到一个已经存在的数据库中。
+#恢复数据时，CREATE TABLE 语句会在数据库中创建表，然后执行 INSERT 语句向表中插入记录。
+#数据库恢复
+mysql -u username -p [&lt;数据库&gt;] &lt; filename.sql
+</code></pre>
+
+<pre><code class="language-sql">-- 数据表导出
+SELECT 列名 FROM table [WHERE 语句] INTO OUTFILE '目标文件'[OPTIONS]
+SELECT * FROM test.person INTO OUTFILE 'C://person.txt';
+-- 数据表导入
+CREATE TABLE tb_students_copy LIKE tb_students_info;
+
+LOAD DATA INFILE 'C:/file.txt' INTO TABLE test_db.tb_students_copy
+FIELDS TERMINATED BY ',' -- 设置字符串为字段之间的分隔符
+OPTIONALLY ENCLOSED BY '"' --设置字符来括上 CHAR、VARCHAR 和 TEXT 等字符型字段。
+LINES TERMINATED BY '?'; -- 设置每行结尾的字符
+</code></pre>
+
+<h2 id="日志">日志</h2>
+
+<blockquote>
+  <p>如果 MySQL 数据库系统意外停止服务，通过<strong>错误日志</strong>查看出现错误的原因。</p>
+
+  <p>通过<strong>二进制日志</strong>来查看用户分别执行了哪些操作、对数据库文件做了哪些修改，然后来修复数据库。</p>
+
+  <p><strong>通用查询日志</strong>记录用户的所有操作，包括启动和关闭 MySQL 服务、更新语句和查询语句等。</p>
+
+  <p><strong>慢查询日志</strong>记录执行事件超过指定时间的操作，通过工具分析慢查询日志可以定位 MySQL 服务器性能瓶颈所在。</p>
+</blockquote>
+
+<pre><code class="language-shell">在 MySQL 配置文件添加相应选项来开启日志
+[mysqld]
+log-bin=dir/filename # 二进制日志
+log-error=dir/filename # 错误日志
+log=dir/filename # 通用查询日志
+log-slow-queries=dir\filename # 慢查询日志
+long_query_time=n # 设置慢查询时间值(s)
+</code></pre>
+
+<pre><code class="language-sql">-- 错误日志
+-- 默认路径：C:\ProgramData\MySQL\MySQL Server\Data\
+SHOW VARIABLES LIKE 'log_error';
+-- mysqladmin -u root -p flush-logs # 开启新的日志
+
+-- 二进制日志
+SHOW VARIABLES LIKE 'log_bin';
+SHOW binary logs; -- 查看二进制日志文件列表
+SHOW master status; -- 查看当前正在写入的二进制日志文件
+-- mysqlbinlog filename.number # 在当前文件夹下查找指定的二进制日志
+RESET MASTER; -- 重置
+PURGE MASTER LOGS TO 'filename.number'; -- 删除指定
+PURGE MASTER LOGS TO 'yyyy-mm-dd hh:MM:ss'; -- 按时间
+SET SQL_LOG_BIN=0/1; -- 暂停/开启
+-- mysqlbinlog filename.number | mysql -u root -p # 还原数据库
+
+-- 通用查询日志
+SHOW VARIABLES LIKE '%general%';
+SET GLOBAL general_log=off;
+
+-- 慢查询日志
+SHOW VARIABLES LIKE 'slow_query%';
+SHOW VARIABLES LIKE 'long_query_time';
+SET GLOBAL slow_query_log=ON;
+SET GLOBAL long_query_time=0.001;
+
+-- 日志输出方式：文件或数据表
+SHOW VARIABLES LIKE '%log_out%';
+SET GLOBAL log_output='FILE,TABLE';
+</code></pre>
+
+<h1 id="python-mysql">PYTHON-MYSQL</h1>
+
+<p><a href="https://wiki.python.org/moin/MySQL">DRIVER</a></p>
+
+<p><a href="https://dev.mysql.com/doc/connector-python/en/">MySQL Connector</a> <code>pip install mysql-connector-python</code></p>
+
+<p><a href="https://www.runoob.com/python3/python-mysql-connector.html">mysql-connector</a></p>
+
+<p><a href="https://github.com/PyMySQL/PyMySQL">PyMySQL</a> <code>import pymysql.cursors</code></p>
+
+<p><a href="https://www.runoob.com/python3/python3-mysql.html">pymysql</a></p>
+
+</div>
+<div class="v">
+  <i class="fas fa-spinner fa-pulse"></i>
+</div>
+<script
+  src='https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js'
+  defer='defer'
+  onload='
+    new Valine({
+      "el": document.getElementsByClassName("v")[0],
+      "appId": "sJhaa5UF52fhugGM95buMpIT-gzGzoHsz",
+      "appKey": "Tp95IdLx1TBXyH9tXflqNnXx",
+      "placeholder": "在这里评论吧！填写邮箱可以获得Gravatar头像和回复通知",
+      "requiredFields": ["nick","mail"],
+      "visitor": true,
+      "recordIP": true
+    })'
+></script>
+
+</div>
+  </div>
+  
+  <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+  
+</body>
+
+</html>

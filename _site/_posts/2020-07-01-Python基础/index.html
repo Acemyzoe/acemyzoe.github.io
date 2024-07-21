@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Python基础 | Acemyzoe</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Python基础" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Some issue" />
+<meta property="og:description" content="Some issue" />
+<link rel="canonical" href="https://acemyzoe.github.io/_posts/2020-07-01-Python%E5%9F%BA%E7%A1%80/" />
+<meta property="og:url" content="https://acemyzoe.github.io/_posts/2020-07-01-Python%E5%9F%BA%E7%A1%80/" />
+<meta property="og:site_name" content="Acemyzoe" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-01T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Python基础","url":"https://acemyzoe.github.io/_posts/2020-07-01-Python%E5%9F%BA%E7%A1%80/","datePublished":"2020-07-01T00:00:00+08:00","dateModified":"2020-07-01T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://acemyzoe.github.io/_posts/2020-07-01-Python%E5%9F%BA%E7%A1%80/"},"description":"Some issue","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  
+  <meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1"
+/>
+<meta
+  http-equiv="content-type"
+  content="text/html; charset=utf-8"
+/>
+<link
+  rel="alternate"
+  href="/feed.xml"
+  title="RSS"
+  type="application/rss+xml"
+/>
+
+  
+  <link
+  rel="apple-touch-icon-precomposed"
+  href="/assets/image/Avatar.jpg"
+/>
+<link
+  rel="shortcut
+  icon"
+  href="/assets/image/Avatar.jpg"
+/>
+
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css"
+/>
+
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"
+/>
+
+  
+  <script
+  src='https://zz.bdstatic.com/linksubmit/push.js'
+  async="async"
+></script>
+
+  
+  <style>
+  .wrap {
+    transition-property: width,background-size,transform;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+    min-height: 100%;
+    display: inline-block;
+    background-size: 100% auto;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(/assets/image/background-wap.jpg);
+  }
+  @media (min-aspect-ratio: 2400/1850) {
+    .wrap {
+      background-image: url(/assets/image/background.jpg);
+    }
+  }
+  .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    width: calc(100% - 14rem);
+    background-size: calc(100% - 14rem) auto;
+    transform: translateX(14rem);
+  }
+  .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    transform: translateX(0);
+  }
+</style>
+
+  
+  <style>
+  .sidebar,
+  html,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: PingFang SC, Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
+  }
+</style>
+
+  
+  <style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+</style>
+
+  
+  <style>
+  img {
+    display: inline-block;
+    margin: 0;
+  }
+</style>
+
+  
+  <style>
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%);
+  }
+</style>
+
+  
+  <style>
+  ::selection {
+    color: White;
+    background: Black;
+  }
+</style>
+
+  
+</head>
+
+<body
+  class="theme-base-07 layout-reverse sidebar-overlay">
+  
+  
+  
+  <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+  <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"
+     />
+  <!-- Toggleable sidebar -->
+  <div class="sidebar" id="sidebar">
+    
+    <div class="sidebar-item">
+      <div class="effect effect-right_to_left">
+        <img class="effect-img" src="/assets/image/Avatar.jpg" alt="img" />
+        <div class="effect-info">
+          人类世界<br/>
+真是<br/>
+太有趣了<br/>
+QAQ<br/>
+<a href="mailto:acemyzoe@outlook.com">
+  <i class="fas fa-envelope"></i>
+</a>
+<a href="https://github.com/acemyzoe">
+  <i class="fab fa-github"></i>
+</a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=52 src="//music.163.com/outchain/player?type=2&id=486806&auto=1&height=32"></iframe>
+
+        </div>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      
+      <a class="sidebar-nav-item" href="/">
+        <i class="fas fa-home fa-fw"></i> 首页
+      </a>
+      
+      <a class="sidebar-nav-item" href="/comments/">
+        <i class="fas fa-comments fa-fw"></i> 留言
+      </a>
+      
+      <a class="sidebar-nav-item" href="/tags/">
+        <i class="fas fa-tags fa-fw"></i> 标签
+      </a>
+      
+      <a class="sidebar-nav-item" href="/archive/">
+        <i class="fas fa-archive fa-fw"></i> 归档
+      </a>
+      
+      <a class="sidebar-nav-item" href="/merger/">
+        <i class="fas fa-coffee fa-fw"></i> 打赏
+      </a>
+      
+    </nav>
+    <div class="sidebar-item">
+      
+      <style>
+  #sidebar-search-input {
+    background: none;
+    border: none;
+    color: White;
+    width: 100%;
+  }
+  #sidebar-search-results-container {
+    overflow: auto auto;
+    max-height: 60vh;
+  }
+</style>
+<input
+  id="sidebar-search-input"
+  placeholder="搜索博文"
+/>
+<ol
+  id="sidebar-search-results-container"
+></ol>
+<script
+  src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.7/dest/simple-jekyll-search.min.js'
+  async='async'
+  onload='
+    SimpleJekyllSearch({
+      json: "/assets/simple-jekyll-search/search.json",
+      searchInput: document.getElementById("sidebar-search-input"),
+      resultsContainer: document.getElementById("sidebar-search-results-container"),
+      searchResultTemplate: `<li><a href="{url}">{title}</a></li>`,
+      limit: 999,
+      fuzzy: true
+    })'
+></script>
+
+      
+      
+      <style>
+  #toc {
+    overflow: auto auto;
+    max-height: 50vh;
+  }
+</style>
+
+      <ol id="toc">
+  <li><a href="#some-issue">Some issue</a></li>
+  <li><a href="#%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83">注释规范</a></li>
+  <li><a href="#%E5%8F%98%E9%87%8F%E6%96%B9%E6%B3%95%E7%B1%BB%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99">变量、方法、类的命名规则</a></li>
+  <li><a href="#dict">Dict</a></li>
+  <li><a href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正则表达式</a></li>
+  <li><a href="#crc%E6%A0%A1%E9%AA%8C">CRC校验</a></li>
+  <li><a href="#%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2">进制转换</a></li>
+  <li><a href="#%E8%A1%A5%E9%9B%B6">补零</a></li>
+  <li><a href="#json">Json</a></li>
+  <li><a href="#str--repr--%E5%AD%97%E7%AC%A6%E4%B8%B2">str() &amp; repr() -&gt;字符串</a></li>
+</ol>
+      
+      
+      <script defer="defer" src="https://cdn.jsdelivr.net/gh/poole/lanyon@v1.1.0/public/js/script.min.js"></script>
+      
+      <style>
+  .sidebar-checkbox {
+    display: none;
+  }
+  .sidebar-toggle {
+    position: fixed;
+  }
+</style>
+
+      
+      <style>
+  .effect {
+    margin: 1rem;
+    perspective: 900px;
+  }
+  .effect-info {
+    text-align: center;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    transform-style: preserve-3d;
+  }
+  .effect-img {
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+  }
+  .effect-img:before {
+    position: absolute;
+    display: block;
+  }
+  .effect-right_to_left .effect-img {
+    transform-origin: 0% 50%;
+  }
+  .effect-right_to_left:hover .effect-img {
+    transform: rotate3d(0, 1, 0, -180deg);
+  }
+</style>
+
+      
+      <div>
+  <i class="fas fa-cog fa-spin fa-fw"></i>
+  <span id="run_time_day">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>天
+  <span id="run_time_hour">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>时
+  <span id="run_time_minute">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>分
+  <span id="run_time_second">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>秒
+  <script>
+    setInterval(function (d,h,m,s,b) {
+      function setzero(i) {
+        return i < 10 ? "0" + i : i;
+      }
+      let BirthDay = new Date(b);
+      let today = new Date();
+      let timeold = (today.getTime() - BirthDay.getTime());
+      let sectimeold = timeold / 1000;
+      let secondsold = Math.floor(sectimeold);
+      let msPerDay = 24 * 60 * 60 * 1000;
+      let e_daysold = timeold / msPerDay;
+      let daysold = Math.floor(e_daysold);
+      let e_hrsold = (e_daysold - daysold) * 24;
+      let hrsold = Math.floor(e_hrsold);
+      let e_minsold = (e_hrsold - hrsold) * 60;
+      let minsold = Math.floor((e_hrsold - hrsold) * 60);
+      let seconds = Math.floor((e_minsold - minsold) * 60);
+      d.textContent = daysold;
+      h.textContent = setzero(hrsold);
+      m.textContent = setzero(minsold);
+      s.textContent = setzero(seconds);
+    },
+    1000,
+    document.getElementById("run_time_day"),
+    document.getElementById("run_time_hour"),
+    document.getElementById("run_time_minute"),
+    document.getElementById("run_time_second"),
+    "04/01/2020 12:00:00")// 这是我第一篇博客的时间
+  </script>
+</div>
+
+      
+      <div>
+  <div>
+    <i class="fas fa-eye fa-fw"></i>
+    <span id="busuanzi_value_page_pv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>次
+  </div>
+  <div>
+    <i class="fas fa-paw fa-fw"></i>
+    <span id="busuanzi_value_site_pv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>枚
+  </div>
+  <div>
+    <i class="fas fa-user-friends fa-fw"></i>
+    <span id="busuanzi_value_site_uv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>人
+  </div>
+  <script
+    src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0'
+    async='async'
+  ></script>
+</div>
+
+      
+      <div>
+  <i class="fas fa-thumbs-up fa-fw"></i>
+  <a href="https://github.com/acemyzoe">
+    Github
+  </a>
+</div>
+
+      
+      <div>
+  <i class="fas fa-copyright fa-fw"></i>
+  acemyzoe
+</div>
+
+      
+      
+    </div>
+  </div>
+  <!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. -->
+  
+  <div class="wrap">
+    
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/katex@0.11.1/dist/katex.min.js,npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js,npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  defer="defer"
+  onload='renderMathInElement(document.body, { delimiters: [{ left: "$", right: "$", display: false }] })'
+></script>
+
+
+
+<style>
+  pre.language-mermaid,
+  code.language-mermaid {
+    display: none;
+  }
+</style>
+<script
+  src="https://cdn.jsdelivr.net/npm/mermaid@8.5.1/dist/mermaid.min.js"
+  defer="defer"
+  onload='
+    for(let x of document.getElementsByClassName("language-mermaid"))
+      if(x.nodeName=="CODE")
+      {
+        let m = document.createElement("div");
+        m.classList.add("mermaid");
+        m.textContent = x.textContent;
+        x.parentNode.insertAdjacentElement("beforebegin", m);
+      }'
+></script>
+
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.css,gh/PrismJS/prism-themes@1955cfef6953b3a59e66016e8a1e016b45d6cc79/themes/prism-nord.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/components/prism-core.min.js,npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.js"
+  defer="defer"
+  onload='
+    Prism.plugins.autoloader.languages_path = "https:\/\/cdn.jsdelivr.net/npm/prismjs/components/";
+    for(let x of document.getElementsByTagName("pre"))
+      x.classList.add("line-numbers");
+    Prism.plugins.toolbar.registerButton("select-code", function (env) {
+      let button = document.createElement("button");
+      button.textContent = "select this " + env.language;
+      button.addEventListener("click", function () {
+        if (document.body.createTextRange) {
+          let range = document.body.createTextRange();
+          range.moveToElementText(env.element);
+          range.select();
+        } else if (window.getSelection) {
+          let selection = window.getSelection();
+          let range = document.createRange();
+          range.selectNodeContents(env.element);
+          selection.removeAllRanges();
+            selection.addRange(range);
+        }
+      });
+      return button;
+    })'
+></script>
+
+
+
+<style>
+  pre {
+    max-height: 50vh;
+    overflow: auto;
+  }
+</style>
+
+
+<style>
+  @media (min-width: 56em) {
+    .container {
+      max-width: 66.6%;
+    }
+  }
+</style>
+
+
+<style>
+  .masthead,
+  .container.content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    animation-duration: 2s;
+    animation-name: fadeIn;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+
+
+<div class="masthead">
+  <h3 class="container masthead-title">
+    
+    Python基础
+    <a href="/" title="Home">
+      <small>
+        Acemyzoe
+      </small>
+    </a>
+    
+  </h3>
+</div>
+
+<div class="container content">
+  <div class="post">
+  <span class="post-date">
+    
+    <i class="fas fa-calendar-day fa-fw"></i>
+    01 Jul 2020
+    
+    
+    <i class="fas fa-file-word fa-fw"></i>
+    5555字
+    
+    
+    <i class="fas fa-clock fa-fw"></i>
+    19分
+    
+    
+    <span class="leancloud-visitors" id="/_posts/2020-07-01-Python%E5%9F%BA%E7%A1%80/" data-xid="/_posts/2020-07-01-Python%E5%9F%BA%E7%A1%80/" data-flag-title="Python基础">
+      <i class="fas fa-book-reader fa-fw"></i>
+      <span class="leancloud-visitors-count">
+        <i class="fas fa-spinner fa-pulse"></i>
+      </span>次
+    </span>
+    
+    
+    
+    <i class="fas fa-tag fa-fw"></i>
+    python
+    
+    
+    <i class="fab fa-creative-commons-by fa-fw"></i>
+<a
+  href="https://creativecommons.org/licenses/by/4.0/deed.zh"
+  rel="license">
+  CC BY 4.0
+</a>
+（除特别声明或转载文章外）
+
+    
+  </span>
+  <h1 id="some-issue">Some issue</h1>
+
+<ul>
+  <li>
+    <pre><code class="language-bash">超时错误提示：pip._vendor.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='pypi.tuna.tsinghua.edu.cn', port=443): Read timed out.
+pip  --default-timeout=100 install Pillow
+直接download whl文件
+</code></pre>
+  </li>
+</ul>
+
+<h1 id="注释规范">注释规范</h1>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />获取注释 <code>function().__doc__</code><br />
+<a href="https://zh-google-styleguide.readthedocs.io/en/latest/">Google 开源项目风格指南 (中文版)</a></li>
+</ul>
+
+<h1 id="变量方法类的命名规则">变量、方法、类的命名规则</h1>
+
+<pre><code class="language-python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+__Title__ = '变量函数类命名'
+__Author__ = 'ace'
+__Author_email__ ='acemyzoe@outlook.com'
+__Time__ = '2018/1/22'
+"""
+
+# 变量命名总结：
+# 1.单下划线开头变量：protected
+# 2.双下划线开头变量：private
+# 3.双下划线开头，双下划线结尾：系统内置变量
+
+"""
+单下划线开头变量
+_xxx，单下划线开头的变量，标明是一个受保护(protected)的变量，原则上不允许直接访问，但外部类还是可以访问到这个变量。
+这只是程序员之间的一个约定，用于警告说明这是一个私有变量，外部类不要去访问它。
+print(stu._name) 当要输入_name时，不会进行_name的提示
+print(stu.age) 当要显示age时，会进行age的提示
+"""
+
+class Student:
+    def __init__(self, name, sex):
+        self._name = name
+        self.sex = sex
+
+stu = Student('ace', 'Male')
+print(stu._name) # 单下划线protected的变量，原则上不允许直接访问 输出：ace
+print(stu.sex) # age可以直接访问 输出：Male
+
+"""
+双下划线开头
+__xxx，双下划线开头的，表示的是私有类型(private)的变量。
+只能是允许这个类本身进行访问了, 连子类也不可以.
+用于命名一个类属性（类变量）,调用时名字被改变
+（在类Student内部，__name变成_Student__name,如 self._Student__name)
+双下划线开头的实例变量是不是一定不能从外部访问呢？其实也不是。仍然可以通过_Student__name来访问__name变量：
+"""
+
+class Person:
+    def __init__(self, name):
+        self.__name = name  
+
+per = Person('ace')
+print(per._Person__name) # 输出ace 但是无法直接访问__name
+
+"""
+双下划线开头，并且以双下划线结尾
+__xxx__，以双下划线开头，并且以双下划线结尾的，是内置变量.
+内置变量是可以直接访问的，不是 private 变量，如__init__，__import__或是__file__。
+★不要自己定义这类变量
+xxx_，单下划线结尾的变量一般只是为了避免与 Python 关键字的命名冲突
+USER_CONSTANT，大写加下划线，对于不会发生改变的全局变量，使用大写加下划线
+"""
+
+# 函数命名总结：
+# 1.私有方法：小写和一个前导下划线
+# 2.特殊方法（魔术方法）：小写和两个前导下划线，两个后置下划线
+# 3.函数参数：小写和下划线，缺省值等号两边无空格
+
+"""
+函数
+总体而言应该使用，小写和下划线
+
+私有方法 ： 小写和一个前导下划线
+这里和私有变量一样，并不是真正的私有访问权限。
+同时也应该注意一般函数不要使用两个前导下划线(当遇到两个前导下划线时，Python 的名称改编特性将发挥作用)。特殊函数后面会提及。
+
+#特殊方法 ： 小写和两个前导下划线，两个后置下划线
+#这种风格只应用于特殊函数，比如操作符重载等。
+
+#函数参数 : 小写和下划线，缺省值等号两边无空格
+
+"""
+
+# 私有方法
+class PrivateCase:
+    @staticmethod
+    def _secrete():
+        print(r"Don't test me") 
+
+priC = PrivateCase()
+priC._secrete() # _secrete为protected member
+
+# 特殊方法（魔术方法）
+def __add__(self, other):
+    return int.__add__(other)
+
+# 函数参数
+def connect(self, user=None):
+    self._user = user
+
+"""
+★类名称命名：
+类总是使用驼峰格式命名，即所有单词首字母大写其余字母小写。
+类名应该简明，精确，并足以从中理解类所完成的工作。
+常见的一个方法是使用表示其类型或者特性的后缀，例如:SQLEngine ，MimeTypes
+对于基类而言，可以使用一个 Base 或者 Abstract 前缀
+不要滥用 *args 和 **kwargs，可能会破坏函数的健壮性
+"""
+</code></pre>
+
+<h1 id="dict">Dict</h1>
+
+<ul class="task-list">
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />字典中如何根据value值取对应的key值</p>
+
+    <pre><code class="language-python">dicxx = {'a':'001', 'b':'002'}
+#1
+list(dicxx.keys())[list(dicxx.values()).index("001")] #=&gt; a
+#2
+def get_keys(d, value):
+    return [k for k,v in d.items() if v == value]  
+get_keys(dicxx, '001') # =&gt; ['a']
+</code></pre>
+  </li>
+</ul>
+
+<h1 id="正则表达式">正则表达式</h1>
+
+<p><a href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html">表达式全集</a></p>
+
+<ul class="task-list">
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />十六进制字符串分割</p>
+
+    <pre><code class="language-python">import re
+subject = '080045'
+result = re.sub(r"(?&lt;=\w)(?=(?:\w\w)+$)", " ", subject)
+# =&gt; '08 00 45'
+</code></pre>
+  </li>
+</ul>
+
+<h1 id="crc校验">CRC校验</h1>
+
+<ul class="task-list">
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />crcmod</p>
+
+    <p><a href="http://crcmod.sourceforge.net/crcmod.predefined.html#predefined-crc-algorithms">算法参数</a></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left">Name</th>
+          <th style="text-align: left">Polynomial</th>
+          <th style="text-align: left">Reversed</th>
+          <th style="text-align: left">Init-value</th>
+          <th style="text-align: left">XOR-out</th>
+          <th style="text-align: left">Check</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left"><code>crc-8</code></td>
+          <td style="text-align: left">0x107</td>
+          <td style="text-align: left">False</td>
+          <td style="text-align: left">0x00</td>
+          <td style="text-align: left">0x00</td>
+          <td style="text-align: left">0xF4</td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><code>crc-8-darc</code></td>
+          <td style="text-align: left">0x139</td>
+          <td style="text-align: left">True</td>
+          <td style="text-align: left">0x00</td>
+          <td style="text-align: left">0x00</td>
+          <td style="text-align: left">0x15</td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><code>crc-8-i-code</code></td>
+          <td style="text-align: left">0x11D</td>
+          <td style="text-align: left">False</td>
+          <td style="text-align: left">0xFD</td>
+          <td style="text-align: left">0x00</td>
+          <td style="text-align: left">0x7E</td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><code>crc-8-itu</code></td>
+          <td style="text-align: left">0x107</td>
+          <td style="text-align: left">False</td>
+          <td style="text-align: left">0x55</td>
+          <td style="text-align: left">0x55</td>
+          <td style="text-align: left">0xA1</td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><code>crc-8-maxim</code></td>
+          <td style="text-align: left">0x131</td>
+          <td style="text-align: left">True</td>
+          <td style="text-align: left">0x00</td>
+          <td style="text-align: left">0x00</td>
+          <td style="text-align: left">0xA1</td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><code>crc-8-rohc</code></td>
+          <td style="text-align: left">0x107</td>
+          <td style="text-align: left">True</td>
+          <td style="text-align: left">0xFF</td>
+          <td style="text-align: left">0x00</td>
+          <td style="text-align: left">0xD0</td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><code>crc-8-wcdma</code></td>
+          <td style="text-align: left">0x19B</td>
+          <td style="text-align: left">True</td>
+          <td style="text-align: left">0x00</td>
+          <td style="text-align: left">0x00</td>
+          <td style="text-align: left">0x25</td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><code>crc-16</code></td>
+          <td style="text-align: left">0x18005</td>
+          <td style="text-align: left">True</td>
+          <td style="text-align: left">0x0000</td>
+          <td style="text-align: left">0x0000</td>
+          <td style="text-align: left">0xBB3D</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">…</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><code>crcmod.mkCrcFun</code>的参数解析</p>
+
+    <ul>
+      <li><em>poly</em> –用于计算CRC的生成多项式。该值指定为Python整数或长整数。该整数中的位是多项式的系数。允许的唯一多项式是那些生成8、16、24、32或64位CRC的多项式。</li>
+      <li><em>rev-</em>当为<code>True</code>时，选择位反转算法的标志。默认为 <code>True，</code>因为位反转算法更有效。</li>
+      <li><em>initCrc</em> –用于开始CRC计算的初始值。该初始值应为初始移位寄存器值，如果使用反向算法则应反向，然后与最终XOR值进行XOR。这等效于算法应针对零长度字符串返回的CRC结果。默认设置为所有位，因为该起始值将考虑前导零字节。从零开始将忽略所有前导零字节。</li>
+      <li><em>xorOut</em> –与计算出的CRC值进行XOR的最终值。由某些CRC算法使用。默认为零。</li>
+    </ul>
+
+    <pre><code class="language-python">import binascii # binascii --- 二进制和 ASCII 码互转
+import crcmod
+  
+#CRC8
+c8=crcmod.predefined.mkCrcFun('CRC-8')
+hex(c8("Test".encode()))
+#CRC16
+c16=crcmod.predefined.mkCrcFun('CRC-16') #'crc-16'默认为IBM
+crc16=crcmod.mkCrcFun(0x18005,rev=True,initCrc=0x0000,xorOut=0x0000)
+crc16modbus=crcmod.mkCrcFun(0x18005,rev=True,initCrc=0xFFFF,xorOut=0x0000)
+crc16m = crcmod.predefined.mkCrcFun('modbus') 
+print(hex(crc16(b"Test")))
+  
+# 自定义CRC算法的功能crcmod.mkCrcFun(...) ：CRC16-MODBUS
+def crc16Add(read):
+    crc16 =crcmod.mkCrcFun(0x18005,rev=True,initCrc=0xFFFF,xorOut=0x0000)
+    data = read.replace(" ","")
+    readcrcout=hex(crc16(binascii.unhexlify(data))).upper()
+    str_list = list(readcrcout)
+    if len(str_list) == 5:
+        str_list.insert(2,'0')      # 位数不足补0
+    crc_data = "".join(str_list)
+    print(crc_data)
+    read = read.strip()+' '+crc_data[4:]+' '+crc_data[2:4]
+    print('CRC16校验:',crc_data[4:]+' '+crc_data[2:4])
+    print('增加Modbus CRC16校验：&gt;&gt;&gt;',read)
+    return read
+   
+#modbus rtu实现
+def calc_crc(data): #modbus rtu
+    crc = 0xFFFF
+    for pos in data:
+        crc ^= pos 
+        for i in range(8):
+            if ((crc &amp; 1) != 0):
+                crc &gt;&gt;= 1
+                crc ^= 0xA001
+            else:
+                crc &gt;&gt;= 1
+    return crc
+a="fc5a"
+data = bytearray.fromhex(a)
+print("crc校验modbus：",hex(calc_crc(data)),"%04X"%(calc_crc(data))) # 0x6d36 6D36
+  
+if __name__ == '__main__':
+    crc16Add("01 03 08 00 01 00 01 00 01 00 01")
+    # CRC16校验: 28 D7
+    # 增加Modbus CRC16校验：&gt;&gt;&gt; 01 03 08 00 01 00 01 00 01 00 01 28 D7
+</code></pre>
+  </li>
+</ul>
+
+<h1 id="进制转换">进制转换</h1>
+
+<ul class="task-list">
+  <li>
+    <table>
+      <thead>
+        <tr>
+          <th>[ ]</th>
+          <th>↓</th>
+          <th>2进制</th>
+          <th>8进制</th>
+          <th>10进制</th>
+          <th>16进制</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> </td>
+          <td>2进制</td>
+          <td>-</td>
+          <td>bin(int(n,8))</td>
+          <td>bin(int(n,10))</td>
+          <td>bin(int(n,16))</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>8进制</td>
+          <td>oct(int(n,2))</td>
+          <td>-</td>
+          <td>oct(int(n,10))</td>
+          <td>oct(int(n,16))</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>10进制</td>
+          <td>int(n,2)</td>
+          <td>int(n,8)</td>
+          <td>-</td>
+          <td>int(n,16)</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>16进制</td>
+          <td>hex(int(n,2))</td>
+          <td>hex(int(n,8))</td>
+          <td>hex(int(n,10))</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />前缀：2进制是0b，8进制是0o，16进制是0x</p>
+
+    <p>去除：切片操作[2:]</p>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />format函数：</p>
+
+    <pre><code class="language-python"># to二进制
+# 先将2进制的数转换为10进制，然后在format的槽中添加一个b，等价于实现了bin函数的功能，此结果是不带有0b前缀的
+print("{:b}".format(int(input(),2)))
+</code></pre>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />ASCII码和字母之间的转换：</p>
+
+    <blockquote>
+      <p>字母转ASCII:</p>
+
+      <p>​	ord(c):参数是长度为1的字符串，简称字符。</p>
+
+      <p>ASCII转字母：</p>
+
+      <p>​	chr(i)：返回一个字符，字符的ascii码等于参数中的整形数值。</p>
+
+      <p>特殊ASCII码：</p>
+
+      <p>​	A-65，Z-90，a-97，z-122，0-48，9-57</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h1 id="补零">补零</h1>
+
+<pre><code class="language-python">  n = "123"
+  s = n.zfill(5)
+  assert s == "00123"
+
+  n = 123
+  s = "%05d" % n
+  s = "{:05d}".format(n)
+  assert s == "00123"
+</code></pre>
+
+<h1 id="json">Json</h1>
+
+<p><a href="https://docs.python.org/zh-cn/3/library/json.html">docs</a></p>
+
+<pre><code class="language-python"># -*- coding:utf-8 -*-  
+import json
+# dict
+data = [{ 'a' : 1, 'c' : 2, 'b' : 3, '中文' : 9 } ]
+
+# json.dumps()方法实现python类型转化为json字符串
+print(json.dumps(data))
+# sort_keys排序 indent缩进 separators分隔 ensure_ascii中文
+data_json = json.dumps(data,sort_keys=True,indent=4,separators(',',':'),ensure_ascii=False)
+print(data_json)
+# json.loads()方法将JSON文本字符串转换为Python对象
+print(json.loads(data_json))
+
+# json.dump()和json.load()来编码和解码JSON文件
+filename = 'data-json.json'
+with open(filename,'w',encoding='utf-8') as file:
+    json.dump(data,file,sort_keys=True,indent=4,separators=(',',':'),ensure_ascii=False)
+    #file.write(data_json)
+with open(filename,'r',encoding='utf-8') as file:
+    print(json.load(file))
+</code></pre>
+
+<h1 id="str--repr--字符串">str() &amp; repr() -&gt;字符串</h1>
+<pre><code class="language-python">print(str('now')) # &gt; now
+# 调用对象.__str__(),只输出实例内容
+print(repr('now')) # &gt; 'now'
+# 调用对象的__repr__()，输出实例内容和实例数据类型
+
+</code></pre>
+
+</div>
+<div class="v">
+  <i class="fas fa-spinner fa-pulse"></i>
+</div>
+<script
+  src='https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js'
+  defer='defer'
+  onload='
+    new Valine({
+      "el": document.getElementsByClassName("v")[0],
+      "appId": "sJhaa5UF52fhugGM95buMpIT-gzGzoHsz",
+      "appKey": "Tp95IdLx1TBXyH9tXflqNnXx",
+      "placeholder": "在这里评论吧！填写邮箱可以获得Gravatar头像和回复通知",
+      "requiredFields": ["nick","mail"],
+      "visitor": true,
+      "recordIP": true
+    })'
+></script>
+
+</div>
+  </div>
+  
+  <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+  
+</body>
+
+</html>

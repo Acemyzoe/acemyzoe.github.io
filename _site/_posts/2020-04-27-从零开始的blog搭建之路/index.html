@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>从零开始的blog搭建之路 | Acemyzoe</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="从零开始的blog搭建之路" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="记录这次 blog 的搭建之路。" />
+<meta property="og:description" content="记录这次 blog 的搭建之路。" />
+<link rel="canonical" href="https://acemyzoe.github.io/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/" />
+<meta property="og:url" content="https://acemyzoe.github.io/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/" />
+<meta property="og:site_name" content="Acemyzoe" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-27T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"从零开始的blog搭建之路","url":"https://acemyzoe.github.io/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/","datePublished":"2020-04-27T00:00:00+08:00","dateModified":"2020-04-27T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://acemyzoe.github.io/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"},"description":"记录这次 blog 的搭建之路。","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  
+  <meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1"
+/>
+<meta
+  http-equiv="content-type"
+  content="text/html; charset=utf-8"
+/>
+<link
+  rel="alternate"
+  href="/feed.xml"
+  title="RSS"
+  type="application/rss+xml"
+/>
+
+  
+  <link
+  rel="apple-touch-icon-precomposed"
+  href="/assets/image/Avatar.jpg"
+/>
+<link
+  rel="shortcut
+  icon"
+  href="/assets/image/Avatar.jpg"
+/>
+
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css"
+/>
+
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"
+/>
+
+  
+  <script
+  src='https://zz.bdstatic.com/linksubmit/push.js'
+  async="async"
+></script>
+
+  
+  <style>
+  .wrap {
+    transition-property: width,background-size,transform;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+    min-height: 100%;
+    display: inline-block;
+    background-size: 100% auto;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(/assets/image/background-wap.jpg);
+  }
+  @media (min-aspect-ratio: 2400/1850) {
+    .wrap {
+      background-image: url(/assets/image/background.jpg);
+    }
+  }
+  .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    width: calc(100% - 14rem);
+    background-size: calc(100% - 14rem) auto;
+    transform: translateX(14rem);
+  }
+  .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    transform: translateX(0);
+  }
+</style>
+
+  
+  <style>
+  .sidebar,
+  html,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: PingFang SC, Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
+  }
+</style>
+
+  
+  <style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+</style>
+
+  
+  <style>
+  img {
+    display: inline-block;
+    margin: 0;
+  }
+</style>
+
+  
+  <style>
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%);
+  }
+</style>
+
+  
+  <style>
+  ::selection {
+    color: White;
+    background: Black;
+  }
+</style>
+
+  
+</head>
+
+<body
+  class="theme-base-07 layout-reverse sidebar-overlay">
+  
+  
+  
+  <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+  <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"
+     />
+  <!-- Toggleable sidebar -->
+  <div class="sidebar" id="sidebar">
+    
+    <div class="sidebar-item">
+      <div class="effect effect-right_to_left">
+        <img class="effect-img" src="/assets/image/Avatar.jpg" alt="img" />
+        <div class="effect-info">
+          人类世界<br/>
+真是<br/>
+太有趣了<br/>
+QAQ<br/>
+<a href="mailto:acemyzoe@outlook.com">
+  <i class="fas fa-envelope"></i>
+</a>
+<a href="https://github.com/acemyzoe">
+  <i class="fab fa-github"></i>
+</a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=52 src="//music.163.com/outchain/player?type=2&id=486806&auto=1&height=32"></iframe>
+
+        </div>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      
+      <a class="sidebar-nav-item" href="/">
+        <i class="fas fa-home fa-fw"></i> 首页
+      </a>
+      
+      <a class="sidebar-nav-item" href="/comments/">
+        <i class="fas fa-comments fa-fw"></i> 留言
+      </a>
+      
+      <a class="sidebar-nav-item" href="/tags/">
+        <i class="fas fa-tags fa-fw"></i> 标签
+      </a>
+      
+      <a class="sidebar-nav-item" href="/archive/">
+        <i class="fas fa-archive fa-fw"></i> 归档
+      </a>
+      
+      <a class="sidebar-nav-item" href="/merger/">
+        <i class="fas fa-coffee fa-fw"></i> 打赏
+      </a>
+      
+    </nav>
+    <div class="sidebar-item">
+      
+      <style>
+  #sidebar-search-input {
+    background: none;
+    border: none;
+    color: White;
+    width: 100%;
+  }
+  #sidebar-search-results-container {
+    overflow: auto auto;
+    max-height: 60vh;
+  }
+</style>
+<input
+  id="sidebar-search-input"
+  placeholder="搜索博文"
+/>
+<ol
+  id="sidebar-search-results-container"
+></ol>
+<script
+  src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.7/dest/simple-jekyll-search.min.js'
+  async='async'
+  onload='
+    SimpleJekyllSearch({
+      json: "/assets/simple-jekyll-search/search.json",
+      searchInput: document.getElementById("sidebar-search-input"),
+      resultsContainer: document.getElementById("sidebar-search-results-container"),
+      searchResultTemplate: `<li><a href="{url}">{title}</a></li>`,
+      limit: 999,
+      fuzzy: true
+    })'
+></script>
+
+      
+      
+      <style>
+  #toc {
+    overflow: auto auto;
+    max-height: 50vh;
+  }
+</style>
+
+      <ol id="toc">
+  <li><a href="#%E4%B8%80%E4%BA%9B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E9%80%94%E5%BE%84">一些搭建博客的途径</a></li>
+  <li><a href="#%E4%B8%80%E4%BA%9B%E6%8F%92%E4%BB%B6">一些插件</a></li>
+</ol>
+      
+      
+      <script defer="defer" src="https://cdn.jsdelivr.net/gh/poole/lanyon@v1.1.0/public/js/script.min.js"></script>
+      
+      <style>
+  .sidebar-checkbox {
+    display: none;
+  }
+  .sidebar-toggle {
+    position: fixed;
+  }
+</style>
+
+      
+      <style>
+  .effect {
+    margin: 1rem;
+    perspective: 900px;
+  }
+  .effect-info {
+    text-align: center;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    transform-style: preserve-3d;
+  }
+  .effect-img {
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+  }
+  .effect-img:before {
+    position: absolute;
+    display: block;
+  }
+  .effect-right_to_left .effect-img {
+    transform-origin: 0% 50%;
+  }
+  .effect-right_to_left:hover .effect-img {
+    transform: rotate3d(0, 1, 0, -180deg);
+  }
+</style>
+
+      
+      <div>
+  <i class="fas fa-cog fa-spin fa-fw"></i>
+  <span id="run_time_day">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>天
+  <span id="run_time_hour">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>时
+  <span id="run_time_minute">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>分
+  <span id="run_time_second">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>秒
+  <script>
+    setInterval(function (d,h,m,s,b) {
+      function setzero(i) {
+        return i < 10 ? "0" + i : i;
+      }
+      let BirthDay = new Date(b);
+      let today = new Date();
+      let timeold = (today.getTime() - BirthDay.getTime());
+      let sectimeold = timeold / 1000;
+      let secondsold = Math.floor(sectimeold);
+      let msPerDay = 24 * 60 * 60 * 1000;
+      let e_daysold = timeold / msPerDay;
+      let daysold = Math.floor(e_daysold);
+      let e_hrsold = (e_daysold - daysold) * 24;
+      let hrsold = Math.floor(e_hrsold);
+      let e_minsold = (e_hrsold - hrsold) * 60;
+      let minsold = Math.floor((e_hrsold - hrsold) * 60);
+      let seconds = Math.floor((e_minsold - minsold) * 60);
+      d.textContent = daysold;
+      h.textContent = setzero(hrsold);
+      m.textContent = setzero(minsold);
+      s.textContent = setzero(seconds);
+    },
+    1000,
+    document.getElementById("run_time_day"),
+    document.getElementById("run_time_hour"),
+    document.getElementById("run_time_minute"),
+    document.getElementById("run_time_second"),
+    "04/01/2020 12:00:00")// 这是我第一篇博客的时间
+  </script>
+</div>
+
+      
+      <div>
+  <div>
+    <i class="fas fa-eye fa-fw"></i>
+    <span id="busuanzi_value_page_pv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>次
+  </div>
+  <div>
+    <i class="fas fa-paw fa-fw"></i>
+    <span id="busuanzi_value_site_pv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>枚
+  </div>
+  <div>
+    <i class="fas fa-user-friends fa-fw"></i>
+    <span id="busuanzi_value_site_uv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>人
+  </div>
+  <script
+    src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0'
+    async='async'
+  ></script>
+</div>
+
+      
+      <div>
+  <i class="fas fa-thumbs-up fa-fw"></i>
+  <a href="https://github.com/acemyzoe">
+    Github
+  </a>
+</div>
+
+      
+      <div>
+  <i class="fas fa-copyright fa-fw"></i>
+  acemyzoe
+</div>
+
+      
+      
+    </div>
+  </div>
+  <!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. -->
+  
+  <div class="wrap">
+    
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/katex@0.11.1/dist/katex.min.js,npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js,npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  defer="defer"
+  onload='renderMathInElement(document.body, { delimiters: [{ left: "$", right: "$", display: false }] })'
+></script>
+
+
+
+<style>
+  pre.language-mermaid,
+  code.language-mermaid {
+    display: none;
+  }
+</style>
+<script
+  src="https://cdn.jsdelivr.net/npm/mermaid@8.5.1/dist/mermaid.min.js"
+  defer="defer"
+  onload='
+    for(let x of document.getElementsByClassName("language-mermaid"))
+      if(x.nodeName=="CODE")
+      {
+        let m = document.createElement("div");
+        m.classList.add("mermaid");
+        m.textContent = x.textContent;
+        x.parentNode.insertAdjacentElement("beforebegin", m);
+      }'
+></script>
+
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.css,gh/PrismJS/prism-themes@1955cfef6953b3a59e66016e8a1e016b45d6cc79/themes/prism-nord.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/components/prism-core.min.js,npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.js"
+  defer="defer"
+  onload='
+    Prism.plugins.autoloader.languages_path = "https:\/\/cdn.jsdelivr.net/npm/prismjs/components/";
+    for(let x of document.getElementsByTagName("pre"))
+      x.classList.add("line-numbers");
+    Prism.plugins.toolbar.registerButton("select-code", function (env) {
+      let button = document.createElement("button");
+      button.textContent = "select this " + env.language;
+      button.addEventListener("click", function () {
+        if (document.body.createTextRange) {
+          let range = document.body.createTextRange();
+          range.moveToElementText(env.element);
+          range.select();
+        } else if (window.getSelection) {
+          let selection = window.getSelection();
+          let range = document.createRange();
+          range.selectNodeContents(env.element);
+          selection.removeAllRanges();
+            selection.addRange(range);
+        }
+      });
+      return button;
+    })'
+></script>
+
+
+
+<style>
+  pre {
+    max-height: 50vh;
+    overflow: auto;
+  }
+</style>
+
+
+<style>
+  @media (min-width: 56em) {
+    .container {
+      max-width: 66.6%;
+    }
+  }
+</style>
+
+
+<style>
+  .masthead,
+  .container.content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    animation-duration: 2s;
+    animation-name: fadeIn;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+
+
+<div class="masthead">
+  <h3 class="container masthead-title">
+    
+    从零开始的blog搭建之路
+    <a href="/" title="Home">
+      <small>
+        Acemyzoe
+      </small>
+    </a>
+    
+  </h3>
+</div>
+
+<div class="container content">
+  <div class="post">
+  <span class="post-date">
+    
+    <i class="fas fa-calendar-day fa-fw"></i>
+    27 Apr 2020
+    
+    
+    <i class="fas fa-file-word fa-fw"></i>
+    733字
+    
+    
+    <i class="fas fa-clock fa-fw"></i>
+    3分
+    
+    
+    <span class="leancloud-visitors" id="/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/" data-xid="/_posts/2020-04-27-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84blog%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/" data-flag-title="从零开始的blog搭建之路">
+      <i class="fas fa-book-reader fa-fw"></i>
+      <span class="leancloud-visitors-count">
+        <i class="fas fa-spinner fa-pulse"></i>
+      </span>次
+    </span>
+    
+    
+    
+    <i class="fas fa-tag fa-fw"></i>
+    just for fun
+    
+    
+    <i class="fab fa-creative-commons-by fa-fw"></i>
+<a
+  href="https://creativecommons.org/licenses/by/4.0/deed.zh"
+  rel="license">
+  CC BY 4.0
+</a>
+（除特别声明或转载文章外）
+
+    
+  </span>
+  <p>记录这次 blog 的搭建之路。</p>
+
+<p>所用的 Markdown 编辑器 : <a href="https://www.typora.io/">typora</a></p>
+
+<h1 id="一些搭建博客的途径">一些搭建博客的途径</h1>
+
+<ul>
+  <li>
+    <p><strong>Github+jekyll</strong> :</p>
+
+    <blockquote>
+      <p>Github Pages和推荐的框架，blog 直接以 markdown 形式存放在项目里。</p>
+    </blockquote>
+
+    <blockquote>
+      <p>可以云端写作，直接生成页面部署上去。其他的框架都是本地写作，本地生成页面，感觉不太方便。</p>
+
+      <p><a href="https://help.github.com/en/github/working-with-github-pages">Github的文档</a></p>
+
+      <p><a href="https://www.jekyll.com.cn/">jekyll官网</a>(挺多好看的主题)</p>
+
+      <ol>
+        <li><a href="https://github.com/mzlogin/mzlogin.github.io">theme</a></li>
+        <li><a href="https://github.com/DONGChuan/Yummy-Jekyll">theme</a>  (这两个主题可以一试)</li>
+        <li><a href="https://github.com/wu-kan/wu-kan.github.io">theme</a> (我fork的主题，后生可畏)</li>
+        <li><a href="https://github.com/Drinkwang/drinkwang.github.io">theme</a> (馋那个看板娘)</li>
+      </ol>
+    </blockquote>
+  </li>
+  <li>
+    <p><strong>Github+issues</strong> :</p>
+
+    <blockquote>
+      <p>基于 Github 的问题系统，用 node.js 搭建的 blog 。</p>
+    </blockquote>
+
+    <blockquote>
+      <p>整个页面简洁，以后可以尝试下，但写作是直接在 issues 上提交 blog ，不知道以后 blog 怎么迁移出来。</p>
+
+      <ul>
+        <li><a href="http://martin-liu.github.io/#/">theme</a></li>
+        <li><a href="https://github.com/Drinkwang/drinkwang.github.io">theme</a>(要试一试的，馋看板娘)</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>
+    <p><a href="https://gridea.dev/"><strong>Gridea</strong></a></p>
+
+    <blockquote>
+      <p>一个静态博客写作客户端，markdown、本地写作、一键部署到Github 或自己的服务器、主题轻松自定义。以后可以尝试下。</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><a href="http://typecho.org/"><strong>Typecho</strong></a></p>
+
+    <blockquote>
+      <p>官方文档有点恶心，没弄懂，以后再说。</p>
+
+      <ul>
+        <li><a href="https://github.com/Dreamer-Paul/Single">theme</a> (真的挺好看，fantasy的主题也很梦幻，还有夜间模式，馋看板娘) (<a href="https://paul.ren/">更多)</a></li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>
+    <p><a href="https://tiddlywiki.com/"><strong>TiddkyWiki</strong></a></p>
+
+    <blockquote>
+      <p>非线性个人笔记本（没弄明白，以后有空再研究下）</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><a href="https://blog.getpelican.com/"><strong>Pelican</strong></a> : python 写的静态站点生成器</p>
+  </li>
+  <li>
+    <p><a href="https://hexo.io/zh-cn/"><strong>Hexo</strong></a> : node.js 写的博客框架</p>
+
+    <ul>
+      <li><a href="https://github.com/theme-next/hexo-theme-next">theme</a></li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://gohugo.io/"><strong>Hugo</strong></a> : 开源静态站点生成器，自称速度最快</p>
+  </li>
+  <li>
+    <p><a href="https://www.netlify.com/"><strong>Netlify</strong></a></p>
+
+    <blockquote>
+      <p>优秀的静态博客托管平台-自动编译部署生成 Web 网站可绑域名支持 SSL。Netlify 支持自动编译Jekyll、Hexo、Hugo等常见的静态博客程序。可以一试。</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h1 id="一些插件">一些插件</h1>
+
+<ul>
+  <li>
+    <p><a href="https://gitalk.github.io/">Gittalk</a></p>
+
+    <blockquote>
+      <p>评论插件(只能Github账户登陆评论，路走窄了yo)</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><a href="https://valine.js.org/">Valine</a></p>
+
+    <blockquote>
+      <p>一款快速、简洁且高效的无后端评论系统。(推荐使用）</p>
+    </blockquote>
+  </li>
+</ul>
+
+</div>
+<div class="v">
+  <i class="fas fa-spinner fa-pulse"></i>
+</div>
+<script
+  src='https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js'
+  defer='defer'
+  onload='
+    new Valine({
+      "el": document.getElementsByClassName("v")[0],
+      "appId": "sJhaa5UF52fhugGM95buMpIT-gzGzoHsz",
+      "appKey": "Tp95IdLx1TBXyH9tXflqNnXx",
+      "placeholder": "在这里评论吧！填写邮箱可以获得Gravatar头像和回复通知",
+      "requiredFields": ["nick","mail"],
+      "visitor": true,
+      "recordIP": true
+    })'
+></script>
+
+</div>
+  </div>
+  
+  <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+  
+</body>
+
+</html>

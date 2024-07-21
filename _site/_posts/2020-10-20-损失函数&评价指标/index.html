@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>损失函数&amp;评价指标 | Acemyzoe</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="损失函数&amp;评价指标" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="损失函数" />
+<meta property="og:description" content="损失函数" />
+<link rel="canonical" href="https://acemyzoe.github.io/_posts/2020-10-20-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0&%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" />
+<meta property="og:url" content="https://acemyzoe.github.io/_posts/2020-10-20-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0&%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" />
+<meta property="og:site_name" content="Acemyzoe" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-10-20T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"损失函数&amp;评价指标","url":"https://acemyzoe.github.io/_posts/2020-10-20-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0&%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/","datePublished":"2020-10-20T00:00:00+08:00","dateModified":"2020-10-20T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://acemyzoe.github.io/_posts/2020-10-20-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0&%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/"},"description":"损失函数","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  
+  <meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1"
+/>
+<meta
+  http-equiv="content-type"
+  content="text/html; charset=utf-8"
+/>
+<link
+  rel="alternate"
+  href="/feed.xml"
+  title="RSS"
+  type="application/rss+xml"
+/>
+
+  
+  <link
+  rel="apple-touch-icon-precomposed"
+  href="/assets/image/Avatar.jpg"
+/>
+<link
+  rel="shortcut
+  icon"
+  href="/assets/image/Avatar.jpg"
+/>
+
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css"
+/>
+
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"
+/>
+
+  
+  <script
+  src='https://zz.bdstatic.com/linksubmit/push.js'
+  async="async"
+></script>
+
+  
+  <style>
+  .wrap {
+    transition-property: width,background-size,transform;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+    min-height: 100%;
+    display: inline-block;
+    background-size: 100% auto;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(/assets/image/background-wap.jpg);
+  }
+  @media (min-aspect-ratio: 2400/1850) {
+    .wrap {
+      background-image: url(/assets/image/background.jpg);
+    }
+  }
+  .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    width: calc(100% - 14rem);
+    background-size: calc(100% - 14rem) auto;
+    transform: translateX(14rem);
+  }
+  .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
+    transform: translateX(0);
+  }
+</style>
+
+  
+  <style>
+  .sidebar,
+  html,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: PingFang SC, Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
+  }
+</style>
+
+  
+  <style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+</style>
+
+  
+  <style>
+  img {
+    display: inline-block;
+    margin: 0;
+  }
+</style>
+
+  
+  <style>
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%);
+  }
+</style>
+
+  
+  <style>
+  ::selection {
+    color: White;
+    background: Black;
+  }
+</style>
+
+  
+</head>
+
+<body
+  class="theme-base-07 layout-reverse sidebar-overlay">
+  
+  
+  
+  <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+  <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"
+     />
+  <!-- Toggleable sidebar -->
+  <div class="sidebar" id="sidebar">
+    
+    <div class="sidebar-item">
+      <div class="effect effect-right_to_left">
+        <img class="effect-img" src="/assets/image/Avatar.jpg" alt="img" />
+        <div class="effect-info">
+          人类世界<br/>
+真是<br/>
+太有趣了<br/>
+QAQ<br/>
+<a href="mailto:acemyzoe@outlook.com">
+  <i class="fas fa-envelope"></i>
+</a>
+<a href="https://github.com/acemyzoe">
+  <i class="fab fa-github"></i>
+</a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=52 src="//music.163.com/outchain/player?type=2&id=486806&auto=1&height=32"></iframe>
+
+        </div>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      
+      <a class="sidebar-nav-item" href="/">
+        <i class="fas fa-home fa-fw"></i> 首页
+      </a>
+      
+      <a class="sidebar-nav-item" href="/comments/">
+        <i class="fas fa-comments fa-fw"></i> 留言
+      </a>
+      
+      <a class="sidebar-nav-item" href="/tags/">
+        <i class="fas fa-tags fa-fw"></i> 标签
+      </a>
+      
+      <a class="sidebar-nav-item" href="/archive/">
+        <i class="fas fa-archive fa-fw"></i> 归档
+      </a>
+      
+      <a class="sidebar-nav-item" href="/merger/">
+        <i class="fas fa-coffee fa-fw"></i> 打赏
+      </a>
+      
+    </nav>
+    <div class="sidebar-item">
+      
+      <style>
+  #sidebar-search-input {
+    background: none;
+    border: none;
+    color: White;
+    width: 100%;
+  }
+  #sidebar-search-results-container {
+    overflow: auto auto;
+    max-height: 60vh;
+  }
+</style>
+<input
+  id="sidebar-search-input"
+  placeholder="搜索博文"
+/>
+<ol
+  id="sidebar-search-results-container"
+></ol>
+<script
+  src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.7/dest/simple-jekyll-search.min.js'
+  async='async'
+  onload='
+    SimpleJekyllSearch({
+      json: "/assets/simple-jekyll-search/search.json",
+      searchInput: document.getElementById("sidebar-search-input"),
+      resultsContainer: document.getElementById("sidebar-search-results-container"),
+      searchResultTemplate: `<li><a href="{url}">{title}</a></li>`,
+      limit: 999,
+      fuzzy: true
+    })'
+></script>
+
+      
+      
+      <style>
+  #toc {
+    overflow: auto auto;
+    max-height: 50vh;
+  }
+</style>
+
+      <ol id="toc">
+  <li><a href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0">损失函数</a>
+    <ol>
+      <li><a href="#%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98">回归问题</a>
+        <ol>
+          <li><a href="#%E5%B9%B3%E5%9D%87%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95">平均损失函数（最小二乘法）</a></li>
+          <li><a href="#%E5%B9%B3%E5%9D%87%E5%80%BC%E7%BB%9D%E5%AF%B9%E8%AF%AF%E5%B7%AEl1%E6%8D%9F%E5%A4%B1mae">平均值绝对误差（L1损失）——MAE</a></li>
+          <li><a href="#mael1%E6%8D%9F%E5%A4%B1-vs-msel2%E6%8D%9F%E5%A4%B1">MAE（L1损失） VS MSE（L2损失）</a></li>
+          <li><a href="#huber%E6%8D%9F%E5%A4%B1">Huber损失</a></li>
+          <li><a href="#logloss">LogLoss</a></li>
+          <li><a href="#exponential-loss">exponential loss</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87">评价指标</a>
+    <ol>
+      <li><a href="#%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98-1">回归问题</a>
+        <ol>
+          <li><a href="#mse">MSE</a></li>
+          <li><a href="#rmse">RMSE</a></li>
+          <li><a href="#mae">MAE</a></li>
+          <li><a href="#mape">MAPE</a></li>
+          <li><a href="#smape">SMAPE</a></li>
+          <li><a href="#r-squared">R Squared</a></li>
+        </ol>
+      </li>
+      <li><a href="#%E5%88%86%E7%B1%BB%E9%97%AE%E9%A2%98">分类问题</a>
+        <ol>
+          <li><a href="#confusion-matrix">Confusion Matrix</a></li>
+          <li><a href="#accuracy">Accuracy</a></li>
+          <li><a href="#precision">Precision</a></li>
+          <li><a href="#recall">Recall</a></li>
+          <li><a href="#p-r%E6%9B%B2%E7%BA%BF">P-R曲线</a></li>
+          <li><a href="#%E5%8A%A0%E6%9D%83%E8%B0%83%E5%92%8C%E5%B9%B3%E5%9D%87%E8%B0%83%E5%92%8C%E5%B9%B3%E5%9D%87">加权调和平均&amp;调和平均</a></li>
+          <li><a href="#roc-auc">ROC-AUC</a></li>
+        </ol>
+      </li>
+      <li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
+    </ol>
+  </li>
+</ol>
+      
+      
+      <script defer="defer" src="https://cdn.jsdelivr.net/gh/poole/lanyon@v1.1.0/public/js/script.min.js"></script>
+      
+      <style>
+  .sidebar-checkbox {
+    display: none;
+  }
+  .sidebar-toggle {
+    position: fixed;
+  }
+</style>
+
+      
+      <style>
+  .effect {
+    margin: 1rem;
+    perspective: 900px;
+  }
+  .effect-info {
+    text-align: center;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    transform-style: preserve-3d;
+  }
+  .effect-img {
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+  }
+  .effect-img:before {
+    position: absolute;
+    display: block;
+  }
+  .effect-right_to_left .effect-img {
+    transform-origin: 0% 50%;
+  }
+  .effect-right_to_left:hover .effect-img {
+    transform: rotate3d(0, 1, 0, -180deg);
+  }
+</style>
+
+      
+      <div>
+  <i class="fas fa-cog fa-spin fa-fw"></i>
+  <span id="run_time_day">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>天
+  <span id="run_time_hour">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>时
+  <span id="run_time_minute">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>分
+  <span id="run_time_second">
+    <i class="fas fa-spinner fa-pulse"></i>
+  </span>秒
+  <script>
+    setInterval(function (d,h,m,s,b) {
+      function setzero(i) {
+        return i < 10 ? "0" + i : i;
+      }
+      let BirthDay = new Date(b);
+      let today = new Date();
+      let timeold = (today.getTime() - BirthDay.getTime());
+      let sectimeold = timeold / 1000;
+      let secondsold = Math.floor(sectimeold);
+      let msPerDay = 24 * 60 * 60 * 1000;
+      let e_daysold = timeold / msPerDay;
+      let daysold = Math.floor(e_daysold);
+      let e_hrsold = (e_daysold - daysold) * 24;
+      let hrsold = Math.floor(e_hrsold);
+      let e_minsold = (e_hrsold - hrsold) * 60;
+      let minsold = Math.floor((e_hrsold - hrsold) * 60);
+      let seconds = Math.floor((e_minsold - minsold) * 60);
+      d.textContent = daysold;
+      h.textContent = setzero(hrsold);
+      m.textContent = setzero(minsold);
+      s.textContent = setzero(seconds);
+    },
+    1000,
+    document.getElementById("run_time_day"),
+    document.getElementById("run_time_hour"),
+    document.getElementById("run_time_minute"),
+    document.getElementById("run_time_second"),
+    "04/01/2020 12:00:00")// 这是我第一篇博客的时间
+  </script>
+</div>
+
+      
+      <div>
+  <div>
+    <i class="fas fa-eye fa-fw"></i>
+    <span id="busuanzi_value_page_pv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>次
+  </div>
+  <div>
+    <i class="fas fa-paw fa-fw"></i>
+    <span id="busuanzi_value_site_pv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>枚
+  </div>
+  <div>
+    <i class="fas fa-user-friends fa-fw"></i>
+    <span id="busuanzi_value_site_uv">
+      <i class="fas fa-spinner fa-pulse"></i>
+    </span>人
+  </div>
+  <script
+    src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0'
+    async='async'
+  ></script>
+</div>
+
+      
+      <div>
+  <i class="fas fa-thumbs-up fa-fw"></i>
+  <a href="https://github.com/acemyzoe">
+    Github
+  </a>
+</div>
+
+      
+      <div>
+  <i class="fas fa-copyright fa-fw"></i>
+  acemyzoe
+</div>
+
+      
+      
+    </div>
+  </div>
+  <!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. -->
+  
+  <div class="wrap">
+    
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/katex@0.11.1/dist/katex.min.js,npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js,npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  defer="defer"
+  onload='renderMathInElement(document.body, { delimiters: [{ left: "$", right: "$", display: false }] })'
+></script>
+
+
+
+<style>
+  pre.language-mermaid,
+  code.language-mermaid {
+    display: none;
+  }
+</style>
+<script
+  src="https://cdn.jsdelivr.net/npm/mermaid@8.5.1/dist/mermaid.min.js"
+  defer="defer"
+  onload='
+    for(let x of document.getElementsByClassName("language-mermaid"))
+      if(x.nodeName=="CODE")
+      {
+        let m = document.createElement("div");
+        m.classList.add("mermaid");
+        m.textContent = x.textContent;
+        x.parentNode.insertAdjacentElement("beforebegin", m);
+      }'
+></script>
+
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.css,gh/PrismJS/prism-themes@1955cfef6953b3a59e66016e8a1e016b45d6cc79/themes/prism-nord.min.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/components/prism-core.min.js,npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.20.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.20.0/plugins/toolbar/prism-toolbar.min.js"
+  defer="defer"
+  onload='
+    Prism.plugins.autoloader.languages_path = "https:\/\/cdn.jsdelivr.net/npm/prismjs/components/";
+    for(let x of document.getElementsByTagName("pre"))
+      x.classList.add("line-numbers");
+    Prism.plugins.toolbar.registerButton("select-code", function (env) {
+      let button = document.createElement("button");
+      button.textContent = "select this " + env.language;
+      button.addEventListener("click", function () {
+        if (document.body.createTextRange) {
+          let range = document.body.createTextRange();
+          range.moveToElementText(env.element);
+          range.select();
+        } else if (window.getSelection) {
+          let selection = window.getSelection();
+          let range = document.createRange();
+          range.selectNodeContents(env.element);
+          selection.removeAllRanges();
+            selection.addRange(range);
+        }
+      });
+      return button;
+    })'
+></script>
+
+
+
+<style>
+  pre {
+    max-height: 50vh;
+    overflow: auto;
+  }
+</style>
+
+
+<style>
+  @media (min-width: 56em) {
+    .container {
+      max-width: 66.6%;
+    }
+  }
+</style>
+
+
+<style>
+  .masthead,
+  .container.content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    animation-duration: 2s;
+    animation-name: fadeIn;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+
+
+<div class="masthead">
+  <h3 class="container masthead-title">
+    
+    损失函数&评价指标
+    <a href="/" title="Home">
+      <small>
+        Acemyzoe
+      </small>
+    </a>
+    
+  </h3>
+</div>
+
+<div class="container content">
+  <div class="post">
+  <span class="post-date">
+    
+    <i class="fas fa-calendar-day fa-fw"></i>
+    20 Oct 2020
+    
+    
+    <i class="fas fa-file-word fa-fw"></i>
+    4321字
+    
+    
+    <i class="fas fa-clock fa-fw"></i>
+    15分
+    
+    
+    <span class="leancloud-visitors" id="/_posts/2020-10-20-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0&%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" data-xid="/_posts/2020-10-20-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0&%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" data-flag-title="损失函数&评价指标">
+      <i class="fas fa-book-reader fa-fw"></i>
+      <span class="leancloud-visitors-count">
+        <i class="fas fa-spinner fa-pulse"></i>
+      </span>次
+    </span>
+    
+    
+    
+    <i class="fas fa-tag fa-fw"></i>
+    ML
+    
+    
+    <i class="fab fa-creative-commons-by fa-fw"></i>
+<a
+  href="https://creativecommons.org/licenses/by/4.0/deed.zh"
+  rel="license">
+  CC BY 4.0
+</a>
+（除特别声明或转载文章外）
+
+    
+  </span>
+  <h1 id="损失函数">损失函数</h1>
+
+<p><strong>损失函数</strong>用来评价模型的<strong>预测值</strong>和<strong>真实值</strong>不一样的程度，损失函数越好，通常模型的性能越好。</p>
+
+<h2 id="回归问题">回归问题</h2>
+
+<h3 id="平均损失函数最小二乘法">平均损失函数（最小二乘法）</h3>
+
+<p>回归问题中常用的损失函数，在线性回归中，可以通过极大似然估计（MLE）推导。计算的是预测值与真实值之间距离的平方和。实际更常用的是<strong>均方误差（MSE）</strong>。</p>
+
+<h3 id="平均值绝对误差l1损失mae">平均值绝对误差（L1损失）——MAE</h3>
+
+<p>MAE是目标值和预测值之差的绝对值之和，可以用来衡量预测值和真实值的距离。</p>
+
+<h3 id="mael1损失-vs-msel2损失">MAE（L1损失） VS MSE（L2损失）</h3>
+
+<p>MSE计算简便，但MAE对异常点有更好的鲁棒性:当数据中存在异常点时，用RMSE计算损失的模型以牺牲了其他样本的误差为代价，朝着减小异常点误差的方向更新，会降低模型的整体性能。</p>
+
+<p>NN中MAE更新梯度始终相同，而MSE则不同： MSE损失的梯度随损失增大而增大，而损失趋于0时则会减小。</p>
+
+<p>使用MAE训练神经网络最大的一个问题就是不变的大梯度，这可能导致在使用梯度下降快要结束时，错过了最小点，为了解决这个缺陷，我们可以使用变化的学习率，在损失接近最小值时降低学习率。而对于MSE，梯度会随着损失的减小而减小，这使得在训练结束时，使用MSE模型的结果会更精确。</p>
+
+<p><strong>Loss选择建议：</strong></p>
+
+<ul>
+  <li>
+    <p><strong>MSE：</strong> 如果异常点代表在商业中很重要的异常情况，并且需要被检测出来</p>
+  </li>
+  <li>
+    <p><strong>MAE：</strong> 如果只把异常值当作受损数据</p>
+  </li>
+</ul>
+
+<h3 id="huber损失">Huber损失</h3>
+
+<p>Huber损失是绝对误差，只是在误差很小时，就变为平方误差。</p>
+
+<p>当δ<em>很大时，等价为<strong>MSE</strong>曲线，当</em>δ很小时，等价为<strong>MAE</strong>曲线。
+\(L_\delta(y,f(x))=\{ {
+{1\over2}(y-f(x))^2 \qquad for|y-f(x)|&lt;\delta
+\atop 
+{\delta|y-f(x)|-{1\over2}\delta^2 \qquad otherwise}
+}\)</p>
+
+<h3 id="logloss">LogLoss</h3>
+
+<p>对数损失(Logarithmic Loss), 即对数似然损失(Log-likelihood Loss), 也称交叉熵损失(cross-entropy Loss)。</p>
+
+<p>对数损失通过惩罚错误的分类,实现对分类器的准确度(Accuracy)的量化。 最小化对数损失基本等价于最大化分类器的准确度。</p>
+
+<p>当使用sigmoid作为激活函数的时候，常用<strong>交叉熵损失函数</strong>而不用<strong>均方误差损失函数</strong>，因为它可以<strong>完美解决平方损失函数权重更新过慢</strong>的问题，具有“误差大的时候，权重更新快；误差小的时候，权重更新慢”的良好性质。</p>
+
+<pre><code class="language-python">#!/usr/bin/env python
+# -*- coding: utf8 -*-
+# y_true: list, the true labels of input instances 
+# y_pred: list, the probability when the predicted label of input instances equals to 1
+def logloss(y_true, y_pred, eps=1e-15):
+    import numpy as np
+
+    # Prepare numpy array data
+    y_true = np.array(y_true)
+    y_pred = np.array(y_pred)
+    assert (len(y_true) and len(y_true) == len(y_pred))
+
+    # Clip y_pred between eps and 1-eps
+    p = np.clip(y_pred, eps, 1-eps)
+    loss = np.sum(- y_true * np.log(p) - (1 - y_true) * np.log(1-p))
+
+    return loss / len(y_true)
+
+def unitest():
+    y_true = [0, 0, 1, 1]
+    y_pred = [0.1, 0.2, 0.7, 0.99]
+
+    print ("Use self-defined logloss() in binary classification, the result is {}".format(logloss(y_true, y_pred)))
+
+    from sklearn.metrics import log_loss
+    print ("Use log_loss() in scikit-learn, the result is {} ".format(log_loss(y_true, y_pred)))
+
+if __name__ == '__main__':
+    unitest()
+</code></pre>
+
+<h3 id="exponential-loss">exponential loss</h3>
+
+<p>指数损失函数，对离群点、噪声非常敏感。经常用在AdaBoost算法中。</p>
+
+<h1 id="评价指标">评价指标</h1>
+
+<p>如何评估机器学习算法模型是任何项目中一个非常重要的环节。分类问题一般会选择准确率（Accuracy）或者AUC作为metric，回归问题使用MSE。上述损失函数大部分可以直接作为评价指标来使用。</p>
+
+<h2 id="回归问题-1">回归问题</h2>
+
+<h3 id="mse">MSE</h3>
+
+<p>均方误差 (Mean Square Error)
+\(MSE={1\over n}{\sum^{n}_{i=1}(\hat{y_i} -{y_i})^2}\)</p>
+
+<blockquote>
+  <p>范围[0,+∞)，当预测值与真实值完全吻合时等于0，即完美模型；误差越大，该值越大。</p>
+</blockquote>
+
+<h3 id="rmse">RMSE</h3>
+
+<p>均方根误差 (Root Mean Square Error)
+\(RMSE=\sqrt {MSE} = \sqrt {\frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2}\)</p>
+
+<blockquote>
+  <p>数量级上比较直观，比如RMSE=10，可以认为回归效果相比真实值平均相差10。</p>
+</blockquote>
+
+<h3 id="mae">MAE</h3>
+
+<p>平均绝对误差(Mean Absolute Error)
+\(MAE=\frac{1}{n} \sum_{i=1}^{n} |\hat{y}_i - y_i|\)</p>
+
+<h3 id="mape">MAPE</h3>
+
+<p>平方绝对百分比误差 (Mean Absolute Percentage Error)
+\(MAPE=\frac{100\%}{n}\sum_{i=1}^n |\frac{ \hat{y}_i - y_i }{ y_i }|\)</p>
+
+<blockquote>
+  <p>当真实值有数据等于0时，存在分母0除问题，该公式不可用。</p>
+</blockquote>
+
+<h3 id="smape">SMAPE</h3>
+
+<p>对称平均绝对百分比误差 (Symmetric Mean Absolute Percentage Error)
+\(SMAPE=\frac{100\%}{n}\sum_{i=1}^n \frac{ |\hat{y}_i - y_i| }{ (|\hat{y}_i| + |y_i|)/2 }\)</p>
+
+<h3 id="r-squared">R Squared</h3>
+
+<p>决定系数 (coefficient of determination)
+\(R^2=1-{\frac {\sum _i (\hat y_i-y_i)^2}{\sum _i (\overline y-y_i)^2}}\)</p>
+
+<blockquote>
+  <ol>
+    <li>分母代表baseline（平均值）的误差，分子代表模型的预测结果产生的误差；</li>
+    <li>预测结果越大越好，R为1说明完美拟合， 为0说明和baseline一致；</li>
+  </ol>
+</blockquote>
+
+<h2 id="分类问题">分类问题</h2>
+
+<h3 id="confusion-matrix">Confusion Matrix</h3>
+
+<p>混淆矩阵，后续多个指标的基础。</p>
+
+<p>eg. 二类混淆矩阵(训练目的：减少FP、FN)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">预测正例</th>
+      <th style="text-align: center">预测反例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">真实正例</td>
+      <td style="text-align: center">TP 真正例</td>
+      <td style="text-align: center">FN 假反例</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">真实反例</td>
+      <td style="text-align: center">FP 假反例</td>
+      <td style="text-align: center">TN 真反例</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="accuracy">Accuracy</h3>
+
+<p>准确率：当样本类别均衡时，Accuracy是一个很好的指标。但在样本不平衡的情况下，产生效果较差。
+\(Acc=\frac {TP+TN}{TP+TN+FP+FN}\)</p>
+
+<h3 id="precision">Precision</h3>
+
+<p>精准率：预测为正例的样本中有多少实际为正。
+\(P=\frac {TP}{TP+FP}\)</p>
+
+<h3 id="recall">Recall</h3>
+
+<p>召回率：实际为正例的样本有多少被预测为正。
+\(R=\frac {TP}{TP+FN}\)</p>
+
+<h3 id="p-r曲线">P-R曲线</h3>
+
+<p>通过选择不同的阈值，得到Recall和Precision，以Recall为横坐标，Precision为纵坐标得到的曲线图。</p>
+
+<h3 id="加权调和平均调和平均">加权调和平均&amp;调和平均</h3>
+
+<p>beta&gt;1时召回率（Recall）影响更大。</p>
+
+<p>beta&lt;1时，精确率（Precision）影响更大。
+\(F_\beta=\frac{(1+\beta^2)PR}{\beta^2P+R},(\beta=1时)F_1=\frac {2PR}{P+R}\)</p>
+
+<h3 id="roc-auc">ROC-AUC</h3>
+
+<p><strong>Area Under Curve(AUC)</strong> 是<strong>二分类</strong>问题中使用非常广泛的一个评价指标。<strong>AUC的本质是，任取一个正样本和负样本，模型输出正样本的值大于负样本值的概率</strong>。构成AUC的两个基本指标是假正例率和真正例率。</p>
+
+<ul>
+  <li><strong>横轴-假正例率：</strong> 实际为负的样本多少被预测为正。FPR。</li>
+  <li><strong>纵轴-真正例率：</strong> 实际为正的样本多少被预测为正。TPR。</li>
+</ul>
+
+<p>TPR和FPR的范围均是[0,1]，通过选择不同的阈值得到TPR和FPR，然后绘制ROC曲线。ROC曲线下的面积为AUC值。</p>
+
+<h2 id="代码">代码</h2>
+
+<pre><code class="language-python"># coding=utf-8
+import numpy as np
+from sklearn import metrics
+y_true=np.array([1.1,3.3,5.5,7.7])
+y_pred=np.array([1.0,3.0,5.0,7.0])
+
+# MSE
+def MSE(true, pred):
+    return np.sum((true - pred)**2)
+mse=metrics.mean_squared_error(y_true,y_pred)
+# RMSE
+rmse=np.sqrt(mse)
+# MAE
+def mae(true, pred):
+    return np.sum(np.abs(true - pred))
+mae=metrics.mean_absolute_error(y_true,y_pred)
+# MAPE
+mape=np.mean(np.abs(y_pred-y_true)/y_true)*100
+#SMPAE
+smape=np.mean(2*np.abs(y_pred-y_true)/(np.abs(y_pred)+np.abs(y_true)))*100
+# R Squared
+RS=metrics.r2_score(y_true,y_pred)
+# huber loss
+def huber(true, pred, delta):
+    loss = np.where(np.abs(true-pred) &lt; delta , 0.5*((true-pred)**2), delta*np.abs(true - pred) - 0.5*(delta**2))
+    return np.sum(loss)
+
+y_trues = [1,1,1,1,0,0,1,1,1,0,0]
+y_preds = [1,1,1,0,1,1,0,1,1,1,0] 
+
+# ACC准确率
+acc=metrics.accuracy_score(y_trues,y_preds)
+# Precision精准率
+P=metrics.precision_score(y_trues,y_preds)
+# Recall召回率
+R=metrics.recall_score(y_trues,y_preds)
+# F
+F=metrics.fbeta_score(y_trues,y_preds,beta=1)
+</code></pre>
+
+
+</div>
+<div class="v">
+  <i class="fas fa-spinner fa-pulse"></i>
+</div>
+<script
+  src='https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js'
+  defer='defer'
+  onload='
+    new Valine({
+      "el": document.getElementsByClassName("v")[0],
+      "appId": "sJhaa5UF52fhugGM95buMpIT-gzGzoHsz",
+      "appKey": "Tp95IdLx1TBXyH9tXflqNnXx",
+      "placeholder": "在这里评论吧！填写邮箱可以获得Gravatar头像和回复通知",
+      "requiredFields": ["nick","mail"],
+      "visitor": true,
+      "recordIP": true
+    })'
+></script>
+
+</div>
+  </div>
+  
+  <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+  
+</body>
+
+</html>
